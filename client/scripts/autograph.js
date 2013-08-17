@@ -36,7 +36,11 @@ svg.on("mouseup", function (e) {
     var c = BaseComponent();
 
     svg.data([
-      {x:d3.event.x, y:d3.event.y}
+      {
+        id: cursorMode.component,
+        x: d3.event.x,
+        y: d3.event.y
+      }
     ])
       .call(c);
 

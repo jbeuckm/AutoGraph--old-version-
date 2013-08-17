@@ -14,15 +14,19 @@ function BaseComponent() {
   function my(selection) {
     selection.each(function (d, i) {
 
-      var state = false;
+      var g = d3.select(this).append("g")
+        .attr("transform", "translate("+d.x+" "+d.y+")")
+        .call(d3.behavior.drag().on("drag", move));
 
-      var rect = d3.select(this).append("rect")
-        .attr("x", d.x)
-        .attr("y", d.y)
+      var rect = g.append("rect")
         .attr("height", 15)
         .attr("width", 60)
-        .attr("class", "module")
-        .call(d3.behavior.drag().on("drag", move));
+        .attr("class", "module");
+
+      var text = g.append("text")
+        .text(d.id)
+        .attr("dx", '3')
+        .attr("dy", '1em');
 
     });
   }

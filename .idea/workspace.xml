@@ -34,19 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="autograph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.73333335">
+            <state line="39" column="33" selection-start="882" selection-end="882" vertical-scroll-proportion="5.076923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+            <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7632509">
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
       <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+            <state line="33" column="16" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,9 +90,9 @@
         <option value="$PROJECT_DIR$/server/modules.json" />
         <option value="$PROJECT_DIR$/client/scripts/Module.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
-        <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
-        <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
+        <option value="$PROJECT_DIR$/client/css/autograph.css" />
+        <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
       </list>
     </option>
   </component>
@@ -430,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="41" selection-start="495" selection-end="495" vertical-scroll-proportion="-14.72">
@@ -446,14 +439,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+        <state line="33" column="16" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.73333335">
+        <state line="39" column="33" selection-start="882" selection-end="882" vertical-scroll-proportion="5.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7632509">
           <folding />
         </state>
       </provider>

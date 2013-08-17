@@ -28,3 +28,8 @@ body {
   stroke-width: 1;
   fill: rgba(0,0,0,.5);
 }
+text {
+  fill: #fff;
+  font-family: "Helvetica";
+  font-size: 12;
+}
