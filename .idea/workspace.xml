@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="" />
+    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/ComponentInput.js" afterPath="$PROJECT_DIR$/client/scripts/ComponentInput.js" />
+    </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,19 +42,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="940" selection-end="940" vertical-scroll-proportion="0.5477032">
+            <state line="34" column="26" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentInput.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ComponentInput.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/ComponentInput.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="39" selection-start="267" selection-end="282" vertical-scroll-proportion="0.0">
+            <state line="13" column="47" selection-start="373" selection-end="373" vertical-scroll-proportion="0.36749116">
               <folding />
             </state>
           </provider>
@@ -96,11 +98,11 @@
         <option value="$PROJECT_DIR$/server/modules.json" />
         <option value="$PROJECT_DIR$/client/scripts/Module.js" />
         <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
-        <option value="$PROJECT_DIR$/client/scripts/ComponentInput.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/server/components.json" />
         <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/client/scripts/ComponentInput.js" />
       </list>
     </option>
   </component>
@@ -445,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/ComponentInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="267" selection-end="282" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="17" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
@@ -468,7 +463,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="940" selection-end="940" vertical-scroll-proportion="0.5477032">
+        <state line="34" column="26" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/ComponentInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="47" selection-start="373" selection-end="373" vertical-scroll-proportion="0.36749116">
           <folding />
         </state>
       </provider>

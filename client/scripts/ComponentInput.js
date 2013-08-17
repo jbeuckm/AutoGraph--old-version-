@@ -10,6 +10,16 @@ function ComponentInput() {
         .attr("width", 8)
         .attr("class", "component-input");
 
+      rect.on("mouseover", function(){
+        d3.select(this).transition().duration(200)
+          .attr("y", d.y-2)
+          .attr("height", 4);
+      })
+        .on("mouseout", function(){
+          d3.select(this).transition().duration(200)
+            .attr("y", d.y)
+            .attr("height", 2);
+        });
     });
   }
 
