@@ -15,7 +15,7 @@ var svg = d3.select("#container")
 
 var moduleList = d3.select("#container")
   .append("div")
-  .attr("class", "module-list");
+  .attr("class", "component-list");
 
 function updateWindow() {
   x = w.innerWidth || e.clientWidth || g.clientWidth;
@@ -54,15 +54,15 @@ svg.on("mouseup", function () {
 
 
 $(document).ready(function () {
-  $.get(AUTOGRAPH_SERVER + 'modules.json', function (response) {
+  $.get(AUTOGRAPH_SERVER + 'components.json', function (response) {
     var modules = JSON.parse(response);
     for (var i = 0, l = modules.length; i < l; i++) {
       moduleList.append("div")
-        .attr("class", "module-option")
+        .attr("class", "component-option")
         .attr("id", modules[i].id)
         .text(modules[i].id);
     }
-    d3.selectAll(".module-option").on("click", function () {
+    d3.selectAll(".component-option").on("click", function () {
 
       setCursorMode({
         cursor: "crosshair",

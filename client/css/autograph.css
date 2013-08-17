@@ -5,7 +5,7 @@ body {
   color: #fff;
 }
 
-.module-list {
+.component-list {
   background-color: #444;
   position: absolute;;
   right: 0;
@@ -13,17 +13,17 @@ body {
   overflow: auto;
 }
 
-.module-option {
+.component-option {
   padding-left: 3px;
   width: 147px;
   cursor: pointer;
 }
-.module-option:hover {
+.component-option:hover {
   background-color: #000;
 }
 
 
-.module {
+.component {
   stroke: #ddd;
   stroke-width: 1;
   fill: rgba(0,0,0,.5);
@@ -32,4 +32,5 @@ text {
   fill: #fff;
   font-family: "Helvetica";
   font-size: 12;
+  pointer-events: none;
 }

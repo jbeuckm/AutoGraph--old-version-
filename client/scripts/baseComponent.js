@@ -5,9 +5,13 @@ function BaseComponent() {
   function move() {
     this.parentNode.appendChild(this);
     var dragTarget = d3.select(this);
+
+    var oldDims = dragTarget.attr("transform").replace("translate(", "").replace(")", "");
+    oldDims = oldDims.split(' ');
     dragTarget
-      .attr("x", function(){return d3.event.dx + parseInt(dragTarget.attr("x"))})
-      .attr("y", function(){return d3.event.dy + parseInt(dragTarget.attr("y"))});
+      .attr("transform", function(){
+        return "translate("+(d3.event.dx+parseFloat(oldDims[0]))+" "+(d3.event.dy+parseFloat(oldDims[1]))+")";
+      });
   }
 
 
@@ -21,7 +25,7 @@ function BaseComponent() {
       var rect = g.append("rect")
         .attr("height", 15)
         .attr("width", 60)
-        .attr("class", "module");
+        .attr("class", "component");
 
       var text = g.append("text")
         .text(d.id)
