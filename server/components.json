@@ -3,7 +3,16 @@
     "id": "button"
   },
   {
+    "id": "clock"
+  },
+  {
     "id": "value"
+  },
+  {
+    "id": "slider"
+  },
+  {
+    "id": "HTTP client"
   },
   {
     "id": "select"
@@ -13,5 +22,8 @@
   },
   {
     "id": "out"
+  },
+  {
+    "id": "HTTP server"
   }
 ]
