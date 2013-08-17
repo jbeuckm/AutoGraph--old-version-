@@ -38,7 +38,7 @@
       <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="25" selection-start="1694" selection-end="1707" vertical-scroll-proportion="0.74558306">
+            <state line="61" column="36" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.5477032">
               <folding />
             </state>
           </provider>
@@ -47,7 +47,7 @@
       <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
+            <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,7 +56,7 @@
       <file leaf-file-name="modules.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/modules.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="7" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
+            <state line="11" column="14" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,9 +80,9 @@
         <option value="$PROJECT_DIR$/server/modules/index.json" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/server/modules/index.html" />
+        <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/server/modules.json" />
         <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
-        <option value="$PROJECT_DIR$/client/css/autograph.css" />
       </list>
     </option>
   </component>
@@ -420,23 +420,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/modules.json">
+    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
+        <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
+    <entry file="file://$PROJECT_DIR$/server/modules.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
+        <state line="11" column="14" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="25" selection-start="1694" selection-end="1707" vertical-scroll-proportion="0.74558306">
+        <state line="61" column="36" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.5477032">
           <folding />
         </state>
       </provider>

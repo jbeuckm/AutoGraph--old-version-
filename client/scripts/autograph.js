@@ -58,6 +58,9 @@ $(document).ready(function(){
         .attr("id", modules[i].id)
         .text(modules[i].id);
     }
+    d3.selectAll(".module-option").on("click", function() {
+      console.log(d3.event.target.id)
+    });
   });
 });
 
@@ -69,6 +72,3 @@ d3.select("body")
     }
   });
 
-d3.select(".module-option").on("click", function() {
-  console.log(d3.event)
-});
