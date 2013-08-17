@@ -30,23 +30,12 @@ window.onresize = updateWindow;
 
 svg.on("mouseup", function(e) {
 
-  svg.append("svg:rect")
-    .attr("x", d3.event.x)
-    .attr("y", d3.event.y)
-    .attr("height", 40)
-    .attr("width", 40)
-    .attr("class", "module")
-    .call(d3.behavior.drag().on("drag", move));
+  var c = BaseComponent();
+
+  svg.data([{x:d3.event.x, y:d3.event.y}])
+    .call(c);
 
 });
-
-function move() {
-  this.parentNode.appendChild(this);
-  var dragTarget = d3.select(this);
-  dragTarget
-    .attr("x", function(){return d3.event.dx + parseInt(dragTarget.attr("x"))})
-    .attr("y", function(){return d3.event.dy + parseInt(dragTarget.attr("y"))});
-}
 
 
 $(document).ready(function(){
