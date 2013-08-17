@@ -1,7 +1,26 @@
 body {
   margin: 0;
   background-color: #000;
+  font-family: "Helvetica";
+  color: #fff;
 }
+
+.module-list {
+  background-color: #444;
+  position: absolute;;
+  right: 0;
+  width: 150px;
+  overflow: scroll;
+}
+
+.module-option {
+  width: 100%;
+  cursor: pointer;
+}
+.module-option:hover {
+  background-color: #000;
+}
+
 
 .module {
   stroke: #ddd;

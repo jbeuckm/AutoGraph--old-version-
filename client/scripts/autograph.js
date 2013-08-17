@@ -14,10 +14,8 @@ var svg = d3.select("#container")
   .style("position", "absolute");
 
 var moduleList = d3.select("#container")
-  .append("select")
-  .style("position", "absolute")
-  .style("right", 0)
-  .attr("multiple", "true");
+  .append("div")
+  .attr("class", "module-list");
 
 function updateWindow() {
   x = w.innerWidth || e.clientWidth || g.clientWidth;
@@ -30,7 +28,7 @@ function updateWindow() {
 updateWindow();
 window.onresize = updateWindow;
 
-svg.on("click", function(e) {
+svg.on("mouseup", function(e) {
 
   svg.append("svg:rect")
     .attr("x", d3.event.x)
@@ -55,8 +53,22 @@ $(document).ready(function(){
   $.get(AUTOGRAPH_SERVER+'modules.json', function(response){
     var modules = JSON.parse(response);
     for (var i= 0, l=modules.length; i<l; i++) {
-      moduleList.append("option")
-        .text(modules[i].name);
+      moduleList.append("div")
+        .attr("class", "module-option")
+        .attr("id", modules[i].id)
+        .text(modules[i].id);
     }
   });
+});
+
+
+d3.select("body")
+  .on("keydown", function(e) {
+    if (d3.event.which == 27) {
+      alert('escape');
+    }
+  });
+
+d3.select(".module-option").on("click", function() {
+  console.log(d3.event)
 });

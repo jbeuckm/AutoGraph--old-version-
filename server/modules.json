@@ -1,14 +1,14 @@
 [
   {
-    "name": "button"
+    "id": "button"
   },
   {
-    "name": "input"
+    "id": "input"
   },
   {
-    "name": "output"
+    "id": "output"
   },
   {
-    "name": "data select"
+    "id": "data select"
   }
 ]
