@@ -32,6 +32,8 @@ function BaseComponent() {
         .attr("dx", '3')
         .attr("dy", '1em');
 
+      var bb = text.node().getBBox();
+      rect.attr("width", bb.width + 6);
 
       var input = ComponentInput();
 
