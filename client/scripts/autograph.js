@@ -29,7 +29,8 @@ function updateWindow() {
 updateWindow();
 window.onresize = updateWindow;
 
-svg.on("mouseup", function (e) {
+svg.on("mouseup", function () {
+
 
   if (cursorMode) {
 
@@ -44,7 +45,9 @@ svg.on("mouseup", function (e) {
     ])
       .call(c);
 
-    clearCursorMode();
+    if (!d3.event.shiftKey) {
+      clearCursorMode();
+    }
   }
 
 });

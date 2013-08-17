@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/autograph.css" afterPath="$PROJECT_DIR$/client/css/autograph.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/autograph.js" afterPath="$PROJECT_DIR$/client/scripts/autograph.js" />
     </list>
     <ignored path="AutoGraph.iws" />
@@ -34,19 +33,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autograph.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="33" selection-start="882" selection-end="882" vertical-scroll-proportion="5.076923">
+            <state line="49" column="5" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.7925926">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7632509">
+            <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,9 +89,9 @@
         <option value="$PROJECT_DIR$/server/modules.json" />
         <option value="$PROJECT_DIR$/client/scripts/Module.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
-        <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
         <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
       </list>
     </option>
   </component>
@@ -444,16 +443,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
+    <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="33" selection-start="882" selection-end="882" vertical-scroll-proportion="5.076923">
+        <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
+    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="760" selection-end="760" vertical-scroll-proportion="0.7632509">
+        <state line="49" column="5" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.7925926">
           <folding />
         </state>
       </provider>
