@@ -21,8 +21,9 @@ function updateWindow() {
   x = w.innerWidth || e.clientWidth || g.clientWidth;
   y = w.innerHeight || e.clientHeight || g.clientHeight;
 
-  svg.attr("width", x - rightMenuWidth).attr("height", y);
-  moduleList.style("width", rightMenuWidth).style("height", y);
+  var listWidth = parseInt(moduleList.style("width"));
+  svg.attr("width", x - listWidth).attr("height", y);
+  moduleList.style("height", y);
 }
 
 updateWindow();

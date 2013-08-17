@@ -36,7 +36,7 @@
       <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="31" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.64444447">
+            <state line="22" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.65185183">
               <folding />
             </state>
           </provider>
@@ -436,13 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
@@ -450,9 +443,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="31" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.64444447">
+        <state line="22" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.65185183">
           <folding />
         </state>
       </provider>
