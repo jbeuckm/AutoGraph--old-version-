@@ -29,6 +29,28 @@ function updateWindow() {
 updateWindow();
 window.onresize = updateWindow;
 
+
+d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
+  for (var i = 0, l = components.length; i < l; i++) {
+    componentList.append("div")
+      .attr("class", "component-option")
+      .attr("id", components[i].id)
+      .text(components[i].id);
+  }
+  d3.selectAll(".component-option").on("click", function () {
+
+    setCursorMode({
+      cursor: "crosshair",
+      component: d3.event.target.id
+    });
+
+  });
+});
+
+
+var cursorMode = null;
+
+
 svg.on("mouseup", function () {
 
 
@@ -52,25 +74,6 @@ svg.on("mouseup", function () {
 
 });
 
-
-d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
-  for (var i = 0, l = components.length; i < l; i++) {
-    componentList.append("div")
-      .attr("class", "component-option")
-      .attr("id", components[i].id)
-      .text(components[i].id);
-  }
-  d3.selectAll(".component-option").on("click", function () {
-
-    setCursorMode({
-      cursor: "crosshair",
-      component: d3.event.target.id
-    });
-
-  });
-});
-
-var cursorMode = null;
 
 function setCursorMode(mode) {
   if (mode.cursor) {

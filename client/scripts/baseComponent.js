@@ -32,6 +32,16 @@ function BaseComponent() {
         .attr("dx", '3')
         .attr("dy", '1em');
 
+
+      var input = ComponentInput();
+
+      g.data([
+        {
+          x: 4,
+          y: -2
+        }
+      ]).call(input);
+
     });
   }
 
