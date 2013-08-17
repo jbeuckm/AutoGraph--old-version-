@@ -52,7 +52,11 @@ function move() {
 
 
 $(document).ready(function(){
-  $.get(AUTOGRAPH_SERVER+'modules/index.json', function(response){
-    alert(response);
+  $.get(AUTOGRAPH_SERVER+'modules.json', function(response){
+    var modules = JSON.parse(response);
+    for (var i= 0, l=modules.length; i<l; i++) {
+      moduleList.append("option")
+        .text(modules[i].name);
+    }
   });
 });
