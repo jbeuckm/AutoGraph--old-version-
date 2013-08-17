@@ -10,12 +10,12 @@ body {
   position: absolute;;
   right: 0;
   width: 150px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .module-option {
   padding-left: 3px;
-  width: 100%;
+  width: 147px;
   cursor: pointer;
 }
 .module-option:hover {

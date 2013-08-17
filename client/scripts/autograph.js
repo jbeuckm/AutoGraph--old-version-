@@ -31,12 +31,17 @@ window.onresize = updateWindow;
 
 svg.on("mouseup", function (e) {
 
-  var c = BaseComponent();
+  if (cursorMode) {
 
-  svg.data([
-    {x:d3.event.x, y:d3.event.y}
-  ])
-    .call(c);
+    var c = BaseComponent();
+
+    svg.data([
+      {x:d3.event.x, y:d3.event.y}
+    ])
+      .call(c);
+
+    clearCursorMode();
+  }
 
 });
 
@@ -51,17 +56,35 @@ $(document).ready(function () {
         .text(modules[i].id);
     }
     d3.selectAll(".module-option").on("click", function () {
-      console.log(d3.event.target.id);
-      d3.select("body").style("cursor", "crosshair");
+
+      setCursorMode({
+        cursor: "crosshair",
+        component: d3.event.target.id
+      });
+
     });
   });
 });
+
+var cursorMode = null;
+
+function setCursorMode(mode) {
+  if (mode.cursor) {
+    d3.select("body").style("cursor", "crosshair");
+  }
+  cursorMode = mode;
+}
+
+function clearCursorMode() {
+  d3.select("body").style("cursor", null);
+  cursorMode = null;
+}
 
 
 d3.select("body")
   .on("keydown", function (e) {
     if (d3.event.which == 27) {
-      alert('escape');
+      clearCursorMode();
     }
   });
 

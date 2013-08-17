@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/autograph.css" afterPath="$PROJECT_DIR$/client/css/autograph.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/autograph.js" afterPath="$PROJECT_DIR$/client/scripts/autograph.js" />
     </list>
     <ignored path="AutoGraph.iws" />
@@ -36,7 +37,7 @@
       <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.65185183">
+            <state line="86" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.73333335">
               <folding />
             </state>
           </provider>
@@ -54,7 +55,7 @@
       <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+            <state line="17" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,11 +87,11 @@
         <option value="$PROJECT_DIR$/client/autograph.css" />
         <option value="$PROJECT_DIR$/server/modules/index.json" />
         <option value="$PROJECT_DIR$/server/modules/index.html" />
-        <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/server/modules.json" />
         <option value="$PROJECT_DIR$/client/scripts/Module.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
       </list>
     </option>
@@ -429,13 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="41" selection-start="495" selection-end="495" vertical-scroll-proportion="-14.72">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
@@ -443,16 +437,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="41" selection-start="495" selection-end="495" vertical-scroll-proportion="-14.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="14" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+        <state line="17" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.65185183">
+        <state line="86" column="24" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.73333335">
           <folding />
         </state>
       </provider>
