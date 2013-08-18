@@ -60,17 +60,15 @@ autographDispatch.on("terminal_mousedown", function(t) {
   console.log(d3.event);
 
   var newWireData = { x1: d3.event.x, y1: d3.event.y, x2: d3.event.x, y2: d3.event.y };
-  var wv = WireView();
-  var newWire = svg.data([newWireData]).call(wv);
+  var newWire = WireView();
+  svg.data([newWireData]).call(newWire);
 
   setCursorMode({
     action: "wire",
     data: newWireData,
     wire: newWire,
     mousemove: function(x, y){
-      newWireData.x2 = x;
-      newWireData.y2 = y;
-      wv.update(x, y);
+      newWire.updateTo(x, y);
     }
   });
 
@@ -108,6 +106,9 @@ console.log(cursorMode);
       break;
 
     case "wire":
+
+      console.log(d3.select(".terminal-input .enabled"));
+
       clearCursorMode();
       break;
 

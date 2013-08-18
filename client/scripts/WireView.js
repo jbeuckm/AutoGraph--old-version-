@@ -19,11 +19,18 @@ function WireView() {
 
   }
 
-  my.update = function(x, y) {
+  my.updateTo = function(x, y) {
     console.log('update wire');
     line
       .attr("x2", x)
       .attr("y2", y);
+  };
+
+  my.updateFrom = function(x, y) {
+    console.log('update wire');
+    line
+      .attr("x1", x)
+      .attr("y1", y);
   };
 
   return my;
