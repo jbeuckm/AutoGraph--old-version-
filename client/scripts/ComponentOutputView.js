@@ -1,8 +1,7 @@
 function ComponentOutputView() {
 
-  function my(selection) {
+  function output(selection) {
 
-    var $self = this;
     var enabled = false;
 
     selection.each(function (d, i) {
@@ -26,14 +25,19 @@ function ComponentOutputView() {
             .attr("height", 3);
         })
         .on("mousedown", function(){
-          console.log('output mouse down');
           d3.event.cancelBubble = true;
-
-          autographDispatch.terminal_mousedown($self);
+          autographDispatch.output_mousedown(this);
         });
     });
 
   }
 
-  return my;
+  output.getAttachPoint = function() {
+    return {
+      x: 5,
+      y: 18
+    }
+  };
+
+  return output;
 }

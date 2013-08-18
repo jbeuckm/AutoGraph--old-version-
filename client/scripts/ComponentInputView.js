@@ -39,5 +39,12 @@ function ComponentInputView() {
 
   }
 
+  my.getAttachPoint = function() {
+    return {
+      x: 5,
+      y: -3
+    }
+  };
+
   return my;
 }

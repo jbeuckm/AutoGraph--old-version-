@@ -2,7 +2,7 @@ function WireView() {
 
   var line;
 
-  function my(selection) {
+  function wire(selection) {
 
     selection.each(function (d, i) {
 
@@ -19,19 +19,19 @@ function WireView() {
 
   }
 
-  my.updateTo = function(x, y) {
-    console.log('update wire');
-    line
-      .attr("x2", x)
-      .attr("y2", y);
-  };
-
-  my.updateFrom = function(x, y) {
+  wire.updateFrom = function(x, y) {
     console.log('update wire');
     line
       .attr("x1", x)
       .attr("y1", y);
   };
 
-  return my;
+  wire.updateTo = function(x, y) {
+    console.log('update wire');
+    line
+      .attr("x2", x)
+      .attr("y2", y);
+  };
+
+  return wire;
 }
