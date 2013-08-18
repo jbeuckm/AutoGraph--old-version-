@@ -30,7 +30,29 @@ var BaseComponentView = Backbone.View.extend({
     var bb = this.text.node().getBBox();
     this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
 
+    this.renderInputs(inputs);
     this.renderOutputs(outputs);
+  },
+
+  renderInputs: function(inputs) {
+
+    for (var i= 0, l=inputs.length; i<l; i++) {
+
+      var input = inputs[i];
+
+      var im = new InputTerminalModel({
+        x: i * 14,
+        y: 0,
+        label: input.label
+      });
+
+      var view = new InputTerminalView({
+        model: im,
+        el: this.d3.append("g")[0]
+      });
+      view.render();
+
+    }
   },
 
   renderOutputs: function(outputs) {
