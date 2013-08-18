@@ -25,7 +25,7 @@ var BaseComponentView = Backbone.View.extend({
       .attr("dy", '1em');
 
     var inputs = m.get("inputs");
-    var outputs = m.get("inputs");
+    var outputs = m.get("outputs");
 
     var bb = this.text.node().getBBox();
     this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
@@ -40,9 +40,9 @@ var BaseComponentView = Backbone.View.extend({
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
-        x: i * 12,
+        x: i * 14,
         y: 15,
-        label: output.get("label")
+        label: output.label
       });
 
       var view = new OutputTerminalView({
