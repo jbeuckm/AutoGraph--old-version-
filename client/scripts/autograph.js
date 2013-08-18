@@ -86,16 +86,17 @@ svg.on("mouseup", function () {
   switch (cursorMode.action) {
 
     case "place":
-      var c = BaseComponentView();
 
-      svg.data([
-        {
-          id:cursorMode.component,
-          x:d3.event.x,
-          y:d3.event.y
-        }
-      ])
-        .call(c);
+      var model = new BaseComponentModel({
+        x: d3.event.x,
+        y: d3.event.y
+      });
+
+      var view = new BaseComponentView({
+        model: model,
+        el: svg.append("g")[0]
+      });
+      view.render();
 
       if (!d3.event.shiftKey) {
         clearCursorMode();

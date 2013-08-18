@@ -1,6 +1,7 @@
-var BaseComponent = Backbone.Model.extend({
+var BaseComponentModel = Backbone.Model.extend({
 
   defaults: {
+    label: "component",
     x: 0,
     y: 0,
     inputs: [],
