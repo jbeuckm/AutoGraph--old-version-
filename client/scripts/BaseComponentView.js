@@ -34,16 +34,38 @@ function BaseComponentView() {
         .attr("dy", '1em');
 
 
-      var bb = text.node().getBBox();
-      rect.attr("width", bb.width + 6);
+      var inputs = [
+        {
+          name: ""
+        },
+        {
+          name: ""
+        }
+      ];
 
-      g.selectAll(".terminal-input").data([1, 2, 3])
+      var outputs = [
+        {
+          name: ""
+        },
+        {
+          name: ""
+        },
+        {
+          name: ""
+        }
+      ];
+
+      var bb = text.node().getBBox();
+      rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
+
+
+      g.selectAll(".terminal-input").data(inputs)
         .enter()
         .append("g")
         .classed("terminal-input", true)
         .call(ComponentInputView());
 
-      g.selectAll(".terminal-output").data([1, 2, 3])
+      g.selectAll(".terminal-output").data(outputs)
         .enter()
         .append("g")
         .classed("terminal-output", true)

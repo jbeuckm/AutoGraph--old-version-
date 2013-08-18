@@ -7,7 +7,7 @@ function ComponentInputView() {
     selection.each(function (d, i) {
 
       var rect = d3.select(this).append("rect")
-        .attr("x", i * 12)
+        .attr("x", i * 14)
         .attr("y", -3)
         .attr("height", 3)
         .attr("width", 10)
