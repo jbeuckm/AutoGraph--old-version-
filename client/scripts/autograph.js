@@ -59,15 +59,18 @@ autographDispatch.on("terminal_mousedown", function(t) {
   console.log(t);
   console.log(d3.event);
 
-  var newWire = { x1: d3.event.x, y1: d3.event.y, x2: d3.event.x, y2: d3.event.y };
-  svg.data([newWire]).call(WireView());
+  var newWireData = { x1: d3.event.x, y1: d3.event.y, x2: d3.event.x, y2: d3.event.y };
+  var wv = WireView();
+  var newWire = svg.data([newWireData]).call(wv);
 
   setCursorMode({
     action: "wire",
+    data: newWireData,
     wire: newWire,
     mousemove: function(x, y){
-      newWire.x2 = x;
-      newWire.y2 = y;
+      newWireData.x2 = x;
+      newWireData.y2 = y;
+      wv.update(x, y);
     }
   });
 
@@ -82,6 +85,8 @@ console.log(cursorMode);
 });
 
   svg.on("mouseup", function () {
+
+    if (!cursorMode) return;
 
   switch (cursorMode.action) {
 
