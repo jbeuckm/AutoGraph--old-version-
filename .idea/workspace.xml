@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/BaseComponentView.js" afterPath="$PROJECT_DIR$/client/scripts/BaseComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/ComponentInputView.js" afterPath="$PROJECT_DIR$/client/scripts/ComponentInputView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/ComponentOutputView.js" afterPath="$PROJECT_DIR$/client/scripts/ComponentOutputView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/autograph.css" afterPath="$PROJECT_DIR$/client/css/autograph.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/WireView.js" afterPath="$PROJECT_DIR$/client/scripts/WireView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/autograph.js" afterPath="$PROJECT_DIR$/client/scripts/autograph.js" />
     </list>
     <ignored path="AutoGraph.iws" />
@@ -39,7 +38,25 @@
       <file leaf-file-name="autograph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="0" selection-start="2369" selection-end="2369" vertical-scroll-proportion="-13.538462">
+            <state line="112" column="18" selection-start="2411" selection-end="2411" vertical-scroll-proportion="-15.230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WireView.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/scripts/WireView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="18" selection-start="749" selection-end="749" vertical-scroll-proportion="0.7941176">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="12" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentOutputView.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ComponentOutputView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/ComponentOutputView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="40" selection-start="365" selection-end="365" vertical-scroll-proportion="0.37809187">
+            <state line="14" column="40" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,13 +102,13 @@
         <option value="$PROJECT_DIR$/client/scripts/ComponentInput.js" />
         <option value="$PROJECT_DIR$/client/scripts/ComponentOutput.js" />
         <option value="$PROJECT_DIR$/client/scripts/BaseComponent.js" />
-        <option value="$PROJECT_DIR$/client/css/autograph.css" />
         <option value="$PROJECT_DIR$/client/index.html" />
-        <option value="$PROJECT_DIR$/client/scripts/WireView.js" />
         <option value="$PROJECT_DIR$/client/scripts/BaseComponentView.js" />
-        <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
         <option value="$PROJECT_DIR$/client/scripts/ComponentInputView.js" />
         <option value="$PROJECT_DIR$/client/scripts/ComponentOutputView.js" />
+        <option value="$PROJECT_DIR$/client/css/autograph.css" />
+        <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
+        <option value="$PROJECT_DIR$/client/scripts/WireView.js" />
       </list>
     </option>
   </component>
@@ -429,23 +446,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="19" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="54" selection-start="508" selection-end="508" vertical-scroll-proportion="-14.72">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/WireView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -457,9 +460,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
+    <entry file="file://$PROJECT_DIR$/client/scripts/ComponentOutputView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="0" selection-start="2369" selection-end="2369" vertical-scroll-proportion="-13.538462">
+        <state line="14" column="40" selection-start="365" selection-end="365" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -471,9 +474,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/ComponentOutputView.js">
+    <entry file="file://$PROJECT_DIR$/client/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="40" selection-start="365" selection-end="365" vertical-scroll-proportion="0.37809187">
+        <state line="17" column="12" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="18" selection-start="2411" selection-end="2411" vertical-scroll-proportion="-15.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/WireView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="18" selection-start="749" selection-end="749" vertical-scroll-proportion="0.7941176">
           <folding />
         </state>
       </provider>

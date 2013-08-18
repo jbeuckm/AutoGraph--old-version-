@@ -33,5 +33,9 @@ function WireView() {
       .attr("y2", y);
   };
 
+  wire.remove = function(){
+    line.remove();
+  };
+
   return wire;
 }
