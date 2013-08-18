@@ -2,9 +2,6 @@ var InputTerminalView = Backbone.View.extend({
 
   initialize: function() {
     this.d3 = d3.select(this.el);
-  },
-
-  render: function() {
 
     var m = this.model;
 

@@ -2,9 +2,6 @@ var OutputTerminalView = Backbone.View.extend({
 
   initialize: function() {
     this.d3 = d3.select(this.el);
-  },
-
-  render: function() {
 
     var m = this.model;
 
@@ -35,7 +32,7 @@ var OutputTerminalView = Backbone.View.extend({
       })
       .on("mousedown", function(){
         d3.event.cancelBubble = true;
-        autographDispatch.output_mousedown(this);
+//        autographDispatch.output_mousedown(this);
       });
 
   }

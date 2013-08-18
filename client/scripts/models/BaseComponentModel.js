@@ -5,7 +5,7 @@ var BaseComponentModel = Backbone.Model.extend({
     x: 0,
     y: 0,
     inputs: [ {label: "input1"}, {label: "input2"} ],
-    outputs: [ {label: "output1"}, {label: "output2"} ]
+    outputs: [ {label: "output1"} ]
   }
 
 });

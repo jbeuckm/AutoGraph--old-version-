@@ -2,6 +2,9 @@ var BaseComponentView = Backbone.View.extend({
 
   initialize: function() {
     this.d3 = d3.select(this.el);
+    this.d3
+      .call(d3.behavior.drag().on("drag", this.dragHandler))
+      .classed("component", true);
   },
 
   render: function() {
@@ -10,8 +13,6 @@ var BaseComponentView = Backbone.View.extend({
 
     this.d3
       .attr("transform", "translate("+m.get("x")+" "+m.get("y")+")")
-      .call(d3.behavior.drag().on("drag", _autograph_component_move))
-      .classed("component", true);
 
     this.rect = this.d3.append("rect")
       .attr("height", 15)
@@ -32,6 +33,25 @@ var BaseComponentView = Backbone.View.extend({
 
     this.renderInputs(inputs);
     this.renderOutputs(outputs);
+  },
+
+  dragHandler: function() {
+    this.parentNode.appendChild(this);
+    var dragTarget = d3.select(this);
+
+    var oldDims = dragTarget.attr("transform").replace("translate(", "").replace(")", "");
+    oldDims = oldDims.split(' ');
+
+    var newX = d3.event.dx+parseFloat(oldDims[0]);
+    var newY = d3.event.dy+parseFloat(oldDims[1]);
+console.log(d3.event);
+//    this.model.set("x", newX);
+//    this.model.set("y", newY);
+
+    dragTarget
+      .attr("transform", function(){
+        return "translate("+newX+" "+newY+")";
+      });
   },
 
   renderInputs: function(inputs) {
@@ -79,14 +99,4 @@ var BaseComponentView = Backbone.View.extend({
 });
 
 
-function _autograph_component_move() {
-  this.parentNode.appendChild(this);
-  var dragTarget = d3.select(this);
 
-  var oldDims = dragTarget.attr("transform").replace("translate(", "").replace(")", "");
-  oldDims = oldDims.split(' ');
-  dragTarget
-    .attr("transform", function(){
-      return "translate("+(d3.event.dx+parseFloat(oldDims[0]))+" "+(d3.event.dy+parseFloat(oldDims[1]))+")";
-    });
-}
