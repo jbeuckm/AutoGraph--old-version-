@@ -37,9 +37,17 @@ function BaseComponentView() {
       var bb = text.node().getBBox();
       rect.attr("width", bb.width + 6);
 
-      var input = g.data([1, 2, 3]).call(ComponentInputView());
+      g.selectAll(".terminal-input").data([1, 2, 3])
+        .enter()
+        .append("g")
+        .classed("terminal-input", true)
+        .call(ComponentInputView());
 
-      var output = g.data([1, 2, 3]).call(ComponentOutputView());
+      g.selectAll(".terminal-output").data([1, 2, 3])
+        .enter()
+        .append("g")
+        .classed("terminal-output", true)
+        .call(ComponentOutputView());
 
     });
   }
