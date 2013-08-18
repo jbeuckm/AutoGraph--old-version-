@@ -13,6 +13,8 @@ var svg = d3.select("#container")
   .attr("class", "autographSVG")
   .style("position", "absolute");
 
+var wireLayer = svg.append("g");
+
 var componentList = d3.select("#container")
   .append("div")
   .attr("class", "component-list");
@@ -61,7 +63,7 @@ autographDispatch.on("output_mousedown", function (t) {
 
   var newWireData = { x1:d3.event.x, y1:d3.event.y, x2:d3.event.x, y2:d3.event.y };
   var newWire = WireView();
-  svg.data([newWireData]).call(newWire);
+  wireLayer.data([newWireData]).call(newWire);
 
   setCursorMode({
     action:"wire",
@@ -106,7 +108,7 @@ svg.on("mouseup", function () {
 
     case "wire":
 
-      d3.selectAll(".terminal-input .enabled").each(function(d, i){
+      d3.selectAll("g.terminal-input.enabled").each(function(d, i){
 console.log(i);
       });
 
