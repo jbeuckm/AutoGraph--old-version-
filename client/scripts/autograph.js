@@ -106,7 +106,7 @@ svg.on("mouseup", function () {
 
     case "wire":
 
-      console.log(d3.select(".terminal-input .enabled"));
+      console.log(d3.selectAll(".terminal-input .enabled")[0].length);
 
       clearCursorMode();
       break;

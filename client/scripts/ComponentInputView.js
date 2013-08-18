@@ -1,6 +1,6 @@
 function ComponentInputView() {
 
-  function my(selection) {
+  function view(selection) {
 
     var enabled = false;
 
@@ -39,12 +39,12 @@ function ComponentInputView() {
 
   }
 
-  my.getAttachPoint = function() {
+  view.getAttachPoint = function() {
     return {
       x: 5,
       y: -3
     }
   };
 
-  return my;
+  return view;
 }

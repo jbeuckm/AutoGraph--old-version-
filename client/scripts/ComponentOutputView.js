@@ -1,6 +1,6 @@
 function ComponentOutputView() {
 
-  function output(selection) {
+  function view(selection) {
 
     var enabled = false;
 
@@ -11,17 +11,22 @@ function ComponentOutputView() {
         .attr("y", 15)
         .attr("height", 3)
         .attr("width", 10)
-        .attr("class", "component-terminal");
+        .classed("component-terminal", true)
+        .classed("terminal-output", true);
 
       rect
         .on("mouseover", function() {
           enabled = true;
-          d3.select(this).transition().duration(200)
+          d3.select(this)
+            .classed("enabled", true)
+            .transition().duration(200)
             .attr("height", 6);
         })
         .on("mouseout", function() {
           enabled = false;
-          d3.select(this).transition().duration(200)
+          d3.select(this)
+            .classed("enabled", false)
+            .transition().duration(200)
             .attr("height", 3);
         })
         .on("mousedown", function(){
@@ -32,12 +37,12 @@ function ComponentOutputView() {
 
   }
 
-  output.getAttachPoint = function() {
+  view.getAttachPoint = function() {
     return {
       x: 5,
       y: 18
     }
   };
 
-  return output;
+  return view;
 }

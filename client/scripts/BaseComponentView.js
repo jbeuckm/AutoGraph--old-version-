@@ -15,7 +15,7 @@ function BaseComponentView() {
   }
 
 
-  function base(selection) {
+  function view(selection) {
     selection.each(function (d, i) {
 
       g = d3.select(this).append("g")
@@ -44,5 +44,5 @@ function BaseComponentView() {
     });
   }
 
-  return base;
+  return view;
 }
