@@ -57,10 +57,6 @@ var cursorMode = null;
 // start drawing a new wire
 autographDispatch.on("output_mousedown", function (t) {
 
-  console.log("output_mousedown ");
-  console.log(t);
-  console.log(d3.event);
-
   var newWireData = { x1:d3.event.x, y1:d3.event.y, x2:d3.event.x, y2:d3.event.y };
   var newWire = WireView();
   wireLayer.data([newWireData]).call(newWire);
@@ -108,8 +104,14 @@ svg.on("mouseup", function () {
 
     case "wire":
 
-      d3.selectAll("g.terminal-input.enabled").each(function(d, i){
-console.log(i);
+      d3.selectAll(".terminal-input.enabled").each(function(d, i){
+console.log(cursorMode.wire);
+        var newWireData = cursorMode.wire.d;
+        newWireData.x2 = d3.event.x;
+        newWireData.y2 = d3.event.y;
+
+        var newWire = WireView();
+        wireLayer.data([newWireData]).call(newWire);
       });
 
       cursorMode.wire.remove();
@@ -138,6 +140,9 @@ function clearCursorMode() {
 d3.select("body")
   .on("keydown", function (e) {
     if (d3.event.which == 27) {
+      if (cursorMode.wire) {
+        cursorMode.wire.remove();
+      }
       clearCursorMode();
     }
   });
