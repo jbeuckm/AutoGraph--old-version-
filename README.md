@@ -1,4 +1,4 @@
 AutoGraph
 =========
 
-PureData for HTTP
+A visual data routing tool for Javascript.

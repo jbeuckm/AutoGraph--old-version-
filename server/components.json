@@ -1,6 +1,7 @@
 [
   {
-    "id": "button"
+    "id": "button",
+    "component": "ButtonComponent"
   },
   {
     "id": "clock"
