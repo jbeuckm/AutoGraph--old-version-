@@ -2,6 +2,7 @@ function ComponentOutputView() {
 
   function my(selection) {
 
+    var $self = this;
     var enabled = false;
 
     selection.each(function (d, i) {
@@ -11,7 +12,7 @@ function ComponentOutputView() {
         .attr("y", 15)
         .attr("height", 3)
         .attr("width", 10)
-        .attr("class", "component-input");
+        .attr("class", "component-terminal");
 
       rect
         .on("mouseover", function() {
@@ -27,6 +28,8 @@ function ComponentOutputView() {
         .on("mousedown", function(){
           console.log('output mouse down');
           d3.event.cancelBubble = true;
+
+          autographDispatch.terminal_mousedown($self);
         });
     });
 

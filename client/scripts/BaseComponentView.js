@@ -25,7 +25,7 @@ function BaseComponentView() {
       var rect = g.append("rect")
         .attr("height", 15)
         .attr("width", 60)
-        .attr("class", "component");
+        .attr("class", "component-rect");
 
       var text = g.append("text")
         .text(d.id)

@@ -11,7 +11,7 @@ function ComponentInputView() {
         .attr("y", -3)
         .attr("height", 3)
         .attr("width", 10)
-        .attr("class", "component-input");
+        .attr("class", "component-terminal");
 
       rect
         .on("mouseover", function() {

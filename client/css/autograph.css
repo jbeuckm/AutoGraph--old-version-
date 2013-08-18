@@ -23,12 +23,13 @@ body {
 }
 
 
-.component {
+.component-rect {
   stroke: #ddd;
   stroke-width: 1;
   fill: rgba(0,0,0,.5);
+  cursor: move;
 }
-.component-input {
+.component-terminal {
   fill: #ddd;
 }
 .component-text {
@@ -42,4 +43,9 @@ body {
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.wire {
+  stroke-width: .7;
+  stroke: #ddd;
 }

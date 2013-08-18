@@ -40,6 +40,7 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
   d3.selectAll(".component-option").on("click", function () {
 
     setCursorMode({
+      action: "place",
       cursor: "crosshair",
       component: d3.event.target.id
     });
@@ -48,28 +49,63 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
 });
 
 
+var autographDispatch = d3.dispatch("terminal_mousedown");
 var cursorMode = null;
 
+// start drawing a new wire
+autographDispatch.on("terminal_mousedown", function(t) {
 
-svg.on("mouseup", function () {
+  console.log("terminal_mousedown ");
+  console.log(t);
+  console.log(d3.event);
 
+  var newWire = { x1: d3.event.x, y1: d3.event.y, x2: d3.event.x, y2: d3.event.y };
+  svg.data([newWire]).call(WireView());
 
-  if (cursorMode) {
-
-    var c = BaseComponentView();
-
-    svg.data([
-      {
-        id: cursorMode.component,
-        x: d3.event.x,
-        y: d3.event.y
-      }
-    ])
-      .call(c);
-
-    if (!d3.event.shiftKey) {
-      clearCursorMode();
+  setCursorMode({
+    action: "wire",
+    wire: newWire,
+    mousemove: function(x, y){
+      newWire.x2 = x;
+      newWire.y2 = y;
     }
+  });
+
+});
+
+
+svg.on("mousemove", function () {
+console.log(cursorMode);
+  if (cursorMode && cursorMode.mousemove) {
+    cursorMode.mousemove(d3.event.x, d3.event.y);
+  }
+});
+
+  svg.on("mouseup", function () {
+
+  switch (cursorMode.action) {
+
+    case "place":
+      var c = BaseComponentView();
+
+      svg.data([
+        {
+          id: cursorMode.component,
+          x: d3.event.x,
+          y: d3.event.y
+        }
+      ])
+        .call(c);
+
+      if (!d3.event.shiftKey) {
+        clearCursorMode();
+      }
+      break;
+
+    case "wire":
+      clearCursorMode();
+      break;
+
   }
 
 });
