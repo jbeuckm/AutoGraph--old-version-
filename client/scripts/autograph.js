@@ -88,6 +88,7 @@ svg.on("mouseup", function () {
     case "place":
 
       var model = new BaseComponentModel({
+        label: cursorMode.component,
         x: d3.event.x,
         y: d3.event.y
       });
