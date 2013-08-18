@@ -1,4 +1,4 @@
 AutoGraph
 =========
 
-A visual data routing tool for Javascript.
+A visual data routing automation tool.
