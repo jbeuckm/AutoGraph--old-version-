@@ -10,7 +10,8 @@ var BaseComponentView = Backbone.View.extend({
 
     this.d3
       .attr("transform", "translate("+m.get("x")+" "+m.get("y")+")")
-      .call(d3.behavior.drag().on("drag", move));
+      .call(d3.behavior.drag().on("drag", _autograph_component_move))
+      .classed("component", true);
 
     this.rect = this.d3.append("rect")
       .attr("height", 15)
@@ -29,11 +30,34 @@ var BaseComponentView = Backbone.View.extend({
     var bb = this.text.node().getBBox();
     this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
 
+    this.renderOutputs(outputs);
+  },
+
+  renderOutputs: function(outputs) {
+
+    for (var i= 0, l=outputs.length; i<l; i++) {
+
+      var output = outputs[i];
+
+      var om = new OutputTerminalModel({
+        x: i * 12,
+        y: 15,
+        label: output.get("label")
+      });
+
+      var view = new OutputTerminalView({
+        model: om,
+        el: this.d3.append("g")[0]
+      });
+      view.render();
+
+    }
   }
+
 });
 
 
-function move() {
+function _autograph_component_move() {
   this.parentNode.appendChild(this);
   var dragTarget = d3.select(this);
 
@@ -43,72 +67,4 @@ function move() {
     .attr("transform", function(){
       return "translate("+(d3.event.dx+parseFloat(oldDims[0]))+" "+(d3.event.dy+parseFloat(oldDims[1]))+")";
     });
-}
-
-
-
-function xBaseComponentView() {
-
-  var g, rect;
-
-  function view(selection) {
-    selection.each(function (d, i) {
-
-      g = d3.select(this).append("g")
-        .attr("transform", "translate("+d.x+" "+d.y+")")
-        .call(d3.behavior.drag().on("drag", move));
-
-      rect = g.append("rect")
-        .attr("height", 15)
-        .attr("width", 60)
-        .attr("class", "component-rect");
-
-      var text = g.append("text")
-        .text(d.id)
-        .attr("class", "component-text")
-        .attr("dx", '3')
-        .attr("dy", '1em');
-
-
-      var inputs = [
-        {
-          name: ""
-        },
-        {
-          name: ""
-        }
-      ];
-
-      var outputs = [
-        {
-          name: ""
-        },
-        {
-          name: ""
-        },
-        {
-          name: ""
-        }
-      ];
-
-      var bb = text.node().getBBox();
-      rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
-
-
-      g.selectAll(".terminal-input").data(inputs)
-        .enter()
-        .append("g")
-        .classed("terminal-input", true)
-        .call(ComponentInputView());
-
-      g.selectAll(".terminal-output").data(outputs)
-        .enter()
-        .append("g")
-        .classed("terminal-output", true)
-        .call(ComponentOutputView());
-
-    });
-  }
-
-  return view;
 }

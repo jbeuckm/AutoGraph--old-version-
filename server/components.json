@@ -1,7 +1,8 @@
 [
   {
-    "id": "button",
-    "component": "ButtonComponent"
+    "label": "button",
+    "model": "ButtonComponentModel",
+    "view": "ButtonComponentView"
   },
   {
     "id": "clock"

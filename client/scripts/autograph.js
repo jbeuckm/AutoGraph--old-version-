@@ -13,7 +13,7 @@ var svg = d3.select("#container")
   .attr("class", "autographSVG")
   .style("position", "absolute");
 
-var wireLayer = svg.append("g");
+var wireLayer = svg.append("g").attr("id", "wire-layer");
 
 var componentList = d3.select("#container")
   .append("div")
@@ -42,9 +42,9 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
   d3.selectAll(".component-option").on("click", function () {
 
     setCursorMode({
-      action:"place",
-      cursor:"crosshair",
-      component:d3.event.target.id
+      action: "place",
+      cursor: "crosshair",
+      component: d3.event.target.id
     });
 
   });
