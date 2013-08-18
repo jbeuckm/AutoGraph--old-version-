@@ -1,4 +1,4 @@
-function BaseComponent() {
+function BaseComponentView() {
 
   var width = 50, height = 15;
 
@@ -29,20 +29,17 @@ function BaseComponent() {
 
       var text = g.append("text")
         .text(d.id)
+        .attr("class", "component-text")
         .attr("dx", '3')
         .attr("dy", '1em');
+
 
       var bb = text.node().getBBox();
       rect.attr("width", bb.width + 6);
 
-      var input = ComponentInput();
+      var input = g.data([1, 2, 3]).call(ComponentInputView());
 
-      g.data([
-        {
-          x: 4,
-          y: -2
-        }
-      ]).call(input);
+      var output = g.data([1, 2, 3]).call(ComponentOutputView());
 
     });
   }

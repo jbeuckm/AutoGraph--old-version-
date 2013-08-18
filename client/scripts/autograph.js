@@ -56,7 +56,7 @@ svg.on("mouseup", function () {
 
   if (cursorMode) {
 
-    var c = BaseComponent();
+    var c = BaseComponentView();
 
     svg.data([
       {

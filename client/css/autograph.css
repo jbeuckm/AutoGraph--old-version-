@@ -31,9 +31,15 @@ body {
 .component-input {
   fill: #ddd;
 }
-text {
+.component-text {
   fill: #fff;
   font-family: "Helvetica";
   font-size: 12;
   pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 }

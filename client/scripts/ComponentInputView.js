@@ -1,0 +1,38 @@
+function ComponentInputView() {
+
+  function my(selection) {
+
+    var enabled = false;
+
+    selection.each(function (d, i) {
+
+      var rect = d3.select(this).append("rect")
+        .attr("x", i * 12)
+        .attr("y", -3)
+        .attr("height", 3)
+        .attr("width", 10)
+        .attr("class", "component-input");
+
+      rect
+        .on("mouseover", function() {
+          enabled = true;
+          d3.select(this).transition().duration(200)
+          .attr("y", -6)
+          .attr("height", 6);
+        })
+        .on("mouseout", function() {
+          enabled = false;
+          d3.select(this).transition().duration(200)
+          .attr("y", -3)
+          .attr("height", 3);
+        })
+        .on("mousedown", function(){
+          console.log('input mouse down');
+          d3.event.cancelBubble = true;
+        });
+    });
+
+  }
+
+  return my;
+}
