@@ -37,14 +37,14 @@ var BaseComponentView = Backbone.View.extend({
     this.text = this.d3.append("text")
       .text(m.get("label"))
       .attr("class", "component-text")
-      .attr("dx", '3')
+      .attr("dx", 5)
       .attr("dy", '1em');
 
     var inputs = m.get("inputs");
     var outputs = m.get("outputs");
 
     var bb = this.text.node().getBBox();
-    this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 20));
+    this.rect.attr("width", Math.max(bb.width + 10, Math.max(inputs.length, outputs.length) * 20));
 
     this.renderInputs(inputs);
     this.renderOutputs(outputs);
