@@ -117,7 +117,19 @@ svg.on("mouseup", function () {
     case "wire":
 
       d3.selectAll(".terminal-input.enabled").each(function(d, i){
-console.log(cursorMode.wire);
+console.log(d3.select(this).attr("data-model"));
+
+        var newWire = new WireModel({
+          origin: cursorMode.wire.get("origin"),
+          destination: this.attr("data-model")
+        });
+
+        var newWireView = new WireView({
+          model: newWire,
+          el: wireLayer.append("g")[0]
+        });
+        newWireView.render();
+
       });
 
       cursorMode.wire.destroy();

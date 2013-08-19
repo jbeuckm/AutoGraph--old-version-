@@ -14,7 +14,8 @@ var InputTerminalView = Backbone.View.extend({
       .attr("height", 4)
       .attr("width", 15)
       .classed("component-terminal", true)
-      .classed("terminal-input", true);
+      .classed("terminal-input", true)
+      .attr("data-model", m);
 
     rect
       .on("mouseover", function() {

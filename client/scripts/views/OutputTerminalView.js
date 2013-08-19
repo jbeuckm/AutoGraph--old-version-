@@ -13,7 +13,8 @@ var OutputTerminalView = Backbone.View.extend({
       .attr("height", 4)
       .attr("width", 15)
       .classed("component-terminal", true)
-      .classed("terminal-output", true);
+      .classed("terminal-output", true)
+      .attr("data-model", m);
 
     rect
       .on("mouseover", function() {

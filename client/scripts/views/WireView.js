@@ -30,9 +30,6 @@ var WireView = Backbone.View.extend({
       var origin = m.get("origin").getAnchorCoords();
       var destination = m.get("destination").getAnchorCoords();
 
-      console.log(origin);
-      console.log(destination);
-
       this.line
         .attr("x1", origin.x)
         .attr("y1", origin.y)
