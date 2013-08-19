@@ -120,7 +120,7 @@ svg.on("mouseup", function () {
 console.log(cursorMode.wire);
       });
 
-//      cursorMode.wire.remove();
+      cursorMode.wire.destroy();
 
       clearCursorMode();
       break;
@@ -147,7 +147,7 @@ d3.select("body")
   .on("keydown", function (e) {
     if (d3.event.which == 27) {
       if (cursorMode.wire) {
-        cursorMode.wire.remove();
+        cursorMode.wire.destroy();
       }
       clearCursorMode();
     }
