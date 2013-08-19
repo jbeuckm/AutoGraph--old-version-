@@ -51,11 +51,19 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
 });
 
 
-var autographDispatch = d3.dispatch("output_mousedown");
+var autographDispatch = d3.dispatch("terminal_mousedown");
 var cursorMode = null;
 
+var cursorModel = new CursorModel();
+
+svg.on("mousemove", function () {
+  if (cursorMode && cursorMode.mousemove) {
+    cursorMode.mousemove(d3.event.x, d3.event.y);
+  }
+});
+
 // start drawing a new wire
-autographDispatch.on("output_mousedown", function (t) {
+autographDispatch.on("terminal_mousedown", function (t) {
 
   var newWireData = { x1:d3.event.x, y1:d3.event.y, x2:d3.event.x, y2:d3.event.y };
   var newWire = WireView();
@@ -72,12 +80,6 @@ autographDispatch.on("output_mousedown", function (t) {
 
 });
 
-
-svg.on("mousemove", function () {
-  if (cursorMode && cursorMode.mousemove) {
-    cursorMode.mousemove(d3.event.x, d3.event.y);
-  }
-});
 
 svg.on("mouseup", function () {
 

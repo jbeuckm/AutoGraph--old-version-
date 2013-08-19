@@ -10,8 +10,8 @@ var OutputTerminalView = Backbone.View.extend({
       .classed("terminal", true);
 
     var rect = this.d3.append("rect")
-      .attr("height", 3)
-      .attr("width", 10)
+      .attr("height", 4)
+      .attr("width", 15)
       .classed("component-terminal", true)
       .classed("terminal-output", true);
 
@@ -21,18 +21,18 @@ var OutputTerminalView = Backbone.View.extend({
         d3.select(this)
           .classed("enabled", true)
           .transition().duration(200)
-          .attr("height", 6);
+          .attr("height", 8);
       })
       .on("mouseout", function() {
         enabled = false;
         d3.select(this)
           .classed("enabled", false)
           .transition().duration(200)
-          .attr("height", 3);
+          .attr("height", 4);
       })
       .on("mousedown", function(){
         d3.event.cancelBubble = true;
-//        autographDispatch.output_mousedown(this);
+        autographDispatch.terminal_mousedown(this);
       });
 
   }

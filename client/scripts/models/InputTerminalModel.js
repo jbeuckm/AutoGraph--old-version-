@@ -1,4 +1,4 @@
-var InputTerminalModel = Backbone.Model.extend({
+var InputTerminalModel = PositionedModel.extend({
 
   defaults: {
     label: "terminal",

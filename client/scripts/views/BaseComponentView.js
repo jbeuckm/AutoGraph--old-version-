@@ -30,8 +30,8 @@ var BaseComponentView = Backbone.View.extend({
       .classed("component", true);
 
     this.rect = this.d3.append("rect")
-      .attr("height", 15)
-      .attr("width", 60)
+      .attr("height", 20)
+      .attr("width", 80)
       .attr("class", "component-rect");
 
     this.text = this.d3.append("text")
@@ -44,7 +44,7 @@ var BaseComponentView = Backbone.View.extend({
     var outputs = m.get("outputs");
 
     var bb = this.text.node().getBBox();
-    this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 14));
+    this.rect.attr("width", Math.max(bb.width + 6, Math.max(inputs.length, outputs.length) * 20));
 
     this.renderInputs(inputs);
     this.renderOutputs(outputs);
@@ -66,7 +66,7 @@ var BaseComponentView = Backbone.View.extend({
       var input = inputs[i];
 
       var im = new InputTerminalModel({
-        x: i * 14,
+        x: i * 20,
         y: 0,
         label: input.label
       });
@@ -87,8 +87,8 @@ var BaseComponentView = Backbone.View.extend({
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
-        x: i * 14,
-        y: 15,
+        x: i * 20,
+        y: 20,
         label: output.label
       });
 

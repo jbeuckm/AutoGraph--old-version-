@@ -1,4 +1,4 @@
-var OutputTerminalModel = Backbone.Model.extend({
+var OutputTerminalModel = PositionedModel.extend({
 
   defaults: {
     label: "terminal",

@@ -1,9 +1,7 @@
-var BaseComponentModel = Backbone.Model.extend({
+var BaseComponentModel = PositionedModel.extend({
 
   defaults: {
     label: "component",
-    x: 0,
-    y: 0,
     inputs: [ {label: "input1"}, {label: "input2"} ],
     outputs: [ {label: "output1"} ]
   }
