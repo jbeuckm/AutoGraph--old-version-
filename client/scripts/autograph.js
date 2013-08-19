@@ -57,25 +57,33 @@ var cursorMode = null;
 var cursorModel = new CursorModel();
 
 svg.on("mousemove", function () {
+
+  cursorModel.set("x", d3.event.x);
+  cursorModel.set("y", d3.event.y);
+/*
   if (cursorMode && cursorMode.mousemove) {
     cursorMode.mousemove(d3.event.x, d3.event.y);
   }
+*/
 });
 
 // start drawing a new wire
-autographDispatch.on("terminal_mousedown", function (t) {
+autographDispatch.on("terminal_mousedown", function (terminal) {
 
-  var newWireData = { x1:d3.event.x, y1:d3.event.y, x2:d3.event.x, y2:d3.event.y };
-  var newWire = WireView();
-  wireLayer.data([newWireData]).call(newWire);
+  var newWire = new WireModel({
+    origin: terminal,
+    destination: cursorModel
+  });
+
+  var newWireView = new WireView({
+    model: newWire,
+    el: wireLayer.append("g")[0]
+  });
+  newWireView.render();
 
   setCursorMode({
-    action:"wire",
-    data:newWireData,
-    wire:newWire,
-    mousemove:function (x, y) {
-      newWire.updateTo(x, y);
-    }
+    action: "wire",
+    wire: newWire
   });
 
 });
@@ -110,15 +118,9 @@ svg.on("mouseup", function () {
 
       d3.selectAll(".terminal-input.enabled").each(function(d, i){
 console.log(cursorMode.wire);
-        var newWireData = cursorMode.wire.d;
-        newWireData.x2 = d3.event.x;
-        newWireData.y2 = d3.event.y;
-
-        var newWire = WireView();
-        wireLayer.data([newWireData]).call(newWire);
       });
 
-      cursorMode.wire.remove();
+//      cursorMode.wire.remove();
 
       clearCursorMode();
       break;

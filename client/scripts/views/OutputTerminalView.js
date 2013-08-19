@@ -32,7 +32,7 @@ var OutputTerminalView = Backbone.View.extend({
       })
       .on("mousedown", function(){
         d3.event.cancelBubble = true;
-        autographDispatch.terminal_mousedown(this);
+        autographDispatch.terminal_mousedown(m);
       });
 
   }
