@@ -20,6 +20,7 @@ var InputTerminalView = Backbone.View.extend({
     rect
       .on("mouseover", function() {
         enabled = true;
+cursorModel.set("activeTerminal", m);
         d3.select(this)
           .classed("enabled", true)
           .transition().duration(200)
@@ -28,6 +29,7 @@ var InputTerminalView = Backbone.View.extend({
       })
       .on("mouseout", function() {
         enabled = false;
+cursorModel.set("activeTerminal", null);
         d3.select(this)
           .classed("enabled", false)
           .transition().duration(200)

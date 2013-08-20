@@ -8,11 +8,7 @@ var WireView = Backbone.View.extend({
 
     var m = this.model;
 
-    var self = this;
-
-    m.get("destination").on("change", function(){
-      self.render();
-    });
+    m.get("destination").on("change", this.render, this);
 
     m.on("destroy", function() {
       console.log("destroy wire");
@@ -20,6 +16,24 @@ var WireView = Backbone.View.extend({
     });
 
   },
+
+
+  set: function(key, value, options) {
+    var m = this.model;
+    switch (key) {
+      case "destination":
+        m.get("destination").off("change", this.render, this);
+        break;
+    }
+    var status = Backbone.Model.prototype.set.call(this, value, options);
+    switch (key) {
+      case "destination":
+        m.get("destination").on("change", this.render, this);
+        break;
+    }
+    return status;
+  },
+
 
   render: function() {
 

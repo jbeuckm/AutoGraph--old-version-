@@ -57,19 +57,17 @@ var cursorMode = null;
 var cursorModel = new CursorModel();
 
 svg.on("mousemove", function () {
-
+console.log("mousemove");
   cursorModel.set("x", d3.event.x);
   cursorModel.set("y", d3.event.y);
-/*
-  if (cursorMode && cursorMode.mousemove) {
-    cursorMode.mousemove(d3.event.x, d3.event.y);
-  }
-*/
+
 });
+
+
 
 // start drawing a new wire
 autographDispatch.on("terminal_mousedown", function (terminal) {
-
+console.log("terminal_mousedown");
   var newWire = new WireModel({
     origin: terminal,
     destination: cursorModel
@@ -90,12 +88,13 @@ autographDispatch.on("terminal_mousedown", function (terminal) {
 
 
 svg.on("mouseup", function () {
-
+console.log("mouseup");
   if (!cursorMode) return;
 
   switch (cursorMode.action) {
 
     case "place":
+      console.log("mouseup place");
 
       var model = new BaseComponentModel({
         label: cursorMode.component,
@@ -115,24 +114,17 @@ svg.on("mouseup", function () {
       break;
 
     case "wire":
+      console.log("mouseup wire");
 
-      d3.selectAll(".terminal-input.enabled").each(function(d, i){
-console.log(d3.select(this).attr("data-model"));
+      var wireRetained = false;
 
-        var newWire = new WireModel({
-          origin: cursorMode.wire.get("origin"),
-          destination: this.attr("data-model")
-        });
-
-        var newWireView = new WireView({
-          model: newWire,
-          el: wireLayer.append("g")[0]
-        });
-        newWireView.render();
-
-      });
-
-      cursorMode.wire.destroy();
+      var t = cursorModel.get("activeTerminal");
+      if (t) {
+        cursorMode.wire.set("destination", t);
+      }
+      else {
+        cursorMode.wire.destroy();
+      }
 
       clearCursorMode();
       break;
@@ -143,6 +135,7 @@ console.log(d3.select(this).attr("data-model"));
 
 
 function setCursorMode(mode) {
+  console.log("setCursorMode");
   if (mode.cursor) {
     d3.select("body").style("cursor", "crosshair");
   }
@@ -150,6 +143,7 @@ function setCursorMode(mode) {
 }
 
 function clearCursorMode() {
+  console.log("clearCursorMode");
   d3.select("body").style("cursor", null);
   cursorMode = null;
 }
