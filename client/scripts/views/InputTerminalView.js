@@ -1,46 +1,28 @@
-var InputTerminalView = Backbone.View.extend({
+var InputTerminalView = TerminalView.extend({
 
   initialize: function() {
-    this.d3 = d3.select(this.el);
+
+    InputTerminalView.__super__.initialize.call(this);
 
     var m = this.model;
 
-    this.d3
-      .attr("transform", "translate("+m.get("x")+" "+m.get("y")+")")
-      .classed("terminal", true);
-
-    var rect = this.d3.append("rect")
+    this.rect
       .attr("y", -4)
-      .attr("height", 4)
-      .attr("width", 15)
-      .classed("component-terminal", true)
-      .classed("terminal-input", true)
-      .attr("data-model", m);
+      .classed("terminal-input", true);
 
-    rect
+    this.rect
       .on("mouseover", function() {
-        enabled = true;
-cursorModel.set("activeTerminal", m);
         d3.select(this)
-          .classed("enabled", true)
           .transition().duration(200)
-          .attr("height", 8)
           .attr("y", -8);
       })
       .on("mouseout", function() {
-        enabled = false;
-cursorModel.set("activeTerminal", null);
         d3.select(this)
-          .classed("enabled", false)
           .transition().duration(200)
-          .attr("height", 4)
           .attr("y", -4);
-      })
-      .on("mousedown", function(){
-        d3.event.cancelBubble = true;
-        autographDispatch.terminal_mousedown(m);
       });
 
+    this.updateAnchorPoints();
   }
 
 });
