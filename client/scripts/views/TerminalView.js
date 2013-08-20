@@ -15,6 +15,7 @@ var TerminalView = Backbone.View.extend({
 
     buildRect: function() {
         this.d3 = d3.select(this.el);
+        var self = this;
 
         var m = this.model;
 
@@ -43,6 +44,7 @@ var TerminalView = Backbone.View.extend({
             })
             .on("mousedown", function(){
                 d3.event.cancelBubble = true;
+                self.updateAnchorPoints();
                 autographDispatch.terminal_mousedown(m);
             });
 

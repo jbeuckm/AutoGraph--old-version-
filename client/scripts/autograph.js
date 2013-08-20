@@ -90,7 +90,7 @@ autographDispatch.on("terminal_mousedown", function (terminal) {
 
 
 svg.on("mouseup", function () {
-console.log("mouseup");
+
   if (!cursorMode) return;
 
   switch (cursorMode.action) {
