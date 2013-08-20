@@ -27,13 +27,13 @@ var WireView = Backbone.View.extend({
     render: function() {
 
         var m = this.model;
-console.log('render WireView');
+//console.log('render WireView');
         if (m.get("origin") && m.get("destination")) {
 
             var origin = m.get("origin");
             var destination = m.get("destination");
-            console.log('origin: '+origin);
-            console.log('destination: '+destination);
+//            console.log('origin: '+origin);
+//            console.log('destination: '+destination);
 
             this.lineData = [
                 { x: origin.get("anchorX"), y: origin.get("anchorY") },

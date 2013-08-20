@@ -54,9 +54,10 @@ var TerminalView = Backbone.View.extend({
 
         var m = this.model;
 
+        var ctm = svg.node().getTransformToElement(this.rect.node());
         var bb = this.rect.node().getBBox();
-        console.log('bb');
         console.log(bb);
+        console.log(ctm);
         m.set("anchorX", bb.x + bb.width/2);
         m.set("anchorY", bb.y + bb.height/2);
 

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/autograph.js" afterPath="$PROJECT_DIR$/client/scripts/autograph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/models/CursorModel.js" afterPath="$PROJECT_DIR$/client/scripts/models/CursorModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" afterPath="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/views/TerminalView.js" afterPath="$PROJECT_DIR$/client/scripts/views/TerminalView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/views/WireView.js" afterPath="$PROJECT_DIR$/client/scripts/views/WireView.js" />
     </list>
@@ -50,7 +48,7 @@
       <file leaf-file-name="TerminalView.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/views/TerminalView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="31" selection-start="700" selection-end="700" vertical-scroll-proportion="0.3960396">
+            <state line="59" column="0" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.76237625">
               <folding />
             </state>
           </provider>
@@ -86,7 +84,7 @@
       <file leaf-file-name="WireView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/views/WireView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="51" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
+            <state line="35" column="2" selection-start="854" selection-end="854" vertical-scroll-proportion="-20.461538">
               <folding />
             </state>
           </provider>
@@ -95,7 +93,7 @@
       <file leaf-file-name="autograph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="58" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
+            <state line="72" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,8 +134,8 @@
         <option value="$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js" />
         <option value="$PROJECT_DIR$/client/scripts/models/CursorModel.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" />
-        <option value="$PROJECT_DIR$/client/scripts/views/WireView.js" />
         <option value="$PROJECT_DIR$/client/scripts/autograph.js" />
+        <option value="$PROJECT_DIR$/client/scripts/views/WireView.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/TerminalView.js" />
       </list>
     </option>
@@ -529,6 +527,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/views/WireView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="2" selection-start="854" selection-end="854" vertical-scroll-proportion="-20.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="4" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
@@ -543,23 +555,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/views/WireView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="51" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="58" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/views/TerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="31" selection-start="700" selection-end="700" vertical-scroll-proportion="0.3960396">
+        <state line="59" column="0" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.76237625">
           <folding />
         </state>
       </provider>

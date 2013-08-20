@@ -69,12 +69,12 @@ svg.on("mousemove", function () {
 
 // start drawing a new wire
 autographDispatch.on("terminal_mousedown", function (terminal) {
-console.log("terminal_mousedown");
+
   var newWire = new WireModel({
     origin: terminal,
     destination: cursorModel
   });
-console.log('created WireModel '+JSON.stringify(newWire));
+
   var newWireView = new WireView({
     model: newWire,
     el: wireLayer.append("g")[0]
