@@ -57,9 +57,11 @@ var cursorMode = null;
 var cursorModel = new CursorModel();
 
 svg.on("mousemove", function () {
-console.log("mousemove");
-  cursorModel.set("x", d3.event.x);
-  cursorModel.set("y", d3.event.y);
+
+    cursorModel.set("x", d3.event.x);
+    cursorModel.set("y", d3.event.y);
+    cursorModel.set("anchorX", d3.event.x);
+    cursorModel.set("anchorY", d3.event.y);
 
 });
 
@@ -72,7 +74,7 @@ console.log("terminal_mousedown");
     origin: terminal,
     destination: cursorModel
   });
-
+console.log('created WireModel '+JSON.stringify(newWire));
   var newWireView = new WireView({
     model: newWire,
     el: wireLayer.append("g")[0]
@@ -94,7 +96,6 @@ console.log("mouseup");
   switch (cursorMode.action) {
 
     case "place":
-      console.log("mouseup place");
 
       var model = new BaseComponentModel({
         label: cursorMode.component,
@@ -114,9 +115,6 @@ console.log("mouseup");
       break;
 
     case "wire":
-      console.log("mouseup wire");
-
-      var wireRetained = false;
 
       var t = cursorModel.get("activeTerminal");
       if (t) {

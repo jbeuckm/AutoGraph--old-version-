@@ -8,17 +8,18 @@ var WireView = Backbone.View.extend({
            .y(function(d) { return d.y; })
            .interpolate("linear");
 
-      this.lineGraph = this.d3.append("path")
+      var lineGraph = this.d3.append("path")
           .attr("class", "wire")
           .attr("fill", "none");
+
+      this.lineGraph = lineGraph;
 
     var m = this.model;
 
     m.get("destination").on("change", this.render, this);
 
     m.on("destroy", function() {
-      console.log("destroy wire");
-      line.remove();
+      lineGraph.remove();
     });
 
   },
@@ -26,15 +27,17 @@ var WireView = Backbone.View.extend({
     render: function() {
 
         var m = this.model;
-
+console.log('render WireView');
         if (m.get("origin") && m.get("destination")) {
 
-            var origin = m.get("origin").getAnchorCoords();
-            var destination = m.get("destination").getAnchorCoords();
+            var origin = m.get("origin");
+            var destination = m.get("destination");
+            console.log('origin: '+origin);
+            console.log('destination: '+destination);
 
             this.lineData = [
-                { x: origin.x, y: origin.y },
-                { x: destination.x, y: destination.y }
+                { x: origin.get("anchorX"), y: origin.get("anchorY") },
+                { x: destination.get("anchorX"), y: destination.get("anchorY") }
             ];
 
             this.lineGraph.attr("d", this.lineFunction(this.lineData));
@@ -43,7 +46,7 @@ var WireView = Backbone.View.extend({
     },
 
 
-    set: function(key, value, options) {
+  set: function(key, value, options) {
     var m = this.model;
     switch (key) {
       case "destination":

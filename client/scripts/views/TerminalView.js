@@ -16,6 +16,8 @@ var TerminalView = Backbone.View.extend({
     buildRect: function() {
         this.d3 = d3.select(this.el);
 
+        var m = this.model;
+
         var rect = this.d3.append("rect")
             .attr("height", 4)
             .attr("width", 15)
@@ -53,6 +55,8 @@ var TerminalView = Backbone.View.extend({
         var m = this.model;
 
         var bb = this.rect.node().getBBox();
+        console.log('bb');
+        console.log(bb);
         m.set("anchorX", bb.x + bb.width/2);
         m.set("anchorY", bb.y + bb.height/2);
 
