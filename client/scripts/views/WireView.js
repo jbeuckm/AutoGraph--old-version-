@@ -16,7 +16,8 @@ var WireView = Backbone.View.extend({
 
     var m = this.model;
 
-    m.get("destination").on("change", this.render, this);
+      m.get("origin").on("change", this.render, this);
+      m.get("destination").on("change", this.render, this);
 
     m.on("destroy", function() {
       lineGraph.remove();
@@ -27,13 +28,11 @@ var WireView = Backbone.View.extend({
     render: function() {
 
         var m = this.model;
-//console.log('render WireView');
+
         if (m.get("origin") && m.get("destination")) {
 
             var origin = m.get("origin");
             var destination = m.get("destination");
-//            console.log('origin: '+origin);
-//            console.log('destination: '+destination);
 
             this.lineData = [
                 { x: origin.get("anchorX"), y: origin.get("anchorY") },
@@ -49,15 +48,21 @@ var WireView = Backbone.View.extend({
   set: function(key, value, options) {
     var m = this.model;
     switch (key) {
-      case "destination":
-        m.get("destination").off("change", this.render, this);
-        break;
+        case "origin":
+            m.get("origin").off("change", this.render, this);
+            break;
+        case "destination":
+            m.get("destination").off("change", this.render, this);
+            break;
     }
     var status = Backbone.Model.prototype.set.call(this, value, options);
     switch (key) {
-      case "destination":
-        m.get("destination").on("change", this.render, this);
-        break;
+        case "origin":
+            m.get("origin").on("change", this.render, this);
+            break;
+        case "destination":
+            m.get("destination").on("change", this.render, this);
+            break;
     }
     return status;
   }

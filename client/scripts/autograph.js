@@ -115,8 +115,8 @@ svg.on("mouseup", function () {
       break;
 
     case "wire":
-
       var t = cursorModel.get("activeTerminal");
+        console.log("mouseup during wire with end terminal "+t);
       if (t) {
         cursorMode.wire.set("destination", t);
       }

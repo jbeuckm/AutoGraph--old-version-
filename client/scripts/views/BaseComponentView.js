@@ -19,6 +19,13 @@ var BaseComponentView = Backbone.View.extend({
       m.set("x", newX);
       m.set("y", newY);
 
+        for (var i= 0, l=inputs.length; i<l; i++) {
+            inputs[i].view.updateAnchorPoints();
+        }
+        for (var j= 0, l=outputs.length; j<l; j++) {
+            outputs[j].view.updateAnchorPoints();
+        }
+
       dragTarget
         .attr("transform", function(){
           return "translate("+newX+" "+newY+")";
@@ -67,7 +74,7 @@ var BaseComponentView = Backbone.View.extend({
       var input = inputs[i];
 
       var im = new InputTerminalModel({
-        component: this.model,
+          component: this.model,
         x: i * 20,
         y: 0,
         label: input.label
@@ -77,7 +84,10 @@ var BaseComponentView = Backbone.View.extend({
         model: im,
         el: this.d3.append("g")[0]
       });
+      this.model.on("change", view.updateAnchorPoints, view);
       view.render();
+
+        input.view = view;
 
     }
   },
@@ -91,7 +101,7 @@ var BaseComponentView = Backbone.View.extend({
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
-        component: this.model,
+          component: this.model,
         x: i * 20,
         y: 20,
         label: output.label
@@ -101,8 +111,10 @@ var BaseComponentView = Backbone.View.extend({
         model: om,
         el: this.d3.append("g")[0]
       });
+        this.model.on("change", view.updateAnchorPoints, view);
       view.render();
 
+        output.view = view;
     }
   }
 

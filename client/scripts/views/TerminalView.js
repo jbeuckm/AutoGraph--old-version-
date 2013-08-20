@@ -57,7 +57,6 @@ var TerminalView = Backbone.View.extend({
         var m = this.model;
 
         var bb = this.d3.node().getBBox();
-        console.log(bb);
 
         m.set("anchorX", m.get("component").get("x") + m.get("x") + bb.x + bb.width/2);
         m.set("anchorY", m.get("component").get("y") + m.get("y") + bb.y + bb.height/2);

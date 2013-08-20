@@ -7,7 +7,7 @@ var OutputTerminalView = TerminalView.extend({
     this.rect
       .classed("terminal-output", true);
 
-    this.updateAnchorPoints();
+//    this.updateAnchorPoints();
   }
 
 });
