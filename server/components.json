@@ -1,6 +1,7 @@
 [
   {
     "id": "button",
+    "path": "scripts/components/",
     "model": "ButtonComponent",
     "view": "ButtonComponentView"
   },

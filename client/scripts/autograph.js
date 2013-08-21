@@ -52,18 +52,15 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
     componentList.append("div")
       .attr("class", "component-option")
       .attr("id", components[i].id)
-      .attr("data-model", components[i].model)
-      .attr("data-view", components[i].view)
+      .datum(components[i])
       .text(components[i].id);
   }
   d3.selectAll(".component-option").on("click", function () {
-console.log(d3.event.target);
+
     setCursorMode({
       action: "place",
       cursor: "crosshair",
-      component: d3.event.target.id,
-      model: d3.select(d3.event.target).attr("data-model"),
-      view: d3.select(d3.event.target).attr("data-view")
+      component: d3.select(d3.event.target).datum()
     });
 
   });
@@ -123,10 +120,10 @@ svg.on("mouseup", function () {
       var clickY = d3.event.y;
       var shiftKey = d3.event.shiftKey;
 
-      getClass(cursorMode.model, "scripts/components/"+cursorMode.model+".js", function(c){
+      getClass(cursorMode.component.model, cursorMode.component.path+cursorMode.component.model+".js", function(c){
 
         var model = new c({
-          label: cursorMode.component,
+          label: cursorMode.component.id,
           x: clickX,
           y: clickY
         });
