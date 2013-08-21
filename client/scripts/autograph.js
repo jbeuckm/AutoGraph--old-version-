@@ -118,10 +118,20 @@ svg.on("mouseup", function () {
       break;
 
     case "wire":
-      var t = cursorModel.get("activeTerminal");
-        console.log("mouseup during wire with end terminal "+t);
-      if (t && t != cursorMode.wire.get("origin")) {
-        cursorMode.wire.set("destination", t);
+      var o = cursorMode.wire.get("origin");
+      var d = cursorModel.get("activeTerminal");
+
+      if (d) {
+        if (d == o) {
+          cursorMode.wire.destroy();
+        }
+        else if (d.get("component") == o.get("component")) {
+          alert("Direct component feedback not allowed at the moment.");
+          cursorMode.wire.destroy();
+        }
+        else {
+          cursorMode.wire.set("destination", d);
+        }
       }
       else {
         cursorMode.wire.destroy();
