@@ -7,7 +7,16 @@ var OutputTerminalView = TerminalView.extend({
     this.rect
       .classed("terminal-output", true);
 
-//    this.updateAnchorPoints();
+    this.updateAnchorPoints();
+  },
+
+
+  updateAnchorPoints: function() {
+    OutputTerminalView.__super__.updateAnchorPoints.call(this);
+
+    var m = this.model;
+    m.set("controlPointX", m.get("anchorX"));
+    m.set("controlPointY", m.get("anchorY") + 50);
   }
 
 });

@@ -58,7 +58,10 @@ var cursorModel = new CursorModel();
 
 svg.on("mousemove", function () {
 
-    cursorModel.set("x", d3.event.x);
+  cursorModel.set("controlPointX", cursorModel.get("anchorX"));
+  cursorModel.set("controlPointY", cursorModel.get("anchorY"));
+
+  cursorModel.set("x", d3.event.x);
     cursorModel.set("y", d3.event.y);
     cursorModel.set("anchorX", d3.event.x);
     cursorModel.set("anchorY", d3.event.y);

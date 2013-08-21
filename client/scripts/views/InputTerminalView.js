@@ -28,7 +28,15 @@ var InputTerminalView = TerminalView.extend({
           .attr("height", 4);
       });
 
-//    this.updateAnchorPoints();
+    this.updateAnchorPoints();
+  },
+
+  updateAnchorPoints: function() {
+    OutputTerminalView.__super__.updateAnchorPoints.call(this);
+
+    var m = this.model;
+    m.set("controlPointX", m.get("anchorX"));
+    m.set("controlPointY", m.get("anchorY") - 50);
   }
 
 });

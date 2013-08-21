@@ -6,7 +6,7 @@ var WireView = Backbone.View.extend({
       this.lineFunction = d3.svg.line()
            .x(function(d) { return d.x; })
            .y(function(d) { return d.y; })
-           .interpolate("linear");
+           .interpolate("bundle");
 
       var lineGraph = this.d3.append("path")
           .attr("class", "wire")
@@ -35,8 +35,10 @@ var WireView = Backbone.View.extend({
             var destination = m.get("destination");
 
             this.lineData = [
-                { x: origin.get("anchorX"), y: origin.get("anchorY") },
-                { x: destination.get("anchorX"), y: destination.get("anchorY") }
+              { x: origin.get("anchorX"), y: origin.get("anchorY") },
+              { x: origin.get("controlPointX"), y: origin.get("controlPointY") },
+              { x: destination.get("controlPointX"), y: destination.get("controlPointY") },
+              { x: destination.get("anchorX"), y: destination.get("anchorY") }
             ];
 
             this.lineGraph.attr("d", this.lineFunction(this.lineData));
