@@ -24,6 +24,12 @@ var BaseComponent = PositionedModel.extend({
     for (var o in outputs) {
 
     }
+  },
+
+  trigger: function(input) {
+    var ins = collectInputs();
+    var results = process(ins);
+    sendOutputs(results);
   }
 
 });

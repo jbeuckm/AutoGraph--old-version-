@@ -4,7 +4,7 @@ var w = window,
   g = d.getElementsByTagName('body')[0];
 
 
-var width, height, rightMenuWidth = 150;
+var width, height;
 
 d3.select("#container").style("position", "relative");
 
@@ -33,14 +33,15 @@ window.onresize = updateWindow;
 
 
 var classRegistry = {};
-function getClassInstance(className, path, callback) {
+function getClass(className, path, callback) {
   if (classRegistry[className]) {
-    callback(className);
+    callback(classRegistry[className]);
   }
   else {
-    d3.get(path, function(str) {
+    $.get(path, function(str) {
       eval(str);
-      callback(className);
+      classRegistry[className] = eval(className);
+      callback(classRegistry[className]);
     });
   }
 }
@@ -51,14 +52,18 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
     componentList.append("div")
       .attr("class", "component-option")
       .attr("id", components[i].id)
+      .attr("data-model", components[i].model)
+      .attr("data-view", components[i].view)
       .text(components[i].id);
   }
   d3.selectAll(".component-option").on("click", function () {
-
+console.log(d3.event.target);
     setCursorMode({
       action: "place",
       cursor: "crosshair",
-      component: d3.event.target.id
+      component: d3.event.target.id,
+      model: d3.select(d3.event.target).attr("data-model"),
+      view: d3.select(d3.event.target).attr("data-view")
     });
 
   });
@@ -114,21 +119,30 @@ svg.on("mouseup", function () {
 
     case "place":
 
-      var model = new BaseComponent({
-        label: cursorMode.component,
-        x: d3.event.x,
-        y: d3.event.y
+      var clickX = d3.event.x;
+      var clickY = d3.event.y;
+      var shiftKey = d3.event.shiftKey;
+
+      getClass(cursorMode.model, "scripts/components/"+cursorMode.model+".js", function(c){
+
+        var model = new c({
+          label: cursorMode.component,
+          x: clickX,
+          y: clickY
+        });
+
+        var view = new BaseComponentView({
+          model: model,
+          el: svg.append("g")[0]
+        });
+        view.render();
+
+        if (!shiftKey) {
+          clearCursorMode();
+        }
+
       });
 
-      var view = new BaseComponentView({
-        model: model,
-        el: svg.append("g")[0]
-      });
-      view.render();
-
-      if (!d3.event.shiftKey) {
-        clearCursorMode();
-      }
       break;
 
     case "wire":
