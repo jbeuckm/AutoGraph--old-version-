@@ -32,6 +32,20 @@ updateWindow();
 window.onresize = updateWindow;
 
 
+var classRegistry = {};
+function getClassInstance(className, path, callback) {
+  if (classRegistry[className]) {
+    callback(className);
+  }
+  else {
+    d3.get(path, function(str) {
+      eval(str);
+      callback(className);
+    });
+  }
+}
+
+
 d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
   for (var i = 0, l = components.length; i < l; i++) {
     componentList.append("div")
@@ -100,7 +114,7 @@ svg.on("mouseup", function () {
 
     case "place":
 
-      var model = new BaseComponentModel({
+      var model = new BaseComponent({
         label: cursorMode.component,
         x: d3.event.x,
         y: d3.event.y

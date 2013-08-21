@@ -19,10 +19,10 @@ var BaseComponentView = Backbone.View.extend({
       m.set("x", newX);
       m.set("y", newY);
 
-        for (var i= 0, l=inputs.length; i<l; i++) {
+        for (var i in inputs) {
             inputs[i].view.updateAnchorPoints();
         }
-        for (var j= 0, l=outputs.length; j<l; j++) {
+        for (var j in outputs) {
             outputs[j].view.updateAnchorPoints();
         }
 
@@ -51,7 +51,7 @@ var BaseComponentView = Backbone.View.extend({
     var outputs = m.get("outputs");
 
     var bb = this.text.node().getBBox();
-    this.rect.attr("width", Math.max(bb.width + 10, Math.max(inputs.length, outputs.length) * 20));
+    this.rect.attr("width", Math.max(bb.width + 10, Math.max(Object.keys(inputs).length, Object.keys(outputs).length) * 20));
 
     this.buildInputs(inputs);
     this.buildOutputs(outputs);
@@ -69,13 +69,14 @@ var BaseComponentView = Backbone.View.extend({
   buildInputs: function(inputs) {
     console.log("buildInputs() with");
     console.log(this.model);
-    for (var i= 0, l=inputs.length; i<l; i++) {
+    var cnt = 0;
+    for (var i in inputs) {
 
       var input = inputs[i];
 
       var im = new InputTerminalModel({
           component: this.model,
-        x: i * 20,
+        x: cnt * 20,
         y: 0,
         label: input.label
       });
@@ -89,6 +90,7 @@ var BaseComponentView = Backbone.View.extend({
 
         input.view = view;
 
+      cnt++;
     }
   },
 
@@ -96,13 +98,14 @@ var BaseComponentView = Backbone.View.extend({
 
     console.log("buildOutputs() with");
     console.log(this.model);
-    for (var i= 0, l=outputs.length; i<l; i++) {
+    var cnt = 0;
+    for (var i in outputs) {
 
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
           component: this.model,
-        x: i * 20,
+        x: cnt * 20,
         y: 20,
         label: output.label
       });
@@ -115,6 +118,8 @@ var BaseComponentView = Backbone.View.extend({
       view.render();
 
         output.view = view;
+
+      cnt++;
     }
   }
 
