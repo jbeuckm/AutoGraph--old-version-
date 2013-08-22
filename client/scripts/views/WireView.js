@@ -16,16 +16,8 @@ var WireView = Backbone.View.extend({
 
     var m = this.model;
 
-    var o = m.get("originTerminalId");
-    var origin = Terminals.get(o);
-    var d = m.get("destinationTerminalId");
-    var destination;
-    if (d) {
-      destination = Terminals.get(d);
-    }
-    else {
-      destination = cursorModel;
-    }
+    var origin = m.getOriginModel();
+    var destination = m.getDestinationModel();
 
     origin.on("change", this.render, this);
     destination.on("change", this.render, this);
@@ -46,18 +38,10 @@ var WireView = Backbone.View.extend({
 
         if (m.get("originTerminalId")) {
 
-            var o = m.get("originTerminalId");
-          var origin = Terminals.get(o);
-            var d = m.get("destinationTerminalId");
-          var destination;
-          if (d) {
-            destination = Terminals.get(d);
-          }
-          else {
-            destination = cursorModel;
-          }
+          var origin = m.getOriginModel();
+          var destination = m.getDestinationModel();
 
-            this.lineData = [
+          this.lineData = [
               { x: origin.get("anchorX"), y: origin.get("anchorY") },
               { x: origin.get("controlPointX"), y: origin.get("controlPointY") },
               { x: destination.get("controlPointX"), y: destination.get("controlPointY") },
