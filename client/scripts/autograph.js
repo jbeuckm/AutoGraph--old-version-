@@ -149,7 +149,9 @@ svg.on("mouseup", function () {
 
       break;
 
+
     case "wire":
+
       var originId = cursorMode.wire.get("originTerminalId");
       var destinationId = cursorModel.get("activeTerminal");
 

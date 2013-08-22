@@ -44,10 +44,18 @@ var WireView = Backbone.View.extend({
 
         var m = this.model;
 
-        if (m.get("origin") && m.get("destination")) {
+        if (m.get("originTerminalId")) {
 
-            var origin = m.get("origin");
-            var destination = m.get("destination");
+            var o = m.get("originTerminalId");
+          var origin = Terminals.get(o);
+            var d = m.get("destinationTerminalId");
+          var destination;
+          if (d) {
+            destination = Terminals.get(d);
+          }
+          else {
+            destination = cursorModel;
+          }
 
             this.lineData = [
               { x: origin.get("anchorX"), y: origin.get("anchorY") },
@@ -59,9 +67,9 @@ var WireView = Backbone.View.extend({
             this.lineGraph.attr("d", this.lineFunction(this.lineData));
         }
 
-    },
+    }
 
-
+/*
   set: function(key, value, options) {
     var m = this.model;
     switch (key) {
@@ -83,6 +91,6 @@ var WireView = Backbone.View.extend({
     }
     return status;
   }
-
+*/
 
 });
