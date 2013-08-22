@@ -94,8 +94,7 @@ svg.on("mousemove", function () {
 autographDispatch.on("terminal_mousedown", function (terminal) {
 
   var newWire = new WireModel({
-    originTerminalId: terminal.get("component").get("id"),
-    destinationTerminalId: cursorModel.id
+    originTerminalId: terminal.cid
   });
 
   var newWireView = new WireView({

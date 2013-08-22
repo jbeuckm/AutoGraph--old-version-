@@ -19,7 +19,13 @@ var WireView = Backbone.View.extend({
     var o = m.get("originTerminalId");
     var origin = Terminals.get(o);
     var d = m.get("destinationTerminalId");
-    var destination = Terminals.get(d);
+    var destination;
+    if (d) {
+      destination = Terminals.get(d);
+    }
+    else {
+      destination = cursorModel;
+    }
 
     origin.on("change", this.render, this);
     destination.on("change", this.render, this);
