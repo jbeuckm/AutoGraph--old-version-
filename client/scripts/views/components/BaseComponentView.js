@@ -67,28 +67,20 @@ var BaseComponentView = Backbone.View.extend({
   },
 
   buildInputs: function(inputs) {
-    console.log("buildInputs() with");
-    console.log(this.model);
+
     var cnt = 0;
     for (var i in inputs) {
 
       var input = inputs[i];
 
-      var im = new InputTerminalModel({
-          component: this.model,
-        x: cnt * 20,
-        y: 0,
-        label: input.label
-      });
-
       var view = new InputTerminalView({
-        model: im,
+        model: input.model,
         el: this.d3.append("g")[0]
       });
       this.model.on("change", view.updateAnchorPoints, view);
       view.render();
 
-        input.view = view;
+      input.view = view;
 
       cnt++;
     }
@@ -96,28 +88,19 @@ var BaseComponentView = Backbone.View.extend({
 
   buildOutputs: function(outputs) {
 
-    console.log("buildOutputs() with");
-    console.log(this.model);
     var cnt = 0;
     for (var i in outputs) {
 
       var output = outputs[i];
 
-      var om = new OutputTerminalModel({
-          component: this.model,
-        x: cnt * 20,
-        y: 20,
-        label: output.label
-      });
-
       var view = new OutputTerminalView({
-        model: om,
+        model: output.model,
         el: this.d3.append("g")[0]
       });
-        this.model.on("change", view.updateAnchorPoints, view);
+      this.model.on("change", view.updateAnchorPoints, view);
       view.render();
 
-        output.view = view;
+      output.view = view;
 
       cnt++;
     }

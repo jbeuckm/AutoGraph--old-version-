@@ -1,15 +1,19 @@
 [
   {
-    "id": "button",
+    "name": "button",
     "path": "scripts/components/",
     "model": "ButtonComponent",
     "view": "ButtonComponentView"
   },
   {
-    "id": "counter"
+    "name": "clock",
+    "path": "scripts/components/",
+    "model": "ClockComponent",
+    "view": "ClockComponentView"
   },
+
   {
-    "id": "clock"
+    "id": "counter"
   },
   {
     "id": "delay"
@@ -44,4 +48,5 @@
   {
     "id": "HTTP server"
   }
+
 ]

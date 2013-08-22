@@ -1,12 +1,15 @@
-var ButtonComponent = PositionedModel.extend({
+var ButtonComponent = BaseComponent.extend({
 
   defaults: {
     label: "button",
     inputs: {
-      input1: {label: "input1"}
+      trigger: {
+        label: "trigger",
+        description: "Fire the button as if clicked."
+      }
     },
     outputs: {
-      output1: {label: "output1"}
+      output: {label: "output"}
     }
   }
 

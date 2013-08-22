@@ -51,9 +51,9 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
   for (var i = 0, l = components.length; i < l; i++) {
     componentList.append("div")
       .attr("class", "component-option")
-      .attr("id", components[i].id)
+      .attr("id", components[i].name)
       .datum(components[i])
-      .text(components[i].id);
+      .text(components[i].name);
   }
   d3.selectAll(".component-option").on("click", function () {
 
@@ -120,10 +120,13 @@ svg.on("mouseup", function () {
       var clickY = d3.event.y;
       var shiftKey = d3.event.shiftKey;
 
-      getClass(cursorMode.component.model, cursorMode.component.path+cursorMode.component.model+".js", function(c){
+      var className = cursorMode.component.model;
+      var path = cursorMode.component.path;
+
+      getClass(className, path + className+".js" + "?v="+Math.random(), function(c){
 
         var model = new c({
-          label: cursorMode.component.id,
+          label: cursorMode.component.name,
           x: clickX,
           y: clickY
         });
@@ -156,6 +159,14 @@ svg.on("mouseup", function () {
         }
         else {
           cursorMode.wire.set("destination", d);
+
+          var connections = o.get("connectedWires");
+          connections.push(cursorMode.wire);
+          o.set("connectedWires", connections);
+
+          connections = d.get("connectedWires");
+          connections.push(cursorMode.wire);
+          d.set("connectedWires", connections);
         }
       }
       else {
