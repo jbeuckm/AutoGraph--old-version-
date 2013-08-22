@@ -37,11 +37,11 @@ var BaseComponent = PositionedModel.extend({
 
   receiveMessage: function(message) {
     console.log("BaseComponent receiveMessage "+JSON.stringify(message));
-/*
+
     var ins = this.readInputValues();
     var results = this.process(ins);
     this.sendOutputs(results);
-    */
+
   },
 
 

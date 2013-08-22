@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js" afterPath="$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/models/WireModel.js" afterPath="$PROJECT_DIR$/client/scripts/models/WireModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" afterPath="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,10 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/scripts/components/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
+            <state line="40" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.8685714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonComponent.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/scripts/components/ButtonComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18285714">
+            <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -119,7 +127,6 @@
         <option value="$PROJECT_DIR$/client/scripts/models/TerminalModel.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" />
-        <option value="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/TerminalView.js" />
         <option value="$PROJECT_DIR$/client/scripts/models/InputTerminalModel.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/components/BaseComponentView.js" />
@@ -127,6 +134,7 @@
         <option value="$PROJECT_DIR$/client/scripts/views/WireView.js" />
         <option value="$PROJECT_DIR$/client/scripts/models/WireModel.js" />
         <option value="$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js" />
+        <option value="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" />
       </list>
     </option>
   </component>
@@ -528,13 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/components/ButtonComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="221" selection-end="257" vertical-scroll-proportion="0.0">
@@ -603,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/scripts/components/BaseComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="154" column="4" selection-start="3292" selection-end="3292" vertical-scroll-proportion="-0.0">
@@ -626,7 +620,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.18285714">
+        <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/components/ButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/scripts/components/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="0.8685714">
           <folding />
         </state>
       </provider>
