@@ -50,8 +50,11 @@ var BaseComponentView = Backbone.View.extend({
     var inputs = m.get("inputs");
     var outputs = m.get("outputs");
 
+    var inputCount = Object.keys(inputs).length;
+    var outputCount = Object.keys(outputs).length;
+
     var bb = this.text.node().getBBox();
-    this.rect.attr("width", Math.max(bb.width + 10, Math.max(Object.keys(inputs).length, Object.keys(outputs).length) * 20));
+    this.rect.attr("width", Math.max(bb.width + 10, Math.max(inputCount, outputCount) * 20));
 
     this.buildInputs(inputs);
     this.buildOutputs(outputs);

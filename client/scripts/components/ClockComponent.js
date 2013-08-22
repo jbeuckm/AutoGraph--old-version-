@@ -27,8 +27,6 @@ var ClockComponent = BaseComponent.extend({
   },
 
   tick: function() {
-    console.log("tick: period = "+this.get("period"));
-    console.log(this);
     var self = this;
     var id = setTimeout(function(){
       self.sendOutputs({ output: true });

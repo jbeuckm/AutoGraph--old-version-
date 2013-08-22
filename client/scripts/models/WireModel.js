@@ -6,7 +6,7 @@ var WireModel = Backbone.Model.extend({
   },
 
   passMessage: function(message) {
-    this.get("destination").passMessage(message);
+    this.get("destination").receiveMessage(message);
   }
 
 });

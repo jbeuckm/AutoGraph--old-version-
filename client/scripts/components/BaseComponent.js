@@ -36,11 +36,13 @@ var BaseComponent = PositionedModel.extend({
     }
   },
 
-  receiveMessage: function(input) {
-    console.log("BaseComponent trigger "+JSON.stringify(input));
+  receiveMessage: function(message) {
+    console.log("BaseComponent receiveMessage "+JSON.stringify(message));
+/*
     var ins = this.readInputValues();
     var results = this.process(ins);
     this.sendOutputs(results);
+    */
   },
 
 
