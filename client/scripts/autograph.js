@@ -1,10 +1,4 @@
-var w = window,
-  d = document,
-  e = d.documentElement,
-  g = d.getElementsByTagName('body')[0];
 
-
-var width, height;
 
 d3.select("#container").style("position", "relative");
 
@@ -19,9 +13,19 @@ var componentList = d3.select("#container")
   .append("div")
   .attr("class", "component-list");
 
+
+var Wires = new WireCollection();
+var Components = new ComponentCollection();
+var Terminals = new TerminalCollection();
+
+
 function updateWindow() {
-  x = w.innerWidth || e.clientWidth || g.clientWidth;
-  y = w.innerHeight || e.clientHeight || g.clientHeight;
+  var d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0];
+
+  x = window.innerWidth || e.clientWidth || g.clientWidth;
+  y = window.innerHeight || e.clientHeight || g.clientHeight;
 
   var listWidth = parseInt(componentList.style("width"));
   svg.attr("width", x - listWidth).attr("height", y);
@@ -58,7 +62,7 @@ d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
   d3.selectAll(".component-option").on("click", function () {
 
     setCursorMode({
-      action: "place",
+      action: "component",
       cursor: "crosshair",
       component: d3.select(d3.event.target).datum()
     });
@@ -90,8 +94,8 @@ svg.on("mousemove", function () {
 autographDispatch.on("terminal_mousedown", function (terminal) {
 
   var newWire = new WireModel({
-    origin: terminal,
-    destination: cursorModel
+    originTerminalId: terminal.get("component").get("id"),
+    destinationTerminalId: cursorModel.id
   });
 
   var newWireView = new WireView({
@@ -114,7 +118,7 @@ svg.on("mouseup", function () {
 
   switch (cursorMode.action) {
 
-    case "place":
+    case "component":
 
       var clickX = d3.event.x;
       var clickY = d3.event.y;
@@ -123,13 +127,14 @@ svg.on("mouseup", function () {
       var className = cursorMode.component.model;
       var path = cursorMode.component.path;
 
-      getClass(className, path + className+".js" + "?v="+Math.random(), function(c){
+      getClass(className, path + className+".js?v="+Math.random(), function(c){
 
         var model = new c({
-          label: cursorMode.component.name,
           x: clickX,
           y: clickY
         });
+
+        Components.add(model);
 
         var view = new BaseComponentView({
           model: model,
@@ -146,27 +151,23 @@ svg.on("mouseup", function () {
       break;
 
     case "wire":
-      var o = cursorMode.wire.get("origin");
-      var d = cursorModel.get("activeTerminal");
+      var originId = cursorMode.wire.get("originTerminalId");
+      var destinationId = cursorModel.get("activeTerminal");
 
-      if (d) {
-        if (d == o) {
+      var origin = Terminals.get(originId);
+      var destination = Terminals.get(destinationId);
+
+      if (destinationId) {
+        if (destinationId == originId) {
           cursorMode.wire.destroy();
         }
-        else if (d.get("component") == o.get("component")) {
+        else if (origin.get("componentId") == destination.get("componentId")) {
           alert("Direct component feedback not allowed at the moment.");
           cursorMode.wire.destroy();
         }
         else {
-          cursorMode.wire.set("destination", d);
-
-          var connections = o.get("connectedWires");
-          connections.push(cursorMode.wire);
-          o.set("connectedWires", connections);
-
-          connections = d.get("connectedWires");
-          connections.push(cursorMode.wire);
-          d.set("connectedWires", connections);
+          cursorMode.wire.set("destinationTerminalId", destinationId);
+          Wires.add(cursorMode.wire);
         }
       }
       else {

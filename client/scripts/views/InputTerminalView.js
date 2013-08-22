@@ -2,7 +2,7 @@ var InputTerminalView = TerminalView.extend({
 
   initialize: function() {
 
-    InputTerminalView.__super__.initialize.call(this);
+    TerminalView.prototype.initialize.call(this);
 
     this.rect
       .attr("y", -4)
@@ -31,9 +31,7 @@ var InputTerminalView = TerminalView.extend({
     this.updateAnchorPoints();
   },
 
-  updateAnchorPoints: function() {
-    OutputTerminalView.__super__.updateAnchorPoints.call(this);
-
+  updateControlPoints: function() {
     var m = this.model;
     m.set("controlPointX", m.get("anchorX"));
     m.set("controlPointY", m.get("anchorY") - 50);

@@ -1,23 +1,23 @@
 var ClockComponent = BaseComponent.extend({
 
   defaults: {
-    label: "clock",
+    name: "clock",
 
     period: 1000,
     ticking: true,
 
     inputs: {
       toggle: {
-        label: "toggle",
+        name: "toggle",
         description: "Turn the clock off or on."
       },
       period: {
-        label: "period",
+        name: "period",
         description: "Period of the clock in milliseconds."
       }
     },
     outputs: {
-      output: {label: "output"}
+      output: {name: "output"}
     }
   },
 

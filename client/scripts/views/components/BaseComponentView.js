@@ -42,7 +42,7 @@ var BaseComponentView = Backbone.View.extend({
       .attr("class", "component-rect");
 
     this.text = this.d3.append("text")
-      .text(m.get("label"))
+      .text(m.get("name"))
       .attr("class", "component-text")
       .attr("dx", 5)
       .attr("dy", '1em');
@@ -80,6 +80,7 @@ var BaseComponentView = Backbone.View.extend({
         model: input.model,
         el: this.d3.append("g")[0]
       });
+
       this.model.on("change", view.updateAnchorPoints, view);
       view.render();
 

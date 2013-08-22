@@ -16,11 +16,20 @@ var WireView = Backbone.View.extend({
 
     var m = this.model;
 
-      m.get("origin").on("change", this.render, this);
-      m.get("destination").on("change", this.render, this);
+    var o = m.get("originTerminalId");
+    var origin = Terminals.get(o);
+    var d = m.get("destinationTerminalId");
+    var destination = Terminals.get(d);
 
+    origin.on("change", this.render, this);
+    destination.on("change", this.render, this);
+
+    var self = this;
     m.on("destroy", function() {
       lineGraph.remove();
+
+      origin.off("change", self.render, self);
+      destination.off("change", self.render, self);
     });
 
   },

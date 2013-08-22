@@ -1,15 +1,15 @@
 var ButtonComponent = BaseComponent.extend({
 
   defaults: {
-    label: "button",
+    name: "button",
     inputs: {
       trigger: {
-        label: "trigger",
+        name: "trigger",
         description: "Fire the button as if clicked."
       }
     },
     outputs: {
-      output: {label: "output"}
+      output: {name: "output"}
     }
   }
 

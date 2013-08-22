@@ -1,10 +1,8 @@
 var TerminalModel = PositionedModel.extend({
 
   defaults: {
-      id: "default_id",
-      label: "terminal",
-      component: null,
-      connectedWires: [],
+      name: "terminal",
+      componentId: null,
 
       anchorX: 0,
       anchorY: 0,
@@ -12,4 +10,8 @@ var TerminalModel = PositionedModel.extend({
       controlPointY: 0
   }
 
+});
+
+var TerminalCollection = Backbone.Collection.extend({
+  model: TerminalModel
 });

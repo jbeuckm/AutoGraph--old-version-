@@ -1,19 +1,18 @@
 var BaseComponent = PositionedModel.extend({
 
   defaults: {
-    label: "component",
+    name: "component",
     inputs: {
-      input1: {label: "input1"},
-      input2: {label: "input2"}
+      input1: {name: "input1"},
+      input2: {name: "input2"}
     },
     outputs: {
-      output1: {label: "output1"},
-      output2: {label: "output2"}
+      output1: {name: "output1"},
+      output2: {name: "output2"}
     }
   },
 
   initialize: function() {
-    PositionedModel.prototype.initialize();
     console.log("BaseComponent init");
     this.buildInputs(this.get("inputs"));
     this.buildOutputs(this.get("outputs"));
@@ -29,9 +28,9 @@ var BaseComponent = PositionedModel.extend({
   },
 
   sendOutputs: function(messages) {
-    console.log("BaseComponent sending "+JSON.stringify(messages));
     var outputs = this.get("outputs");
     for (var o in outputs) {
+      console.log("BaseComponent sending to terminal "+o);
       outputs[o].model.sendMessage(messages[o]);
     }
   },
@@ -52,14 +51,16 @@ var BaseComponent = PositionedModel.extend({
     for (var i in inputs) {
 
       var input = inputs[i];
-
+      console.log("build inputs for model:");
+      console.log(this.cid);
       var im = new InputTerminalModel({
-        id: i,
-        component: this,
+        componentId: this.cid,
         x: cnt * 20,
         y: 0,
-        label: input.label
+        name: input.name
       });
+
+      Terminals.add(im);
 
       input.model = im;
 
@@ -75,12 +76,13 @@ var BaseComponent = PositionedModel.extend({
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
-        id: i,
-        component: this,
+        componentId: this.cid,
         x: cnt * 20,
         y: 20,
-        label: output.label
+        name: output.name
       });
+
+      Terminals.add(om);
 
       output.model = om;
 
@@ -88,4 +90,9 @@ var BaseComponent = PositionedModel.extend({
     }
   }
 
+});
+
+
+var ComponentCollection = Backbone.Collection.extend({
+  model: BaseComponent
 });
