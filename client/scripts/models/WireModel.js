@@ -20,7 +20,7 @@ var WireModel = Backbone.Model.extend({
   },
 
   passMessage: function(message) {
-    this.get("destinationTerminalId").receiveMessage(message);
+    this.getDestinationModel().receiveMessage(message);
   }
 
 });
