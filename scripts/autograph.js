@@ -51,7 +51,7 @@ function getClass(className, path, callback) {
 }
 
 
-d3.json(AUTOGRAPH_SERVER + 'components.json', function (components) {
+d3.json('components.json', function (components) {
   for (var i = 0, l = components.length; i < l; i++) {
     componentList.append("div")
       .attr("class", "component-option")

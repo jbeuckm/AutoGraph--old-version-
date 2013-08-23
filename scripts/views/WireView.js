@@ -53,28 +53,4 @@ var WireView = Backbone.View.extend({
 
     }
 
-/*
-  set: function(key, value, options) {
-    var m = this.model;
-    switch (key) {
-        case "origin":
-            m.get("origin").off("change", this.render, this);
-            break;
-        case "destination":
-            m.get("destination").off("change", this.render, this);
-            break;
-    }
-    var status = Backbone.Model.prototype.set.call(this, value, options);
-    switch (key) {
-        case "origin":
-            m.get("origin").on("change", this.render, this);
-            break;
-        case "destination":
-            m.get("destination").on("change", this.render, this);
-            break;
-    }
-    return status;
-  }
-*/
-
 });
