@@ -1,9 +1,9 @@
 var InputTerminalModel = TerminalModel.extend({
 
   receiveMessage: function(message) {
+    console.log(this.get("component").get("name")+":");
     console.log("InputTerminal receiveMessage");
-    var component = Components.get(this.get("componentId"));
-    component.receiveMessage({ input:this.get("id"), message:message });
+    this.trigger("message", message);
   }
 
 });

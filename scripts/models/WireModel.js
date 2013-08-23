@@ -17,10 +17,6 @@ var WireModel = Backbone.Model.extend({
     else {
       return(cursorModel);
     }
-  },
-
-  passMessage: function(message) {
-    this.getDestinationModel().receiveMessage(message);
   }
 
 });

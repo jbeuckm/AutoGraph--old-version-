@@ -8,6 +8,10 @@ var TerminalModel = PositionedModel.extend({
       anchorY: 0,
       controlPointX: 0,
       controlPointY: 0
+  },
+
+  initialize: function() {
+    this.set("componentId", this.get("component").cid);
   }
 
 });

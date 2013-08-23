@@ -159,15 +159,22 @@ svg.on("mouseup", function () {
       var destination = Terminals.get(destinationId);
 
       if (destinationId) {
+        // can't connect terminal to itself
         if (destinationId == originId) {
           cursorMode.wire.destroy();
         }
+        // can't connect component to itself
         else if (origin.get("componentId") == destination.get("componentId")) {
-          alert("Direct component feedback not allowed at the moment.");
           cursorMode.wire.destroy();
         }
         else {
           cursorMode.wire.set("destinationTerminalId", destinationId);
+
+          origin.on("message", destination.receiveMessage, destination);
+          cursorMode.wire.on("destroy", function(){
+            origin.off("message", destination.receiveMessage, destination);
+          });
+
           Wires.add(cursorMode.wire);
         }
       }

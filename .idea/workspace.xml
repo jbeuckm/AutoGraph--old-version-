@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/autograph.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/css/autograph.css" afterPath="$PROJECT_DIR$/css/autograph.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/autograph.js" afterPath="$PROJECT_DIR$/scripts/autograph.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" afterPath="$PROJECT_DIR$/scripts/components/BaseComponent.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/components/ButtonComponent.js" afterPath="$PROJECT_DIR$/scripts/components/ButtonComponent.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/components/ClockComponent.js" afterPath="$PROJECT_DIR$/scripts/components/ClockComponent.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/backbone-min.js" afterPath="$PROJECT_DIR$/scripts/lib/backbone-min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/backbone-relational.js" afterPath="$PROJECT_DIR$/scripts/lib/backbone-relational.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/d3.min.js" afterPath="$PROJECT_DIR$/scripts/lib/d3.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/scripts/lib/jquery-1.10.2.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/q.js" afterPath="$PROJECT_DIR$/scripts/lib/q.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/lib/underscore-min.js" afterPath="$PROJECT_DIR$/scripts/lib/underscore-min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/CursorModel.js" afterPath="$PROJECT_DIR$/scripts/models/CursorModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/InputTerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/InputTerminalModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/OutputTerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/OutputTerminalModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/PositionedModel.js" afterPath="$PROJECT_DIR$/scripts/models/PositionedModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/TerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/TerminalModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/models/WireModel.js" afterPath="$PROJECT_DIR$/scripts/models/WireModel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/require.js" afterPath="$PROJECT_DIR$/scripts/require.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" afterPath="$PROJECT_DIR$/scripts/views/InputTerminalView.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js" afterPath="$PROJECT_DIR$/scripts/views/OutputTerminalView.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/views/TerminalView.js" afterPath="$PROJECT_DIR$/scripts/views/TerminalView.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/views/WireView.js" afterPath="$PROJECT_DIR$/scripts/views/WireView.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/scripts/views/components/BaseComponentView.js" afterPath="$PROJECT_DIR$/scripts/views/components/BaseComponentView.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/server/components.json" afterPath="$PROJECT_DIR$/components.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/autograph.css" afterPath="$PROJECT_DIR$/css/autograph.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/autograph.js" afterPath="$PROJECT_DIR$/scripts/autograph.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/components/BaseComponent.js" afterPath="$PROJECT_DIR$/scripts/components/BaseComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/models/InputTerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/InputTerminalModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/models/OutputTerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/OutputTerminalModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/models/TerminalModel.js" afterPath="$PROJECT_DIR$/scripts/models/TerminalModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/models/WireModel.js" afterPath="$PROJECT_DIR$/scripts/models/WireModel.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,28 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="autograph.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="autograph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/autograph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="8" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.52509654">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="-4.48">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WireModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/models/WireModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="38" selection-start="174" selection-end="190" vertical-scroll-proportion="0.0">
+            <state line="174" column="73" selection-start="4108" selection-end="4108" vertical-scroll-proportion="-10.461538">
               <folding />
             </state>
           </provider>
@@ -86,19 +49,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/components/BaseComponent.js">
+      <file leaf-file-name="WireModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/models/WireModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+            <state line="19" column="3" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ButtonComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/components/ButtonComponent.js">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/components/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="8" selection-start="68" selection-end="68" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/autograph.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="18" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseComponentView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/views/components/BaseComponentView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="0" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,7 +88,7 @@
       <file leaf-file-name="ClockComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/components/ClockComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="209" selection-end="210" vertical-scroll-proportion="0.0">
+            <state line="23" column="26" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +97,7 @@
       <file leaf-file-name="TerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/models/TerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
+            <state line="13" column="55" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,16 +106,16 @@
       <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/models/OutputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
+            <state line="11" column="53" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/models/InputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="58" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.14705883">
               <folding />
             </state>
           </provider>
@@ -153,12 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/components.json" />
-        <option value="$PROJECT_DIR$/client/scripts/components/ButtonComponent.js" />
-        <option value="$PROJECT_DIR$/client/scripts/components/ClockComponent.js" />
-        <option value="$PROJECT_DIR$/client/scripts/models/TerminalModel.js" />
-        <option value="$PROJECT_DIR$/client/scripts/views/OutputTerminalView.js" />
-        <option value="$PROJECT_DIR$/client/scripts/views/InputTerminalView.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/TerminalView.js" />
         <option value="$PROJECT_DIR$/client/scripts/models/InputTerminalModel.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/components/BaseComponentView.js" />
@@ -168,7 +143,13 @@
         <option value="$PROJECT_DIR$/client/scripts/components/BaseComponent.js" />
         <option value="$PROJECT_DIR$/client/scripts/views/WireView.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/models/TerminalModel.js" />
+        <option value="$PROJECT_DIR$/scripts/components/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/css/autograph.css" />
+        <option value="$PROJECT_DIR$/scripts/models/WireModel.js" />
+        <option value="$PROJECT_DIR$/scripts/models/OutputTerminalModel.js" />
         <option value="$PROJECT_DIR$/scripts/autograph.js" />
+        <option value="$PROJECT_DIR$/scripts/models/InputTerminalModel.js" />
       </list>
     </option>
   </component>
@@ -219,6 +200,110 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,13 +470,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/views/OutputTerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="221" selection-end="257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/models/PositionedModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" />
@@ -404,51 +482,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/views/TerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/models/CursorModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/views/components/BaseComponentView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1578" selection-end="1578" vertical-scroll-proportion="-4.5384617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/models/TerminalModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/models/InputTerminalModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="58" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/components/ClockComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="209" selection-end="210" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/models/OutputTerminalModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="45" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -460,16 +496,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/components/BaseComponent.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="-4.48">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/models/WireModel.js">
+    <entry file="file://$PROJECT_DIR$/scripts/views/TerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="38" selection-start="174" selection-end="190" vertical-scroll-proportion="0.0">
+        <state line="60" column="0" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/views/components/BaseComponentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/components/ClockComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="26" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/models/TerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="55" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/components/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/autograph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="18" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -481,16 +552,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/scripts/models/WireModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="-4.48">
+        <state line="19" column="3" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/models/OutputTerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="53" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/autograph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="8" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.52509654">
+        <state line="174" column="73" selection-start="4108" selection-end="4108" vertical-scroll-proportion="-10.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/models/InputTerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.14705883">
           <folding />
         </state>
       </provider>
