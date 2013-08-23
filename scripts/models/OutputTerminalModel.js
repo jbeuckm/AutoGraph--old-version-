@@ -9,8 +9,6 @@ var OutputTerminalModel = TerminalModel.extend({
   },
 
   sendMessage: function(message) {
-    console.log(this.get("component").get("name")+":");
-    console.log("output terminal sending output "+JSON.stringify(message));
     this.trigger("message", message);
   }
 

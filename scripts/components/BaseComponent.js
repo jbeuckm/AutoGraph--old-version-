@@ -13,14 +13,11 @@ var BaseComponent = PositionedModel.extend({
   },
 
   initialize: function() {
-    console.log("BaseComponent init");
     this.buildInputs(this.get("inputs"));
     this.buildOutputs(this.get("outputs"));
   },
 
   receiveMessage: function(message) {
-    console.log(this.get("name")+" receiveMessage "+JSON.stringify(message));
-
     var ins = this.readInputValues(message);
     var results = this.process(ins);
     this.sendOutputs(results);
@@ -31,7 +28,6 @@ var BaseComponent = PositionedModel.extend({
   },
 
   process: function(args) {
-    console.log(this.get("name")+" processing "+JSON.stringify(args));
     return [true];
   },
 

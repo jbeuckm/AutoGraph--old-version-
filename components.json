@@ -13,10 +13,12 @@
   },
 
   {
-    "id": "counter"
+    "name": "delay",
+    "path": "scripts/components/",
+    "model": "DelayComponent"
   },
   {
-    "id": "delay"
+    "id": "counter"
   },
   {
     "id": "value"

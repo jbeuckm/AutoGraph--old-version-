@@ -63,8 +63,6 @@ var BaseComponentView = Backbone.View.extend({
   },
 
   hilight: function(){
-    console.log("hilight:");
-    console.log(this);
     var c = this.rect.style("stroke");
     this.rect
       .style("stroke", "#f00")
