@@ -58,6 +58,18 @@ var BaseComponentView = Backbone.View.extend({
 
     this.buildInputs(inputs);
     this.buildOutputs(outputs);
+
+    this.listenTo(m, "message", this.hilight);
+  },
+
+  hilight: function(){
+    console.log("hilight:");
+    console.log(this);
+    var c = this.rect.style("stroke");
+    this.rect
+      .style("stroke", "#f00")
+      .transition()
+      .style("stroke", c);
   },
 
   render: function() {
