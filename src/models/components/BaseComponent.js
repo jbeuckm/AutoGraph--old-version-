@@ -1,4 +1,7 @@
-var BaseComponent = PositionedModel.extend({
+define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTerminalModel'],
+  function (PositionedModel, OutputTerminalModel, InputTerminalModel) {
+
+  return PositionedModel.extend({
 
   defaults: {
     name: "component",
@@ -44,6 +47,7 @@ var BaseComponent = PositionedModel.extend({
       var input = inputs[i];
 
       var im = new InputTerminalModel({
+        autograph: this.get("autograph"),
         component: this,
         x: cnt * 20,
         y: 0,
@@ -54,7 +58,7 @@ var BaseComponent = PositionedModel.extend({
 
       input.model = im;
 
-      Terminals.add(im);
+      this.get("autograph").Terminals.add(im);
 
       cnt++;
     }
@@ -68,6 +72,7 @@ var BaseComponent = PositionedModel.extend({
       var output = outputs[i];
 
       var om = new OutputTerminalModel({
+        autograph: this.get("autograph"),
         component: this,
         x: cnt * 20,
         y: 20,
@@ -76,7 +81,7 @@ var BaseComponent = PositionedModel.extend({
 
       output.model = om;
 
-      Terminals.add(om);
+      this.get("autograph").Terminals.add(om);
 
       cnt++;
     }
@@ -84,7 +89,6 @@ var BaseComponent = PositionedModel.extend({
 
 });
 
-
-var ComponentCollection = Backbone.Collection.extend({
-  model: BaseComponent
 });
+
+

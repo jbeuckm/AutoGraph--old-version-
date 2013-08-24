@@ -1,4 +1,6 @@
-var OutputTerminalModel = TerminalModel.extend({
+define(['models/TerminalModel'], function(TerminalModel){
+
+  return TerminalModel.extend({
 
   initialize: function() {
     TerminalModel.prototype.initialize.call(this);
@@ -12,4 +14,5 @@ var OutputTerminalModel = TerminalModel.extend({
     this.trigger("message", message);
   }
 
+  });
 });

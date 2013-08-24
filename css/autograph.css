@@ -47,6 +47,5 @@ body {
 
 .wire {
   stroke: #ddd;
-  stroke-width: 2px;
   cursor: pointer;
 }

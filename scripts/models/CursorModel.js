@@ -1,5 +1,0 @@
-var CursorModel = PositionedModel.extend({
-
-
-
-});

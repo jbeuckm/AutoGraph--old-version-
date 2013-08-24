@@ -1,20 +1,17 @@
 [
   {
     "name": "button",
-    "path": "scripts/components/",
     "model": "ButtonComponent",
     "view": "ButtonComponentView"
   },
   {
     "name": "clock",
-    "path": "scripts/components/",
     "model": "ClockComponent",
     "view": "ClockComponentView"
   },
 
   {
     "name": "delay",
-    "path": "scripts/components/",
     "model": "DelayComponent"
   },
   {
