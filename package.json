@@ -1,0 +1,21 @@
+{
+    "name": "AutoGraph",
+    "version": "0.1.0",
+    "author": "Joe Beuckmnan <joe@beigerecords.com>",
+    "description": "A visual data routing automation tool.",
+    "scripts": {
+        "test": "jasmine-node spec/*.spec.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jbeuckm/AutoGraph.git"
+    },
+    "keywords": [
+      "puredata",
+      "Max/MSP",
+      "Lily",
+      "HTTP",
+      "D3",
+      "Backbone"
+    ]
+}

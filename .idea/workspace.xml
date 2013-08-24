@@ -59,10 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4117647">
+            <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.5294118">
               <folding />
             </state>
           </provider>
@@ -72,15 +81,6 @@
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="1" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/views/components/BaseComponentView.js" />
         <option value="$PROJECT_DIR$/src/views/components/ButtonComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
         <option value="$PROJECT_DIR$/src/collections/ComponentCollection.js" />
@@ -142,6 +141,7 @@
         <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
         <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -516,13 +516,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="581" selection-end="623" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
@@ -623,7 +616,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4117647">
+        <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.5294118">
           <folding />
         </state>
       </provider>
