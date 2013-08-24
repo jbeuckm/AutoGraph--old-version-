@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="" />
+    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+    </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,19 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.5294118">
+            <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="5" column="29" selection-start="113" selection-end="113" vertical-scroll-proportion="0.14705883">
               <folding />
             </state>
           </provider>
@@ -126,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/views/components/ButtonComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
         <option value="$PROJECT_DIR$/src/collections/ComponentCollection.js" />
         <option value="$PROJECT_DIR$/src/components/views/ButtonComponentView.js" />
@@ -142,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
         <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -607,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
@@ -623,7 +618,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.5294118">
+        <state line="18" column="16" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="113" selection-end="113" vertical-scroll-proportion="0.14705883">
           <folding />
         </state>
       </provider>
