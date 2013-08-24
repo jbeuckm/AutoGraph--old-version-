@@ -40,17 +40,13 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         .classed("component", true);
 
       this.rect = this.d3.append("rect")
-        .attr("height", 20)
-        .attr("width", 80)
         .attr("class", "component-rect");
 
-      this.content = this.d3.append("g");
+      this.content = this.d3.append("g")
+        .attr("transform", "translate(4,4)");
 
-      this.text = this.content.append("text")
-        .text(m.get("name"))
-        .attr("class", "component-text")
-        .attr("dx", 5)
-        .attr("dy", '1em');
+
+      this.addContent();
 
       var inputs = m.get("inputs");
       var outputs = m.get("outputs");
@@ -69,6 +65,13 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       this.listenTo(m, "message", this.hilight);
     },
 
+    addContent: function() {
+      this.text = this.content.append("text")
+        .text(this.model.get("name"))
+        .attr("class", "component-text")
+        .attr("dy", '.75em');
+    },
+
     hilight:function () {
       var c = this.rect.style("stroke");
       this.rect
@@ -82,7 +85,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       var m = this.model;
 
       var bb = this.content.node().getBBox();
-      this.rect.attr("width", Math.max(bb.width + 10, this.minWidth));
+      this.rect.attr("width", Math.max(bb.width + 8, this.minWidth));
 
       var height = bb.height + 3;
       this.rect.attr("height", height);

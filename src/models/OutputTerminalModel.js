@@ -2,7 +2,9 @@ define(['models/TerminalModel'], function(TerminalModel){
 
   return TerminalModel.extend({
 
-  initialize: function() {
+    className:"OutputTerminalModel",
+
+    initialize: function() {
     TerminalModel.prototype.initialize.call(this);
 
     var c = this.get("component");

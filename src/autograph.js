@@ -180,7 +180,12 @@ define(['backbone', 'd3', 'models/CursorModel',
               else if (origin.get("componentId") == destination.get("componentId")) {
                 cursorMode.wire.destroy();
               }
+              // can't connect input to input or output to output
+              else if (origin.className == destination.className) {
+                cursorMode.wire.destroy();
+              }
               else {
+
                 cursorMode.wire.set("destinationTerminalId", destinationId);
 
                 origin.on("message", destination.receiveMessage, destination);
