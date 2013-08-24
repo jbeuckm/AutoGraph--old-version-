@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components.json" afterPath="$PROJECT_DIR$/components.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/autograph.css" afterPath="$PROJECT_DIR$/css/autograph.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,19 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValueComponentView.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ValueComponentView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="24" selection-start="190" selection-end="190" vertical-scroll-proportion="0.20588236">
+            <state line="13" column="39" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponentView.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BaseComponentView.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.0">
+            <state line="13" column="8" selection-start="354" selection-end="354" vertical-scroll-proportion="0.29411766">
               <folding />
             </state>
           </provider>
@@ -123,13 +120,13 @@
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
         <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
         <option value="$PROJECT_DIR$/src/collections/ComponentCollection.js" />
-        <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/views/ButtonComponentView.js" />
         <option value="$PROJECT_DIR$/src/views/WireView.js" />
         <option value="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
         <option value="$PROJECT_DIR$/components.json" />
         <option value="$PROJECT_DIR$/css/autograph.css" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
+        <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
       </list>
     </option>
   </component>
@@ -567,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1393" selection-end="1393" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="25" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0">
@@ -597,7 +587,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="24" selection-start="190" selection-end="190" vertical-scroll-proportion="0.20588236">
+        <state line="13" column="39" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="8" selection-start="354" selection-end="354" vertical-scroll-proportion="0.29411766">
           <folding />
         </state>
       </provider>

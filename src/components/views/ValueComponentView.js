@@ -11,10 +11,9 @@ var ValueComponentView = BaseComponentView.extend({
     this.input = this.inputHolder.append("xhtml:body")
       .append("xhtml:body")
       .attr('xmlns','http://www.w3.org/1999/xhtml')
-      .html("<input type='text' />")
+      .html("<input type='text' class='nodrag'/>")
       .attr("width", 130)
-      .attr("height", 24)
-      .on("mousedown", function() { d3.event.stopPropagation(); });
+      .attr("height", 24);
   }
 
 });
