@@ -13,7 +13,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
 
         if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) return;
-
+console.log(d3.event);
         this.parentNode.appendChild(this);
         var dragTarget = d3.select(this);
 
@@ -49,6 +49,15 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
       this.rect = this.d3.append("rect")
         .attr("class", "component-rect");
+      this.rect.on("contextmenu", function(data, index) {
+
+        d3.event.preventDefault();
+
+        if (confirm('Delete this component?')) {
+          m.get("autograph")
+          m.destroy();
+        }
+      });
 
       this.rectColor = this.rect.style("stroke");
 
