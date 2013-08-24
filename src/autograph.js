@@ -105,6 +105,11 @@ define(['backbone', 'd3', 'models/CursorModel',
 // start drawing a new wire
       this.autographDispatch.on("terminal_mousedown", function (terminal) {
 
+        if (terminal.className == "InputTerminalModel") {
+          console.log("can not originate connection at input");
+          return;
+        }
+
         var newWire = new WireModel({
           originTerminalId:terminal.cid
         });
@@ -193,7 +198,8 @@ define(['backbone', 'd3', 'models/CursorModel',
                   origin.off("message", destination.receiveMessage, destination);
                 });
 
-                // this makes sure the anchor points are updated on the destination
+                // this makes sure the anchor points are updated before redrawing wire
+                origin.get("component").trigger("change");
                 destination.get("component").trigger("change");
 
                 self.Wires.add(cursorMode.wire);
