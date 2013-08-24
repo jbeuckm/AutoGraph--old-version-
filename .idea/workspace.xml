@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
-    </list>
+    <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="" />
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,15 +32,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValueComponentView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,17 +50,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoGraph.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AutoGraph.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="294" column="0" selection-start="8519" selection-end="8519" vertical-scroll-proportion="0.45762712">
+            <state line="294" column="0" selection-start="8519" selection-end="8519" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TerminalModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/TerminalModel.js">
+      <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4117647">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -128,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/views/TerminalView.js" />
         <option value="$PROJECT_DIR$/src/views/components/BaseComponentView.js" />
         <option value="$PROJECT_DIR$/src/views/components/ButtonComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
@@ -144,6 +141,7 @@
         <option value="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
         <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
+        <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
       </list>
     </option>
   </component>
@@ -337,6 +335,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoGraph" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -504,20 +516,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/collections/ComponentCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="38" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="0" selection-start="581" selection-end="623" vertical-scroll-proportion="0.0">
@@ -611,7 +609,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="0" selection-start="8519" selection-end="8519" vertical-scroll-proportion="0.45762712">
+        <state line="294" column="0" selection-start="8519" selection-end="8519" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="3" selection-start="179" selection-end="179" vertical-scroll-proportion="0.4117647">
           <folding />
         </state>
       </provider>
