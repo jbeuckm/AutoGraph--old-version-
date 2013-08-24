@@ -211,8 +211,10 @@ define(['backbone', 'd3', 'models/CursorModel',
                 cursorMode.wire.set("destinationTerminalId", destinationId);
 
                 origin.on("message", destination.receiveMessage, destination);
+                origin.on("value", destination.receiveValue, destination);
                 cursorMode.wire.on("destroy", function () {
                   origin.off("message", destination.receiveMessage, destination);
+                  origin.off("value", destination.receiveValue, destination);
                 });
 
                 // this makes sure the anchor points are updated before redrawing wire

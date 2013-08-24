@@ -29,7 +29,7 @@ var ClockComponent = BaseComponent.extend({
   tick: function() {
     var self = this;
     var id = setTimeout(function(){
-      self.sendOutputs({ output: true });
+      self.sendMessage({ output: true });
       self.tick();
     }, this.get("period"));
     this.set("timeoutId", id);

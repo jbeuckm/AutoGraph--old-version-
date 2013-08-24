@@ -10,7 +10,7 @@ var ButtonComponentView = BaseComponentView.extend({
       .style("fill", "#555")
       .style("cursor", "pointer")
       .on("click", function(){
-        m.sendOutputs({ output: true });
+        m.sendMessage({ output: true });
       });
   },
 

@@ -13,7 +13,10 @@ var ValueComponentView = BaseComponentView.extend({
       .attr('xmlns','http://www.w3.org/1999/xhtml')
       .html("<input type='text' class='nodrag'/>")
       .attr("width", 130)
-      .attr("height", 24);
+      .attr("height", 24)
+      .on("change", function(){
+        m.sendValue({output:this.value});
+      });
   }
 
 });

@@ -6,6 +6,10 @@ define(['models/TerminalModel'], function(TerminalModel){
 
     receiveMessage: function(message) {
       this.trigger("message", message);
+    },
+
+    receiveValue: function(message) {
+      this.trigger("value", message);
     }
 
   });

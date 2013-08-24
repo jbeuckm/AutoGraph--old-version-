@@ -22,7 +22,7 @@ var DelayComponent = BaseComponent.extend({
   receiveMessage: function(message) {
     var self = this;
     setTimeout(function(){
-      self.sendOutputs(message);
+      self.sendMessage(message);
     }, this.get("period"));
   }
 
