@@ -1,4 +1,6 @@
-define(["AutoGraph"], function (AutoGraph) {
+var r = require('require');
+
+r.define(["AutoGraph"], function (AutoGraph) {
 
   describe("KMeans", function () {
 
