@@ -1,15 +1,12 @@
 define(['backbone', 'd3', 'models/CursorModel',
   'models/components/BaseComponent', 'models/WireModel',
-  'collections/BaseComponent', 'collections/WireCollection', 'collections/TerminalCollection',
+  'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'views/components/BaseComponentView', 'views/WireView'],
-  function (Backbone, d3, CursorModel,
-    BaseComponent, WireModel,
-    ComponentCollection, WireCollection, TerminalCollection,
-    BaseComponentView, WireView) {
+  function (Backbone, d3, CursorModel, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WireView) {
 
     return function (containerId) {
 
-      var container = d3.select("#"+containerId);
+      var container = d3.select("#" + containerId);
       container
         .style("position", "relative");
 
@@ -17,7 +14,11 @@ define(['backbone', 'd3', 'models/CursorModel',
         .attr("class", "autographSVG")
         .style("position", "absolute");
 
-      var wireLayer = svg.append("g").attr("id", "wire-layer");
+      this.svg = svg;
+
+      this.mainGroup = svg.append("g");
+      this.wireLayer = this.mainGroup.attr("id", "wire-layer");
+      this.componentLayer = this.mainGroup.append("g").attr("id", "component-layer");
 
       var componentList = container.append("div")
         .attr("class", "component-list");
@@ -99,6 +100,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       });
 
+      var self = this;
 
 // start drawing a new wire
       this.autographDispatch.on("terminal_mousedown", function (terminal) {
@@ -109,7 +111,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
         var newWireView = new WireView({
           model:newWire,
-          el:wireLayer.append("g")[0]
+          el: self.wireLayer.append("g")[0]
         });
         newWireView.render();
 
@@ -120,7 +122,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       });
 
-var self = this;
+
       svg.on("mouseup", function () {
 
         if (!cursorMode) return;
@@ -139,7 +141,7 @@ var self = this;
             getClass(className, path + className + ".js?v=" + Math.random(), function (c) {
 
               var model = new c({
-                autograph: this,
+                autograph:this,
                 x:clickX,
                 y:clickY
               });
@@ -148,7 +150,7 @@ var self = this;
 
               var view = new BaseComponentView({
                 model:model,
-                el:svg.append("g")[0]
+                el: this.componentLayer.append("g")[0]
               });
               view.render();
 

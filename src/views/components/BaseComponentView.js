@@ -44,7 +44,9 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         .attr("width", 80)
         .attr("class", "component-rect");
 
-      this.text = this.d3.append("text")
+      this.content = this.d3.append("g");
+
+      this.text = this.content.append("text")
         .text(m.get("name"))
         .attr("class", "component-text")
         .attr("dx", 5)
@@ -56,8 +58,10 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       var inputCount = Object.keys(inputs).length;
       var outputCount = Object.keys(outputs).length;
 
-      var bb = this.text.node().getBBox();
-      this.rect.attr("width", Math.max(bb.width + 10, Math.max(inputCount, outputCount) * 20));
+      this.minWidth = Math.max(inputCount, outputCount) * 20;
+
+      this.inputTerminalHolder = this.d3.append("g");
+      this.outputTerminalHolder = this.d3.append("g");
 
       this.buildInputs(inputs);
       this.buildOutputs(outputs);
@@ -77,9 +81,17 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
       var m = this.model;
 
-      this.d3
-        .attr("transform", "translate(" + m.get("x") + " " + m.get("y") + ")")
+      var bb = this.content.node().getBBox();
+      this.rect.attr("width", Math.max(bb.width + 10, this.minWidth));
 
+      var height = bb.height + 3;
+      this.rect.attr("height", height);
+
+      this.outputTerminalHolder
+        .attr("transform", "translate(0, "+height+")");
+
+      this.d3
+        .attr("transform", "translate(" + m.get("x") + " " + m.get("y") + ")");
     },
 
     buildInputs:function (inputs) {
@@ -92,7 +104,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         var view = new InputTerminalView({
           autograph: this.model.get("autograph"),
           model:input.model,
-          el:this.d3.append("g")[0]
+          el:this.inputTerminalHolder.append("g")[0]
         });
 
         this.model.on("change", view.updateAnchorPoints, view);
@@ -114,7 +126,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         var view = new OutputTerminalView({
           autograph: this.model.get("autograph"),
           model:output.model,
-          el:this.d3.append("g")[0]
+          el:this.outputTerminalHolder.append("g")[0]
         });
         this.model.on("change", view.updateAnchorPoints, view);
         view.render();

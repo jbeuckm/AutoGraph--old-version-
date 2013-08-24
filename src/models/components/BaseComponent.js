@@ -75,7 +75,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         autograph: this.get("autograph"),
         component: this,
         x: cnt * 20,
-        y: 20,
+        y: 0,
         name: output.name
       });
 
