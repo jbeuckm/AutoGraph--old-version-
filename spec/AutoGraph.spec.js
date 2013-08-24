@@ -1,4 +1,4 @@
-var r = require('require');
+var r = require('requirejs');
 
 r.define(["AutoGraph"], function (AutoGraph) {
 
