@@ -12,6 +12,8 @@ define(['backbone'], function (Backbone) {
         .classed("terminal", true);
 
       this.rect = this.buildRect();
+
+      this.listenTo(m, "change", this.updateAnchorPoints);
     },
 
 

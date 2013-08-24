@@ -188,6 +188,9 @@ define(['backbone', 'd3', 'models/CursorModel',
                   origin.off("message", destination.receiveMessage, destination);
                 });
 
+                // this makes sure the anchor points are updated on the destination
+                destination.get("component").trigger("change");
+
                 self.Wires.add(cursorMode.wire);
               }
             }
