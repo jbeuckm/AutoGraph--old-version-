@@ -14,10 +14,12 @@
     "model": "DelayComponent"
   },
   {
-    "id": "counter"
+    "name": "value",
+    "model": "ValueComponent",
+    "view": "ValueComponentView"
   },
   {
-    "id": "value"
+    "id": "counter"
   },
   {
     "id": "conditional"
