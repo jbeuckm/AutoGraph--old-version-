@@ -13,7 +13,10 @@ define(['models/TerminalModel'], function(TerminalModel){
   },
 
   sendMessage: function(message) {
-    this.trigger("message", message);
+    var x = message.hasOwnProperty(this.name);
+    if (x !== undefined) {
+      this.trigger("message", x);
+    }
   }
 
   });
