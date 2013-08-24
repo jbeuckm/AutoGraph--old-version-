@@ -46,6 +46,8 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       this.rect = this.d3.append("rect")
         .attr("class", "component-rect");
 
+      this.rectColor = this.rect.style("stroke");
+
       this.content = this.d3.append("g")
         .attr("transform", "translate(4,4)");
 
@@ -77,11 +79,10 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
     },
 
     hilight:function () {
-      var c = this.rect.style("stroke");
       this.rect
         .style("stroke", "#f00")
         .transition()
-        .style("stroke", c);
+        .style("stroke", this.rectColor);
     },
 
     render:function () {

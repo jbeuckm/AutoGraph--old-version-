@@ -4,6 +4,7 @@ define(['backbone'], function (Backbone) {
 
     initialize:function () {
       this.d3 = d3.select(this.el);
+      var m = this.model;
 
       this.lineFunction = d3.svg.line()
         .x(function (d) {
@@ -18,9 +19,16 @@ define(['backbone'], function (Backbone) {
         .attr("class", "wire")
         .attr("fill", "none");
 
-      this.lineGraph = lineGraph;
+      lineGraph.on("contextmenu", function(data, index) {
 
-      var m = this.model;
+        d3.event.preventDefault();
+
+        if (confirm('Delete this wire?')) {
+          m.destroy();
+        }
+      });
+
+      this.lineGraph = lineGraph;
 
       var origin = m.getOriginModel();
       var destination = m.getDestinationModel();
