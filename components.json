@@ -6,8 +6,7 @@
   },
   {
     "name": "clock",
-    "model": "ClockComponent",
-    "view": "ClockComponentView"
+    "model": "ClockComponent"
   },
 
   {

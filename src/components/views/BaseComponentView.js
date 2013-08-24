@@ -73,7 +73,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       this.text = this.content.append("text")
         .text(this.model.get("name"))
         .attr("class", "component-text")
-        .attr("dy", '.75em');
+        .attr("dy", '.9em');
     },
 
     hilight:function () {
@@ -91,7 +91,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       var bb = this.content.node().getBBox();
       this.rect.attr("width", Math.max(bb.width + 8, this.minWidth));
 
-      var height = bb.height + 3;
+      var height = bb.height + 8;
       this.rect.attr("height", height);
 
       this.outputTerminalHolder

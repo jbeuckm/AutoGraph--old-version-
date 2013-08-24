@@ -35,7 +35,7 @@ body {
 .component-text {
   fill: #fff;
   font-family: "Helvetica";
-  font-size: 16;
+  font-size: 16px;
   pointer-events: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
