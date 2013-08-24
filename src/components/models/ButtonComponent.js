@@ -1,3 +1,4 @@
+
 var ButtonComponent = BaseComponent.extend({
 
   defaults: {

@@ -1,7 +1,7 @@
 define(['backbone', 'd3', 'models/CursorModel',
-  'models/components/BaseComponent', 'models/WireModel',
+  'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
-  'views/components/BaseComponentView', 'views/WireView'],
+  'components/views/BaseComponentView', 'views/WireView'],
   function (Backbone, d3, CursorModel, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WireView) {
 
     return function (containerId) {
@@ -144,24 +144,36 @@ define(['backbone', 'd3', 'models/CursorModel',
             var clickY = d3.event.y;
             var shiftKey = d3.event.shiftKey;
 
-            var className = cursorMode.component.model;
-            var path = cursorMode.component.path || "src/models/components/";
+            var modelClass = cursorMode.component.model;
+            var viewClass = cursorMode.component.view;
+            var path = cursorMode.component.path || "src/components/";
 
-            getClass(className, path + className + ".js?v=" + Math.random(), function (c) {
+            getClass(modelClass, path + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
 
-              var model = new c({
+              var model = new mc({
                 autograph:this,
                 x:clickX,
                 y:clickY
               });
-
               self.Components.add(model);
 
-              var view = new BaseComponentView({
-                model:model,
-                el:this.componentLayer.append("g")[0]
-              });
-              view.render();
+              if (viewClass) {
+
+                  getClass(viewClass, path + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
+                    var view = new vc({
+                      model:model,
+                      el:self.componentLayer.append("g")[0]
+                    });
+                    view.render();
+                  });
+              }
+              else {
+                var view = new BaseComponentView({
+                  model:model,
+                  el:self.componentLayer.append("g")[0]
+                });
+                view.render();
+              }
 
               if (!shiftKey) {
                 clearCursorMode();
