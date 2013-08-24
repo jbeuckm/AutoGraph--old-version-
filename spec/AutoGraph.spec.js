@@ -1,6 +1,6 @@
 var r = require('requirejs');
 
-r.define(["src/AutoGraph"], function (AutoGraph) {
+define(["src/AutoGraph"], function (AutoGraph) {
 
   describe("AutoGraph", function () {
 
