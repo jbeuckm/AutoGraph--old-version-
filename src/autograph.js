@@ -90,19 +90,23 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       svg.on("mousemove", function () {
 
-        cursorModel.set("controlPointX", cursorModel.get("anchorX"));
-        cursorModel.set("controlPointY", cursorModel.get("anchorY"));
+        cursorModel.set({
+          "controlPointX": cursorModel.get("anchorX"),
+          "controlPointY": cursorModel.get("anchorY")
+        });
 
-        cursorModel.set("x", d3.event.x);
-        cursorModel.set("y", d3.event.y);
-        cursorModel.set("anchorX", d3.event.x);
-        cursorModel.set("anchorY", d3.event.y);
+        cursorModel.set({
+          "x": d3.event.x,
+          "y": d3.event.y,
+          "anchorX": d3.event.x,
+          "anchorY": d3.event.y
+        });
 
       });
 
       var self = this;
 
-// start drawing a new wire
+      // start drawing a new wire
       this.autographDispatch.on("terminal_mousedown", function (terminal) {
 
         if (terminal.className == "InputTerminalModel") {
@@ -116,7 +120,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
         var newWireView = new WireView({
           model:newWire,
-          el: self.wireLayer.append("g")[0]
+          el:self.wireLayer.append("g")[0]
         });
         newWireView.render();
 
@@ -155,7 +159,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
               var view = new BaseComponentView({
                 model:model,
-                el: this.componentLayer.append("g")[0]
+                el:this.componentLayer.append("g")[0]
               });
               view.render();
 
@@ -189,6 +193,7 @@ define(['backbone', 'd3', 'models/CursorModel',
               else if (origin.className == destination.className) {
                 cursorMode.wire.destroy();
               }
+              // ok let's do this
               else {
 
                 cursorMode.wire.set("destinationTerminalId", destinationId);
@@ -199,7 +204,6 @@ define(['backbone', 'd3', 'models/CursorModel',
                 });
 
                 // this makes sure the anchor points are updated before redrawing wire
-                origin.get("component").trigger("change");
                 destination.get("component").trigger("change");
 
                 self.Wires.add(cursorMode.wire);
@@ -218,7 +222,6 @@ define(['backbone', 'd3', 'models/CursorModel',
 
 
       function setCursorMode(mode) {
-        console.log("setCursorMode");
         if (mode.cursor) {
           d3.select("body").style("cursor", "crosshair");
         }
@@ -226,13 +229,12 @@ define(['backbone', 'd3', 'models/CursorModel',
       }
 
       function clearCursorMode() {
-        console.log("clearCursorMode");
         d3.select("body").style("cursor", null);
         cursorMode = null;
       }
 
 
-      container
+      d3.select("body")
         .on("keydown", function (e) {
           if (d3.event.which == 27) {
             if (cursorMode.wire) {

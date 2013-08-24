@@ -34,6 +34,10 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
             return "translate(" + newX + " " + newY + ")";
           });
       });
+      // this tells the wire views to update
+      dragger.on("dragend", function(){
+        m.trigger("change");
+      });
 
       this.d3
         .call(dragger)
