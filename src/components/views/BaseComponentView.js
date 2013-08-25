@@ -66,8 +66,8 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
       this.addContent();
 
-      var inputs = m.get("inputs");
-      var outputs = m.get("outputs");
+      var inputs = m.inputs;
+      var outputs = m.outputs;
 
       var inputCount = Object.keys(inputs).length;
       var outputCount = Object.keys(outputs).length;

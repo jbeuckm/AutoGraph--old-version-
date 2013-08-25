@@ -14,6 +14,7 @@ define(['models/TerminalModel'], function(TerminalModel){
     receiveValue: function(value) {
       console.log('received val '+value);
       this.set("value", value);
+      this.trigger("value");
     }
 
   });

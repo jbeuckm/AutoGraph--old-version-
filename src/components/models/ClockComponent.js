@@ -1,33 +1,30 @@
 var ClockComponent = BaseComponent.extend({
 
+  inputs: {
+    toggle: {
+      name: "toggle",
+      description: "Turn the clock off or on."
+    },
+    period: {
+      name: "period",
+      description: "Period of the clock in milliseconds."
+    }
+  },
+  outputs: {
+    output: {name: "output"}
+  },
+
   defaults: {
     name: "clock",
 
     period: 1000,
-    running: true,
-
-    inputs: {
-      toggle: {
-        name: "toggle",
-        description: "Turn the clock off or on."
-      },
-      period: {
-        name: "period",
-        description: "Period of the clock in milliseconds."
-      }
-    },
-    outputs: {
-      output: {name: "output"}
-    }
+    running: true
   },
 
   initialize: function() {
     BaseComponent.prototype.initialize.call(this);
 
-    var self = this;
-
-    this.bindInputToProperty("period", "period");
-
+    // reset clock when period changes
     this.on("change:period", function(){
       clearTimeout(this.timeoutId);
       this.tick();
@@ -37,13 +34,13 @@ var ClockComponent = BaseComponent.extend({
   },
 
   tick: function() {
-
-    if (!this.get("running")) return;
-
+console.log("ticking with period "+this.get("period"));
     var self = this;
     this.timeoutId = setTimeout(function(){
-      self.sendMessage({ output: true });
-      self.tick();
+      if (self.get("running")) {
+        self.sendMessage({ output: true });
+        self.tick();
+      }
     }, this.get("period"));
   }
 

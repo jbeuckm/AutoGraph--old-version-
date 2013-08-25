@@ -1,22 +1,25 @@
 var DelayComponent = BaseComponent.extend({
 
+  inputs: {
+    trigger: {
+      name: "input"
+    },
+    period: {
+      name: "period",
+      description: "Period of the delay in milliseconds."
+    }
+  },
+  outputs: {
+    output: {name: "output"}
+  },
+
   defaults: {
     name: "delay",
+    period: 500
+  },
 
-    period: 500,
-
-    inputs: {
-      trigger: {
-        name: "input"
-      },
-      period: {
-        name: "period",
-        description: "Period of the delay in milliseconds."
-      }
-    },
-    outputs: {
-      output: {name: "output"}
-    }
+  initialize: function() {
+    BaseComponent.prototype.initialize.call(this);
   },
 
   receiveMessage: function(message) {

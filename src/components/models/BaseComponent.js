@@ -3,21 +3,22 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
     return PositionedModel.extend({
 
+      inputs:{
+        input1:{name:"input1"},
+        input2:{name:"input2"}
+      },
+      outputs:{
+        output1:{name:"output1"},
+        output2:{name:"output2"}
+      },
+
       defaults:{
         name:"component",
-        inputs:{
-          input1:{name:"input1"},
-          input2:{name:"input2"}
-        },
-        outputs:{
-          output1:{name:"output1"},
-          output2:{name:"output2"}
-        }
       },
 
       initialize:function () {
-        this.buildInputs(this.get("inputs"));
-        this.buildOutputs(this.get("outputs"));
+        this.buildInputs(this.inputs);
+        this.buildOutputs(this.outputs);
       },
 
       receiveMessage:function (message) {
@@ -45,15 +46,9 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       getInputTerminalModel: function(name) {
-        return this.get("inputs")[name].model;
+        return this.inputs[name].model;
       },
 
-      bindInputToProperty: function(input, property){
-        var terminal = this.getInputTerminalModel(input);
-        this.listenTo(terminal, "change:value", function() {
-          this.set(property, terminal.get("value"));
-        })
-      },
 
       buildInputs:function (inputs) {
 
@@ -71,6 +66,9 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
           });
 
           this.listenTo(im, "message", this.receiveMessage);
+          this.listenTo(im, "value", function(){
+            this.set(input.name, im.get("value"))
+          });
 
           input.model = im;
 
