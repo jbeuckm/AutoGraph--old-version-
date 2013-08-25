@@ -9,3 +9,4 @@ before_script:
 branches:
     only:
         - master
+script: phantomjs "spec/runner.html"

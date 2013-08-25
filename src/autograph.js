@@ -4,7 +4,7 @@ define(['backbone', 'd3', 'models/CursorModel',
   'components/views/BaseComponentView', 'views/WireView'],
   function (Backbone, d3, CursorModel, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WireView) {
 
-    return function (containerId) {
+    return function (containerId, componentsPath) {
 
       var container = d3.select("#" + containerId);
       container
@@ -71,7 +71,7 @@ define(['backbone', 'd3', 'models/CursorModel',
       }
 
 
-      d3.json('components.json', function (components) {
+      d3.json(componentsPath, function (components) {
         for (var i = 0, l = components.length; i < l; i++) {
           componentList.append("div")
             .attr("class", "component-option")

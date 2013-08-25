@@ -22,6 +22,6 @@ requirejs.config({
 
 define(['autograph'], function (AutoGraph) {
 
-  var a = AutoGraph('container');
+  var a = AutoGraph('container', 'components.json');
 
 });
