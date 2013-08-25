@@ -14,9 +14,6 @@ define(['models/TerminalModel'], function (TerminalModel) {
     },
 
     sendMessage:function (message) {
-      console.log("otm sendmessage "+message);
-      console.log(message);
-      console.log(this.get("name"));
       var x = message[this.get("name")];
       if (x !== undefined) {
         this.trigger("message", x);

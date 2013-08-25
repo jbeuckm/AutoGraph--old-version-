@@ -5,7 +5,10 @@ define(['models/TerminalModel'], function(TerminalModel){
     className:"InputTerminalModel",
 
     receiveMessage: function(message) {
-      this.trigger("message", message);
+      var labeledMessage = {};
+      labeledMessage[this.get("name")] = message;
+
+      this.trigger("message", labeledMessage);
     },
 
     receiveValue: function(value) {

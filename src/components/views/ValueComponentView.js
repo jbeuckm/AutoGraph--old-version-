@@ -10,11 +10,10 @@ var ValueComponentView = BaseComponentView.extend({
 
     this.input = this.inputHolder.append("xhtml:body")
       .attr('xmlns','http://www.w3.org/1999/xhtml')
-//      .html("<input type='text' class='nodrag'/>")
       .append("input").attr("type", "text").classed("class", "nodrag")
       .attr("width", 130)
       .attr("height", 24)
-      .on("keydown", function(){
+      .on("keyup", function(){
         m.sendValue({output:d3.event.target.value});
       });
   }
