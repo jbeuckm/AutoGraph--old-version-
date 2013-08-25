@@ -2,7 +2,9 @@ define(['backbone', 'd3', 'models/CursorModel',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'components/views/BaseComponentView', 'views/WireView'],
-  function (Backbone, d3, CursorModel, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WireView) {
+  function (Backbone, d3, CursorModel,
+            BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
+            BaseComponentView, WireView) {
 
     return function (containerId, componentsPath) {
 
@@ -219,10 +221,10 @@ define(['backbone', 'd3', 'models/CursorModel',
                 cursorMode.wire.set("destinationTerminalId", destinationId);
 
                 origin.on("message", destination.receiveMessage, destination);
-                origin.on("value", destination.receiveValue, destination);
+                origin.on("change:value", destination.receiveValue, destination);
                 cursorMode.wire.on("destroy", function () {
                   origin.off("message", destination.receiveMessage, destination);
-                  origin.off("value", destination.receiveValue, destination);
+                  origin.off("change:value", destination.receiveValue, destination);
                 });
 
                 // this makes sure the anchor points are updated before redrawing wire

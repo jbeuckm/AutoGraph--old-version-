@@ -7,7 +7,6 @@ var EchoComponentView = BaseComponentView.extend({
     this.listenTo(this.model, "message", function(e){
       var str = JSON.stringify(e.input, undefined, 2);
       this.echoDiv.node().innerHTML = str;
-      console.log(str);
       this.render();
     });
   },
@@ -15,18 +14,17 @@ var EchoComponentView = BaseComponentView.extend({
   addContent:function () {
 
     this.htmlHolder = this.content.append("foreignObject")
-      .attr("width", 130)
-      .attr("height", 100);
+      .attr("width", 200)
+      .attr("height", 150);
 
     this.echoDiv = this.htmlHolder.append("xhtml:body")
       .attr('xmlns','http://www.w3.org/1999/xhtml')
-      .append("div")
+      .append("pre")
       .style("font-family", "courier")
       .style("font-size", "12px")
       .style("color", "#0f0")
-      .attr("value", 100)
-      .attr("width", 130)
-      .attr("height",100);
+      .attr("width", 200)
+      .attr("height",150);
   }
 
 });

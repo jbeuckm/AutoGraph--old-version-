@@ -48,14 +48,6 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         this.trigger("message", message);
       },
 
-      sendValue:function (value) {
-        this.trigger("value", value);
-      },
-
-      getInputTerminalModel: function(name) {
-        return this.inputs[name].model;
-      },
-
 
       buildInputs:function (inputs) {
 
@@ -73,7 +65,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
           });
 
           this.listenTo(im, "message", this.receiveMessage);
-          this.listenTo(im, "value", function(){
+          this.listenTo(im, "change:value", function(){
+            console.log("basecomp setting "+input.name+" to "+im.get("value"));
             this.set(input.name, im.get("value"))
           });
 

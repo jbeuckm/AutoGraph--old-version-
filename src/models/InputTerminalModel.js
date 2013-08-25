@@ -11,9 +11,10 @@ define(['models/TerminalModel'], function(TerminalModel){
       this.trigger("message", labeledMessage);
     },
 
-    receiveValue: function(value) {
-      this.set("value", value);
-      this.trigger("value");
+    receiveValue: function(origin) {
+      console.log("itm received ");
+      console.log(origin.get("value"));
+      this.set("value", origin.get("value"));
     }
 
   });
