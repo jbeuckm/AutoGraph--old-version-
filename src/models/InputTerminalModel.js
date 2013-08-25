@@ -8,8 +8,9 @@ define(['models/TerminalModel'], function(TerminalModel){
       this.trigger("message", message);
     },
 
-    receiveValue: function(message) {
-      this.trigger("value", message);
+    receiveValue: function(value) {
+      console.log('received val '+value);
+      this.set("value", value);
     }
 
   });

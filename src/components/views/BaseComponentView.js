@@ -11,9 +11,8 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       var dragger = d3.behavior.drag();
       dragger.on("drag", function () {
 
-
         if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) return;
-console.log(d3.event);
+
         this.parentNode.appendChild(this);
         var dragTarget = d3.select(this);
 
