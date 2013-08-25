@@ -14,14 +14,17 @@ define(['models/TerminalModel'], function (TerminalModel) {
     },
 
     sendMessage:function (message) {
-      var x = message[this.name];
+      console.log("otm sendmessage "+message);
+      console.log(message);
+      console.log(this.get("name"));
+      var x = message[this.get("name")];
       if (x !== undefined) {
         this.trigger("message", x);
       }
     },
 
     sendValue:function (value) {
-      var x = value[this.name];
+      var x = value[this.get("name")];
       if (x !== undefined) {
         this.trigger("value", x);
       }

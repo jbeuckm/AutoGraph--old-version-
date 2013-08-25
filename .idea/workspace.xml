@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ClockComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/InputTerminalModel.js" afterPath="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/OutputTerminalModel.js" afterPath="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
     </list>
     <ignored path="AutoGraph.iws" />
@@ -56,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="326" selection-end="326" vertical-scroll-proportion="0.3529412">
+            <state line="6" column="39" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/OutputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="32" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+            <state line="19" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.5588235">
               <folding />
             </state>
           </provider>
@@ -578,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="55" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/InputTerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -606,20 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/OutputTerminalModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="48" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
@@ -627,9 +602,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="55" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="326" selection-end="326" vertical-scroll-proportion="0.3529412">
+        <state line="6" column="39" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/OutputTerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="38" selection-start="550" selection-end="550" vertical-scroll-proportion="0.5588235">
           <folding />
         </state>
       </provider>
