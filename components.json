@@ -19,6 +19,11 @@
     "view": "ValueComponentView"
   },
   {
+    "name": "echo",
+    "model": "EchoComponent",
+    "view": "EchoComponentView"
+  },
+  {
     "id": "counter"
   },
   {
