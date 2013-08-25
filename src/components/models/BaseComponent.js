@@ -24,7 +24,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 //        var messageFromInput = this.readInputValues(message);
 
         var results = this.process(message);
-        this.sendMessage({output: results});
+        this.sendMessage(results);
       },
 
       readInputValues:function () {
@@ -32,7 +32,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       process:function (args) {
-        return args;
+        return { input: args, output: args };
       },
 
       sendMessage:function (message) {
