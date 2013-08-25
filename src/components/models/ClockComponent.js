@@ -34,7 +34,6 @@ var ClockComponent = BaseComponent.extend({
   },
 
   tick: function() {
-console.log("ticking with period "+this.get("period"));
     var self = this;
     this.timeoutId = setTimeout(function(){
       if (self.get("running")) {

@@ -4,12 +4,10 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
     return PositionedModel.extend({
 
       inputs:{
-        input1:{name:"input1"},
-        input2:{name:"input2"}
+        input:{name:"input"}
       },
       outputs:{
-        output1:{name:"output1"},
-        output2:{name:"output2"}
+        output:{name:"output"}
       },
 
       defaults:{
@@ -26,7 +24,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 //        var messageFromInput = this.readInputValues(message);
 
         var results = this.process(message);
-        this.sendMessage(results);
+        this.sendMessage({output: results});
       },
 
       readInputValues:function () {
@@ -34,7 +32,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       process:function (args) {
-        return [true];
+        return args;
       },
 
       sendMessage:function (message) {
