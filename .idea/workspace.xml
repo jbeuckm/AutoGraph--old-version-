@@ -52,15 +52,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoGraph.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="48" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/OutputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,6 +65,15 @@
         <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="23" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValueComponent.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.3529412">
               <folding />
             </state>
           </provider>
@@ -97,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseComponent.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="44" selection-start="831" selection-end="831" vertical-scroll-proportion="0.6764706">
+            <state line="28" column="14" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -537,13 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="24" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
@@ -593,27 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
@@ -630,7 +602,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="44" selection-start="831" selection-end="831" vertical-scroll-proportion="0.6764706">
+        <state line="28" column="14" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.3529412">
           <folding />
         </state>
       </provider>

@@ -21,18 +21,26 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
       receiveMessage:function (message) {
 
-//        var messageFromInput = this.readInputValues(message);
+        var messageFromInputs = this.readInputValues(message);
 
-        var results = this.process(message);
-        this.sendMessage(results);
+        var self = this;
+
+        this.process(messageFromInputs, function(results){
+          self.sendMessage(results);
+        });
       },
 
       readInputValues:function () {
-        return [true];
+        var ins = {};
+        for (var key in this.inputs) {
+          var input = this.inputs[key].model;
+          ins[key] = input.get("value");
+        }
+        return ins;
       },
 
-      process:function (args) {
-        return { input: args, output: args };
+      process:function (args, callback) {
+        callback( { input: args, output: args } );
       },
 
       sendMessage:function (message) {
