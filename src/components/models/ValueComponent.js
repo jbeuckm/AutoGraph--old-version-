@@ -1,6 +1,8 @@
 
 var ValueComponent = BaseComponent.extend({
 
+  label: "value",
+
   inputs: {
     value: {
 
@@ -13,7 +15,6 @@ var ValueComponent = BaseComponent.extend({
   },
 
   defaults: {
-    name: "value",
   }
 
 });

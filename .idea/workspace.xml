@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/BaseComponent.js" afterPath="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ButtonComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ClockComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/DelayComponent.js" afterPath="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ValueComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,82 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InputTerminalView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/InputTerminalView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TerminalModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/TerminalModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/OutputTerminalModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelayComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValueComponent.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.3529412">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ButtonComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseComponentView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="29" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="14" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+            <state line="5" column="11" selection-start="210" selection-end="215" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -109,7 +42,43 @@
       <file leaf-file-name="ClockComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+            <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DelayComponent.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValueComponent.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="7" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseComponentView.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="28" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonComponent.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="7" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0882353">
               <folding />
             </state>
           </provider>
@@ -137,13 +106,13 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
+        <option value="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
+        <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
+        <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
         <option value="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
         <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
-        <option value="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
-        <option value="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
-        <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
       </list>
     </option>
   </component>
@@ -579,6 +548,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.39575973">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/InputTerminalView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -586,51 +562,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/views/BaseComponentView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="29" selection-start="1863" selection-end="1863" vertical-scroll-proportion="0.0">
+        <state line="85" column="28" selection-start="2296" selection-end="2296" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="14" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+        <state line="5" column="11" selection-start="210" selection-end="215" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0">
+        <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.0">
+        <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="203" selection-end="203" vertical-scroll-proportion="0.3529412">
+        <state line="3" column="7" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="7" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0882353">
           <folding />
         </state>
       </provider>

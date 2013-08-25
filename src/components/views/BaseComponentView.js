@@ -85,7 +85,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
     addContent: function() {
       this.text = this.content.append("text")
-        .text(this.model.get("name"))
+        .text(this.model.label)
         .attr("class", "component-text")
         .attr("dy", '.9em');
     },

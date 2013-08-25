@@ -1,5 +1,7 @@
 var DelayComponent = BaseComponent.extend({
 
+  label: "delay",
+
   inputs: {
     trigger: {
       name: "input"
@@ -14,7 +16,6 @@ var DelayComponent = BaseComponent.extend({
   },
 
   defaults: {
-    name: "delay",
     period: 500
   },
 

@@ -3,6 +3,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
     return PositionedModel.extend({
 
+      label:"component",
+
       inputs:{
         input:{name:"input"}
       },
@@ -11,7 +13,6 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       defaults:{
-        name:"component",
       },
 
       initialize:function () {

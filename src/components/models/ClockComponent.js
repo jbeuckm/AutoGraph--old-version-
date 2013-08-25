@@ -1,5 +1,7 @@
 var ClockComponent = BaseComponent.extend({
 
+  label: "clock",
+
   inputs: {
     toggle: {
       name: "toggle",
@@ -15,8 +17,6 @@ var ClockComponent = BaseComponent.extend({
   },
 
   defaults: {
-    name: "clock",
-
     period: 1000,
     running: true
   },

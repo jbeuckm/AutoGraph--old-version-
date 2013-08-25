@@ -1,6 +1,8 @@
 
 var ButtonComponent = BaseComponent.extend({
 
+  label: "button",
+
   inputs: {
     trigger: {
       name: "trigger",
@@ -12,7 +14,6 @@ var ButtonComponent = BaseComponent.extend({
   },
 
   defaults: {
-    name: "button"
   }
 
 });
