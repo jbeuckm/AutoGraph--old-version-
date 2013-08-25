@@ -1,10 +1,10 @@
 var ClockComponent = BaseComponent.extend({
 
-  period: 1000,
-  running: true,
-
   defaults: {
     name: "clock",
+
+    period: 1000,
+    running: true,
 
     inputs: {
       toggle: {
@@ -24,19 +24,27 @@ var ClockComponent = BaseComponent.extend({
   initialize: function() {
     BaseComponent.prototype.initialize.call(this);
 
-    this.get("inputs").period.model.on("value", alert);
+    var self = this;
+
+    this.bindInputToProperty("period", "period");
+
+    this.on("change:period", function(){
+      clearTimeout(this.timeoutId);
+      this.tick();
+    });
 
     this.tick();
   },
 
   tick: function() {
+
+    if (!this.get("running")) return;
+
     var self = this;
     this.timeoutId = setTimeout(function(){
       self.sendMessage({ output: true });
-      if (self.running) {
-        self.tick();
-      }
-    }, this.period);
+      self.tick();
+    }, this.get("period"));
   }
 
 });

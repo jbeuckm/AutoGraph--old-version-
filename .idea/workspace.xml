@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/BaseComponent.js" afterPath="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/DelayComponent.js" afterPath="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ClockComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/InputTerminalModel.js" afterPath="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/OutputTerminalModel.js" afterPath="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,19 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="InputTerminalModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="251" selection-end="251" vertical-scroll-proportion="0.29411766">
+            <state line="10" column="0" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClockComponent.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ClockComponent.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="55" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
+            <state line="32" column="18" selection-start="649" selection-end="649" vertical-scroll-proportion="0.44117647">
               <folding />
             </state>
           </provider>
@@ -78,7 +75,7 @@
       <file leaf-file-name="ValueComponentView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+            <state line="13" column="24" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,7 +84,7 @@
       <file leaf-file-name="BaseComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="29" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
+            <state line="53" column="51" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,13 +139,13 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/components/views/BaseComponentView.js" />
-        <option value="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
         <option value="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
         <option value="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
-        <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
+        <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
       </list>
     </option>
   </component>
@@ -591,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="55" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
@@ -619,23 +609,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+        <state line="13" column="24" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
+        <state line="53" column="51" selection-start="1419" selection-end="1419" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/InputTerminalModel.js">
+    <entry file="file://$PROJECT_DIR$/src/components/models/ClockComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="251" selection-end="251" vertical-scroll-proportion="0.29411766">
+        <state line="32" column="18" selection-start="649" selection-end="649" vertical-scroll-proportion="0.44117647">
           <folding />
         </state>
       </provider>

@@ -22,9 +22,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
       receiveMessage:function (message) {
 
-        console.log(message);
 //        var messageFromInput = this.readInputValues(message);
-
 
         var results = this.process(message);
         this.sendMessage(results);
@@ -46,6 +44,16 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         this.trigger("value", value);
       },
 
+      getInputTerminalModel: function(name) {
+        return this.get("inputs")[name].model;
+      },
+
+      bindInputToProperty: function(input, property){
+        var terminal = this.getInputTerminalModel(input);
+        this.listenTo(terminal, "change:value", function() {
+          this.set(property, terminal.get("value"));
+        })
+      },
 
       buildInputs:function (inputs) {
 
