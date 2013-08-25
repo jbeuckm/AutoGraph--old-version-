@@ -2,8 +2,10 @@ language: node_js
 node_js:
     - "0.8"
 before_script:
+    - "npm install jsdom"
+    - "npm install jquery"
     - "npm i -g jasmine-node"
-    - "npm install requirejs"
+    - "npm install requirejs 2.1.6"
 branches:
     only:
         - master

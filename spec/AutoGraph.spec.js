@@ -1,6 +1,8 @@
 define(["AutoGraph"], function (AutoGraph) {
 
-    describe("AutoGraph", function () {
+  initBackbone();
+
+  describe("AutoGraph", function () {
     it("instantiates an object", function () {
 
       var a = AutoGraph();
