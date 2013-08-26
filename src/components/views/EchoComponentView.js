@@ -1,8 +1,8 @@
-var EchoComponentView = BaseComponentView.extend({
+var EchoComponentView = WebviewComponentView.extend({
 
 
   initialize: function() {
-    BaseComponentView.prototype.initialize.call(this);
+    WebviewComponentView.prototype.initialize.call(this);
 
     this.listenTo(this.model, "bang", function(){
 
@@ -11,7 +11,7 @@ var EchoComponentView = BaseComponentView.extend({
   },
 
   render: function() {
-    BaseComponentView.prototype.render.call(this);
+    WebviewComponentView.prototype.render.call(this);
 
     var value = this.model.get("value");
     if (value != undefined) {
@@ -22,12 +22,13 @@ var EchoComponentView = BaseComponentView.extend({
 
   addContent:function () {
 
-    this.htmlHolder = this.content.append("foreignObject")
+    WebviewComponentView.prototype.addContent.call(this);
+
+    this.htmlHolder
       .attr("width", 200)
       .attr("height", 150);
 
-    this.echoDiv = this.htmlHolder.append("xhtml:body")
-      .attr('xmlns','http://www.w3.org/1999/xhtml')
+    this.echoDiv = this.htmlBody
       .append("pre")
       .style("font-family", "courier")
       .style("font-size", "12px")

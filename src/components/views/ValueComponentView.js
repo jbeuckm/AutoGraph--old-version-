@@ -1,16 +1,19 @@
-var ValueComponentView = BaseComponentView.extend({
+var ValueComponentView = WebviewComponentView.extend({
 
   addContent:function () {
 
+    WebviewComponentView.prototype.addContent.call(this);
+
     var m = this.model;
 
-    this.inputHolder = this.content.append("foreignObject")
+    this.htmlHolder
       .attr("width", 130)
       .attr("height", 24);
 
-    this.textField = this.inputHolder.append("xhtml:body")
-      .attr('xmlns','http://www.w3.org/1999/xhtml')
-      .append("input").attr("type", "text").classed("class", "nodrag");
+    this.textField = this.htmlBody
+      .append("input")
+      .attr("type", "text")
+      .classed("class", "nodrag");
 
     this.textField
       .on("keyup", function(){
@@ -21,7 +24,7 @@ var ValueComponentView = BaseComponentView.extend({
   },
 
   render: function() {
-    BaseComponentView.prototype.render.call(this);
+    WebviewComponentView.prototype.render.call(this);
     this.textField
       .attr("value", this.model.get("value"));
 

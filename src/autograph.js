@@ -1,10 +1,10 @@
 define(['backbone', 'd3', 'models/CursorModel',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
-  'components/views/BaseComponentView', 'views/WireView'],
+  'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
   function (Backbone, d3, CursorModel,
             BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
-            BaseComponentView, WireView) {
+            BaseComponentView, WebviewComponentView, WireView) {
 
     return function (containerId, componentsPath) {
 
