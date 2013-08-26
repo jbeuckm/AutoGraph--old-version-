@@ -20,32 +20,51 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         this.buildOutputs(this.outputs);
       },
 
-      receiveMessage:function (message) {
+      receiveBang:function () {
 
-        var messageFromInputs = this.readInputValues(message);
+        var inputTerminalValues = this.readInputValues();
 
         var self = this;
 
-        this.process(messageFromInputs, function(results){
-          self.sendMessage(results);
+        this.process(inputTerminalValues, function(results){
+//console.log("processCallback()");
+          console.log(results);
+
+          self.updateOutputTerminals(results);
+
+          self.sendBang();
         });
       },
 
       readInputValues:function () {
+//console.log("readInputValues()");
         var ins = {};
         for (var key in this.inputs) {
           var input = this.inputs[key].model;
-          ins[key] = input.get("value");
+          if (input.get("value")) {
+            ins[key] = input.get("value");
+          }
         }
         return ins;
+      },
+
+      updateOutputTerminals: function(values) {
+
+        for (var key in values) {
+          var output = this.outputs[key];
+          if (output) {
+            output.model.set("value", values[key]);
+          }
+        }
       },
 
       process:function (args, callback) {
         callback( { input: args, output: args } );
       },
 
-      sendMessage:function (message) {
-        this.trigger("message", message);
+      sendBang:function () {
+//console.log("sendBang()");
+        this.trigger("bang");
       },
 
 
@@ -64,7 +83,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             name:input.name
           });
 
-          this.listenTo(im, "message", this.receiveMessage);
+          this.listenTo(im, "bang", this.receiveBang);
           this.listenTo(im, "change:value", function(){
             console.log("basecomp setting "+input.name+" to "+im.get("value"));
             this.set(input.name, im.get("value"))

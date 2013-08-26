@@ -37,7 +37,7 @@ var ClockComponent = BaseComponent.extend({
     var self = this;
     this.timeoutId = setTimeout(function(){
       if (self.get("running")) {
-        self.sendMessage({ output: true });
+        self.sendBang();
         self.tick();
       }
     }, this.get("period"));

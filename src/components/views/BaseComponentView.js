@@ -80,7 +80,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       this.buildInputs(inputs);
       this.buildOutputs(outputs);
 
-      this.listenTo(m, "message", this.hilight);
+      this.listenTo(m, "bang", this.hilight);
     },
 
     addContent: function() {

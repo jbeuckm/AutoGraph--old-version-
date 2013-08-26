@@ -220,10 +220,10 @@ define(['backbone', 'd3', 'models/CursorModel',
 
                 cursorMode.wire.set("destinationTerminalId", destinationId);
 
-                origin.on("message", destination.receiveMessage, destination);
+                origin.on("bang", destination.receiveBang, destination);
                 origin.on("change:value", destination.receiveValue, destination);
                 cursorMode.wire.on("destroy", function () {
-                  origin.off("message", destination.receiveMessage, destination);
+                  origin.off("bang", destination.receiveBang, destination);
                   origin.off("change:value", destination.receiveValue, destination);
                 });
 

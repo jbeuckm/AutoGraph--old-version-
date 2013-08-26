@@ -4,8 +4,11 @@ var EchoComponentView = BaseComponentView.extend({
   initialize: function() {
     BaseComponentView.prototype.initialize.call(this);
 
-    this.listenTo(this.model, "message", function(e){
-      var str = JSON.stringify(e.input, undefined, 2);
+    this.listenTo(this.model, "bang", function(){
+
+      var value = this.model.inputs["input"].model.get("value");
+
+      var str = JSON.stringify(value, undefined, 2);
       this.echoDiv.node().innerHTML = str;
       this.render();
     });

@@ -4,8 +4,8 @@ var ValueComponent = BaseComponent.extend({
   label: "value",
 
   inputs: {
-    value: {
-      name: "value",
+    input: {
+      name: "input",
       description: "Set the value of the component."
     }
   },
@@ -17,16 +17,18 @@ var ValueComponent = BaseComponent.extend({
     value: 100
   },
 
+
   initialize: function() {
     BaseComponent.prototype.initialize.call(this);
+
+    this.listenTo(this.inputs.input.model, "change:value", function(){
+      this.set("value", this.inputs.input.model.get("value"));
+    });
 
     this.listenTo(this, "change:value", function(){
       this.outputs.output.model.set("value", this.get("value"));
     });
-  },
-
-  process:function (args, callback) {
-    callback( { input: args, output: this.get("value") } );
   }
+
 
 });

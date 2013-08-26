@@ -7,16 +7,14 @@ define(['models/TerminalModel'], function (TerminalModel) {
     initialize:function () {
       TerminalModel.prototype.initialize.call(this);
 
-      var c = this.get("component");
+      var component = this.get("component");
 
-      this.listenTo(c, "message", this.sendMessage);
+      this.listenTo(component, "bang", this.sendBang);
     },
 
-    sendMessage:function (message) {
-      var x = message[this.get("name")];
-      if (x !== undefined) {
-        this.trigger("message", x);
-      }
+    sendBang:function () {
+//      console.log("otm sendBang()");
+      this.trigger("bang");
     }
 
   });

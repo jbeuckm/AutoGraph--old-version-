@@ -23,11 +23,11 @@ var DelayComponent = BaseComponent.extend({
     BaseComponent.prototype.initialize.call(this);
   },
 
-  receiveMessage: function(message) {
+  receiveBang: function() {
     var self = this;
     setTimeout(function(){
-      self.sendMessage({output: message});
-    }, this.get("period"));
+      self.sendBang();
+    }, self.get("period"));
   }
 
 });
