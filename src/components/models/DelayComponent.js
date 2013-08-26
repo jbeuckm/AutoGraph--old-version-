@@ -27,7 +27,7 @@ var DelayComponent = BaseComponent.extend({
     var self = this;
     setTimeout(function(){
       self.sendBang();
-    }, self.get("period"));
+    }, this.get("period"));
   }
 
 });

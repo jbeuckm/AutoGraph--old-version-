@@ -13,12 +13,16 @@ define(['backbone'], function (Backbone) {
 
       this.rect = this.buildRect();
 
+      this.label = this.d3.append("text")
+        .classed("terminal-label", true)
+        .text(m.get("name"))
+        .style("visibility", "hidden");
+
       this.listenTo(m, "change", this.updateAnchorPoints);
     },
 
 
     buildRect:function () {
-      this.d3 = d3.select(this.el);
       var self = this;
 
       var m = this.model;
@@ -31,6 +35,9 @@ define(['backbone'], function (Backbone) {
 
       rect
         .on("mouseover", function () {
+
+          self.label.style("visibility", "visible");
+
           enabled = true;
           m.get("autograph").cursorModel.set("activeTerminal", m);
           d3.select(this)
@@ -39,6 +46,9 @@ define(['backbone'], function (Backbone) {
             .attr("height", 8);
         })
         .on("mouseout", function () {
+
+          self.label.style("visibility", "hidden");
+
           enabled = false;
           m.get("autograph").cursorModel.set("activeTerminal", null);
           d3.select(this)
@@ -124,7 +134,7 @@ define(['backbone'], function (Backbone) {
       var m = this.model;
 
 
-      var pos = getBBoxInScreenSpace(this.el);
+      var pos = getBBoxInScreenSpace(this.rect.node());
 
 
       m.set("anchorX", pos.x + pos.width / 2);

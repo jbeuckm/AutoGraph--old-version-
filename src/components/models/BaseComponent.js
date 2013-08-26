@@ -21,18 +21,15 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       receiveBang:function () {
-
         var inputTerminalValues = this.readInputValues();
-
         var self = this;
 
         this.process(inputTerminalValues, function(results){
 //console.log("processCallback()");
-          console.log(self.label);
+          console.log("process results for "+self.label);
           console.log(results);
 
           self.updateOutputTerminals(results);
-
           self.sendBang();
         });
       },

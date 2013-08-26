@@ -24,6 +24,11 @@
     "view": "EchoComponentView"
   },
   {
+    "name": "HTTP client",
+    "model": "HTTPClientComponent",
+    "view": "HTTPClientComponentView"
+  },
+  {
     "id": "counter"
   },
   {
@@ -31,9 +36,6 @@
   },
   {
     "id": "slider"
-  },
-  {
-    "id": "HTTP client"
   },
   {
     "id": "select"

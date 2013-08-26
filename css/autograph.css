@@ -45,6 +45,11 @@ body {
   user-select: none;
 }
 
+.terminal-label {
+  font-size: 10px;
+  fill: #999;
+}
+
 .wire {
   stroke: #ddd;
 }

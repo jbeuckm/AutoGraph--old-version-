@@ -10,9 +10,15 @@ define(['views/TerminalView'], function (TerminalView) {
         .classed("terminal-input", true);
 
       var m = this.model;
+      var self = this;
+
+      this.label.attr("dy", -16);
 
       this.rect
         .on("mouseover", function () {
+
+          self.label.style("visibility", "visible");
+
           enabled = true;
           m.get("autograph").cursorModel.set("activeTerminal", m);
           d3.select(this)
@@ -21,6 +27,9 @@ define(['views/TerminalView'], function (TerminalView) {
             .attr("height", 8);
         })
         .on("mouseout", function () {
+
+          self.label.style("visibility", "hidden");
+
           enabled = true;
           m.get("autograph").cursorModel.set("activeTerminal", null);
           d3.select(this)
