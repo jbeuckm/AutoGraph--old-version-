@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/BaseComponent.js" afterPath="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/autograph.css" afterPath="$PROJECT_DIR$/css/autograph.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ButtonComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/ValueComponent.js" afterPath="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/EchoComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/EchoComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/WireView.js" afterPath="$PROJECT_DIR$/src/views/WireView.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ValueComponent.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ValueComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="62" selection-start="669" selection-end="669" vertical-scroll-proportion="0.7352941">
+            <state line="29" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WireView.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/WireView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="0" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.81609195">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autograph.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/autograph.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +58,7 @@
       <file leaf-file-name="ValueComponentView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="16" selection-start="434" selection-end="439" vertical-scroll-proportion="0.0">
+            <state line="18" column="28" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,7 +85,7 @@
       <file leaf-file-name="ButtonComponent.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+            <state line="8" column="61" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,8 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/components.json" />
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
         <option value="$PROJECT_DIR$/src/models/InputTerminalModel.js" />
@@ -126,10 +141,12 @@
         <option value="$PROJECT_DIR$/src/models/OutputTerminalModel.js" />
         <option value="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
         <option value="$PROJECT_DIR$/src/components/views/EchoComponentView.js" />
-        <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/css/autograph.css" />
         <option value="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/models/ButtonComponent.js" />
+        <option value="$PROJECT_DIR$/src/views/WireView.js" />
       </list>
     </option>
   </component>
@@ -509,20 +526,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/OutputTerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/InputTerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/TerminalModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -586,9 +589,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
+    <entry file="file://$PROJECT_DIR$/css/autograph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+        <state line="49" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="28" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -600,6 +617,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/ButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="61" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="8" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0">
@@ -607,16 +631,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
+    <entry file="file://$PROJECT_DIR$/src/views/WireView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="434" selection-end="439" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="62" selection-start="669" selection-end="669" vertical-scroll-proportion="0.7352941">
+        <state line="90" column="0" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.81609195">
           <folding />
         </state>
       </provider>

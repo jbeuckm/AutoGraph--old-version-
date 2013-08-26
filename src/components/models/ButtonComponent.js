@@ -4,9 +4,9 @@ var ButtonComponent = BaseComponent.extend({
   label: "button",
 
   inputs: {
-    value: {
-      name: "value",
-      description: "Values and bangs input."
+    input: {
+      name: "input",
+      description: "values and bangs will be copied to output."
     }
   },
   outputs: {

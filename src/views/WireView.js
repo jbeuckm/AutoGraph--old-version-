@@ -15,11 +15,26 @@ define(['backbone'], function (Backbone) {
         })
         .interpolate("bundle");
 
+      var lineGraphTarget = this.d3.append("path")
+        .attr("stroke", "transparent")
+        .attr("stroke-width", 10)
+        .attr("fill", "none")
+        .style("cursor", "pointer");
+
       var lineGraph = this.d3.append("path")
         .attr("class", "wire")
-        .attr("fill", "none");
+        .attr("fill", "none")
+        .style("pointer-events", "none");
 
-      lineGraph.on("contextmenu", function(data, index) {
+
+      lineGraphTarget
+        .on("mouseover", function(){
+          lineGraphTarget.attr("stroke", "#333")
+        })
+        .on("mouseout", function(){
+          lineGraphTarget.attr("stroke", "transparent")
+        });
+      lineGraphTarget.on("contextmenu", function(data, index) {
 
         d3.event.preventDefault();
 
@@ -28,6 +43,7 @@ define(['backbone'], function (Backbone) {
         }
       });
 
+      this.lineGraphTarget = lineGraphTarget;
       this.lineGraph = lineGraph;
 
       var origin = m.getOriginModel();
@@ -39,6 +55,7 @@ define(['backbone'], function (Backbone) {
       var self = this;
       m.on("destroy", function () {
         lineGraph.remove();
+        lineGraphTarget.remove();
 
         origin.off("change", self.render, self);
         destination.off("change", self.render, self);
@@ -55,14 +72,28 @@ define(['backbone'], function (Backbone) {
         var origin = m.getOriginModel();
         var destination = m.getDestinationModel();
 
-        this.lineData = [
-          { x:origin.get("anchorX"), y:origin.get("anchorY") },
-          { x:origin.get("controlPointX"), y:origin.get("controlPointY") },
-          { x:destination.get("controlPointX"), y:destination.get("controlPointY") },
-          { x:destination.get("anchorX"), y:destination.get("anchorY") }
-        ];
+        var dx = destination.get("anchorX") - origin.get("anchorX");
+        var dy = destination.get("anchorY") - origin.get("anchorY");
+        var distance = Math.sqrt(dx*dx + dy*dy);
+
+        if (distance > 100) {
+
+          this.lineData = [
+            { x:origin.get("anchorX"), y:origin.get("anchorY") },
+            { x:origin.get("controlPointX"), y:origin.get("controlPointY") },
+            { x:destination.get("controlPointX"), y:destination.get("controlPointY") },
+            { x:destination.get("anchorX"), y:destination.get("anchorY") }
+          ];
+        }
+        else {
+          this.lineData = [
+            { x:origin.get("anchorX"), y:origin.get("anchorY") },
+            { x:destination.get("anchorX"), y:destination.get("anchorY") }
+          ];
+        }
 
         this.lineGraph.attr("d", this.lineFunction(this.lineData));
+        this.lineGraphTarget.attr("d", this.lineFunction(this.lineData));
       }
 
     }
