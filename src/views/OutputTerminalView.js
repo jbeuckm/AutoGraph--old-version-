@@ -6,7 +6,7 @@ define(['views/TerminalView'], function (TerminalView) {
 
       TerminalView.prototype.initialize.call(this);
 
-      this.label.attr("dy", 20).style("text-anchor", "end");
+      this.label.attr("dy", 32);//.style("text-anchor", "end");
 
       this.rect
         .classed("terminal-output", true);

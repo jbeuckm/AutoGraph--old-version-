@@ -13,12 +13,11 @@ var ValueComponentView = WebviewComponentView.extend({
     this.textField = this.htmlBody
       .append("input")
       .attr("type", "text")
-      .classed("class", "nodrag");
+      .attr("class", "nodrag");
 
     this.textField
       .on("keyup", function(){
         var val = d3.event.target.value;
-        console.log('setting comp value to '+val);
         m.set("value", val);
       });
   },

@@ -17,8 +17,11 @@ var HTTPClientComponent = BaseComponent.extend({
     body: {name: "body"}
   },
 
-  defaults: {
-    period: 500
+  process:function (args, callback) {
+
+    console.log(args);
+
+    callback( args );
   }
 
 });
