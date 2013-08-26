@@ -28,6 +28,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
         this.process(inputTerminalValues, function(results){
 //console.log("processCallback()");
+          console.log(self.label);
           console.log(results);
 
           self.updateOutputTerminals(results);
@@ -59,7 +60,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       process:function (args, callback) {
-        callback( { input: args, output: args } );
+        callback( args );
       },
 
       sendBang:function () {

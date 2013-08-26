@@ -6,12 +6,18 @@ var EchoComponentView = BaseComponentView.extend({
 
     this.listenTo(this.model, "bang", function(){
 
-      var value = this.model.inputs["input"].model.get("value");
-
-      var str = JSON.stringify(value, undefined, 2);
-      this.echoDiv.node().innerHTML = str;
       this.render();
     });
+  },
+
+  render: function() {
+    BaseComponentView.prototype.render.call(this);
+
+    var value = this.model.get("value");
+    if (value != undefined) {
+      var str = JSON.stringify(value, undefined, 2);
+      this.echoDiv.node().innerHTML = str;
+    }
   },
 
   addContent:function () {

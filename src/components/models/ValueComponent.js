@@ -28,6 +28,8 @@ var ValueComponent = BaseComponent.extend({
     this.listenTo(this, "change:value", function(){
       this.outputs.output.model.set("value", this.get("value"));
     });
+
+    this.outputs.output.model.set("value", this.get("value"));
   }
 
 
