@@ -33,6 +33,17 @@ var ClockComponent = BaseComponent.extend({
     this.tick();
   },
 
+  receiveBang:function () {
+    if (this.get("running")) {
+      this.set("running", false);
+    }
+    else {
+      this.set("running", true);
+      this.tick();
+    }
+  },
+
+
   tick: function() {
     var self = this;
     this.timeoutId = setTimeout(function(){
