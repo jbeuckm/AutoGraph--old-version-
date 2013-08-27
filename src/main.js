@@ -20,9 +20,9 @@ requirejs.config({
   }
 });
 
+
 require(['AutoGraph'], function (AutoGraph) {
 
-//  window.AutoGraph = AutoGraph;
-  var a = AutoGraph('container', 'components.json');
-
+  window.autograph = AutoGraph;
+  console.log("Initialized AutoGraph Model...");
 });

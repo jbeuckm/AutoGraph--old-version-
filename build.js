@@ -21,5 +21,9 @@
 			}
     },
   out: "build/autograph-min.js",
-  include: ["requireLib"]
+  include: ["requireLib"],
+  wrap: {
+    start: "",
+    end: ""
+  }
 })

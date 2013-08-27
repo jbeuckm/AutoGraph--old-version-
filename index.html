@@ -4,10 +4,8 @@
   <title>AutoGraph Workbench</title>
 
   <link rel="stylesheet" type="text/css" href="css/autograph.css"/>
-<!--
-  <script data-main="src/main" src="src/require.js"></script>
--->
   <script src="build/autograph-min.js"></script>
+
 </head>
 
 
@@ -15,6 +13,10 @@
 
   <div id="container"> </div>
 
-
+  <script>
+    require(['AutoGraph'], function (AutoGraph) {
+            var a = window.autograph('container', 'components.json');
+    });
+  </script>
 </body>
 </html>
