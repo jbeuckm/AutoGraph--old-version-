@@ -6,7 +6,6 @@ before_script:
     - "npm install jquery"
     - "npm i -g jasmine-node"
     - "npm install requirejs"
-    - "node r.js -o build.js"
 branches:
     only:
         - master
