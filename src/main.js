@@ -20,8 +20,9 @@ requirejs.config({
   }
 });
 
-define(['autograph'], function (AutoGraph) {
+require(['AutoGraph'], function (AutoGraph) {
 
+//  window.AutoGraph = AutoGraph;
   var a = AutoGraph('container', 'components.json');
 
 });

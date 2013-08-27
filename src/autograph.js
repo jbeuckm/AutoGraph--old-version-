@@ -309,8 +309,6 @@ define(['backbone', 'd3', 'models/CursorModel',
       });
 
       controlTarget.call(selectDragger);
-
-
-    }
+    };
 
   });

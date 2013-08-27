@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/autograph.css" afterPath="$PROJECT_DIR$/css/autograph.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/models/HTTPClientComponent.js" afterPath="$PROJECT_DIR$/src/components/models/HTTPClientComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" afterPath="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/OutputTerminalView.js" afterPath="$PROJECT_DIR$/src/views/OutputTerminalView.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/autograph.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/autograph.js" afterPath="$PROJECT_DIR$/src/AutoGraph.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,37 +31,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HTTPClientComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/models/HTTPClientComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTTPClientComponentView.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HTTPClientComponentView.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.38235295">
+            <state line="13" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EchoComponentView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/views/EchoComponentView.js">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="572" selection-end="646" vertical-scroll-proportion="0.0">
+            <state line="11" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="-7.04">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebviewComponentView.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/views/WebviewComponentView.js">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runner.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/runner.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="29" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AutoGraph.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="0" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -69,15 +107,6 @@
         <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="16" column="0" selection-start="328" selection-end="360" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelayComponent.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,11 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/components/models/ClockComponent.js" />
-        <option value="$PROJECT_DIR$/src/AutoGraph.js" />
-        <option value="$PROJECT_DIR$/src/components/views/WebviewComponentView.js" />
-        <option value="$PROJECT_DIR$/src/components/views/EchoComponentView.js" />
-        <option value="$PROJECT_DIR$/src/components/models/ValueComponent.js" />
         <option value="$PROJECT_DIR$/src/components/models/DelayComponent.js" />
         <option value="$PROJECT_DIR$/src/components/models/BaseComponent.js" />
         <option value="$PROJECT_DIR$/components.json" />
@@ -121,6 +145,11 @@
         <option value="$PROJECT_DIR$/src/components/models/HTTPClientComponent.js" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js" />
+        <option value="$PROJECT_DIR$/src/AutoGraph.js" />
+        <option value="$PROJECT_DIR$/src/main.js" />
+        <option value="$PROJECT_DIR$/build.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -500,55 +529,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/models/ValueComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="36" selection-start="485" selection-end="508" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/InputTerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/OutputTerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="34" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/autograph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="12" selection-start="795" selection-end="795" vertical-scroll-proportion="0.736">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/TerminalView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="53" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="208" selection-end="244" vertical-scroll-proportion="-5.6254416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/TerminalModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.19787987">
@@ -566,13 +546,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/models/DelayComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1431" selection-end="1508" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -598,6 +571,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/views/ValueComponentView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="328" selection-end="360" vertical-scroll-proportion="0.0">
@@ -605,9 +585,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js">
+    <entry file="file://$PROJECT_DIR$/src/AutoGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.38235295">
+        <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/models/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="1431" selection-end="1508" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="-7.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="29" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/runner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

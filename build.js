@@ -1,9 +1,9 @@
 ({
     baseUrl: "src",
-    name: "AutoGraph",
-	out: "build/autograph.js",
-	paths: {
-	"underscore": "lib/underscore-min",
+    name: "main",
+  paths: {
+    requireLib: 'require',
+    "underscore": "lib/underscore-min",
 	    "jquery": "lib/jquery-1.10.2.min",
 	    "backbone": "lib/backbone-min",
 	    "d3": "lib/d3.min"
@@ -19,5 +19,7 @@
 		'd3': {
 		    exports: 'd3'
 			}
-    }    
+    },
+  out: "build/autograph-min.js",
+  include: ["requireLib"]
 })
