@@ -13,7 +13,7 @@ describe("AutoGraph works", function () {
       function (errors, win) {
 
 */
-          window = jsdom.jsdom().createWindow('<html><head></head><body></body></html>');
+          window = jsdom.jsdom().createWindow('<html><head></head><body><div id="container"></div></body></html>');
 
           console.log("got window "+window+" now loading module");
 
