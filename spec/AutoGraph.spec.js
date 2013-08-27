@@ -1,20 +1,22 @@
-window = require('jsdom').jsdom('<html><head></head><body></body></html>').createWindow();
+var jsdom = require("jsdom");
+window = jsdom.jsdom('<html><head></head><body></body></html>').createWindow();
 
-describe("AutoGraph", function () {
+describe("AutoGraph works", function () {
 
     var flag = false, win;
 
     beforeEach(function () {
 
-    var jsdom = require("jsdom");
 
     jsdom.env('<html><body></body></html>',
       ["http://code.jquery.com/jquery.js"],
-      function (errors, window) {
+      function (errors, win) {
           console.log("got window "+window+" now loading module");
 
+          window = win;
+
           require(["../src/main"], function(a) {
-console.log("autograph = "+window.autograph);
+console.log("autograph = "+win.autograph);
               flag = true;
           });
       }
