@@ -10,6 +10,7 @@ require.config({
     'jasmine-html': '../src/lib/jasmine/jasmine-html',
     'require': '../src/require',
     src: "../src/"
+
   },
   shim: {
     'backbone': {

@@ -2,6 +2,8 @@ describe("AutoGraph", function () {
 
   beforeEach(function () {
 
+    window = require('jsdom').jsdom('<html><head></head><body></body></html>').createWindow();
+
     var flag = false, self = this;
     console.log('hi');
 
