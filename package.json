@@ -3,6 +3,9 @@
   "version":"0.1.0",
   "author":"Joe Beuckman <joe@beigerecords.com>",
   "description":"A visual data routing automation tool.",
+    "dependencies": {
+        "jsdom": ">= 0.8.4"
+    },
   "scripts":{
     "test":"jasmine-node --verbose --runWithRequireJs spec"
   },

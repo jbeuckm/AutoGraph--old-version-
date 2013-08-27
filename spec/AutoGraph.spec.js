@@ -2,27 +2,33 @@ window = require('jsdom').jsdom('<html><head></head><body></body></html>').creat
 
 describe("AutoGraph", function () {
 
-  beforeEach(function () {
+    var flag = false, win;
 
-    var flag = false, self = this;
-    console.log('hi');
+    beforeEach(function () {
 
-    require(["../build/autograph-min"], function(AutoGraph) {
-      self.autograph = AutoGraph;
-      flag = true;
-      return 1;
-    });
-    console.log('hi');
+    var jsdom = require("jsdom");
 
-    waitsFor(function () {
+    jsdom.env('<html><body></body></html>',
+      ["http://code.jquery.com/jquery.js"],
+      function (errors, window) {
+          console.log("got window "+window+" now loading module");
+
+          require(["../src/main"], function(a) {
+console.log("autograph = "+window.autograph);
+              flag = true;
+          });
+      }
+    );
+
+    waitsFor(function() {
       return flag;
     }, "autograph module never loaded", 5000);
 
   });
 
-  it("instantiates an object", function () {
-
-    expect(this.autograph).not.toEqual(null);
+  it("finds the module", function () {
+console.log("window.autograph = "+window.autograph);
+    expect(window.autograph).not.toEqual(null);
 
   });
 
