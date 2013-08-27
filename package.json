@@ -1,10 +1,10 @@
 {
   "name":"AutoGraph",
   "version":"0.1.0",
-  "author":"Joe Beuckmnan <joe@beigerecords.com>",
+  "author":"Joe Beuckman <joe@beigerecords.com>",
   "description":"A visual data routing automation tool.",
   "scripts":{
-    "test":"jasmine-node --runWithRequireJs spec"
+    "test":"jasmine-node --verbose --runWithRequireJs spec"
   },
   "repository":{
     "type":"git",

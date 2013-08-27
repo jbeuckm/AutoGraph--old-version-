@@ -9,29 +9,13 @@
 
   <!-- Jasmine styles -->
   <link rel="stylesheet" href="../src/lib/jasmine/jasmine.css">
+
+  <script data-main="specRunner" src="../src/require.js"></script>
 </head>
 
 <body>
 
 <div id="container"></div>
 
-<script src="../src/lib/jasmine/jasmine.js"></script>
-<script src="../src/lib/jasmine/jasmine-html.js"></script>
-
-<script data-main="../src/main" src="../src/require.js"></script>
-
-
-<script>
-
-  require({ paths: { spec:"../spec/"} }, [
-
-    "spec/AutoGraph.spec"
-
-  ], function() {
-
-    jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
-    jasmine.getEnv().execute();
-  });
-</script>
 </body>
 </html>

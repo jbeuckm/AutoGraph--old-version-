@@ -1,12 +1,25 @@
-define(["AutoGraph"], function (AutoGraph) {
+describe("AutoGraph", function () {
 
-  describe("AutoGraph", function () {
-    it("instantiates an object", function () {
+  beforeEach(function () {
 
-      var a = 1;
-      expect(a).not.toEqual(null);
+    console.log('flag');
+    var flag = false;
 
+    require(["../build/autograph-min"], function (AutoGraph) {
+      window.autograph = AutoGraph('container', 'components.js', "../");
+      flag = true;
+    });
+
+    waitsFor(function () {
+      return flag;
     });
   });
 
+  it("instantiates an object", function () {
+
+    expect(window.autograph).not.toEqual(null);
+
+  });
+
 });
+

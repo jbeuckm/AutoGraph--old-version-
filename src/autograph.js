@@ -6,7 +6,7 @@ define(['backbone', 'd3', 'models/CursorModel',
             BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
             BaseComponentView, WebviewComponentView, WireView) {
 
-    return function (containerId, componentsPath) {
+    return function (containerId, components, path) {
 
       var container = d3.select("#" + containerId);
       container
@@ -73,7 +73,7 @@ define(['backbone', 'd3', 'models/CursorModel',
       }
 
 
-      d3.json(componentsPath, function (components) {
+      d3.json(path+components, function (components) {
         for (var i = 0, l = components.length; i < l; i++) {
           componentList.append("div")
             .attr("class", "component-option")
@@ -156,9 +156,9 @@ define(['backbone', 'd3', 'models/CursorModel',
 
             var modelClass = cursorMode.component.model;
             var viewClass = cursorMode.component.view;
-            var path = cursorMode.component.path || "src/components/";
+            var fullpath = cursorMode.component.path || "src/components/";
 
-            getClass(modelClass, path + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
+            getClass(modelClass, path + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
 
               var model = new mc({
                 autograph:this,
@@ -169,7 +169,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
               if (viewClass) {
 
-                  getClass(viewClass, path + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
+                  getClass(viewClass, path + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
                     var view = new vc({
                       model:model,
                       el:self.componentLayer.append("g")[0]
