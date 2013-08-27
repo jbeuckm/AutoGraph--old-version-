@@ -76,9 +76,8 @@ define(['backbone', 'd3', 'models/CursorModel',
       }
 
       updateWindow();
-        if (window) {
       window.onresize = updateWindow;
-        }
+
 
       var classRegistry = {};
 

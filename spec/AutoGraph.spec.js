@@ -16,7 +16,7 @@ describe("AutoGraph works", function () {
           window = win;
 
           require(["../src/main"], function(a) {
-console.log("autograph = "+win.autograph);
+console.log("autograph = "+window.autograph);
               flag = true;
           });
       }
