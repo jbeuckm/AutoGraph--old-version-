@@ -5,7 +5,7 @@ describe("AutoGraph", function () {
     var flag = false, self = this;
     console.log('hi');
 
-    require(["build/autograph-min"], function(AutoGraph) {
+    require(["../build/autograph-min"], function(AutoGraph) {
       self.autograph = AutoGraph;
       flag = true;
       return 1;

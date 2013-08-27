@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/AutoGraph.spec.js" afterPath="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/specRunner.js" afterPath="$PROJECT_DIR$/spec/specRunner.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +55,7 @@
       <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.8220183">
+            <state line="7" column="17" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20550458">
               <folding />
             </state>
           </provider>
@@ -551,7 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="490" selection-end="490" vertical-scroll-proportion="0.8220183">
+        <state line="7" column="17" selection-start="141" selection-end="141" vertical-scroll-proportion="0.20550458">
           <folding />
         </state>
       </provider>
