@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/specRunner.js" afterPath="$PROJECT_DIR$/spec/specRunner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/AutoGraph.spec.js" afterPath="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AutoGraph.spec.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+            <state line="1" column="2" selection-start="38" selection-end="38" vertical-scroll-proportion="0.029357798">
               <folding />
             </state>
           </provider>
@@ -70,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="specRunner.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="specRunner.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/specRunner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="30" selection-start="371" selection-end="371" vertical-scroll-proportion="0.29357797">
+            <state line="10" column="30" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,8 +142,8 @@
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
         <option value="$PROJECT_DIR$/spec/runner.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
         <option value="$PROJECT_DIR$/spec/specRunner.js" />
+        <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
       </list>
     </option>
   </component>
@@ -527,18 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/runner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="31" selection-start="381" selection-end="381" vertical-scroll-proportion="-7.68">
@@ -548,7 +536,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/specRunner.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="371" selection-end="371" vertical-scroll-proportion="0.29357797">
+        <state line="10" column="30" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="29" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/AutoGraph.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="2" selection-start="38" selection-end="38" vertical-scroll-proportion="0.029357798">
           <folding />
         </state>
       </provider>

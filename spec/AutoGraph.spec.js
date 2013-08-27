@@ -1,5 +1,5 @@
 describe("AutoGraph", function () {
-
+/*
   beforeEach(function () {
 
     console.log('flag');
@@ -14,7 +14,7 @@ describe("AutoGraph", function () {
       return flag;
     });
   });
-
+*/
   it("instantiates an object", function () {
 
     expect(window.autograph).not.toEqual(null);
