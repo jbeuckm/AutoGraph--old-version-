@@ -3,7 +3,7 @@ window = jsdom.jsdom('<html><head></head><body></body></html>').createWindow();
 
 describe("AutoGraph works", function () {
 
-    var flag = false, win;
+    var flag = false;
 
     beforeEach(function () {
 
@@ -11,14 +11,14 @@ describe("AutoGraph works", function () {
     jsdom.env('<html><body></body></html>',
       ["http://code.jquery.com/jquery.js"],
       function (errors, win) {
-          console.log("got window "+window+" now loading module");
 
-          window = win;
+        console.log("got window "+window+" now loading module");
 
           require(["../src/main"], function(a) {
 console.log("autograph = "+window.autograph);
               flag = true;
           });
+
       }
     );
 
