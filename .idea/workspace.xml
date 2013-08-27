@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20983eb7-1a73-4ecb-99f2-089770cc9c08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
     </list>
     <ignored path="AutoGraph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.23486239">
+            <state line="8" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="10" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
+            <state line="1" column="20" selection-start="23" selection-end="23" vertical-scroll-proportion="0.029357798">
               <folding />
             </state>
           </provider>
@@ -135,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/components/models/HTTPClientComponent.js" />
         <option value="$PROJECT_DIR$/src/components/views/ValueComponentView.js" />
         <option value="$PROJECT_DIR$/src/components/views/HTTPClientComponentView.js" />
-        <option value="$PROJECT_DIR$/build.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/AutoGraph.js" />
@@ -144,6 +143,7 @@
         <option value="$PROJECT_DIR$/spec/specRunner.js" />
         <option value="$PROJECT_DIR$/spec/AutoGraph.spec.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/build.js" />
       </list>
     </option>
   </component>
@@ -487,13 +487,6 @@
         <state line="61" column="0" selection-start="1431" selection-end="1508" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="10" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="231" selection-end="359" vertical-scroll-proportion="-12.16">
@@ -550,7 +543,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.23486239">
+        <state line="8" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="23" selection-end="23" vertical-scroll-proportion="0.029357798">
           <folding />
         </state>
       </provider>

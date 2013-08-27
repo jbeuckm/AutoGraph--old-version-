@@ -1,5 +1,5 @@
 ({
-    baseUrl: "src",
+    baseUrl: "./src/",
     name: "main",
   paths: {
     requireLib: 'require',
