@@ -3,7 +3,7 @@ node_js:
     - "0.8"
 before_script:
     - "npm install jsdom"
-    - "npm install jquery"
+#    - "npm install jquery"
     - "npm i -g jasmine-node"
     - "npm install requirejs"
 branches:

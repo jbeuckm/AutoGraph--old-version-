@@ -1,3 +1,5 @@
+window = require('jsdom').jsdom('<html><head></head><body></body></html>').createWindow();
+
 describe("AutoGraph", function () {
 
   beforeEach(function () {
@@ -5,8 +7,7 @@ describe("AutoGraph", function () {
     var flag = false, self = this;
     console.log('hi');
 
-    require(["../build/autograph-min", 'jsdom'], function(AutoGraph, jsdom) {
-      window = jsdom.jsdom('<html><head></head><body></body></html>').createWindow();
+    require(["../build/autograph-min"], function(AutoGraph) {
       self.autograph = AutoGraph;
       flag = true;
       return 1;
