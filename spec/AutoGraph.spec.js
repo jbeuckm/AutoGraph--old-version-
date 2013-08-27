@@ -1,23 +1,24 @@
 describe("AutoGraph", function () {
-/*
+
   beforeEach(function () {
 
-    console.log('flag');
-    var flag = false;
+    var flag = false, self = this;
 
-    require(["../build/autograph-min"], function (AutoGraph) {
-      window.autograph = AutoGraph('container', 'components.js', "../");
-      flag = true;
+    runs(function(){
+      require(["../build/autograph-min"], function (AutoGraph) {
+        self.autograph = AutoGraph('container', 'components.js', "../");
+        flag = true;
+      });
     });
 
     waitsFor(function () {
       return flag;
     });
   });
-*/
+
   it("instantiates an object", function () {
 
-    expect(window.autograph).not.toEqual(null);
+    expect(self.autograph).not.toEqual(null);
 
   });
 
