@@ -3,22 +3,24 @@ describe("AutoGraph", function () {
   beforeEach(function () {
 
     var flag = false, self = this;
+    console.log('hi');
 
-    runs(function(){
-      require(["../build/autograph-min"], function (AutoGraph) {
-        self.autograph = AutoGraph('container', 'components.js', "../");
-        flag = true;
-      });
+    require(["build/autograph-min"], function(AutoGraph) {
+      self.autograph = AutoGraph;
+      flag = true;
+      return 1;
     });
+    console.log('hi');
 
     waitsFor(function () {
       return flag;
-    });
+    }, "autograph module never loaded", 5000);
+
   });
 
   it("instantiates an object", function () {
 
-    expect(self.autograph).not.toEqual(null);
+    expect(this.autograph).not.toEqual(null);
 
   });
 

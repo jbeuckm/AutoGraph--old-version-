@@ -8,7 +8,8 @@ require.config({
     "d3": "../src/lib/d3.min",
     'jasmine': '../src/lib/jasmine/jasmine',
     'jasmine-html': '../src/lib/jasmine/jasmine-html',
-    'require': '../src/require'
+    'require': '../src/require',
+    src: "../src/"
   },
   shim: {
     'backbone': {
