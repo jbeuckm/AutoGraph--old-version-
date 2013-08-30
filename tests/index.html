@@ -31,8 +31,13 @@
   <script src="autograph.test.js"></script>
 
   <script>
-    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-    else { mocha.run(); }
+    require(['autograph'], function (AutoGraph) {
+      var a = autograph('container', 'components.json', '../');
+
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+
+    });
   </script>
 
 </body>
