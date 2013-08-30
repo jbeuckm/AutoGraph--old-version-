@@ -8,8 +8,10 @@ describe('AutoGraph', function() {
   });
 
   it('can instantiate a BaseComponent', function(){
-    var bc = new BaseComponent();
-//    expect(bc).to.not.equal(null);
+    autograph.getClass('BaseComponent', "../src/components/", function(bc){
+      expect(bc).to.not.equal(null);
+    });
+//    var bc = new BaseComponent();
   });
 
 });
