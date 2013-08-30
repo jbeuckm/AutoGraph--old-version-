@@ -4,23 +4,24 @@
   <title>AutoGraph Workbench</title>
 
   <link rel="stylesheet" type="text/css" href="css/autograph.css"/>
-  <script src="build/autograph-min.js"></script>
 
-    <style>
-
-    </style>
+  <style>
+  </style>
 
 </head>
 
 
 <body>
 
-  <div id="container"> </div>
+<div id="container"> </div>
 
-  <script>
-    require(['autograph'], function (AutoGraph) {
-            var a = window.autograph('container', 'components.json', '');
-    });
-  </script>
+<script src="build/autograph-min.js"></script>
+
+<script>
+  require(['autograph'], function (AutoGraph) {
+    var a = window.autograph('container', 'components.json', '');
+  });
+</script>
+
 </body>
 </html>

@@ -2,9 +2,7 @@ language: node_js
 node_js:
     - "0.10"
 before_script:
-    - "npm install jsdom"
-    - "npm i -g jasmine-node"
-    - "npm install requirejs"
+    - "npm install -g mocha-phantomjs"
 branches:
     only:
         - master
