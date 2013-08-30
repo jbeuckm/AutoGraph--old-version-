@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>AutoGraph Workbench</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/autograph.css"/>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+    <style>
+
+    </style>
+
+</head>
+
+
+<body>
+
+  <div id="container"> </div>
+
+  <div id="mocha"></div>
+
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../build/autograph-min.js"></script>
+
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+  </script>
+
+  <script src="autograph.test.js"></script>
+
+  <script>
+    require(['autograph'], function (AutoGraph) {
+      var a = autograph('container', 'components.json', '../');
+
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+    });
+  </script>
+
+
+  <script>
+  </script>
+
+</body>
+</html>

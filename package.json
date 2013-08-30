@@ -8,7 +8,7 @@
     "chai" : "*"
   },
   "scripts":{
-    "test":"mocha-phantomjs test.html"
+    "test":"mocha-phantomjs tests/index.html"
   },
   "repository":{
     "type":"git",
