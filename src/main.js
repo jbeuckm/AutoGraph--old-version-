@@ -1,4 +1,8 @@
 
+requirejs.config({
+  urlArgs: "bust=" + (new Date()).getTime(),
+  baseUrl: "src/"
+});
 
 require(['autograph'], function (AutoGraph) {
 

@@ -49,7 +49,7 @@ define(['backbone', 'd3', 'models/CursorModel',
       this.wireLayer = this.mainGroup.append("g").attr("id", "wire-layer");
       this.componentLayer = this.mainGroup.append("g").attr("id", "component-layer");
 
-      var componentList = container.append("div")
+      this.componentList = container.append("div")
         .attr("class", "component-list");
 
 
@@ -67,9 +67,9 @@ define(['backbone', 'd3', 'models/CursorModel',
         x = window.innerWidth || e.clientWidth || g.clientWidth;
         y = window.innerHeight || e.clientHeight || g.clientHeight;
 
-        var listWidth = parseInt(componentList.style("width"));
+        var listWidth = parseInt(self.componentList.style("width"));
         svg.attr("width", x - listWidth).attr("height", y);
-        componentList.style("height", y);
+        self.componentList.style("height", y);
 
         controlTarget
           .attr("width", x).attr("height", y);
@@ -99,22 +99,26 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       d3.json(path+components, function (components) {
         for (var i = 0, l = components.length; i < l; i++) {
-          componentList.append("div")
+          self.componentList.append("div")
             .attr("class", "component-option")
             .attr("id", components[i].name)
             .datum(components[i])
             .text(components[i].name);
         }
-        d3.selectAll(".component-option").on("click", function () {
-
-          setCursorMode({
-            action:"component",
-            cursor:"crosshair",
-            component:d3.select(d3.event.target).datum()
-          });
-
+        d3.selectAll(".component-option").on("click", function() {
+          self.clickComponentMenuOption(d3.select(d3.event.target).datum());
         });
       });
+
+
+      this.clickComponentMenuOption = function(componentDescription) {
+
+        setCursorMode({
+          action:"component",
+          cursor:"crosshair",
+          component: componentDescription
+        });
+      };
 
 
       this.autographDispatch = d3.dispatch("terminal_mousedown");
