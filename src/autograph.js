@@ -113,7 +113,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       this.clickComponentMenuOption = function(componentDescription) {
 
-        setCursorMode({
+        self.setCursorMode({
           action:"component",
           cursor:"crosshair",
           component: componentDescription
@@ -122,7 +122,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
 
       this.autographDispatch = d3.dispatch("terminal_mousedown");
-      var cursorMode = null;
+      this.cursorMode = null;
 
       var cursorModel = new CursorModel();
       this.cursorModel = cursorModel;
@@ -162,7 +162,7 @@ define(['backbone', 'd3', 'models/CursorModel',
         });
         newWireView.render();
 
-        setCursorMode({
+        self.setCursorMode({
           action:"wire",
           wire:newWire
         });
@@ -172,9 +172,9 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       svg.on("mouseup", function () {
 
-        if (!cursorMode) return;
+        if (!self.cursorMode) return;
 
-        switch (cursorMode.action) {
+        switch (self.cursorMode.action) {
 
           case "component":
 
@@ -182,9 +182,9 @@ define(['backbone', 'd3', 'models/CursorModel',
             var clickY = d3.event.y;
             var shiftKey = d3.event.shiftKey;
 
-            var modelClass = cursorMode.component.model;
-            var viewClass = cursorMode.component.view;
-            var fullpath = cursorMode.component.path || "src/components/";
+            var modelClass = self.cursorMode.component.model;
+            var viewClass = self.cursorMode.component.view;
+            var fullpath = self.cursorMode.component.path || "src/components/";
 
             getClass(modelClass, path + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
 
@@ -224,7 +224,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
           case "wire":
 
-            var originId = cursorMode.wire.get("originTerminalId");
+            var originId = self.cursorMode.wire.get("originTerminalId");
             var destinationId = cursorModel.get("activeTerminal");
 
             var origin = self.Terminals.get(originId);
@@ -233,24 +233,24 @@ define(['backbone', 'd3', 'models/CursorModel',
             if (destinationId) {
               // can't connect terminal to itself
               if (destinationId == originId) {
-                cursorMode.wire.destroy();
+                self.cursorMode.wire.destroy();
               }
               // can't connect component to itself
               else if (origin.get("componentId") == destination.get("componentId")) {
-                cursorMode.wire.destroy();
+                self.cursorMode.wire.destroy();
               }
               // can't connect input to input or output to output
               else if (origin.className == destination.className) {
-                cursorMode.wire.destroy();
+                self.cursorMode.wire.destroy();
               }
               // ok let's do this
               else {
 
-                cursorMode.wire.set("destinationTerminalId", destinationId);
+                self.cursorMode.wire.set("destinationTerminalId", destinationId);
 
                 origin.on("bang", destination.receiveBang, destination);
                 origin.on("change:value", destination.receiveValue, destination);
-                cursorMode.wire.on("destroy", function () {
+                self.cursorMode.wire.on("destroy", function () {
                   origin.off("bang", destination.receiveBang, destination);
                   origin.off("change:value", destination.receiveValue, destination);
                 });
@@ -258,11 +258,11 @@ define(['backbone', 'd3', 'models/CursorModel',
                 // this makes sure the anchor points are updated before redrawing wire
                 destination.get("component").trigger("change");
 
-                self.Wires.add(cursorMode.wire);
+                self.Wires.add(self.cursorMode.wire);
               }
             }
             else {
-              cursorMode.wire.destroy();
+              self.cursorMode.wire.destroy();
             }
 
             clearCursorMode();
@@ -273,24 +273,24 @@ define(['backbone', 'd3', 'models/CursorModel',
       });
 
 
-      function setCursorMode(mode) {
+      self.setCursorMode = function(mode) {
         if (mode.cursor) {
           d3.select("body").style("cursor", "crosshair");
         }
-        cursorMode = mode;
+        self.cursorMode = mode;
       }
 
       function clearCursorMode() {
         d3.select("body").style("cursor", null);
-        cursorMode = null;
+        self.cursorMode = null;
       }
 
 
       d3.select("body")
         .on("keydown", function (e) {
           if (d3.event.which == 27) {
-            if (cursorMode.wire) {
-              cursorMode.wire.destroy();
+            if (self.cursorMode.wire) {
+              self.cursorMode.wire.destroy();
             }
             clearCursorMode();
           }

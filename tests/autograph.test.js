@@ -22,6 +22,8 @@ describe('AutoGraph', function() {
       "model": "ButtonComponent",
       "view": "ButtonComponentView"
     };
+    a.clickComponentMenuOption(componentDescription);
+    expect(a.cursorMode.component).to.equal(componentDescription);
   });
 
   /*
