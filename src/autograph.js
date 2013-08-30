@@ -171,7 +171,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
 
       svg.on("mouseup", function () {
-
+console.log("mouseup");
         if (!self.cursorMode) return;
 
         switch (self.cursorMode.action) {
@@ -316,7 +316,7 @@ define(['backbone', 'd3', 'models/CursorModel',
           x: d3.event.sourceEvent.offsetX,
           y: d3.event.sourceEvent.offsetY
         };
-        selectRect = controlLayer.append("path")
+        selectRect = self.controlLayer.append("path")
           .style("stroke", '#bbb')
           .style("fill", 'none')
           .style("stroke-dasharray", ("3, 3"));

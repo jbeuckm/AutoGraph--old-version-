@@ -4,7 +4,7 @@ describe('AutoGraph', function() {
 
   var a;
 
-  beforeEach(function(){
+  before(function(){
     a = new autograph('container', 'components.json', '../');
   });
 
@@ -24,6 +24,8 @@ describe('AutoGraph', function() {
     };
     a.clickComponentMenuOption(componentDescription);
     expect(a.cursorMode.component).to.equal(componentDescription);
+
+    $('svg').trigger("mouseup", {clientX:100, clientY:100});
   });
 
   /*
