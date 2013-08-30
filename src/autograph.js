@@ -94,6 +94,7 @@ define(['backbone', 'd3', 'models/CursorModel',
           });
         }
       }
+      this.getClass = getClass;
 
 
       d3.json(path+components, function (components) {

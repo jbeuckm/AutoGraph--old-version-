@@ -31,7 +31,7 @@
   <script src="autograph.test.js"></script>
 
   <script>
-    require(['autograph', 'components/models/BaseComponent'], function (AutoGraph, BaseComponent) {
+    require(['autograph'], function (AutoGraph) {
       var a = autograph('container', 'components.json', '../');
 
       if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
