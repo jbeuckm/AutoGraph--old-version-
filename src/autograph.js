@@ -269,6 +269,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       });
 
 
+      var selectionTool = SelectionTool(self.controlLayer);
       self.controlTarget.call(selectionTool);
 
     };
