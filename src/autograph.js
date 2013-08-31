@@ -169,39 +169,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary',
             var originId = self.cursorMode.wire.get("originTerminalId");
             var destinationId = self.cursorModel.get("activeTerminal");
 
-            var origin = self.Terminals.get(originId);
-            var destination = self.Terminals.get(destinationId);
-
             if (destinationId) {
-              // can't connect terminal to itself
-              if (destinationId == originId) {
-                self.cursorMode.wire.destroy();
-              }
-              // can't connect component to itself
-              else if (origin.get("componentId") == destination.get("componentId")) {
-                self.cursorMode.wire.destroy();
-              }
-              // can't connect input to input or output to output
-              else if (origin.className == destination.className) {
-                self.cursorMode.wire.destroy();
-              }
-              // ok let's do this
-              else {
-
-                self.cursorMode.wire.set("destinationTerminalId", destinationId);
-
-                origin.on("bang", destination.receiveBang, destination);
-                origin.on("change:value", destination.receiveValue, destination);
-                self.cursorMode.wire.on("destroy", function () {
-                  origin.off("bang", destination.receiveBang, destination);
-                  origin.off("change:value", destination.receiveValue, destination);
-                });
-
-                // this makes sure the anchor points are updated before redrawing wire
-                destination.get("component").trigger("change");
-
-                self.Wires.add(self.cursorMode.wire);
-              }
+              self.placeNewWire(originId, destinationId);
             }
             else {
               self.cursorMode.wire.destroy();
@@ -213,6 +182,43 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary',
         }
 
       });
+
+
+      self.placeNewWire = function(originId, destinationId) {
+
+        var origin = self.Terminals.get(originId);
+        var destination = self.Terminals.get(destinationId);
+
+        // can't connect terminal to itself
+        if (destinationId == originId) {
+          self.cursorMode.wire.destroy();
+        }
+        // can't connect component to itself
+        else if (origin.get("componentId") == destination.get("componentId")) {
+          self.cursorMode.wire.destroy();
+        }
+        // can't connect input to input or output to output
+        else if (origin.className == destination.className) {
+          self.cursorMode.wire.destroy();
+        }
+        // ok let's do this
+        else {
+
+          self.cursorMode.wire.set("destinationTerminalId", destinationId);
+
+          origin.on("bang", destination.receiveBang, destination);
+          origin.on("change:value", destination.receiveValue, destination);
+          self.cursorMode.wire.on("destroy", function () {
+            origin.off("bang", destination.receiveBang, destination);
+            origin.off("change:value", destination.receiveValue, destination);
+          });
+
+          // this makes sure the anchor points are updated before redrawing wire
+          destination.get("component").trigger("change");
+
+          self.Wires.add(self.cursorMode.wire);
+        }
+      };
 
 
 
