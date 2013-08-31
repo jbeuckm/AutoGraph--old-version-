@@ -11,21 +11,33 @@ describe('AutoGraph', function() {
   it('should define the var autograph', function() {
     expect(autograph).to.not.equal(null);
   });
-  it('should define a wires collection', function() {
-      expect(a.Wires).to.not.equal(null);
+  it('should define necessary collections', function() {
+    expect(a.Components).to.not.equal(null);
+    expect(a.Terminals).to.not.equal(null);
+    expect(a.Wires).to.not.equal(null);
   });
 
 
   it('should select a component list item', function() {
-    var componentDescription = {
+    var buttonComponent = {
       "name": "button",
       "model": "ButtonComponent",
       "view": "ButtonComponentView"
     };
-    a.clickComponentMenuOption(componentDescription);
-    expect(a.cursorMode.component).to.equal(componentDescription);
+    a.clickComponentMenuOption(buttonComponent);
+    expect(a.cursorMode.component).to.equal(buttonComponent);
+    a.placeNewModel(a.cursorMode, {x:360, y:30});
+    a.clearCursorMode();
 
-    $('svg').trigger("mouseup", {clientX:100, clientY:100});
+    var valueComponent = {
+      "name": "value",
+      "model": "ValueComponent",
+      "view": "ValueComponentView"
+    };
+    a.clickComponentMenuOption(valueComponent);
+    a.placeNewModel(a.cursorMode, {x:440, y:30});
+    a.clearCursorMode();
+
   });
 
   /*

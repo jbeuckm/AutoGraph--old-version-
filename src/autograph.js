@@ -12,7 +12,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       var container = d3.select("#" + containerId);
       container
-        .style("position", "relative");
+        .style("position", "relative").classed("autograph", true);
 
       var svg = container.append("svg")
         .attr("class", "autographSVG")
@@ -223,6 +223,8 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       self.placeNewModel = function(mode, position) {
 
+        var self = this;
+
         var modelClass = mode.component.model;
         var viewClass = mode.component.view;
         var fullpath = mode.component.path || "src/components/";
@@ -230,7 +232,7 @@ define(['backbone', 'd3', 'models/CursorModel',
         getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
 
           var model = new mc({
-            autograph:this,
+            autograph: self,
             x: position.x,
             y: position.y
           });
@@ -270,9 +272,10 @@ define(['backbone', 'd3', 'models/CursorModel',
         d3.select("body").style("cursor", null);
         self.cursorMode = null;
       }
+      self.clearCursorMode = clearCursorMode;
 
 
-      d3.select("body")
+        d3.select("body")
         .on("keydown", function (e) {
           if (d3.event.which == 27) {
             if (self.cursorMode.wire) {

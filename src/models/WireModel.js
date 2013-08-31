@@ -8,12 +8,12 @@ define(['backbone'], function (Backbone) {
 
     getOriginModel:function () {
       var o = this.get("originTerminalId");
-      return(Terminals.get(o));
+      return(this.get("autograph").Terminals.get(o));
     },
     getDestinationModel:function () {
       var d = this.get("destinationTerminalId");
       if (d) {
-        return(Terminals.get(d));
+        return(this.get("autograph").Terminals.get(d));
       }
       else {
         return(cursorModel);

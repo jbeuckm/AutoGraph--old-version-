@@ -61,7 +61,6 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       sendBang:function () {
-//console.log("sendBang()");
         this.trigger("bang");
       },
 

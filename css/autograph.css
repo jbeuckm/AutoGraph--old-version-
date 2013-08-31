@@ -1,8 +1,15 @@
+#mocha-stats {
+  background-color: #fff;
+}
+
 body {
-  margin: 0;
   background-color: #000;
+  margin: 0;
   font-family: "Helvetica";
   color: #fff;
+}
+
+.autograph svg {
 }
 
 .component-list {
