@@ -1,10 +1,10 @@
 
 
-define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary',
+define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTool',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
-  function (Backbone, d3, CursorModel, ComponentLibrary,
+  function (Backbone, d3, CursorModel, ComponentLibrary, SelectionTool,
             BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
             BaseComponentView, WebviewComponentView, WireView) {
 
@@ -259,57 +259,18 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary',
       };
 
 
-        d3.select("body")
-        .on("keydown", function (e) {
-          if (d3.event.which == 27) {
-            if (self.cursorMode.wire) {
-              self.cursorMode.wire.destroy();
-            }
-            self.clearCursorMode();
+      d3.select("body").on("keydown", function (e) {
+        if (d3.event.which == 27) {
+          if (self.cursorMode.wire) {
+            self.cursorMode.wire.destroy();
           }
-        });
-
-
-
-      var selectLineFunction = d3.svg.line()
-        .x(function (d) {
-          return d.x;
-        })
-        .y(function (d) {
-          return d.y;
-        })
-        .interpolate("linear-closed");
-
-      var selectStart = null;
-      var selectRect = null;
-
-      var selectDragger = d3.behavior.drag();
-      selectDragger.on("dragstart", function(){
-        selectStart = {
-          x: d3.event.sourceEvent.offsetX,
-          y: d3.event.sourceEvent.offsetY
-        };
-        selectRect = self.controlLayer.append("componentPath")
-          .style("stroke", '#bbb')
-          .style("fill", 'none')
-          .style("stroke-dasharray", ("3, 3"));
-      });
-      selectDragger.on("drag", function () {
-        var data = [
-          selectStart,
-          { x:d3.event.x, y:selectStart.y},
-          { x:d3.event.x, y:d3.event.y},
-          { x:selectStart.x, y:d3.event.y}
-        ];
-
-        selectRect.attr("d", selectLineFunction(data));
-
-      });
-      selectDragger.on("dragend", function(){
-        selectRect.remove();
+          self.clearCursorMode();
+        }
       });
 
-      self.controlTarget.call(selectDragger);
+
+      self.controlTarget.call(selectionTool);
+
     };
 
   });
