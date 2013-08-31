@@ -15,10 +15,10 @@
 
 <div id="container"> </div>
 
-<script src="build/autograph-min.js"></script>
+<script data-main="src/main" src="src/require.js"></script>
 
 <script>
-  require(['autograph'], function (AutoGraph) {
+  require(['main', 'autograph'], function (main, autograph) {
     var a = autograph('container', 'components.json', '');
   });
 </script>

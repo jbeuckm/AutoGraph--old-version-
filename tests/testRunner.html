@@ -20,7 +20,6 @@
 
   <script src="../node_modules/mocha/mocha.js"></script>
   <script src="../node_modules/chai/chai.js"></script>
-  <script src="../build/autograph-min.js"></script>
 
   <script>
     mocha.ui('bdd');
@@ -30,9 +29,10 @@
 
   <script src="autograph.test.js"></script>
 
+  <script data-main="test-config" src="../src/require.js"></script>
+
   <script>
-    require(['autograph'], function (AutoGraph) {
-//      var a = new autograph('container', 'components.json', '../');
+    require(['test-config', '../src/autograph'], function (main, autograph) {
 
       if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
       else { mocha.run(); }

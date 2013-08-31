@@ -1,7 +1,7 @@
 
 requirejs.config({
   urlArgs: "bust=" + (new Date()).getTime(),
-  baseUrl: "src/",
+  baseUrl: "../src/",
   paths: {
     "underscore": "lib/underscore-min",
     "jquery": "lib/jquery-1.10.2.min",
@@ -24,7 +24,7 @@ requirejs.config({
 
 require(['autograph'], function (AutoGraph) {
 
-    window.autograph = AutoGraph;
-    console.log("Initialized AutoGraph()");
+  window.autograph = AutoGraph;
+  console.log("Initialized AutoGraph()");
 
 });

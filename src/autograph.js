@@ -1,25 +1,4 @@
-requirejs.config({
-    urlArgs: "bust=" + (new Date()).getTime(),
-  baseUrl: "./",
-    paths: {
-        "underscore": "lib/underscore-min",
-        "jquery": "lib/jquery-1.10.2.min",
-        "backbone": "lib/backbone-min",
-        "d3": "lib/d3.min"
-    },
-    shim: {
-        'backbone': {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
-            exports: '_'
-        },
-        'd3': {
-            exports: 'd3'
-        }
-    }
-});
+
 
 define(['backbone', 'd3', 'models/CursorModel',
   'components/models/BaseComponent', 'models/WireModel',
@@ -29,7 +8,7 @@ define(['backbone', 'd3', 'models/CursorModel',
             BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
             BaseComponentView, WebviewComponentView, WireView) {
 
-    return function (containerId, components, path) {
+    return function (containerId, components, componentPath) {
 
       var container = d3.select("#" + containerId);
       container
@@ -97,7 +76,7 @@ define(['backbone', 'd3', 'models/CursorModel',
       this.getClass = getClass;
 
 
-      d3.json(path+components, function (components) {
+      d3.json(componentPath+components, function (components) {
         for (var i = 0, l = components.length; i < l; i++) {
           self.componentList.append("div")
             .attr("class", "component-option")
@@ -124,17 +103,16 @@ define(['backbone', 'd3', 'models/CursorModel',
       this.autographDispatch = d3.dispatch("terminal_mousedown");
       this.cursorMode = null;
 
-      var cursorModel = new CursorModel();
-      this.cursorModel = cursorModel;
+      this.cursorModel = new CursorModel();
 
       svg.on("mousemove", function () {
 
-        cursorModel.set({
-          "controlPointX": cursorModel.get("anchorX"),
-          "controlPointY": cursorModel.get("anchorY")
+        self.cursorModel.set({
+          "controlPointX": self.cursorModel.get("anchorX"),
+          "controlPointY": self.cursorModel.get("anchorY")
         });
 
-        cursorModel.set({
+        self.cursorModel.set({
           "x": d3.event.x,
           "y": d3.event.y,
           "anchorX": d3.event.x,
@@ -171,53 +149,23 @@ define(['backbone', 'd3', 'models/CursorModel',
 
 
       svg.on("mouseup", function () {
-console.log("mouseup");
+
         if (!self.cursorMode) return;
 
         switch (self.cursorMode.action) {
 
           case "component":
 
-            var clickX = d3.event.x;
-            var clickY = d3.event.y;
-            var shiftKey = d3.event.shiftKey;
+            var position = {
+              x: d3.event.x,
+              y: d3.event.y
+            };
 
-            var modelClass = self.cursorMode.component.model;
-            var viewClass = self.cursorMode.component.view;
-            var fullpath = self.cursorMode.component.path || "src/components/";
+            self.placeNewModel(self.cursorMode, position);
 
-            getClass(modelClass, path + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
-
-              var model = new mc({
-                autograph:this,
-                x:clickX,
-                y:clickY
-              });
-              self.Components.add(model);
-
-              if (viewClass) {
-
-                  getClass(viewClass, path + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
-                    var view = new vc({
-                      model:model,
-                      el:self.componentLayer.append("g")[0]
-                    });
-                    view.render();
-                  });
-              }
-              else {
-                var view = new BaseComponentView({
-                  model:model,
-                  el:self.componentLayer.append("g")[0]
-                });
-                view.render();
-              }
-
-              if (!shiftKey) {
-                clearCursorMode();
-              }
-
-            });
+            if (!d3.event.shiftKey) {
+              clearCursorMode();
+            }
 
             break;
 
@@ -225,7 +173,7 @@ console.log("mouseup");
           case "wire":
 
             var originId = self.cursorMode.wire.get("originTerminalId");
-            var destinationId = cursorModel.get("activeTerminal");
+            var destinationId = self.cursorModel.get("activeTerminal");
 
             var origin = self.Terminals.get(originId);
             var destination = self.Terminals.get(destinationId);
@@ -273,12 +221,50 @@ console.log("mouseup");
       });
 
 
+      self.placeNewModel = function(mode, position) {
+
+        var modelClass = mode.component.model;
+        var viewClass = mode.component.view;
+        var fullpath = mode.component.path || "src/components/";
+
+        getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
+
+          var model = new mc({
+            autograph:this,
+            x: position.x,
+            y: position.y
+          });
+          self.Components.add(model);
+
+          if (viewClass) {
+
+            getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
+              var view = new vc({
+                model:model,
+                el:self.componentLayer.append("g")[0]
+              });
+              view.render();
+            });
+          }
+          else {
+            var view = new BaseComponentView({
+              model:model,
+              el:self.componentLayer.append("g")[0]
+            });
+            view.render();
+          }
+
+        });
+      };
+
+
+
       self.setCursorMode = function(mode) {
         if (mode.cursor) {
           d3.select("body").style("cursor", "crosshair");
         }
         self.cursorMode = mode;
-      }
+      };
 
       function clearCursorMode() {
         d3.select("body").style("cursor", null);
@@ -316,7 +302,7 @@ console.log("mouseup");
           x: d3.event.sourceEvent.offsetX,
           y: d3.event.sourceEvent.offsetY
         };
-        selectRect = self.controlLayer.append("path")
+        selectRect = self.controlLayer.append("componentPath")
           .style("stroke", '#bbb')
           .style("fill", 'none')
           .style("stroke-dasharray", ("3, 3"));
