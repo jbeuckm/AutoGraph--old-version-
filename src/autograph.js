@@ -34,8 +34,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
       this.mainGroup = svg.append("g");
       this.controlLayer = this.mainGroup.append("g").attr("id", "control-layer");
-      this.controlTarget = this.controlLayer.append("rect")
-        .style("fill", "rgba(100,100,100,.1)");
+      this.controlTarget = this.controlLayer.append("rect").style("fill", "rgba(100,100,100,.1)");
 
       this.wireLayer = this.mainGroup.append("g").attr("id", "wire-layer");
       this.componentLayer = this.mainGroup.append("g").attr("id", "component-layer");
@@ -92,7 +91,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
       // start drawing a new wire
-      this.autographDispatch.on("terminal_mousedown", function (terminal) {
+      self.terminalMouseDown = function(terminal) {
 
         if (terminal.className == "InputTerminalModel") {
           console.log("can not originate connection at input");
@@ -115,10 +114,11 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           wire:newWire
         });
 
-      });
+      };
+      this.autographDispatch.on("terminal_mousedown", self.terminalMouseDown, self);
 
 
-      svg.on("mouseup", function () {
+      self.mouseUp = function() {
 
         if (!self.cursorMode) return;
 
@@ -159,7 +159,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
         }
 
-      });
+      };
+      svg.on("mouseup", self.mouseUp, self);
+
 
 
       self.placeNewWire = function(originId, destinationId) {

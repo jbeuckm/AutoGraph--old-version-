@@ -7,7 +7,7 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
     self.componentList = container.append("div").attr("class", "component-list");
 
-    
+
     d3.json(componentPath+components, function (components) {
       for (var i = 0, l = components.length; i < l; i++) {
 
