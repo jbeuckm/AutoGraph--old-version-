@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>AutoGraph Workbench</title>
+
+  <link rel="stylesheet" type="text/css" href="css/autograph.css"/>
+
+  <style>
+  </style>
+
+</head>
+
+
+<body>
+
+<div id="container"> </div>
+
+<script src="build/autograph-min.js"></script>
+
+<script>
+  require(['autograph'], function (autograph) {
+    var a = autograph('container', 'components.json', '');
+  });
+</script>
+
+</body>
+</html>
