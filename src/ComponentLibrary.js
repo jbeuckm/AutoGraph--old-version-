@@ -1,9 +1,31 @@
 define(['jquery', 'components/models/BaseComponent', 'components/views/BaseComponentView', 'components/views/WebviewComponentView'],
   function($, BaseComponent, BaseComponentView, WebviewComponentView){
 
-  return function(componentPath) {
+  return function(container, components, componentPath, selectCallback) {
 
     var self = this;
+
+    self.componentList = container.append("div").attr("class", "component-list");
+
+    
+    d3.json(componentPath+components, function (components) {
+      for (var i = 0, l = components.length; i < l; i++) {
+
+        var componentDescription = components[i];
+
+        self.componentList.append("div")
+          .attr("class", "component-option")
+          .attr("id", componentDescription.name)
+          .datum(componentDescription)
+          .text(componentDescription.name);
+
+      }
+      d3.selectAll(".component-option").on("click", function() {
+        selectCallback(d3.select(d3.event.target).datum());
+      });
+    });
+
+
 
     var classRegistry = {};
 

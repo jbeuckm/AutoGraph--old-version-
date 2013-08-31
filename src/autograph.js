@@ -10,11 +10,21 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
     return function (containerId, components, componentPath) {
 
-      this.componentLibrary = new ComponentLibrary(componentPath);
+      var self = this;
 
-      var container = d3.select("#" + containerId);
-      container
-        .style("position", "relative").classed("autograph", true);
+      var container = d3.select("#" + containerId)
+        .style("position", "relative")
+        .classed("autograph", true);
+
+
+      self.clickComponentMenuOption = function(componentDescription) {
+        self.setCursorMode({
+          action:"component",
+          cursor:"crosshair",
+          component: componentDescription
+        });
+      };
+      this.componentLibrary = new ComponentLibrary(container, components, componentPath, self.clickComponentMenuOption);
 
       var svg = container.append("svg")
         .attr("class", "autographSVG")
@@ -30,15 +40,12 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       this.wireLayer = this.mainGroup.append("g").attr("id", "wire-layer");
       this.componentLayer = this.mainGroup.append("g").attr("id", "component-layer");
 
-      this.componentList = container.append("div")
-        .attr("class", "component-list");
 
 
       this.Wires = new WireCollection();
       this.Components = new ComponentCollection();
       this.Terminals = new TerminalCollection();
 
-      var self = this;
 
       function updateWindow() {
         var d = document,
@@ -48,9 +55,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         x = window.innerWidth || e.clientWidth || g.clientWidth;
         y = window.innerHeight || e.clientHeight || g.clientHeight;
 
-        var listWidth = parseInt(self.componentList.style("width"));
+        var listWidth = parseInt(self.componentLibrary.componentList.style("width"));
         svg.attr("width", x - listWidth).attr("height", y);
-        self.componentList.style("height", y);
+        self.componentLibrary.componentList.style("height", y);
 
         self.controlTarget
           .attr("width", x).attr("height", y);
@@ -60,35 +67,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       updateWindow();
       window.onresize = updateWindow;
 
-
-
-
-      d3.json(componentPath+components, function (components) {
-        for (var i = 0, l = components.length; i < l; i++) {
-
-          var componentDescription = components[i];
-
-          self.componentList.append("div")
-            .attr("class", "component-option")
-            .attr("id", componentDescription.name)
-            .datum(componentDescription)
-            .text(componentDescription.name);
-
-        }
-        d3.selectAll(".component-option").on("click", function() {
-          self.clickComponentMenuOption(d3.select(d3.event.target).datum());
-        });
-      });
-
-
-      this.clickComponentMenuOption = function(componentDescription) {
-
-        self.setCursorMode({
-          action:"component",
-          cursor:"crosshair",
-          component: componentDescription
-        });
-      };
 
 
       this.autographDispatch = d3.dispatch("terminal_mousedown");
