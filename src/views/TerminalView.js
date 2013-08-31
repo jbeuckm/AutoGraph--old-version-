@@ -133,9 +133,7 @@ define(['backbone'], function (Backbone) {
 
       var m = this.model;
 
-
       var pos = getBBoxInScreenSpace(this.rect.node());
-
 
       m.set("anchorX", pos.x + pos.width / 2);
       m.set("anchorY", pos.y + pos.height / 2);

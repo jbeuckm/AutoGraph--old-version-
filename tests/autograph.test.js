@@ -40,7 +40,6 @@ describe('AutoGraph', function() {
 
   describe('creates components and wires', function(){
 
-
     before(function(ready){
       a.componentLibrary.loadComponentClasses(buttonComponent, function(b){
         loadedButton = b;
@@ -54,10 +53,20 @@ describe('AutoGraph', function() {
 
     it('should create a wire between components', function() {
 
+      var wireCount = a.Wires.length;
+
       var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:370, y:30});
 
       var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:440, y:30});
 
+      var origin = button.outputs['output'].model;
+      var destination = value.inputs['input'].model;
+
+      a.terminalMouseDown(origin);
+      var newWire = a.placeNewWire(origin.cid, destination.cid);
+
+      expect(newWire).to.not.equal(null);
+      expect(a.Wires.length).to.equal(wireCount + 1);
     });
 
   });

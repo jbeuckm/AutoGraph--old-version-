@@ -197,6 +197,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           destination.get("component").trigger("change");
 
           self.Wires.add(self.cursorMode.wire);
+
+          return self.cursorMode.wire;
         }
       };
 
