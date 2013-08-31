@@ -1,14 +1,16 @@
 
 
-define(['backbone', 'd3', 'models/CursorModel',
+define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
-  function (Backbone, d3, CursorModel,
+  function (Backbone, d3, CursorModel, ComponentLibrary,
             BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
             BaseComponentView, WebviewComponentView, WireView) {
 
     return function (containerId, components, componentPath) {
+
+      this.componentLibrary = new ComponentLibrary(componentPath);
 
       var container = d3.select("#" + containerId);
       container
@@ -22,7 +24,7 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       this.mainGroup = svg.append("g");
       this.controlLayer = this.mainGroup.append("g").attr("id", "control-layer");
-      var controlTarget = this.controlLayer.append("rect")
+      this.controlTarget = this.controlLayer.append("rect")
         .style("fill", "rgba(100,100,100,.1)");
 
       this.wireLayer = this.mainGroup.append("g").attr("id", "wire-layer");
@@ -50,7 +52,7 @@ define(['backbone', 'd3', 'models/CursorModel',
         svg.attr("width", x - listWidth).attr("height", y);
         self.componentList.style("height", y);
 
-        controlTarget
+        self.controlTarget
           .attr("width", x).attr("height", y);
 
       }
@@ -59,21 +61,6 @@ define(['backbone', 'd3', 'models/CursorModel',
       window.onresize = updateWindow;
 
 
-      var classRegistry = {};
-
-      function getClass(className, path, callback) {
-        if (classRegistry[className]) {
-          callback(classRegistry[className]);
-        }
-        else {
-          $.get(path, function (str) {
-            eval(str);
-            classRegistry[className] = eval(className);
-            callback(classRegistry[className]);
-          });
-        }
-      }
-      this.getClass = getClass;
 
 
       d3.json(componentPath+components, function (components) {
@@ -166,12 +153,12 @@ define(['backbone', 'd3', 'models/CursorModel',
               y: d3.event.y
             };
 
-            self.loadComponentClasses(self.cursorMode.component, function(loaded){
+            self.componentLibrary.loadComponentClasses(self.cursorMode.component, function(loaded){
               self.placeNewModel(loaded.modelClass, loaded.viewClass, position);
             });
 
             if (!d3.event.shiftKey) {
-              clearCursorMode();
+              self.clearCursorMode();
             }
 
             break;
@@ -220,40 +207,13 @@ define(['backbone', 'd3', 'models/CursorModel',
               self.cursorMode.wire.destroy();
             }
 
-            clearCursorMode();
+            self.clearCursorMode();
             break;
 
         }
 
       });
 
-
-      self.loadComponentClasses = function(componentDescription, callback) {
-
-        var modelClass = componentDescription.model;
-        var viewClass = componentDescription.view;
-        var fullpath = componentDescription.path || "src/components/";
-
-        var result = {};
-
-        getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
-
-          result.modelClass = mc;
-
-          if (viewClass) {
-
-            getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
-              result.viewClass = vc;
-              callback(result);
-            });
-          }
-          else {
-             result.viewClass = BaseComponentView;
-            callback(result);
-          }
-
-        });
-      };
 
 
       self.placeNewModel = function(modelClass, viewClass, position) {
@@ -287,11 +247,10 @@ define(['backbone', 'd3', 'models/CursorModel',
         self.cursorMode = mode;
       };
 
-      function clearCursorMode() {
+      self.clearCursorMode = function() {
         d3.select("body").style("cursor", null);
         self.cursorMode = null;
-      }
-      self.clearCursorMode = clearCursorMode;
+      };
 
 
         d3.select("body")
@@ -300,7 +259,7 @@ define(['backbone', 'd3', 'models/CursorModel',
             if (self.cursorMode.wire) {
               self.cursorMode.wire.destroy();
             }
-            clearCursorMode();
+            self.clearCursorMode();
           }
         });
 
@@ -344,7 +303,7 @@ define(['backbone', 'd3', 'models/CursorModel',
         selectRect.remove();
       });
 
-      controlTarget.call(selectDragger);
+      self.controlTarget.call(selectDragger);
     };
 
   });

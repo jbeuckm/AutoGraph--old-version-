@@ -42,9 +42,9 @@ describe('AutoGraph', function() {
 
 
     before(function(ready){
-      a.loadComponentClasses(buttonComponent, function(b){
+      a.componentLibrary.loadComponentClasses(buttonComponent, function(b){
         loadedButton = b;
-        a.loadComponentClasses(valueComponent, function(v){
+        a.componentLibrary.loadComponentClasses(valueComponent, function(v){
           loadedValue = v;
           ready();
         });
