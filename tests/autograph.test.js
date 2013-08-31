@@ -3,6 +3,18 @@ var expect = chai.expect;
 describe('AutoGraph', function() {
 
   var a;
+  var buttonComponent = {
+    "name": "button",
+    "model": "ButtonComponent",
+    "view": "ButtonComponentView"
+  };
+  var loadedButton;
+  var valueComponent = {
+    "name": "value",
+    "model": "ValueComponent",
+    "view": "ValueComponentView"
+  };
+  var loadedValue;
 
   before(function(){
     a = new autograph('container', 'components.json', '../');
@@ -19,35 +31,38 @@ describe('AutoGraph', function() {
 
 
   it('should select a component list item', function() {
-    var buttonComponent = {
-      "name": "button",
-      "model": "ButtonComponent",
-      "view": "ButtonComponentView"
-    };
     a.clickComponentMenuOption(buttonComponent);
     expect(a.cursorMode.component).to.equal(buttonComponent);
-    a.placeNewModel(a.cursorMode, {x:360, y:30});
     a.clearCursorMode();
+    expect(a.cursorMode).to.equal(null);
+  });
 
-    var valueComponent = {
-      "name": "value",
-      "model": "ValueComponent",
-      "view": "ValueComponentView"
-    };
-    a.clickComponentMenuOption(valueComponent);
-    a.placeNewModel(a.cursorMode, {x:440, y:30});
-    a.clearCursorMode();
+
+  describe('creates components and wires', function(){
+
+
+    before(function(ready){
+      a.loadComponentClasses(buttonComponent, function(b){
+        loadedButton = b;
+        a.loadComponentClasses(valueComponent, function(v){
+          loadedValue = v;
+          ready();
+        });
+
+      });
+    });
+
+    it('should create a wire between components', function() {
+
+      var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:370, y:30});
+
+      var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:440, y:30});
+
+    });
 
   });
 
-  /*
-    it('can instantiate a BaseComponent', function(){
-      autograph.getClass('BaseComponent', "../src/components/", function(bc){
-        expect(bc).to.not.equal(null);
-      });
-  //    var bc = new BaseComponent();
-    });
-  */
+
 });
 
 

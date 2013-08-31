@@ -78,11 +78,15 @@ define(['backbone', 'd3', 'models/CursorModel',
 
       d3.json(componentPath+components, function (components) {
         for (var i = 0, l = components.length; i < l; i++) {
+
+          var componentDescription = components[i];
+
           self.componentList.append("div")
             .attr("class", "component-option")
-            .attr("id", components[i].name)
-            .datum(components[i])
-            .text(components[i].name);
+            .attr("id", componentDescription.name)
+            .datum(componentDescription)
+            .text(componentDescription.name);
+
         }
         d3.selectAll(".component-option").on("click", function() {
           self.clickComponentMenuOption(d3.select(d3.event.target).datum());
@@ -131,12 +135,13 @@ define(['backbone', 'd3', 'models/CursorModel',
         }
 
         var newWire = new WireModel({
-          originTerminalId:terminal.cid
+          autograph: self,
+          originTerminalId: terminal.cid
         });
 
         var newWireView = new WireView({
-          model:newWire,
-          el:self.wireLayer.append("g")[0]
+          model: newWire,
+          el: self.wireLayer.append("g")[0]
         });
         newWireView.render();
 
@@ -161,7 +166,9 @@ define(['backbone', 'd3', 'models/CursorModel',
               y: d3.event.y
             };
 
-            self.placeNewModel(self.cursorMode, position);
+            self.loadComponentClasses(self.cursorMode.component, function(loaded){
+              self.placeNewModel(loaded.modelClass, loaded.viewClass, position);
+            });
 
             if (!d3.event.shiftKey) {
               clearCursorMode();
@@ -221,42 +228,54 @@ define(['backbone', 'd3', 'models/CursorModel',
       });
 
 
-      self.placeNewModel = function(mode, position) {
+      self.loadComponentClasses = function(componentDescription, callback) {
 
-        var self = this;
+        var modelClass = componentDescription.model;
+        var viewClass = componentDescription.view;
+        var fullpath = componentDescription.path || "src/components/";
 
-        var modelClass = mode.component.model;
-        var viewClass = mode.component.view;
-        var fullpath = mode.component.path || "src/components/";
+        var result = {};
 
         getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
 
-          var model = new mc({
-            autograph: self,
-            x: position.x,
-            y: position.y
-          });
-          self.Components.add(model);
+          result.modelClass = mc;
 
           if (viewClass) {
 
             getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
-              var view = new vc({
-                model:model,
-                el:self.componentLayer.append("g")[0]
-              });
-              view.render();
+              result.viewClass = vc;
+              callback(result);
             });
           }
           else {
-            var view = new BaseComponentView({
-              model:model,
-              el:self.componentLayer.append("g")[0]
-            });
-            view.render();
+             result.viewClass = BaseComponentView;
+            callback(result);
           }
 
         });
+      };
+
+
+      self.placeNewModel = function(modelClass, viewClass, position) {
+
+        var self = this;
+
+        var model = new modelClass({
+          autograph: self,
+          x: position.x,
+          y: position.y
+        });
+        self.Components.add(model);
+
+
+        var view = new viewClass({
+          model:model,
+          el:self.componentLayer.append("g")[0]
+        });
+        view.render();
+
+        return model;
+
       };
 
 
