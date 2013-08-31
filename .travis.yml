@@ -3,7 +3,7 @@ node_js:
     - "0.10"
 before_script:
     - "npm install -g mocha-phantomjs"
-    - "node r.js -o build.js"
+    - "node src/lib/r.js -o build.js"
 branches:
     only:
         - master

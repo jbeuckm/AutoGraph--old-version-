@@ -2,7 +2,7 @@
   baseUrl:"./src/",
   name:"main",
   paths:{
-    requireLib:'require',
+    requireLib:'lib/require',
     "underscore":"lib/underscore-min",
     "jquery":"lib/jquery-1.10.2.min",
     "backbone":"lib/backbone-min",
