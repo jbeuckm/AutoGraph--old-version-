@@ -25,7 +25,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         var self = this;
 
         this.process(inputTerminalValues, function(results){
-//console.log("processCallback()");
+
           console.log("process results for "+self.label);
           console.log(results);
 

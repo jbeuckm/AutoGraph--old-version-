@@ -3,12 +3,20 @@ var expect = chai.expect;
 describe('AutoGraph', function() {
 
   var a;
+  var baseComponent = {
+    "name": "base components",
+    "model": "BaseComponent",
+    "view": "BaseComponentView"
+  };
+  var loadedBaseComponent;
+
   var buttonComponent = {
     "name": "button",
     "model": "ButtonComponent",
     "view": "ButtonComponentView"
   };
   var loadedButton;
+
   var valueComponent = {
     "name": "value",
     "model": "ValueComponent",
@@ -37,6 +45,32 @@ describe('AutoGraph', function() {
     expect(a.cursorMode).to.equal(null);
   });
 
+  describe('creates a base component', function() {
+
+    var bc;
+
+    before(function(ready){
+      a.componentLibrary.loadComponentClasses(baseComponent, function(b){
+        loadedBaseComponent = b;
+        ready();
+      });
+    });
+
+    it('should add the base component to the collection', function() {
+      var componentCount = a.Components.length;
+      bc = a.placeNewModel(loadedBaseComponent.modelClass, loadedBaseComponent.viewClass, {x:370, y:10});
+      expect(a.Components.length).to.equal(componentCount + 1);
+    });
+
+    it('should transmit a bang from in to out', function(done) {
+      var input = bc.inputs['input'].model;
+      var output = bc.outputs['output'].model;
+
+      output.on("bang", done);
+      input.receiveBang();
+    });
+
+  });
 
   describe('creates components and wires', function(){
 
@@ -55,9 +89,9 @@ describe('AutoGraph', function() {
 
       var wireCount = a.Wires.length;
 
-      var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:370, y:10});
+      var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:470, y:10});
 
-      var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:490, y:60});
+      var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:590, y:60});
 
       var origin = button.outputs['output'].model;
       var destination = value.inputs['input'].model;
