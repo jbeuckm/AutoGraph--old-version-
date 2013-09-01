@@ -55,9 +55,9 @@ describe('AutoGraph', function() {
 
       var wireCount = a.Wires.length;
 
-      var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:370, y:30});
+      var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x:370, y:10});
 
-      var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:440, y:30});
+      var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x:490, y:60});
 
       var origin = button.outputs['output'].model;
       var destination = value.inputs['input'].model;

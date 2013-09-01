@@ -79,12 +79,12 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           "controlPointX": self.cursorModel.get("anchorX"),
           "controlPointY": self.cursorModel.get("anchorY")
         });
-
+console.log(d3.event);
         self.cursorModel.set({
-          "x": d3.event.x,
-          "y": d3.event.y,
-          "anchorX": d3.event.x,
-          "anchorY": d3.event.y
+          "x": d3.event.offsetX,
+          "y": d3.event.offsetY,
+          "anchorX": d3.event.offsetX,
+          "anchorY": d3.event.offsetY
         });
 
       });
@@ -127,8 +127,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           case "component":
 
             var position = {
-              x: d3.event.x,
-              y: d3.event.y
+              x: d3.event.offsetX,
+              y: d3.event.offsetY
             };
 
             self.componentLibrary.loadComponentClasses(self.cursorMode.component, function(loaded){

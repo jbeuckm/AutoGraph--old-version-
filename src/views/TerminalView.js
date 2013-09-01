@@ -132,8 +132,7 @@ define(['backbone'], function (Backbone) {
 
         var svg = m.get("component").get("autograph").svg.node();
         var trans = element.getTransformToElement(svg);
-console.log(trans);
-//        return getBoundingBoxInArbitrarySpace(element, element.getScreenCTM());
+
         return getBoundingBoxInArbitrarySpace(element, trans);
       }
 
