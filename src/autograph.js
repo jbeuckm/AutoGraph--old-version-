@@ -79,7 +79,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           "controlPointX": self.cursorModel.get("anchorX"),
           "controlPointY": self.cursorModel.get("anchorY")
         });
-console.log(d3.event);
+
         self.cursorModel.set({
           "x": d3.event.offsetX,
           "y": d3.event.offsetY,
