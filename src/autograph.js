@@ -167,7 +167,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       self.placeNewWire = function(originId, destinationId) {
 
         var origin = self.Terminals.get(originId);
+        origin.trigger("change");
         var destination = self.Terminals.get(destinationId);
+        destination.trigger("change");
 
         // can't connect terminal to itself
         if (destinationId == originId) {

@@ -36,8 +36,6 @@ define(['backbone'], function (Backbone) {
       rect
         .on("mouseover", function () {
 
-          self.updateAnchorPoints();
-
           self.label.style("visibility", "visible");
 
           enabled = true;
@@ -60,8 +58,6 @@ define(['backbone'], function (Backbone) {
         })
         .on("mousedown", function () {
           d3.event.cancelBubble = true;
-
-          self.updateAnchorPoints();
 
           m.get("autograph").autographDispatch.terminal_mousedown(m);
         });
