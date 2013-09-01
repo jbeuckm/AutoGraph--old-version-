@@ -68,8 +68,7 @@ define(['backbone'], function (Backbone) {
 
     updateAnchorPoints:function () {
 
-
-      function getBoundingBoxInArbitrarySpace(element,mat){
+      function getBoundingBoxInArbitrarySpace(element, mat){
         var svgRoot = element.ownerSVGElement;
         var bbox = element.getBBox();
 
@@ -127,11 +126,17 @@ define(['backbone'], function (Backbone) {
         return newBBox;
       }
 
+      var m = this.model;
+
       function getBBoxInScreenSpace(element){
-        return getBoundingBoxInArbitrarySpace(element,element.getScreenCTM());
+
+        var svg = m.get("component").get("autograph").svg.node();
+        var trans = element.getTransformToElement(svg);
+console.log(trans);
+//        return getBoundingBoxInArbitrarySpace(element, element.getScreenCTM());
+        return getBoundingBoxInArbitrarySpace(element, trans);
       }
 
-      var m = this.model;
 
       var pos = getBBoxInScreenSpace(this.rect.node());
 
