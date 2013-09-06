@@ -98,6 +98,7 @@ describe('AutoGraph', function() {
 
       a.terminalMouseDown(origin);
       var newWire = a.placeNewWire(origin.cid, destination.cid);
+      a.clearCursorMode();
 
       expect(newWire).to.not.equal(null);
       expect(a.Wires.length).to.equal(wireCount + 1);
