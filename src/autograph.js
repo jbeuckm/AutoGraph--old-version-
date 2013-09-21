@@ -76,15 +76,15 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       svg.on("mousemove", function () {
 
         self.cursorModel.set({
-          "controlPointX": self.cursorModel.get("anchorX"),
-          "controlPointY": self.cursorModel.get("anchorY")
+          controlPointX: self.cursorModel.get("anchorX"),
+          controlPointY: self.cursorModel.get("anchorY")
         });
 
         self.cursorModel.set({
-          "x": d3.event.offsetX,
-          "y": d3.event.offsetY,
-          "anchorX": d3.event.offsetX,
-          "anchorY": d3.event.offsetY
+          x: d3.event.offsetX,
+          y: d3.event.offsetY,
+          anchorX: d3.event.offsetX,
+          anchorY: d3.event.offsetY
         });
 
       });
