@@ -205,7 +205,14 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-
+      /**
+       *
+       * @param modelClass
+       * @param viewClass
+       * @param position
+       *
+       * @return {BaseComponent}
+       */
       self.placeNewModel = function(modelClass, viewClass, position) {
 
         var self = this;
@@ -217,7 +224,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         });
         self.Components.add(model);
 
-
         var view = new viewClass({
           model:model,
           el:self.componentLayer.append("g")[0]
@@ -225,7 +231,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         view.render();
 
         return model;
-
       };
 
 

@@ -85,7 +85,7 @@ describe('AutoGraph', function() {
       });
     });
 
-    it('should create a wire between components', function() {
+    it('should create a wire between components', function(done) {
 
       var wireCount = a.Wires.length;
 
@@ -95,6 +95,7 @@ describe('AutoGraph', function() {
 
       var origin = button.outputs['output'].model;
       var destination = value.inputs['input'].model;
+      var valueOutput = value.outputs['output'].model;
 
       a.terminalMouseDown(origin);
       var newWire = a.placeNewWire(origin.cid, destination.cid);
@@ -102,6 +103,9 @@ describe('AutoGraph', function() {
 
       expect(newWire).to.not.equal(null);
       expect(a.Wires.length).to.equal(wireCount + 1);
+
+      valueOutput.on("bang", done);
+      button.receiveBang();
     });
 
   });
