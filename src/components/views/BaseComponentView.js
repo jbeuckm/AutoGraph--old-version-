@@ -8,10 +8,19 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
       var m = this.model;
 
+      var self = this;
+
       var dragger = d3.behavior.drag();
+      dragger.on("dragstart", function(){
+          if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) {
+            self.ignoreDrag = true;
+          }
+      });
       dragger.on("drag", function () {
 
-        if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) return;
+        if (self.ignoreDrag) {
+          return;
+        }
 
         this.parentNode.appendChild(this);
         var dragTarget = d3.select(this);
@@ -40,6 +49,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       // this tells the wire views to update
       dragger.on("dragend", function(){
         m.trigger("change");
+        self.ignoreDrag = false;
       });
 
       this.d3
