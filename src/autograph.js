@@ -224,8 +224,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         self.Components.add(model);
 
         var view = new viewClass({
-          model:model,
-          el:self.componentLayer.append("g")[0]
+          model: model,
+          el: self.componentLayer.append("g")[0]
         });
         view.render();
 
