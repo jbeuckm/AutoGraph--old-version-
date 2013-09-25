@@ -46,7 +46,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       this.Terminals = new TerminalCollection();
 
 
-      function updateWindow() {
+      function resizeWindow() {
         var d = document,
           e = d.documentElement,
           g = d.getElementsByTagName('body')[0];
@@ -62,9 +62,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           .attr("width", x).attr("height", y);
 
       }
-
-      updateWindow();
-      window.onresize = updateWindow;
+      resizeWindow();
+      window.onresize = resizeWindow;
 
 
 
