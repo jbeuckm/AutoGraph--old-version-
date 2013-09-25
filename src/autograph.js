@@ -67,7 +67,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
 
-      this.autographDispatch = d3.dispatch("terminal_mousedown");
       this.cursorMode = null;
 
       this.cursorModel = new CursorModel();
@@ -89,7 +88,18 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       });
 
 
-      // start drawing a new wire
+      this.componentLayer.on("mousedown", function () {
+        console.log("componentLayer mousedown");
+        if (d3.select(d3.event.target).classed("component-terminal")) {
+          var terminalId = d3.event.target.dataset.terminal;
+          console.log("click terminal "+terminalId);
+
+          var terminal = self.Terminals.get(terminalId);
+          self.terminalMouseDown(terminal);
+        }
+      });
+
+        // start drawing a new wire
       self.terminalMouseDown = function(terminal) {
 
         if (terminal.className == "InputTerminalModel") {
@@ -114,7 +124,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         });
 
       };
-      this.autographDispatch.on("terminal_mousedown", self.terminalMouseDown, self);
 
 
       self.mouseUp = function() {

@@ -31,7 +31,8 @@ define(['backbone'], function (Backbone) {
         .attr("height", 4)
         .attr("width", 15)
         .classed("component-terminal", true)
-        .attr("data-model", this.model);
+        .classed("nodrag", true)
+        .attr("data-terminal", m.cid);
 
       rect
         .on("mouseover", function () {
@@ -55,11 +56,6 @@ define(['backbone'], function (Backbone) {
             .classed("enabled", false)
             .transition().duration(200)
             .attr("height", 4);
-        })
-        .on("mousedown", function () {
-          d3.event.cancelBubble = true;
-
-          m.get("autograph").autographDispatch.terminal_mousedown(m);
         });
 
       return rect;
