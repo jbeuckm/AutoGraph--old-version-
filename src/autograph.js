@@ -65,7 +65,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
       this.cursorModel = new CursorModel();
 
-      this.listenTo(this.componentLayer, "mousedown", function () {
+      this.componentLayer.on("mousedown", function () {
         if (d3.select(d3.event.target).classed("component-terminal")) {
           var terminalId = d3.event.target.dataset.terminal;
           var terminal = self.Terminals.get(terminalId);
@@ -104,8 +104,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-      this.listenTo(svg, "mousemove", function () {
-        console.log(self.cursorModel);
+      svg.on("mousemove", function () {
 
         self.cursorModel.set({
           controlPointX: self.cursorModel.get("anchorX"),
@@ -166,7 +165,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         }
 
       };
-      this.listenTo(svg, "mouseup", self.mouseUp, self);
+      svg.on("mouseup", self.mouseUp, self);
 
 
       self.placeNewWire = function (originId, destinationId) {
@@ -196,7 +195,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           destination.listenTo(origin, "bang", destination.receiveBang, destination);
           destination.listenTo(origin, "change:value", destination.receiveValue, destination);
 
-          self.listenTo(self.cursorMode.wire, "destroy", function () {
+          self.cursorMode.wire.on("destroy", function () {
             destination.stopListening(origin);
           });
 
@@ -253,7 +252,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-      this.listenTo(d3.select("body"), "keydown", function (e) {
+      d3.select("body").on("keydown", function (e) {
         if (d3.event.which == 27) {
           if (self.cursorMode.wire) {
             self.cursorMode.wire.destroy();
