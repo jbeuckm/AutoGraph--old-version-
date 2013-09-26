@@ -54,14 +54,7 @@ define(['backbone'], function (Backbone) {
       var self = this;
 
       this.listenTo(m, "destroy", function() {
-
         self.d3.remove();
-/*
-        lineGraph.remove();
-        lineGraphTarget.remove();
-
-        self.stopListening([origin, destination]);
-*/
       });
 
     },

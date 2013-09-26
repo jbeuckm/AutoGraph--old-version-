@@ -171,9 +171,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       self.placeNewWire = function (originId, destinationId) {
 
         var origin = self.Terminals.get(originId);
-        origin.trigger("change");
+        origin.get("component").trigger("change");
         var destination = self.Terminals.get(destinationId);
-        destination.trigger("change");
+        destination.get("component").trigger("change");
 
         // can't connect terminal to itself
         if (destinationId == originId) {
@@ -192,6 +192,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
           self.cursorMode.wire.set("destinationTerminalId", destinationId);
 
+          var newWireView = self.cursorMode.wireView;
+          newWireView.listenTo(destination, "change", newWireView.render, newWireView);
+          newWireView.render();
+
           destination.listenTo(origin, "bang", destination.receiveBang, destination);
           destination.listenTo(origin, "change:value", destination.receiveValue, destination);
 
@@ -200,8 +204,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           });
 
           // this makes sure the anchor points are updated before redrawing wire
-          origin.get("component").trigger("change");
-          destination.get("component").trigger("change");
+//          origin.get("component").trigger("change");
+//          destination.get("component").trigger("change");
 
           self.Wires.add(self.cursorMode.wire);
 
