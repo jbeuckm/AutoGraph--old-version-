@@ -1,12 +1,8 @@
-
-
 define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTool',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
-  function (Backbone, d3, CursorModel, ComponentLibrary, SelectionTool,
-            BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection,
-            BaseComponentView, WebviewComponentView, WireView) {
+  function (Backbone, d3, CursorModel, ComponentLibrary, SelectionTool, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WebviewComponentView, WireView) {
 
     return function (containerId, components, componentPath) {
 
@@ -17,10 +13,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         .classed("autograph", true);
 
 
-      self.clickComponentMenuOption = function(componentDescription) {
+      self.clickComponentMenuOption = function (componentDescription) {
         self.setCursorMode({
-          action:"component",
-          cursor:"crosshair",
+          action: "component",
+          cursor: "crosshair",
           component: componentDescription
         });
       };
@@ -40,7 +36,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       this.componentLayer = this.mainGroup.append("g").attr("id", "component-layer");
 
 
-
       this.Wires = new WireCollection();
       this.Components = new ComponentCollection();
       this.Terminals = new TerminalCollection();
@@ -58,37 +53,19 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         svg.attr("width", x - listWidth).attr("height", y);
         self.componentLibrary.componentList.style("height", y);
 
-        self.controlTarget
-          .attr("width", x).attr("height", y);
+        self.controlTarget.attr("width", x).attr("height", y);
 
       }
+
       resizeWindow();
       window.onresize = resizeWindow;
-
 
 
       this.cursorMode = null;
 
       this.cursorModel = new CursorModel();
 
-      svg.on("mousemove", function () {
-
-        self.cursorModel.set({
-          x: d3.event.offsetX,
-          y: d3.event.offsetY,
-          anchorX: d3.event.offsetX,
-          anchorY: d3.event.offsetY
-        });
-
-        self.cursorModel.set({
-          controlPointX: self.cursorModel.get("anchorX"),
-          controlPointY: self.cursorModel.get("anchorY")
-        });
-
-      });
-
-
-      this.componentLayer.on("mousedown", function () {
+      this.listenTo(this.componentLayer, "mousedown", function () {
         if (d3.select(d3.event.target).classed("component-terminal")) {
           var terminalId = d3.event.target.dataset.terminal;
           var terminal = self.Terminals.get(terminalId);
@@ -96,13 +73,16 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         }
       });
 
-        // start drawing a new wire
-      self.terminalMouseDown = function(terminal) {
+      // start drawing a new wire
+      self.terminalMouseDown = function (terminal) {
 
         if (terminal.className == "InputTerminalModel") {
           console.log("can not originate connection at input");
           return;
         }
+
+        // update the anchor points to draw the temp wire
+        terminal.get("component").trigger("change");
 
         var newWire = new WireModel({
           autograph: self,
@@ -116,14 +96,33 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         newWireView.render();
 
         self.setCursorMode({
-          action:"wire",
-          wire:newWire
+          action: "wire",
+          wire: newWire,
+          wireView: newWireView
         });
 
       };
 
 
-      self.mouseUp = function() {
+      this.listenTo(svg, "mousemove", function () {
+        console.log(self.cursorModel);
+
+        self.cursorModel.set({
+          controlPointX: self.cursorModel.get("anchorX"),
+          controlPointY: self.cursorModel.get("anchorY")
+        });
+
+        self.cursorModel.set({
+          x: d3.event.offsetX,
+          y: d3.event.offsetY,
+          anchorX: d3.event.offsetX,
+          anchorY: d3.event.offsetY
+        });
+
+      });
+
+
+      self.mouseUp = function () {
 
         if (!self.cursorMode) return;
 
@@ -136,7 +135,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
               y: d3.event.offsetY
             };
 
-            self.componentLibrary.loadComponentClasses(self.cursorMode.component, function(loaded){
+            self.componentLibrary.loadComponentClasses(self.cursorMode.component, function (loaded) {
               self.placeNewModel(loaded.modelClass, loaded.viewClass, position);
             });
 
@@ -148,6 +147,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
           case "wire":
+
+            self.cursorMode.wireView.stopListening(self.cursorModel);
 
             var originId = self.cursorMode.wire.get("originTerminalId");
             var destinationId = self.cursorModel.get("activeTerminal");
@@ -165,11 +166,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         }
 
       };
-      svg.on("mouseup", self.mouseUp, self);
+      this.listenTo(svg, "mouseup", self.mouseUp, self);
 
 
-
-      self.placeNewWire = function(originId, destinationId) {
+      self.placeNewWire = function (originId, destinationId) {
 
         var origin = self.Terminals.get(originId);
         origin.trigger("change");
@@ -193,11 +193,11 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
           self.cursorMode.wire.set("destinationTerminalId", destinationId);
 
-          origin.on("bang", destination.receiveBang, destination);
-          origin.on("change:value", destination.receiveValue, destination);
-          self.cursorMode.wire.on("destroy", function () {
-            origin.off("bang", destination.receiveBang, destination);
-            origin.off("change:value", destination.receiveValue, destination);
+          destination.listenTo(origin, "bang", destination.receiveBang, destination);
+          destination.listenTo(origin, "change:value", destination.receiveValue, destination);
+
+          self.listenTo(self.cursorMode.wire, "destroy", function () {
+            destination.stopListening(origin);
           });
 
           // this makes sure the anchor points are updated before redrawing wire
@@ -219,7 +219,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
        *
        * @return {BaseComponent}
        */
-      self.placeNewModel = function(modelClass, viewClass, position) {
+      self.placeNewModel = function (modelClass, viewClass, position) {
 
         var self = this;
 
@@ -240,21 +240,20 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-
-      self.setCursorMode = function(mode) {
+      self.setCursorMode = function (mode) {
         if (mode.cursor) {
           d3.select("body").style("cursor", "crosshair");
         }
         self.cursorMode = mode;
       };
 
-      self.clearCursorMode = function() {
+      self.clearCursorMode = function () {
         d3.select("body").style("cursor", null);
         self.cursorMode = null;
       };
 
 
-      d3.select("body").on("keydown", function (e) {
+      this.listenTo(d3.select("body"), "keydown", function (e) {
         if (d3.event.which == 27) {
           if (self.cursorMode.wire) {
             self.cursorMode.wire.destroy();

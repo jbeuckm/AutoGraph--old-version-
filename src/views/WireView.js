@@ -27,14 +27,13 @@ define(['backbone'], function (Backbone) {
         .style("pointer-events", "none");
 
 
-      lineGraphTarget
-        .on("mouseover", function(){
-          lineGraphTarget.attr("stroke", "#333")
-        })
-        .on("mouseout", function(){
-          lineGraphTarget.attr("stroke", "transparent")
-        });
-      lineGraphTarget.on("contextmenu", function(data, index) {
+      this.listenTo(lineGraphTarget, "mouseover", function(){
+        lineGraphTarget.attr("stroke", "#333")
+      });
+      this.listenTo(lineGraphTarget, "mouseout", function(){
+        lineGraphTarget.attr("stroke", "transparent")
+      });
+      this.listenTo(lineGraphTarget, "contextmenu", function(data, index) {
 
         d3.event.preventDefault();
 
@@ -49,22 +48,26 @@ define(['backbone'], function (Backbone) {
       var origin = m.getOriginModel();
       var destination = m.getDestinationModel();
 
-      origin.on("change", this.render, this);
-      destination.on("change", this.render, this);
+      this.listenTo(origin, "change", this.render, this);
+      this.listenTo(destination, "change", this.render, this);
 
       var self = this;
-      m.on("destroy", function () {
+
+      this.listenTo(m, "destroy", function() {
+
+        self.d3.remove();
+/*
         lineGraph.remove();
         lineGraphTarget.remove();
 
-        origin.off("change", self.render, self);
-        destination.off("change", self.render, self);
+        self.stopListening([origin, destination]);
+*/
       });
 
     },
 
     render:function () {
-
+console.log("WireView::render()");
       var m = this.model;
 
       if (m.get("originTerminalId")) {
