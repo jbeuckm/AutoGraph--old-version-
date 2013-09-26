@@ -133,8 +133,8 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
         var view = new InputTerminalView({
           autograph: this.model.get("autograph"),
-          model:input.model,
-          el:this.inputTerminalHolder.append("g")[0]
+          model: input.model,
+          el: this.inputTerminalHolder.append("g")[0]
         });
 
         this.model.on("change", view.updateAnchorPoints, view);

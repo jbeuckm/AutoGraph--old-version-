@@ -89,11 +89,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
       this.componentLayer.on("mousedown", function () {
-        console.log("componentLayer mousedown");
         if (d3.select(d3.event.target).classed("component-terminal")) {
           var terminalId = d3.event.target.dataset.terminal;
-          console.log("click terminal "+terminalId);
-
           var terminal = self.Terminals.get(terminalId);
           self.terminalMouseDown(terminal);
         }
@@ -204,6 +201,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           });
 
           // this makes sure the anchor points are updated before redrawing wire
+          origin.get("component").trigger("change");
           destination.get("component").trigger("change");
 
           self.Wires.add(self.cursorMode.wire);

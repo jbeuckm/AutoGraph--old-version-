@@ -24,7 +24,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         var inputTerminalValues = this.readInputValues();
         var self = this;
 
-        this.process(inputTerminalValues, function(results){
+        this.process(inputTerminalValues, function (results) {
 
           console.log("process results for "+self.label);
           console.log(results);
@@ -46,7 +46,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
         return ins;
       },
 
-      updateOutputTerminals: function(values) {
+      updateOutputTerminals:function (values) {
 
         for (var key in values) {
           var output = this.outputs[key];
@@ -57,7 +57,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       process:function (args, callback) {
-        callback( args );
+        callback(args);
       },
 
       sendBang:function () {
@@ -81,8 +81,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
           });
 
           this.listenTo(im, "bang", this.receiveBang);
-          this.listenTo(im, "change:value", function(){
-            console.log("basecomp setting "+input.name+" to "+im.get("value"));
+          this.listenTo(im, "change:value", function () {
+            console.log("basecomp setting " + input.name + " to " + im.get("value"));
             this.set(input.name, im.get("value"))
           });
 

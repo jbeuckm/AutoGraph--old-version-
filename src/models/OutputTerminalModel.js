@@ -13,7 +13,6 @@ define(['models/TerminalModel'], function (TerminalModel) {
     },
 
     sendBang:function () {
-//      console.log("otm sendBang()");
       this.trigger("bang");
     }
 
