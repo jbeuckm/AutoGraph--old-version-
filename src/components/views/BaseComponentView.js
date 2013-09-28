@@ -65,8 +65,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         if (confirm('Delete this component?')) {
           var a = m.get("autograph");
           self.d3.remove();
-          m.destroy();
-
+          self.stopListening();
           a.removeComponent(m);
         }
       });
