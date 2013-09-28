@@ -70,6 +70,12 @@ describe('AutoGraph', function() {
       input.receiveBang();
     });
 
+    it('can remove a component', function() {
+      var componentCount = a.Components.length;
+      a.removeComponent(bc);
+      expect(a.Components.length).to.equal(componentCount - 1);
+    });
+
   });
 
   describe('creates components and wires', function(){

@@ -203,10 +203,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
             destination.stopListening(origin);
           });
 
-          // this makes sure the anchor points are updated before redrawing wire
-//          origin.get("component").trigger("change");
-//          destination.get("component").trigger("change");
-
           self.Wires.add(self.cursorMode.wire);
 
           return self.cursorMode.wire;
@@ -240,6 +236,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         view.render();
 
         return model;
+      };
+
+      self.removeComponent = function(componentModel) {
+
       };
 
 
