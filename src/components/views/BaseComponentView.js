@@ -3,7 +3,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
   return Backbone.View.extend({
 
-    initialize:function () {
+    initialize: function () {
       this.d3 = d3.select(this.el);
 
       var m = this.model;
@@ -65,7 +65,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         if (confirm('Delete this component?')) {
           var a = m.get("autograph");
           self.d3.remove();
-          self.stopListening();
+          self.destroy();
           a.removeComponent(m);
         }
       });
@@ -102,14 +102,14 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
         .attr("dy", '.9em');
     },
 
-    hilight:function () {
+    hilight: function () {
       this.rect
         .style("stroke", "#f00")
         .transition()
         .style("stroke", this.rectColor);
     },
 
-    render:function () {
+    render: function () {
 
       var m = this.model;
 
@@ -148,7 +148,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
       }
     },
 
-    buildOutputs:function (outputs) {
+    buildOutputs: function (outputs) {
 
       var cnt = 0;
       for (var i in outputs) {
