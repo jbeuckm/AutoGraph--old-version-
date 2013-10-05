@@ -240,6 +240,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
       self.removeComponent = function(componentModel) {
         componentModel.destroy();
+//        self.componentLayer.remove(
       };
 
 
