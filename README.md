@@ -6,3 +6,4 @@ AutoGraph
 A browser-based visual data routing automation tool.
 
 ![Screenshot](screenshot.png)
+
