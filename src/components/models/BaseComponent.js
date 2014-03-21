@@ -35,7 +35,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       },
 
       readInputValues:function () {
-//console.log("readInputValues()");
+
         var ins = {};
         for (var key in this.inputs) {
           var input = this.inputs[key].model;
