@@ -1,20 +1,22 @@
 {
-  "name":"AutoGraph",
-  "version":"0.1.0",
-  "author":"Joe Beuckman <joe@beigerecords.com>",
-  "description":"A visual data routing automation tool.",
+  "name": "autograph",
+  "version": "0.1.0",
+  "author": "Joe Beuckman <joe@beigerecords.com>",
+  "description": "A visual data routing automation tool.",
   "devDependencies": {
     "mocha": "*",
-    "chai" : "*"
+    "chai": "*",
+    "grunt": "~0.4.4",
+    "grunt-jsdoc": "~0.5.4"
   },
-  "scripts":{
-    "test":"mocha-phantomjs tests/testRunner.html"
+  "scripts": {
+    "test": "mocha-phantomjs tests/testRunner.html"
   },
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/jbeuckm/AutoGraph.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbeuckm/AutoGraph.git"
   },
-  "keywords":[
+  "keywords": [
     "puredata",
     "Max/MSP",
     "Lily",
