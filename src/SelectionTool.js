@@ -1,3 +1,6 @@
+/*
+ * Draw a dashed line rect when clicking and dragging across the autograph SVG
+ */
 define(['d3'], function(d3){
 
   return function(controlLayer) {
