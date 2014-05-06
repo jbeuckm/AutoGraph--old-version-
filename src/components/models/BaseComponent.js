@@ -1,3 +1,6 @@
+/**
+ * Implement the logic of an AutoGraph component
+ */
 define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTerminalModel'],
   function (PositionedModel, OutputTerminalModel, InputTerminalModel) {
 

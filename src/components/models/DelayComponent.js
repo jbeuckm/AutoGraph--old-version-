@@ -1,3 +1,8 @@
+/**
+ * 
+ *
+ * @type {*}
+ */
 var DelayComponent = BaseComponent.extend({
 
   label: "delay",

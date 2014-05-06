@@ -1,4 +1,8 @@
-
+/**
+ * A Basic button component.
+ *
+ * @type {*}
+ */
 var ButtonComponent = BaseComponent.extend({
 
   label: "button",

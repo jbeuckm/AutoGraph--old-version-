@@ -250,6 +250,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
+      /**
+       * Update the model and view of the cursor
+       * @param mode
+       */
       self.setCursorMode = function (mode) {
         if (mode.cursor) {
           d3.select("body").style("cursor", "crosshair");
@@ -257,6 +261,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         self.cursorMode = mode;
       };
 
+      /**
+       * Return to default cursor mode
+       */
       self.clearCursorMode = function () {
         d3.select("body").style("cursor", null);
         self.cursorMode = null;

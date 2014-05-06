@@ -1,3 +1,6 @@
+/**
+ * Manage available components.
+ */
 define(['jquery', 'components/models/BaseComponent', 'components/views/BaseComponentView', 'components/views/WebviewComponentView'],
   function($, BaseComponent, BaseComponentView, WebviewComponentView){
 
