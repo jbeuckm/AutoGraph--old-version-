@@ -4,7 +4,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
   'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
   function (Backbone, d3, CursorModel, ComponentLibrary, SelectionTool, BaseComponent, WireModel, ComponentCollection, WireCollection, TerminalCollection, BaseComponentView, WebviewComponentView, WireView) {
 
-    /*
+    /**
      * Establish the SVG and component library for the autograph.
      */
     return function (containerId, components, componentPath) {

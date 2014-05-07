@@ -17,4 +17,5 @@ define(['models/TerminalModel'], function (TerminalModel) {
     }
 
   });
+
 });

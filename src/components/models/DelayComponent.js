@@ -1,5 +1,5 @@
 /**
- * 
+ * Transmit a received signal after a given timelapse.
  *
  * @type {*}
  */

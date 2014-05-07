@@ -1,3 +1,6 @@
+/**
+ * Model the connection between two particular terminals.
+ */
 define(['backbone'], function (Backbone) {
   return Backbone.Model.extend({
 
