@@ -1,5 +1,12 @@
+/**
+ * @class
+ * @type {*}
+ */
 var ButtonComponentView = BaseComponentView.extend({
 
+  /**
+   * method
+   */
   addContent:function () {
 
     var m = this.model;
@@ -14,6 +21,9 @@ var ButtonComponentView = BaseComponentView.extend({
       });
   },
 
+  /**
+   * method
+   */
   hilight:function () {
 
     BaseComponentView.prototype.hilight.call(this);

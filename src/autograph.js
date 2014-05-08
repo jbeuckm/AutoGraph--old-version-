@@ -1,3 +1,6 @@
+/**
+ * @module autograph
+ */
 define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTool',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
@@ -6,16 +9,25 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
     /**
      * Establish the SVG and component library for the autograph.
+     * @constructor
      */
     return function (containerId, components, componentPath) {
 
       var self = this;
 
+      /**
+       * @member
+       * @type {*}
+       */
       var container = d3.select("#" + containerId)
         .style("position", "relative")
         .classed("autograph", true);
 
 
+      /**
+       * @method
+       * @param componentDescription
+       */
       self.clickComponentMenuOption = function (componentDescription) {
         self.setCursorMode({
           action: "component",
@@ -23,6 +35,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           component: componentDescription
         });
       };
+      /**
+       * @member
+       * @type {ComponentLibrary}
+       */
       this.componentLibrary = new ComponentLibrary(container, components, componentPath, self.clickComponentMenuOption);
 
       var svg = container.append("svg")
@@ -44,7 +60,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       this.Terminals = new TerminalCollection();
 
 
-      function resizeWindow() {
+      self.resizeWindow = function() {
         var d = document,
           e = d.documentElement,
           g = d.getElementsByTagName('body')[0];
@@ -58,28 +74,39 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
         self.controlTarget.attr("width", x).attr("height", y);
 
-      }
+      };
 
-      resizeWindow();
-      window.onresize = resizeWindow;
+      self.resizeWindow();
+      window.onresize = self.resizeWindow;
 
 
+      /**
+       * @member
+       */
       this.cursorMode = null;
 
+      /**
+       * @member
+       * @type {models.CursorModel}
+       */
       this.cursorModel = new CursorModel();
 
-      this.componentLayer.on("mousedown", function () {
+      /**
+       * @method
+       */
+      self.mouseDown = function() {
         if (d3.select(d3.event.target).classed("component-terminal")) {
           var terminalId = d3.event.target.dataset.terminal;
           var terminal = self.Terminals.get(terminalId);
           self.terminalMouseDown(terminal);
         }
-      });
+      };
+      this.componentLayer.on("mousedown", self.mouseDown);
 
-      /*
+      /**
        * Start drawing a new wire.
        *
-       *
+       * @module
        */
       self.terminalMouseDown = function (terminal) {
 
@@ -127,7 +154,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
       });
 
-
+      /**
+       * @listens mouseup
+       */
       self.mouseUp = function () {
 
         if (!self.cursorMode) return;
@@ -175,6 +204,12 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       svg.on("mouseup", self.mouseUp, self);
 
 
+      /**
+       * @method
+       * @param originId
+       * @param destinationId
+       * @return {*}
+       */
       self.placeNewWire = function (originId, destinationId) {
 
         var origin = self.Terminals.get(originId);
@@ -218,6 +253,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
       /**
+       * @method
        *
        * @param modelClass
        * @param viewClass
@@ -245,13 +281,19 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         return model;
       };
 
+      /**
+       * @method
+       *
+       * @param componentModel
+       */
       self.removeComponent = function(componentModel) {
         componentModel.destroy();
       };
 
 
       /**
-       * Update the model and view of the cursor
+       * Update the model and view of the cursor.
+       * @method
        * @param mode
        */
       self.setCursorMode = function (mode) {
@@ -263,6 +305,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
       /**
        * Return to default cursor mode
+       * @method
        */
       self.clearCursorMode = function () {
         d3.select("body").style("cursor", null);
@@ -270,17 +313,28 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-      d3.select("body").on("keydown", function (e) {
-        if (d3.event.which == 27) {
-          if (self.cursorMode.wire) {
-            self.cursorMode.wire.destroy();
-          }
-          self.clearCursorMode();
+      d3.select("body").on("keydown", self.handleKeyDown);
+
+      /**
+       * @method
+       * @param e
+       */
+      self.handleKeyDown = function (e) {
+        switch (d3.event.which) {
+
+          case 27:
+            if (self.cursorMode.wire) {
+              self.cursorMode.wire.destroy();
+            }
+            self.clearCursorMode();
+            break;
         }
-      });
+
+      };
 
 
       var selectionTool = SelectionTool(self.controlLayer);
+
       self.controlTarget.call(selectionTool);
 
     };

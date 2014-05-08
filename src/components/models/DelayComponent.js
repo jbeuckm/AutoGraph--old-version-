@@ -1,6 +1,7 @@
 /**
  * Transmit a received signal after a given timelapse.
  *
+ * @class
  * @type {*}
  */
 var DelayComponent = BaseComponent.extend({

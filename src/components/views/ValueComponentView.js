@@ -1,3 +1,7 @@
+/**
+ * @class
+ * @type {*}
+ */
 var ValueComponentView = WebviewComponentView.extend({
 
   addContent:function () {

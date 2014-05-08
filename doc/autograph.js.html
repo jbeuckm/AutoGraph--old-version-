@@ -25,7 +25,10 @@
     
     <section>
         <article>
-            <pre class="prettyprint source"><code>define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTool',
+            <pre class="prettyprint source"><code>/**
+ * @module autograph
+ */
+define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTool',
   'components/models/BaseComponent', 'models/WireModel',
   'collections/ComponentCollection', 'collections/WireCollection', 'collections/TerminalCollection',
   'components/views/BaseComponentView', 'components/views/WebviewComponentView', 'views/WireView'],
@@ -33,16 +36,25 @@
 
     /**
      * Establish the SVG and component library for the autograph.
+     * @constructor
      */
     return function (containerId, components, componentPath) {
 
       var self = this;
 
+      /**
+       * @member
+       * @type {*}
+       */
       var container = d3.select("#" + containerId)
         .style("position", "relative")
         .classed("autograph", true);
 
 
+      /**
+       * @method
+       * @param componentDescription
+       */
       self.clickComponentMenuOption = function (componentDescription) {
         self.setCursorMode({
           action: "component",
@@ -50,6 +62,10 @@
           component: componentDescription
         });
       };
+      /**
+       * @member
+       * @type {ComponentLibrary}
+       */
       this.componentLibrary = new ComponentLibrary(container, components, componentPath, self.clickComponentMenuOption);
 
       var svg = container.append("svg")
@@ -71,7 +87,7 @@
       this.Terminals = new TerminalCollection();
 
 
-      function resizeWindow() {
+      self.resizeWindow = function() {
         var d = document,
           e = d.documentElement,
           g = d.getElementsByTagName('body')[0];
@@ -85,28 +101,39 @@
 
         self.controlTarget.attr("width", x).attr("height", y);
 
-      }
+      };
 
-      resizeWindow();
-      window.onresize = resizeWindow;
+      self.resizeWindow();
+      window.onresize = self.resizeWindow;
 
 
+      /**
+       * @member
+       */
       this.cursorMode = null;
 
+      /**
+       * @member
+       * @type {models.CursorModel}
+       */
       this.cursorModel = new CursorModel();
 
-      this.componentLayer.on("mousedown", function () {
+      /**
+       * @method
+       */
+      self.mouseDown = function() {
         if (d3.select(d3.event.target).classed("component-terminal")) {
           var terminalId = d3.event.target.dataset.terminal;
           var terminal = self.Terminals.get(terminalId);
           self.terminalMouseDown(terminal);
         }
-      });
+      };
+      this.componentLayer.on("mousedown", self.mouseDown);
 
-      /*
+      /**
        * Start drawing a new wire.
        *
-       *
+       * @module
        */
       self.terminalMouseDown = function (terminal) {
 
@@ -154,7 +181,9 @@
 
       });
 
-
+      /**
+       * @listens mouseup
+       */
       self.mouseUp = function () {
 
         if (!self.cursorMode) return;
@@ -202,6 +231,12 @@
       svg.on("mouseup", self.mouseUp, self);
 
 
+      /**
+       * @method
+       * @param originId
+       * @param destinationId
+       * @return {*}
+       */
       self.placeNewWire = function (originId, destinationId) {
 
         var origin = self.Terminals.get(originId);
@@ -245,6 +280,7 @@
 
 
       /**
+       * @method
        *
        * @param modelClass
        * @param viewClass
@@ -272,13 +308,19 @@
         return model;
       };
 
+      /**
+       * @method
+       *
+       * @param componentModel
+       */
       self.removeComponent = function(componentModel) {
         componentModel.destroy();
       };
 
 
       /**
-       * Update the model and view of the cursor
+       * Update the model and view of the cursor.
+       * @method
        * @param mode
        */
       self.setCursorMode = function (mode) {
@@ -290,6 +332,7 @@
 
       /**
        * Return to default cursor mode
+       * @method
        */
       self.clearCursorMode = function () {
         d3.select("body").style("cursor", null);
@@ -297,17 +340,28 @@
       };
 
 
-      d3.select("body").on("keydown", function (e) {
-        if (d3.event.which == 27) {
-          if (self.cursorMode.wire) {
-            self.cursorMode.wire.destroy();
-          }
-          self.clearCursorMode();
+      d3.select("body").on("keydown", self.handleKeyDown);
+
+      /**
+       * @method
+       * @param e
+       */
+      self.handleKeyDown = function (e) {
+        switch (d3.event.which) {
+
+          case 27:
+            if (self.cursorMode.wire) {
+              self.cursorMode.wire.destroy();
+            }
+            self.clearCursorMode();
+            break;
         }
-      });
+
+      };
 
 
       var selectionTool = SelectionTool(self.controlLayer);
+
       self.controlTarget.call(selectionTool);
 
     };
@@ -323,13 +377,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-autograph.html">autograph</a></li><li><a href="module-BaseComponent.html">BaseComponent</a></li><li><a href="module-ComponentCollection.html">ComponentCollection</a></li><li><a href="module-ComponentLibrary.html">ComponentLibrary</a></li><li><a href="BaseComponentView.html">components/views/BaseComponentView</a></li><li><a href="TerminalModel.html">models/TerminalModel</a></li></ul><h3>Classes</h3><ul><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="ButtonComponentView.html">ButtonComponentView</a></li><li><a href="ClockComponent.html">ClockComponent</a></li><li><a href="DelayComponent.html">DelayComponent</a></li><li><a href="EchoComponentView.html">EchoComponentView</a></li><li><a href="HTTPClientComponentView.html">HTTPClientComponentView</a></li><li><a href="ValueComponentView.html">ValueComponentView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addContent">addContent</a></li><li><a href="global.html#hilight">hilight</a></li><li><a href="global.html#sendBang">sendBang</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue May 06 2014 20:30:26 GMT-0500 (CDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed May 07 2014 20:53:13 GMT-0500 (CDT)
 </footer>
 
 <script> prettyPrint(); </script>

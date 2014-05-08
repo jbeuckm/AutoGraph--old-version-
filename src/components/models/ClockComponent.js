@@ -1,5 +1,7 @@
 /**
  * Component to fire a bang at regular, settable interval.
+ *
+ * @class
  * @type {*}
  */
 var ClockComponent = BaseComponent.extend({

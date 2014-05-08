@@ -1,8 +1,18 @@
+/**
+ * @class
+ *
+ */
 define(['components/views/BaseComponentView'],
   function (BaseComponentView) {
 
+    /**
+     * @constructor
+     */
     return BaseComponentView.extend({
 
+      /**
+       * @method
+       */
       addContent:function () {
 
         this.htmlHolder = this.content.append("foreignObject");

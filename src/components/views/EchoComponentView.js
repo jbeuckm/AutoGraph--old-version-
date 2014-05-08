@@ -1,3 +1,7 @@
+/**
+ * @class
+ * @type {*}
+ */
 var EchoComponentView = WebviewComponentView.extend({
 
 

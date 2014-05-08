@@ -1,10 +1,14 @@
 /**
- * Manage available components.
+ * @module ComponentLibrary
  */
 define(['jquery', 'components/models/BaseComponent', 'components/views/BaseComponentView', 'components/views/WebviewComponentView'],
   function($, BaseComponent, BaseComponentView, WebviewComponentView){
 
-  return function(container, components, componentPath, selectCallback) {
+    /**
+     * Manage available components.
+     * @constructor
+     */
+    return function(container, components, componentPath, selectCallback) {
 
     var self = this;
 

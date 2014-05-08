@@ -1,3 +1,7 @@
+/**
+ * @class
+ * @type {*}
+ */
 var HTTPClientComponentView = WebviewComponentView.extend({
 
   addContent:function () {

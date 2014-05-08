@@ -1,6 +1,7 @@
 /**
  * A Basic button component.
  *
+ * @class
  * @type {*}
  */
 var ButtonComponent = BaseComponent.extend({

@@ -1,13 +1,13 @@
 
 module.exports = function(grunt) {
 
-
   grunt.initConfig({
     jsdoc : {
       dist : {
-        src: ['src/*.js', 'tests/*.js'],
+        src: ['src/*.js', 'src/components', 'src/collections', 'src/models', 'views'],
         options: {
-          destination: 'doc'
+          destination: 'doc',
+          configure: 'jsdoc.conf.json'
         }
       }
     }
