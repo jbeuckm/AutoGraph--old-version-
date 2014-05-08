@@ -1,5 +1,5 @@
 /**
- * @class
+ * @class EchoComponentView
  * @extends WebviewComponentView
  * @type {*}
  */
@@ -30,6 +30,9 @@ var EchoComponentView = WebviewComponentView.extend({
     }
   },
 
+  /**
+   * @method
+   */
   addContent:function () {
 
     WebviewComponentView.prototype.addContent.call(this);

@@ -1,7 +1,11 @@
+/**
+ * @module models/TerminalModel
+ *
+ */
 define(['models/TerminalModel'], function(TerminalModel){
 
   /**
-   * @module models/TerminalModel
+   * @class models/TerminalModel
    *
    */
   return TerminalModel.extend({

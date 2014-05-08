@@ -1,12 +1,18 @@
+/**
+ * @module models/TerminalModel
+ */
 define(['models/TerminalModel'], function (TerminalModel) {
 
   /**
-   * @constructor
+   * @class TerminalModel
    */
   return TerminalModel.extend({
 
     className:"OutputTerminalModel",
 
+    /**
+     * @method
+     */
     initialize:function () {
       TerminalModel.prototype.initialize.call(this);
 

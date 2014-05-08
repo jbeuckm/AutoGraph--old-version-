@@ -1,12 +1,12 @@
 /**
- * @class
+ * @class ButtonComponentView
  * @extends BaseComponentView
  * @type {*}
  */
 var ButtonComponentView = BaseComponentView.extend({
 
   /**
-   * method
+   * @method
    */
   addContent:function () {
 
@@ -23,7 +23,7 @@ var ButtonComponentView = BaseComponentView.extend({
   },
 
   /**
-   * method
+   * @method
    */
   hilight:function () {
 

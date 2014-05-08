@@ -1,4 +1,11 @@
+/**
+ * @module PositionedModel
+ */
 define(['backbone'], function(Backbone){
+
+  /**
+   * @class PositionedModel
+   */
   return Backbone.Model.extend({
 
     defaults: {

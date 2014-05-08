@@ -1,5 +1,5 @@
 /**
- * @class
+ * @class HTTPClientComponentView
  * @extends WebviewComponentView
  * @type {*}
  */

@@ -1,7 +1,13 @@
 /**
  * Model the connection between two particular terminals.
+ *
+ * @module WireModel
  */
 define(['backbone'], function (Backbone) {
+
+  /**
+   * @class WireModel
+   */
   return Backbone.Model.extend({
 
     defaults:{
@@ -9,12 +15,20 @@ define(['backbone'], function (Backbone) {
       destinationTerminalId:null
     },
 
-    getOriginModel:function () {
+    /**
+     * @method
+     * @return {*}
+     */
+    getOriginModel: function () {
       var o = this.get("originTerminalId");
       return(this.get("autograph").Terminals.get(o));
     },
 
-    getDestinationModel:function () {
+    /**
+     * @method
+     * @return {*}
+     */
+    getDestinationModel: function () {
       var d = this.get("destinationTerminalId");
       if (d) {
         return(this.get("autograph").Terminals.get(d));

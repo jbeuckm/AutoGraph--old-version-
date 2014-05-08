@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/views/EchoComponentView.js</title>
+    <title>JSDoc: Source: models/TerminalModel.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: components/views/EchoComponentView.js</h1>
+    <h1 class="page-title">Source: models/TerminalModel.js</h1>
     
     
 
@@ -26,59 +26,35 @@
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
- * @class EchoComponentView
- * @extends WebviewComponentView
- * @type {*}
+ * @module TerminalModel
  */
-var EchoComponentView = WebviewComponentView.extend({
+define(['models/PositionedModel'],
+  function (PositionedModel) {
 
-  /**
-   * @method
-   */
-  initialize: function() {
-    WebviewComponentView.prototype.initialize.call(this);
+    /**
+     * @class TerminalModel
+     */
+    return PositionedModel.extend({
 
-    this.listenTo(this.model, "bang", function(){
+      defaults:{
+        name:"terminal",
+        componentId:null,
 
-      this.render();
+        anchorX:0,
+        anchorY:0,
+        controlPointX:0,
+        controlPointY:0
+      },
+
+      /**
+       * @method
+       */
+      initialize:function () {
+        this.set("componentId", this.get("component").cid);
+      }
+
     });
-  },
-
-  /**
-   * @method
-   */
-  render: function() {
-    WebviewComponentView.prototype.render.call(this);
-
-    var value = this.model.get("value");
-    if (value != undefined) {
-      var str = JSON.stringify(value, undefined, 2);
-      this.echoDiv.node().innerHTML = str;
-    }
-  },
-
-  /**
-   * @method
-   */
-  addContent:function () {
-
-    WebviewComponentView.prototype.addContent.call(this);
-
-    this.htmlHolder
-      .attr("width", 200)
-      .attr("height", 150);
-
-    this.echoDiv = this.htmlBody
-      .append("pre")
-      .style("font-family", "courier")
-      .style("font-size", "12px")
-      .style("color", "#0f0")
-      .attr("width", 200)
-      .attr("height",150);
-  }
-
 });
-
 
 </code></pre>
         </article>

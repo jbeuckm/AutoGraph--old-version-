@@ -60,6 +60,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       this.Terminals = new TerminalCollection();
 
 
+      /**
+       * @method
+       */
       self.resizeWindow = function() {
         var d = document,
           e = d.documentElement,
@@ -106,7 +109,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       /**
        * Start drawing a new wire.
        *
-       * @module
+       * @method
        */
       self.terminalMouseDown = function (terminal) {
 
@@ -138,7 +141,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-      svg.on("mousemove", function () {
+      /**
+       * @method
+       */
+      self.mouseMove = function() {
 
         self.cursorModel.set({
           controlPointX: self.cursorModel.get("anchorX"),
@@ -152,9 +158,11 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
           anchorY: d3.event.offsetY
         });
 
-      });
+      };
+      svg.on("mousemove", self.mouseMove);
 
       /**
+       * @method
        * @listens mouseup
        */
       self.mouseUp = function () {
@@ -313,8 +321,6 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
       };
 
 
-      d3.select("body").on("keydown", self.handleKeyDown);
-
       /**
        * @method
        * @param e
@@ -331,6 +337,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
         }
 
       };
+      d3.select("body").on("keydown", self.handleKeyDown);
 
 
       var selectionTool = SelectionTool(self.controlLayer);

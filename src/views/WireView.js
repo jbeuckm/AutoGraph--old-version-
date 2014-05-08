@@ -1,7 +1,16 @@
+/**
+ * @module WireView
+ */
 define(['backbone'], function (Backbone) {
 
+  /**
+   * @class WireView
+   */
   return Backbone.View.extend({
 
+    /**
+     * @method
+     */
     initialize:function () {
       this.d3 = d3.select(this.el);
       var m = this.model;
@@ -59,6 +68,9 @@ define(['backbone'], function (Backbone) {
 
     },
 
+    /**
+     * @method
+     */
     render:function () {
 console.log("WireView::render()");
       var m = this.model;

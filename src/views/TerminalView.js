@@ -1,5 +1,11 @@
+/**
+ * @module TerminalView
+ */
 define(['backbone'], function (Backbone) {
 
+  /**
+   * @class TerminalView
+   */
   return Backbone.View.extend({
 
     initialize:function () {
@@ -21,7 +27,10 @@ define(['backbone'], function (Backbone) {
       this.listenTo(m, "change", this.updateAnchorPoints);
     },
 
-
+    /**
+     * @method
+     * @return {*}
+     */
     buildRect:function () {
       var self = this;
 
@@ -62,6 +71,9 @@ define(['backbone'], function (Backbone) {
     },
 
 
+    /**
+     * @method
+     */
     updateAnchorPoints:function () {
 console.log("TerminalView::updateAnchorPoints()");
       var m = this.model;
@@ -74,12 +86,20 @@ console.log("TerminalView::updateAnchorPoints()");
       this.updateControlPoints();
     },
 
+    /**
+     * @method
+     */
     updateControlPoints:function () {
       var m = this.model;
       m.set("controlPointX", m.get("anchorX"));
       m.set("controlPointY", m.get("anchorY"));
     },
 
+    /**
+     * @method
+     * @param element
+     * @return {*}
+     */
     getBBoxInWorkbenchSpace: function(element){
 
       var svg = this.model.get("autograph").svg.node();
@@ -89,6 +109,12 @@ console.log("TerminalView::updateAnchorPoints()");
     },
 
 
+    /**
+     * @method
+     * @param element
+     * @param mat
+     * @return {Object}
+     */
     getBoundingBoxInArbitrarySpace: function(element, mat) {
       var svgRoot = element.ownerSVGElement;
       var bbox = element.getBBox();

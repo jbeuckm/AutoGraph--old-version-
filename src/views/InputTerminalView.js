@@ -1,4 +1,12 @@
+/**
+ * @module InputTerminalView
+ * @extends TerminalView
+ */
 define(['views/TerminalView'], function (TerminalView) {
+
+  /**
+   * @class InputTerminalView
+   */
   return TerminalView.extend({
 
     initialize:function () {

@@ -6,7 +6,7 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
     /**
      * Manage available components.
-     * @constructor
+     * @class ComponentLibrary
      */
     return function(container, components, componentPath, selectCallback) {
 
@@ -49,7 +49,11 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
       }
     }
 
-
+      /**
+       * @method
+       * @param componentDescription
+       * @param callback
+       */
     self.loadComponentClasses = function(componentDescription, callback) {
 
       var modelClass = componentDescription.model;

@@ -1,9 +1,12 @@
 /**
- * @class
+ * @class ValueComponentView
  * @type {*}
  */
 var ValueComponentView = WebviewComponentView.extend({
 
+  /**
+   * @method
+   */
   addContent:function () {
 
     WebviewComponentView.prototype.addContent.call(this);
@@ -26,6 +29,9 @@ var ValueComponentView = WebviewComponentView.extend({
       });
   },
 
+  /**
+   * @method
+   */
   render: function() {
     WebviewComponentView.prototype.render.call(this);
     this.textField

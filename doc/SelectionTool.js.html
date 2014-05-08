@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/views/EchoComponentView.js</title>
+    <title>JSDoc: Source: SelectionTool.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: components/views/EchoComponentView.js</h1>
+    <h1 class="page-title">Source: SelectionTool.js</h1>
     
     
 
@@ -25,61 +25,55 @@
     
     <section>
         <article>
-            <pre class="prettyprint source"><code>/**
- * @class EchoComponentView
- * @extends WebviewComponentView
- * @type {*}
+            <pre class="prettyprint source"><code>/*
+ * Draw a dashed line rect when clicking and dragging across the autograph SVG
+ *
+ * @module SelectionTool
  */
-var EchoComponentView = WebviewComponentView.extend({
+define(['d3'], function(d3){
 
-  /**
-   * @method
-   */
-  initialize: function() {
-    WebviewComponentView.prototype.initialize.call(this);
+  return function(controlLayer) {
 
-    this.listenTo(this.model, "bang", function(){
+    var selectLineFunction = d3.svg.line()
+      .x(function (d) {
+        return d.x;
+      })
+      .y(function (d) {
+        return d.y;
+      })
+      .interpolate("linear-closed");
 
-      this.render();
+    var selectStart = null;
+    var selectRect = null;
+
+    var selectDragger = d3.behavior.drag();
+    selectDragger.on("dragstart", function(){
+      selectStart = {
+        x: d3.event.sourceEvent.offsetX,
+        y: d3.event.sourceEvent.offsetY
+      };
+      selectRect = controlLayer.append("path")
+        .style("stroke", '#bbb')
+        .style("fill", 'none')
+        .style("stroke-dasharray", ("3, 3"));
     });
-  },
+    selectDragger.on("drag", function () {
+      var data = [
+        selectStart,
+        { x:d3.event.x, y:selectStart.y},
+        { x:d3.event.x, y:d3.event.y},
+        { x:selectStart.x, y:d3.event.y}
+      ];
+      selectRect.attr("d", selectLineFunction(data));
+    });
+    selectDragger.on("dragend", function(){
+      selectRect.remove();
+    });
 
-  /**
-   * @method
-   */
-  render: function() {
-    WebviewComponentView.prototype.render.call(this);
-
-    var value = this.model.get("value");
-    if (value != undefined) {
-      var str = JSON.stringify(value, undefined, 2);
-      this.echoDiv.node().innerHTML = str;
-    }
-  },
-
-  /**
-   * @method
-   */
-  addContent:function () {
-
-    WebviewComponentView.prototype.addContent.call(this);
-
-    this.htmlHolder
-      .attr("width", 200)
-      .attr("height", 150);
-
-    this.echoDiv = this.htmlBody
-      .append("pre")
-      .style("font-family", "courier")
-      .style("font-size", "12px")
-      .style("color", "#0f0")
-      .attr("width", 200)
-      .attr("height",150);
+    return selectDragger;
   }
 
 });
-
-
 </code></pre>
         </article>
     </section>

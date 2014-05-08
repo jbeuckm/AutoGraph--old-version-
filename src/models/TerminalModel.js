@@ -1,5 +1,12 @@
+/**
+ * @module TerminalModel
+ */
 define(['models/PositionedModel'],
   function (PositionedModel) {
+
+    /**
+     * @class TerminalModel
+     */
     return PositionedModel.extend({
 
       defaults:{
@@ -12,6 +19,9 @@ define(['models/PositionedModel'],
         controlPointY:0
       },
 
+      /**
+       * @method
+       */
       initialize:function () {
         this.set("componentId", this.get("component").cid);
       }

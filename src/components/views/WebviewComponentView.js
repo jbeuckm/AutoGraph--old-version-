@@ -1,11 +1,11 @@
 /**
- * @module
+ * @module WebviewComponentView
  */
 define(['components/views/BaseComponentView'],
   function (BaseComponentView) {
 
     /**
-     * @class WebComponentView
+     * @class WebviewComponentView
      */
     return BaseComponentView.extend({
 

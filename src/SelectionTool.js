@@ -1,5 +1,7 @@
 /*
  * Draw a dashed line rect when clicking and dragging across the autograph SVG
+ *
+ * @module SelectionTool
  */
 define(['d3'], function(d3){
 
