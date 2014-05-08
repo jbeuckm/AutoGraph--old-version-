@@ -5,6 +5,7 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
   function (Backbone, InputTerminalView, OutputTerminalView) {
 
     /**
+     * @class BaseComponentView
      * @constructor
      */
   return Backbone.View.extend({

@@ -1,10 +1,13 @@
 /**
  * @class
+ * @extends WebviewComponentView
  * @type {*}
  */
 var EchoComponentView = WebviewComponentView.extend({
 
-
+  /**
+   * @method
+   */
   initialize: function() {
     WebviewComponentView.prototype.initialize.call(this);
 
@@ -14,6 +17,9 @@ var EchoComponentView = WebviewComponentView.extend({
     });
   },
 
+  /**
+   * @method
+   */
   render: function() {
     WebviewComponentView.prototype.render.call(this);
 

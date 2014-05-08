@@ -1,5 +1,6 @@
 /**
  * @class
+ * @extends WebviewComponentView
  * @type {*}
  */
 var HTTPClientComponentView = WebviewComponentView.extend({

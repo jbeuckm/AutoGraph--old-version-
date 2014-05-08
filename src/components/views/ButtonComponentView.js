@@ -1,5 +1,6 @@
 /**
  * @class
+ * @extends BaseComponentView
  * @type {*}
  */
 var ButtonComponentView = BaseComponentView.extend({
