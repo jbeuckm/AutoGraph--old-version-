@@ -21,7 +21,27 @@ var HTTPClientComponent = BaseComponent.extend({
 
     console.log(args);
 
-    callback( args );
+    var url = this.buildUrl(args);
+    console.log(url);
+
+    $.ajax(url, {
+
+    })
+    .done(function() {
+        console.log(this);
+        callback( args );
+    })
+    .fail(function() {
+        console.log(this);
+    });
+
+  },
+
+  buildUrl: function(args) {
+    var url = "http://" + args.server;
+    if (args.port) url += ':'+args.port;
+    url += '/';
+    return url;
   }
 
 });
