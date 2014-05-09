@@ -83,7 +83,7 @@ http.createServer(function(request, response) {
 
         var options = {
             port: 80,
-            host: request.headers['host'],
+            host: url.parse(request.url).host,
             method: request.method,
             headers: request.headers,
             path: url.parse(request.url).pathname

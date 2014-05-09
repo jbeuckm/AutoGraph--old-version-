@@ -25,21 +25,17 @@ var HTTPClientComponent = BaseComponent.extend({
             if ( options.crossDomain ) {
                 options.url = "http://localhost:8080/" + encodeURIComponent( options.url );
                 options.crossDomain = false;
-/*
-                options.headers = {
-                    host: options.url.split('/')[2]
-                }
-*/
             }
         });
-
+/*
         $.ajaxSetup({
             "beforeSend": function(xhr) {
 
-                xhr.setRequestHeader("host", 'usbpi.us');
+                xhr.setRequestHeader("proxy-host", 'usbpi.us');
 
             }
         });
+*/
     },
 
     process: function (args, callback) {
