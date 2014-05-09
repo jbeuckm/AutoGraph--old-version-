@@ -8,7 +8,8 @@
     "grunt": "~0.4.4",
     "grunt-jsdoc": "~0.5.4",
     "grunt-jslint": "^1.1.11",
-    "mocha": "*"
+    "mocha": "*",
+    "mocha-phantomjs": "^3.4.0"
   },
   "scripts": {
     "test": "mocha-phantomjs tests/testRunner.html"
