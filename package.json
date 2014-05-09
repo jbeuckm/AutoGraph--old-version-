@@ -1,8 +1,11 @@
 {
   "name": "autograph",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Joe Beuckman <joe@beigerecords.com>",
   "description": "A visual data routing automation tool.",
+  "dependencies": {
+    "http-proxy": "^1.1.2"
+  },
   "devDependencies": {
     "chai": "*",
     "grunt": "~0.4.4",

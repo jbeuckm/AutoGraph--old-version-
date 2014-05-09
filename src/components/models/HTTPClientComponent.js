@@ -17,6 +17,19 @@ var HTTPClientComponent = BaseComponent.extend({
         body: {name: "body"}
     },
 
+    initialize: function() {
+
+        BaseComponent.prototype.initialize.call(this);
+
+        $.ajaxPrefilter(function( options ) {
+            if ( options.crossDomain ) {
+                options.url = "http://localhost:8080/" + encodeURIComponent( options.url );
+                options.crossDomain = false;
+            }
+        });
+
+    },
+
     process: function (args, callback) {
 
         console.log(args);
@@ -25,7 +38,7 @@ var HTTPClientComponent = BaseComponent.extend({
         console.log(url);
 
         $.ajax(url, {
-
+            crossDomain: true
         })
             .done(function () {
                 console.log(this);
