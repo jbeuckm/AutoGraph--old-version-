@@ -10,9 +10,28 @@ module.exports = function(grunt) {
           configure: 'jsdoc.conf.json'
         }
       }
-    }
+    },
+
+      jslint: { // configure the task
+          client: {
+              src: [
+                  'src/**/*.js'
+              ],
+              exclude: [
+                  'src/lib/*.js'
+              ],
+              directives: {
+                  browser: true,
+                  predef: [
+                      'jQuery', 'angular', 'confirm', 'Backbone', 'define', 'requirejs'
+                  ]
+              }
+          }
+      }
+
   });
 
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-jslint');
 
 };

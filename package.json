@@ -4,10 +4,11 @@
   "author": "Joe Beuckman <joe@beigerecords.com>",
   "description": "A visual data routing automation tool.",
   "devDependencies": {
-    "mocha": "*",
     "chai": "*",
     "grunt": "~0.4.4",
-    "grunt-jsdoc": "~0.5.4"
+    "grunt-jsdoc": "~0.5.4",
+    "grunt-jslint": "^1.1.11",
+    "mocha": "*"
   },
   "scripts": {
     "test": "mocha-phantomjs tests/testRunner.html"

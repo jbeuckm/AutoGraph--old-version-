@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite>
+<testcase classname="src.ComponentLibrary" name="ComponentLibrary:22:22">
+  <failure message="Move 'var' declarations to the top of the function." />
+</testcase>
+<testcase classname="src.ComponentLibrary" name="ComponentLibrary:22:22">
+  <failure message="Stopping. (25% scanned)." />
+</testcase>
+<testcase classname="src.SelectionTool" name="SelectionTool:8:5">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.SelectionTool" name="SelectionTool:19:13">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.SelectionTool" name="SelectionTool:20:13">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.SelectionTool" name="SelectionTool:22:13">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.SelectionTool" name="SelectionTool:47:6">
+  <failure message="Expected ';' and instead saw '}'." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:20:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:24:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:28:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:28:33">
+  <failure message="Missing 'new'." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:66:25">
+  <failure message="'document' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:70:17">
+  <failure message="'x' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:70:21">
+  <failure message="'window' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:71:17">
+  <failure message="'y' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:71:21">
+  <failure message="'window' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:73:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:73:33">
+  <failure message="Missing radix parameter." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:74:35">
+  <failure message="'x' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:74:65">
+  <failure message="'y' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:75:69">
+  <failure message="'y' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:77:50">
+  <failure message="'x' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:77:68">
+  <failure message="'y' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:82:13">
+  <failure message="'window' was used before it was defined." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:94:25">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:107:40">
+  <failure message="Expected '===' and instead saw '=='." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:120:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:161:39">
+  <failure message="Expected '{' and instead saw 'return'." />
+</testcase>
+<testcase classname="src.autograph" name="autograph:161:39">
+  <failure message="Stopping. (47% scanned)." />
+</testcase>
+<testcase classname="src.collections.ComponentCollection" name="ComponentCollection:0:0"></testcase>
+<testcase classname="src.collections.TerminalCollection" name="TerminalCollection:0:0"></testcase>
+<testcase classname="src.collections.WireCollection" name="WireCollection:0:0"></testcase>
+<testcase classname="src.components.models.BaseComponent" name="BaseComponent:40:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.models.BaseComponent" name="BaseComponent:58:22">
+  <failure message="Move 'var' declarations to the top of the function." />
+</testcase>
+<testcase classname="src.components.models.BaseComponent" name="BaseComponent:58:22">
+  <failure message="Stopping. (36% scanned)." />
+</testcase>
+<testcase classname="src.components.models.ButtonComponent" name="ButtonComponent:7:23">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:7:22">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:31:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:43:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:46:9">
+  <failure message="Expected exactly one space between '}' and 'else'." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:47:13">
+  <failure message="Expected 'this' at column 17, not column 13." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:48:13">
+  <failure message="Expected 'this' at column 17, not column 13." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:49:9">
+  <failure message="Expected '}' at column 13, not column 9." />
+</testcase>
+<testcase classname="src.components.models.ClockComponent" name="ClockComponent:54:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.DelayComponent" name="DelayComponent:7:22">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.DelayComponent" name="DelayComponent:29:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.DelayComponent" name="DelayComponent:33:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.EchoComponent" name="EchoComponent:5:21">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:5:27">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:31:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:36:9">
+  <failure message="'$' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:56:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:57:24">
+  <failure message="Expected '{' and instead saw 'url'." />
+</testcase>
+<testcase classname="src.components.models.HTTPClientComponent" name="HTTPClientComponent:57:24">
+  <failure message="Stopping. (90% scanned)." />
+</testcase>
+<testcase classname="src.components.models.ValueComponent" name="ValueComponent:5:22">
+  <failure message="'BaseComponent' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.models.ValueComponent" name="ValueComponent:25:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:22:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:24:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:39:25">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:42:25">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:43:25">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:48:26">
+  <failure message="Move 'var' declarations to the top of the function." />
+</testcase>
+<testcase classname="src.components.views.BaseComponentView" name="BaseComponentView:48:26">
+  <failure message="Stopping. (25% scanned)." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:6:27">
+  <failure message="'BaseComponentView' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:8:17">
+  <failure message="Expected ':' and instead saw ';'." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:5">
+  <failure message="Expected 'addContent' at column 9, not column 5." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:15">
+  <failure message="Expected ':' at column 1, not column 15." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:17">
+  <failure message="Unexpected space between ':' and 'function'." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:26">
+  <failure message="Unexpected space between 'function' and '('." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:29">
+  <failure message="Expected an operator and instead saw '{'." />
+</testcase>
+<testcase classname="src.components.views.ButtonComponentView" name="ButtonComponentView:13:9">
+  <failure message="Stopping. (30% scanned)." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:6:25">
+  <failure message="'WebviewComponentView' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:12:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:24:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:27:19">
+  <failure message="Expected '!==' and instead saw '!='." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:28:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.components.views.EchoComponentView" name="EchoComponentView:38:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.HTTPClientComponentView" name="HTTPClientComponentView:6:31">
+  <failure message="'WebviewComponentView' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.views.HTTPClientComponentView" name="HTTPClientComponentView:10:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.ValueComponentView" name="ValueComponentView:5:26">
+  <failure message="'WebviewComponentView' was used before it was defined." />
+</testcase>
+<testcase classname="src.components.views.ValueComponentView" name="ValueComponentView:12:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.ValueComponentView" name="ValueComponentView:36:9">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.components.views.WebviewComponentView" name="WebviewComponentView:28:1">
+  <failure message="Expected ')' at column 5, not column 1." />
+</testcase>
+<testcase classname="src.main" name="main:26:5">
+  <failure message="Missing 'use strict' statement." />
+</testcase>
+<testcase classname="src.models.CursorModel" name="CursorModel:0:0"></testcase>
+<testcase classname="src.models.InputTerminalModel" name="InputTerminalModel:0:0"></testcase>
+<testcase classname="src.models.OutputTerminalModel" name="OutputTerminalModel:0:0"></testcase>
+<testcase classname="src.models.PositionedModel" name="PositionedModel:0:0"></testcase>
+<testcase classname="src.models.TerminalModel" name="TerminalModel:0:0"></testcase>
+<testcase classname="src.models.WireModel" name="WireModel:0:0"></testcase>
+<testcase classname="src.views.InputTerminalView" name="InputTerminalView:23:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.InputTerminalView" name="InputTerminalView:32:21">
+  <failure message="'enabled' was used before it was defined." />
+</testcase>
+<testcase classname="src.views.InputTerminalView" name="InputTerminalView:43:21">
+  <failure message="'enabled' was used before it was defined." />
+</testcase>
+<testcase classname="src.views.OutputTerminalView" name="OutputTerminalView:0:0"></testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:40:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:42:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:84:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:109:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:123:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:125:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:132:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:137:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:142:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:147:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:150:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:151:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:152:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:153:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:154:18">
+  <failure message="Move 'var' declarations to the top of the function." />
+</testcase>
+<testcase classname="src.views.TerminalView" name="TerminalView:154:18">
+  <failure message="Stopping. (87% scanned)." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:29:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:35:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:59:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:60:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:65:17">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:82:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:83:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:86:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:87:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+<testcase classname="src.views.WireView" name="WireView:88:21">
+  <failure message="Combine this with the previous 'var' statement." />
+</testcase>
+  </testsuite>
+</testsuites>
