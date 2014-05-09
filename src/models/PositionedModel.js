@@ -1,17 +1,17 @@
 /**
  * @module PositionedModel
  */
-define(['backbone'], function(Backbone){
+define(['backbone'], function (Backbone) {
 
-  /**
-   * @class PositionedModel
-   */
-  return Backbone.Model.extend({
+    /**
+     * @class PositionedModel
+     */
+    return Backbone.Model.extend({
 
-    defaults: {
-      x: 0,
-      y: 0
-    }
+        defaults: {
+            x: 0,
+            y: 0
+        }
 
-  });
+    });
 });

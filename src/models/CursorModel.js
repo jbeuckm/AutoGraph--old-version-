@@ -2,9 +2,9 @@
  * @module CursorModel
  * @extends PositionedModel
  */
-define(['models/PositionedModel'], function(PositionedModel){
+define(['models/PositionedModel'], function (PositionedModel) {
 
-  return PositionedModel.extend({
-  });
+    return PositionedModel.extend({
+    });
 
 });

@@ -1,7 +1,7 @@
-define(['models/WireModel'], function(WireModel){
+define(['models/WireModel'], function (WireModel) {
 
-  return Backbone.Collection.extend({
-    model: WireModel
-  });
+    return Backbone.Collection.extend({
+        model: WireModel
+    });
 
 });

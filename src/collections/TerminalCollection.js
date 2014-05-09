@@ -1,7 +1,7 @@
-define(['models/TerminalModel'], function(TerminalModel){
+define(['models/TerminalModel'], function (TerminalModel) {
 
-  return Backbone.Collection.extend({
-    model: TerminalModel
-  });
+    return Backbone.Collection.extend({
+        model: TerminalModel
+    });
 
 });

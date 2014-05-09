@@ -3,153 +3,155 @@
  * @module BaseComponent
  */
 define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTerminalModel'],
-  function (PositionedModel, OutputTerminalModel, InputTerminalModel) {
+    function (PositionedModel, OutputTerminalModel, InputTerminalModel) {
 
-    /**
-     * @constructor
-     */
-    return PositionedModel.extend({
+        'use strict';
 
-      label:"component",
+        /**
+         * @constructor
+         */
+        return PositionedModel.extend({
 
-      inputs:{
-        input:{name:"input"}
-      },
-      outputs:{
-        output:{name:"output"}
-      },
+            label: "component",
 
-      defaults:{
-      },
+            inputs: {
+                input: {name: "input"}
+            },
+            outputs: {
+                output: {name: "output"}
+            },
 
-      /**
-       * @method
-       */
-      initialize:function () {
-        this.buildInputs(this.inputs);
-        this.buildOutputs(this.outputs);
-      },
+            defaults: {
+            },
 
-      /**
-       * @method
-       */
-      receiveBang:function () {
-        var inputTerminalValues = this.readInputValues();
-        var self = this;
+            /**
+             * @method
+             */
+            initialize: function () {
+                this.buildInputs(this.inputs);
+                this.buildOutputs(this.outputs);
+            },
 
-        this.process(inputTerminalValues, function (results) {
+            /**
+             * @method
+             */
+            receiveBang: function () {
+                var inputTerminalValues = this.readInputValues();
+                var self = this;
 
-          console.log("process results for "+self.label);
-          console.log(results);
+                this.process(inputTerminalValues, function (results) {
 
-          self.updateOutputTerminals(results);
-          self.sendBang();
+                    console.log("process results for " + self.label);
+                    console.log(results);
+
+                    self.updateOutputTerminals(results);
+                    self.sendBang();
+                });
+            },
+
+            /**
+             * @method
+             */
+            readInputValues: function () {
+
+                var ins = {};
+                for (var key in this.inputs) {
+                    var input = this.inputs[key].model;
+                    if (input.get("value")) {
+                        ins[key] = input.get("value");
+                    }
+                }
+                return ins;
+            },
+
+            /**
+             * @method
+             */
+            updateOutputTerminals: function (values) {
+
+                for (var key in values) {
+                    var output = this.outputs[key];
+                    if (output) {
+                        output.model.set("value", values[key]);
+                    }
+                }
+            },
+
+            /**
+             * @method
+             */
+            process: function (args, callback) {
+                callback(args);
+            },
+
+            /**
+             * @method
+             */
+            sendBang: function () {
+                this.trigger("bang");
+            },
+
+
+            /**
+             * @method
+             */
+            buildInputs: function (inputs) {
+
+                var cnt = 0;
+                for (var i in inputs) {
+
+                    var input = inputs[i];
+
+                    var im = new InputTerminalModel({
+                        autograph: this.get("autograph"),
+                        component: this,
+                        x: cnt * 20,
+                        y: 0,
+                        name: input.name
+                    });
+
+                    this.listenTo(im, "bang", this.receiveBang);
+                    this.listenTo(im, "change:value", function () {
+                        console.log("basecomp setting " + input.name + " to " + im.get("value"));
+                        this.set(input.name, im.get("value"))
+                    });
+
+                    input.model = im;
+
+                    this.get("autograph").Terminals.add(im);
+
+                    cnt++;
+                }
+            },
+
+            /**
+             * @method
+             */
+            buildOutputs: function (outputs) {
+
+                var cnt = 0;
+                for (var i in outputs) {
+
+                    var output = outputs[i];
+
+                    var om = new OutputTerminalModel({
+                        autograph: this.get("autograph"),
+                        component: this,
+                        x: cnt * 20,
+                        y: 0,
+                        name: output.name
+                    });
+
+                    output.model = om;
+
+                    this.get("autograph").Terminals.add(om);
+
+                    cnt++;
+                }
+            }
+
         });
-      },
-
-      /**
-       * @method
-       */
-      readInputValues:function () {
-
-        var ins = {};
-        for (var key in this.inputs) {
-          var input = this.inputs[key].model;
-          if (input.get("value")) {
-            ins[key] = input.get("value");
-          }
-        }
-        return ins;
-      },
-
-      /**
-       * @method
-       */
-      updateOutputTerminals:function (values) {
-
-        for (var key in values) {
-          var output = this.outputs[key];
-          if (output) {
-            output.model.set("value", values[key]);
-          }
-        }
-      },
-
-      /**
-       * @method
-       */
-      process:function (args, callback) {
-        callback(args);
-      },
-
-      /**
-       * @method
-       */
-      sendBang:function () {
-        this.trigger("bang");
-      },
-
-
-      /**
-       * @method
-       */
-      buildInputs:function (inputs) {
-
-        var cnt = 0;
-        for (var i in inputs) {
-
-          var input = inputs[i];
-
-          var im = new InputTerminalModel({
-            autograph:this.get("autograph"),
-            component:this,
-            x:cnt * 20,
-            y:0,
-            name:input.name
-          });
-
-          this.listenTo(im, "bang", this.receiveBang);
-          this.listenTo(im, "change:value", function () {
-            console.log("basecomp setting " + input.name + " to " + im.get("value"));
-            this.set(input.name, im.get("value"))
-          });
-
-          input.model = im;
-
-          this.get("autograph").Terminals.add(im);
-
-          cnt++;
-        }
-      },
-
-      /**
-       * @method
-       */
-      buildOutputs:function (outputs) {
-
-        var cnt = 0;
-        for (var i in outputs) {
-
-          var output = outputs[i];
-
-          var om = new OutputTerminalModel({
-            autograph:this.get("autograph"),
-            component:this,
-            x:cnt * 20,
-            y:0,
-            name:output.name
-          });
-
-          output.model = om;
-
-          this.get("autograph").Terminals.add(om);
-
-          cnt++;
-        }
-      }
 
     });
-
-  });
 
 
