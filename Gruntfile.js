@@ -23,7 +23,7 @@ module.exports = function(grunt) {
               directives: {
                   browser: true,
                   predef: [
-                      'jQuery', 'angular', 'confirm', 'Backbone', 'define', 'requirejs'
+                      'jQuery', 'angular', 'confirm', 'Backbone', 'define', , 'd3'
                   ]
               }
           }

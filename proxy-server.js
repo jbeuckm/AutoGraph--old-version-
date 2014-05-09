@@ -98,7 +98,7 @@ http.createServer(function (request, response) {
     request.headers.Origin = 'http://';
 
     var options = {
-        port: 80,
+        port: request_parts.port | 80,
         method: request.method,
         headers: request.headers,
         host: request_parts.host,
@@ -108,7 +108,6 @@ http.createServer(function (request, response) {
     var proxy_request = http.request(options, function (stream) {
 
         stream.on('data', function (chunk) {
-            console.log(chunk);
             response.write(chunk, 'binary');
         });
 
