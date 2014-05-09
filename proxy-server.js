@@ -9,6 +9,7 @@
 var http = require('http');
 var sys  = require('sys');
 var fs   = require('fs');
+var url = require('url');
 
 var blacklist = [];
 var iplist    = [];
@@ -79,8 +80,24 @@ http.createServer(function(request, response) {
   }
 
   sys.log(ip + ": " + request.method + " " + request.url);
-  var proxy = http.createClient(80, request.headers['host'])
-  var proxy_request = proxy.request(request.method, request.url, request.headers);
+
+        var options = {
+            port: 80,
+            host: request.headers['host'],
+            method: request.method,
+            headers: request.headers,
+            path: url.parse(request.url).pathname
+        };
+console.log(options);
+
+  var proxy_request = http.request(options, function(res) {
+
+console.log(res);
+
+  });
+//      proxy.request(request.method, request.url, request.headers);
+
+/*
   proxy_request.addListener('response', function(proxy_response) {
     proxy_response.addListener('data', function(chunk) {
       response.write(chunk, 'binary');
@@ -96,6 +113,16 @@ http.createServer(function(request, response) {
   request.addListener('end', function() {
     proxy_request.end();
   });
+*/
+
+
+        proxy_request.on('error', function(error) {
+            console.log(error);
+        });
+
+        proxy_request.end();
+
+
 }).listen(8080);
 
 update_blacklist();
