@@ -36,6 +36,7 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
             var classRegistry = {};
 
             function getClass(className, path, callback) {
+
                 if (classRegistry[className]) {
                     callback(classRegistry[className]);
                 }
@@ -44,7 +45,11 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
                         eval(str);
                         classRegistry[className] = eval(className);
                         callback(classRegistry[className]);
-                    });
+                    }, 'text')
+                        .fail(function(err){
+                            console.log('ERROR LOADING COMPONENT '+className);
+                            console.log(path);
+                        });
                 }
             }
 

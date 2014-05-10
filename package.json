@@ -4,11 +4,13 @@
   "author": "Joe Beuckman <joe@beigerecords.com>",
   "description": "A visual data routing automation tool.",
   "dependencies": {
-    "http-proxy": "^1.1.2"
   },
   "devDependencies": {
+    "http-proxy": "^1.1.2",
+    "grunt-nodestatic": "^0.1.2",
     "chai": "*",
     "grunt": "~0.4.4",
+    "grunt-contrib-commands": "^0.1.6",
     "grunt-jsdoc": "~0.5.4",
     "grunt-jslint": "^1.1.11",
     "mocha": "*",
