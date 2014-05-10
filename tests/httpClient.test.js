@@ -24,7 +24,7 @@ describe('HTTPClient', function() {
       });
     });
 
-    it('makes an http request', function(done) {
+    xit('makes an http request', function(done) {
 
       var http = a.placeNewModel(loadedComponent.modelClass, loadedComponent.viewClass, {x:380, y:230});
 
