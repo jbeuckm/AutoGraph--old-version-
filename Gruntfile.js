@@ -40,11 +40,17 @@ module.exports = function (grunt) {
 
         // this task
         command : {
+            build: {
+                cmd: ['node r.js -o build.js']
+            },
             proxy: {
                 cmd: ['node proxy-server.js']
             },
             open: {
                 cmd: ['open http://localhost:9000']
+            },
+            test: {
+                cmd: ['mocha-phantomjs tests/testRunner.html']
             }
         }
 
