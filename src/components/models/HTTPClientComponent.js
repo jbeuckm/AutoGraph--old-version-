@@ -23,7 +23,7 @@ var HTTPClientComponent = BaseComponent.extend({
 
         $.ajaxPrefilter(function( options ) {
             if ( options.crossDomain ) {
-                options.url = "http://localhost:8080/" + encodeURIComponent( options.url );
+                options.url = "http://localhost:9000/" + encodeURIComponent( options.url );
                 options.crossDomain = false;
             }
         });

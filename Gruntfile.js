@@ -40,6 +40,9 @@ module.exports = function (grunt) {
 
         // this task
         command : {
+            proxy: {
+                cmd: ['node proxy-server.js']
+            },
             open: {
                 cmd: ['open http://localhost:9000']
             }
