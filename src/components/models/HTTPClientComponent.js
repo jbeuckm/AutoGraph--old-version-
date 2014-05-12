@@ -23,19 +23,11 @@ var HTTPClientComponent = BaseComponent.extend({
 
         $.ajaxPrefilter(function( options ) {
             if ( options.crossDomain ) {
-                options.url = "http://localhost:9000/" + encodeURIComponent( options.url );
+                options.url = "http://localhost:8080/" + encodeURIComponent( options.url );
                 options.crossDomain = false;
             }
         });
-/*
-        $.ajaxSetup({
-            "beforeSend": function(xhr) {
 
-                xhr.setRequestHeader("proxy-host", 'usbpi.us');
-
-            }
-        });
-*/
     },
 
     process: function (args, callback) {
@@ -48,8 +40,8 @@ var HTTPClientComponent = BaseComponent.extend({
         $.ajax(url, {
             crossDomain: true
         })
-            .done(function () {
-                console.log(this);
+            .done(function (data) {
+                console.log(data);
                 callback(args);
             })
             .fail(function () {

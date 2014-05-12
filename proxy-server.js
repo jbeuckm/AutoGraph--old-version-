@@ -50,7 +50,7 @@ function update_iplist() {
 
 function ip_allowed(ip) {
     return true;
-    for (i in iplist) {
+    for (var i in iplist) {
         if (iplist[i] == ip) {
             return true;
         }
@@ -59,7 +59,7 @@ function ip_allowed(ip) {
 }
 
 function host_allowed(host) {
-    for (i in blacklist) {
+    for (var i in blacklist) {
         if (blacklist[i].test(host)) {
             return false;
         }
@@ -74,6 +74,12 @@ function deny(response, msg) {
 }
 
 http.createServer(function (request, response) {
+
+    response.writeHead(200, {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*'
+    });
+
     var ip = request.connection.remoteAddress;
     if (!ip_allowed(ip)) {
         msg = "IP " + ip + " is not allowed to use this proxy";

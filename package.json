@@ -3,16 +3,16 @@
   "version": "0.1.1",
   "author": "Joe Beuckman <joe@beigerecords.com>",
   "description": "A visual data routing automation tool.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "http-proxy": "^1.1.2",
-    "grunt-nodestatic": "^0.1.2",
     "chai": "*",
     "grunt": "~0.4.4",
     "grunt-contrib-commands": "^0.1.6",
+    "grunt-contrib-connect": "^0.7.1",
     "grunt-jsdoc": "~0.5.4",
     "grunt-jslint": "^1.1.11",
+    "grunt-nodestatic": "^0.1.2",
+    "http-proxy": "^1.1.2",
     "mocha": "*",
     "mocha-phantomjs": "^3.4.0"
   },

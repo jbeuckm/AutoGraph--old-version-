@@ -38,13 +38,22 @@ module.exports = function (grunt) {
             }
         },
 
+        connect: {
+            server: {
+                options: {
+                    port: 9000,
+                    base: '.'
+                }
+            }
+        },
+
         // this task
         command : {
             build: {
                 cmd: ['node r.js -o build.js']
             },
             proxy: {
-                cmd: ['node proxy-server.js']
+                cmd: ['node proxy-server.js &']
             },
             open: {
                 cmd: ['open http://localhost:9000']
@@ -60,4 +69,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-contrib-commands');
     grunt.loadNpmTasks('grunt-nodestatic');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.registerTask('launch', ['command:proxy', 'connect:server:keepalive', 'command:open']);
 };
