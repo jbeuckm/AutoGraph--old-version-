@@ -29,37 +29,27 @@ module.exports = function (grunt) {
             }
         },
 
-        nodestatic: {
-            server: {
-                options: {
-                    port: 9000,
-                    keepalive: true
-                }
+        open : {
+            index : {
+                path: 'http://localhost:9000/index.html'
             }
         },
 
-        connect: {
-            server: {
-                options: {
-                    port: 9000,
-                    base: '.'
-                }
-            }
-        },
-
-        // this task
         command : {
             build: {
                 cmd: ['node r.js -o build.js']
             },
             proxy: {
-                cmd: ['node proxy-server.js &']
+                cmd: ['screen -S proxy -d -m node proxy-server.js']
             },
-            open: {
-                cmd: ['open http://localhost:9000']
+            server: {
+                cmd: ['screen -S server -d -m python -m SimpleHTTPServer 9000']
             },
             test: {
                 cmd: ['mocha-phantomjs tests/testRunner.html']
+            },
+            kill: {
+                cmd: ['screen -X -S server quit', 'screen -X -S proxy quit']
             }
         }
 
@@ -68,8 +58,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-contrib-commands');
-    grunt.loadNpmTasks('grunt-nodestatic');
-    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-open');
 
-    grunt.registerTask('launch', ['command:proxy', 'connect:server:keepalive', 'command:open']);
+    grunt.registerTask('launch', ['command:proxy', 'command:server', 'open']);
+    grunt.registerTask('kill', ['command:kill']);
 };

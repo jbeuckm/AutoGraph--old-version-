@@ -12,6 +12,7 @@
     "grunt-jsdoc": "~0.5.4",
     "grunt-jslint": "^1.1.11",
     "grunt-nodestatic": "^0.1.2",
+    "grunt-open": "^0.2.3",
     "http-proxy": "^1.1.2",
     "mocha": "*",
     "mocha-phantomjs": "^3.4.0"
