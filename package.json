@@ -1,6 +1,6 @@
 {
   "name": "autograph",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "author": "Joe Beuckman <joe@beigerecords.com>",
   "description": "A visual data routing automation tool.",
   "dependencies": {},
