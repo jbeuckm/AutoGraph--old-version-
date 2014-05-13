@@ -24,14 +24,14 @@ describe('HTTPClient', function () {
             });
         });
 
-        it('makes an http request', function (done) {
+        xit('makes an http request', function (done) {
 
             var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 60});
 
             var http = a.placeNewModel(loadedComponent.modelClass, loadedComponent.viewClass, {x: 380, y: 230});
 
             var origin = value.outputs['output'].model;
-            var destination = http.inputs['input'].model;
+            var destination = http.inputs['host'].model;
             var statusOutput = http.outputs['status'].model;
 
             a.terminalMouseDown(origin);
