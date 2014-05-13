@@ -73,6 +73,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-commands');
     grunt.loadNpmTasks('grunt-open');
 
+    grunt.registerTask('test', ['command:proxy', 'command:test']);
     grunt.registerTask('launch', ['command:proxy', 'command:server', 'open']);
     grunt.registerTask('kill', ['command:kill']);
 };
