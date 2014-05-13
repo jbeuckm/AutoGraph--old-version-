@@ -8,6 +8,7 @@
     "chai": "*",
     "grunt": "~0.4.4",
     "grunt-contrib-commands": "^0.1.6",
+    "grunt-contrib-jshint": "^0.10.0",
     "grunt-jsdoc": "~0.5.4",
     "grunt-jslint": "^1.1.11",
     "grunt-open": "^0.2.3",

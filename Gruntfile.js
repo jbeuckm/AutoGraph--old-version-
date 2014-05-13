@@ -28,6 +28,18 @@ module.exports = function (grunt) {
                 }
             }
         },
+        jshint: {
+            options: {
+                curly: true,
+                eqeqeq: true,
+                eqnull: true,
+                browser: true,
+                globals: {
+                    jQuery: true
+                },
+            },
+            uses_defaults: ['src/**/*.js'],
+        },
 
         open : {
             index : {
@@ -57,6 +69,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-jslint');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-commands');
     grunt.loadNpmTasks('grunt-open');
 

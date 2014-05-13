@@ -3,6 +3,7 @@ node_js:
     - "0.10.26"
 before_script:
     - "node r.js -o build.js"
+    - "grunt command:proxy"
 branches:
     only:
         - master
