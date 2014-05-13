@@ -51,7 +51,9 @@ var HTTPClientComponent = BaseComponent.extend({
 
     buildUrl: function (args) {
         var url = "http://" + args.server;
-        if (args.port) url += ':' + args.port;
+        if (args.port) {
+            url += ':' + args.port;
+        }
         url += '/';
         return url;
     }

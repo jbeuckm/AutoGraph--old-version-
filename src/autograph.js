@@ -98,7 +98,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
              */
             self.terminalMouseDown = function (terminal) {
 
-                if (terminal.className == "InputTerminalModel") {
+                if (terminal.className === "InputTerminalModel") {
                     console.log("can not originate connection at input");
                     return;
                 }
@@ -152,7 +152,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
              */
             self.mouseUp = function () {
 
-                if (!self.cursorMode) return;
+                if (!self.cursorMode) {
+                    return;
+                }
 
                 switch (self.cursorMode.action) {
 
@@ -211,15 +213,15 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                 destination.get("component").trigger("change");
 
                 // can't connect terminal to itself
-                if (destinationId == originId) {
+                if (destinationId === originId) {
                     self.cursorMode.wire.destroy();
                 }
                 // can't connect component to itself
-                else if (origin.get("componentId") == destination.get("componentId")) {
+                else if (origin.get("componentId") === destination.get("componentId")) {
                     self.cursorMode.wire.destroy();
                 }
                 // can't connect input to input or output to output
-                else if (origin.className == destination.className) {
+                else if (origin.className === destination.className) {
                     self.cursorMode.wire.destroy();
                 }
                 // ok let's do this

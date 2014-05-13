@@ -113,7 +113,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                     this.listenTo(im, "bang", this.receiveBang);
                     this.listenTo(im, "change:value", function () {
                         console.log("basecomp setting " + input.name + " to " + im.get("value"));
-                        this.set(input.name, im.get("value"))
+                        this.set(input.name, im.get("value"));
                     });
 
                     input.model = im;

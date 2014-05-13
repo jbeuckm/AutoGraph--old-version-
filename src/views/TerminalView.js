@@ -141,25 +141,25 @@ define(['backbone'], function (Backbone) {
             cPt4.y = bbox.y + bbox.height;
             cPt4 = cPt4.matrixTransform(mat);
 
-            var points = [cPt1, cPt2, cPt3, cPt4]
+            var points = [cPt1, cPt2, cPt3, cPt4];
 
             //find minX,minY,maxX,maxY
             var minX = Number.MAX_VALUE;
             var minY = Number.MAX_VALUE;
-            var maxX = 0
-            var maxY = 0
+            var maxX = 0;
+            var maxY = 0;
             for (i = 0; i < points.length; i++) {
                 if (points[i].x < minX) {
-                    minX = points[i].x
+                    minX = points[i].x;
                 }
                 if (points[i].y < minY) {
-                    minY = points[i].y
+                    minY = points[i].y;
                 }
                 if (points[i].x > maxX) {
-                    maxX = points[i].x
+                    maxX = points[i].x;
                 }
                 if (points[i].y > maxY) {
-                    maxY = points[i].y
+                    maxY = points[i].y;
                 }
             }
 

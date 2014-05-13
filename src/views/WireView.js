@@ -37,10 +37,10 @@ define(['backbone'], function (Backbone) {
 
 
             this.listenTo(lineGraphTarget, "mouseover", function () {
-                lineGraphTarget.attr("stroke", "#333")
+                lineGraphTarget.attr("stroke", "#333");
             });
             this.listenTo(lineGraphTarget, "mouseout", function () {
-                lineGraphTarget.attr("stroke", "transparent")
+                lineGraphTarget.attr("stroke", "transparent");
             });
             this.listenTo(lineGraphTarget, "contextmenu", function (data, index) {
 

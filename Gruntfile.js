@@ -37,6 +37,7 @@ module.exports = function (grunt) {
                 globals: {
                     jQuery: true
                 },
+                ignores: ['src/lib/**/*.js']
             },
             uses_defaults: ['src/**/*.js'],
         },
@@ -73,7 +74,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-commands');
     grunt.loadNpmTasks('grunt-open');
 
-    grunt.registerTask('test', ['command:proxy', 'command:test']);
+    // open a proxy and server and open the app in your preferred browser
     grunt.registerTask('launch', ['command:proxy', 'command:server', 'open']);
     grunt.registerTask('kill', ['command:kill']);
+
+    // this is as in-progress way to test with a local proxy and server so HTTP client can make requests.
+    grunt.registerTask('test', ['command:proxy', 'command:test']);
 };

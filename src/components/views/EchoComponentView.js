@@ -24,7 +24,7 @@ var EchoComponentView = WebviewComponentView.extend({
         WebviewComponentView.prototype.render.call(this);
 
         var value = this.model.get("value");
-        if (value != undefined) {
+        if (value !== undefined) {
             var str = JSON.stringify(value, undefined, 2);
             this.echoDiv.node().innerHTML = str;
         }
