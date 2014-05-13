@@ -35,7 +35,7 @@ describe('HTTPClient', function () {
             var statusOutput = http.outputs['status'].model;
 
             a.terminalMouseDown(origin);
-            var newWire = a.placeNewWire(origin.cid, destination.cid);
+            a.placeNewWire(origin.cid, destination.cid);
             a.clearCursorMode();
 
             statusOutput.on("bang", done);
