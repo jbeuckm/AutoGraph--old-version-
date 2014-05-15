@@ -13,7 +13,7 @@ var ValueComponent = BaseComponent.extend({
     },
 
     defaults: {
-        value: 100
+        value: ""
     },
 
 

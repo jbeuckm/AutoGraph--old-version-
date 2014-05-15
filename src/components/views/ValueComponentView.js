@@ -4,7 +4,13 @@
  */
 var ValueComponentView = WebviewComponentView.extend({
 
-    /**
+    initialize: function () {
+        BaseComponentView.prototype.initialize.call(this);
+
+        this.textField.node().focus();
+    },
+
+        /**
      * @method
      */
     addContent: function () {
