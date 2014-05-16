@@ -5,7 +5,7 @@ AutoGraph
 
 A browser-based visual data routing automation tool.
 
-![Screenshot](screenshot.png)
+![Screenshot](animation.gif)
 
 ### Try it out ###
 
