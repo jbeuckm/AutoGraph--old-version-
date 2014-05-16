@@ -4,7 +4,7 @@ var HTTPClientComponent = BaseComponent.extend({
 
     inputs: {
         method: {name: "method"},
-        server: {name: "server"},
+        hostname: {name: "hostname"},
         port: {name: "port"},
         path: {name: "path"},
         headers: {name: "headers"},
@@ -36,13 +36,19 @@ var HTTPClientComponent = BaseComponent.extend({
         var url = this.buildUrl(args);
         console.log(url);
 
+        var self = this;
+
         $.ajax(url, {
-            crossDomain: true
-        })
-            .done(function (data) {
-                console.log(data);
+            crossDomain: true,
+            complete: function(e, xhr, settings){
+
+                self.outputs.status.model.set("value", e.status);
+                self.outputs.headers.model.set("value", e.getAllResponseHeaders());
+                self.outputs.body.model.set("value", e.responseText);
+
                 callback(args);
-            })
+            }
+        })
             .fail(function () {
                 console.log(this);
             });
@@ -50,7 +56,7 @@ var HTTPClientComponent = BaseComponent.extend({
     },
 
     buildUrl: function (args) {
-        var url = "http://" + args.server;
+        var url = "http://" + args.hostname;
         if (args.port) {
             url += ':' + args.port;
         }

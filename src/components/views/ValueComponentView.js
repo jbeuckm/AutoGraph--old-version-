@@ -10,7 +10,7 @@ var ValueComponentView = WebviewComponentView.extend({
         this.textField.node().focus();
     },
 
-        /**
+    /**
      * @method
      */
     addContent: function () {
