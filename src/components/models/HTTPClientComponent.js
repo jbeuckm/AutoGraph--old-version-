@@ -48,10 +48,9 @@ var HTTPClientComponent = BaseComponent.extend({
 
                 callback(args);
             }
-        })
-            .fail(function () {
-                console.log(this);
-            });
+        }).fail(function () {
+            console.log(this);
+        });
 
     },
 
