@@ -18,7 +18,7 @@ var DelayComponent = BaseComponent.extend({
     },
 
     defaults: {
-
+        count: 0
     },
 
     initialize: function () {
@@ -27,6 +27,13 @@ var DelayComponent = BaseComponent.extend({
 
     receiveBang: function () {
         var self = this;
+
+        var newCount = this.get("count") + 1;
+
+        this.set("count", newCount);
+
+        self.outputs.output.model.set("value", newCount);
+
 
         self.sendBang();
 

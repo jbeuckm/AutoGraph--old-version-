@@ -29,7 +29,9 @@
     "view": "HTTPClientComponentView"
   },
   {
-    "id": "counter"
+    "name": "counter",
+    "model": "CounterComponent",
+    "view": "CounterComponentView"
   },
   {
     "id": "conditional"

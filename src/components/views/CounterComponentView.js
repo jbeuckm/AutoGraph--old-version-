@@ -2,7 +2,7 @@
  * @class ValueComponentView
  * @type {*}
  */
-var ValueComponentView = WebviewComponentView.extend({
+var ValueComponentView = BaseComponentView.extend({
 
     initialize: function () {
         BaseComponentView.prototype.initialize.call(this);
@@ -13,7 +13,7 @@ var ValueComponentView = WebviewComponentView.extend({
      */
     addContent: function () {
 
-        WebviewComponentView.prototype.addContent.call(this);
+        BaseComponentView.prototype.addContent.call(this);
 
         var m = this.model;
 
@@ -27,8 +27,9 @@ var ValueComponentView = WebviewComponentView.extend({
      * @method
      */
     render: function () {
-        WebviewComponentView.prototype.render.call(this);
+        BaseComponentView.prototype.render.call(this);
 
+        this.text.text(this.model.get("count"));
     }
 
 });
