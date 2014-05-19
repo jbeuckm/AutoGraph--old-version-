@@ -16,6 +16,9 @@ var HTTPClientComponent = BaseComponent.extend({
         headers: {name: "headers"},
         body: {name: "body"}
     },
+    defaults: {
+        method: 'GET'
+    },
 
     initialize: function() {
 
@@ -42,11 +45,11 @@ var HTTPClientComponent = BaseComponent.extend({
             crossDomain: true,
             complete: function(e, xhr, settings){
 
-                self.outputs.status.model.set("value", e.status);
-                self.outputs.headers.model.set("value", e.getAllResponseHeaders());
-                self.outputs.body.model.set("value", e.responseText);
-
-                callback(args);
+                callback({
+                    status: e.status,
+                    headers: e.getAllResponseHeaders(),
+                    body: e.responseText
+                });
             }
         }).fail(function () {
             console.log(this);
