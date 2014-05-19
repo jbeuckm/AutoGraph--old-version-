@@ -1,35 +1,19 @@
 /**
- * @class ValueComponentView
+ * @class CounterComponentView
  * @type {*}
  */
-var ValueComponentView = BaseComponentView.extend({
-
-    initialize: function () {
-        BaseComponentView.prototype.initialize.call(this);
-    },
-
-    /**
-     * @method
-     */
-    addContent: function () {
-
-        BaseComponentView.prototype.addContent.call(this);
-
-        var m = this.model;
-
-        this.htmlHolder
-            .attr("width", 130)
-            .attr("height", 24);
-
-    },
+var CounterComponentView = BaseComponentView.extend({
 
     /**
      * @method
      */
     render: function () {
+
         BaseComponentView.prototype.render.call(this);
 
-        this.text.text(this.model.get("count"));
+        this.text.text(this.model.get("count"))
+
+        this.model.on("change", this.render);
     }
 
 });

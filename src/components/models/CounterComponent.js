@@ -1,10 +1,10 @@
 /**
- * Transmit a received signal after a given timelapse.
+ * Increase an integer every bang.
  *
  * @class
  * @type {*}
  */
-var DelayComponent = BaseComponent.extend({
+var CounterComponent = BaseComponent.extend({
 
     label: "counter",
 
@@ -21,22 +21,15 @@ var DelayComponent = BaseComponent.extend({
         count: 0
     },
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
-    },
-
-    receiveBang: function () {
-        var self = this;
+    process: function(args, callback) {
 
         var newCount = this.get("count") + 1;
 
         this.set("count", newCount);
 
-        self.outputs.output.model.set("value", newCount);
-
-
-        self.sendBang();
-
+        callback({
+            output: newCount
+        });
     }
 
 });

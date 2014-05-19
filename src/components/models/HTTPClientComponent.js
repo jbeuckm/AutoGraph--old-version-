@@ -42,6 +42,7 @@ var HTTPClientComponent = BaseComponent.extend({
         var self = this;
 
         $.ajax(url, {
+            method: this.get("method"),
             crossDomain: true,
             complete: function(e, xhr, settings){
 
