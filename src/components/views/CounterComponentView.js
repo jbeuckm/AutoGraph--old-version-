@@ -10,8 +10,6 @@ var CounterComponentView = BaseComponentView.extend({
         var self = this;
 
         this.model.on("change:count", function(){
-console.log("CHANGE");
-//            this.render();
             self.text.text(self.model.get("count"));
         });
     },
