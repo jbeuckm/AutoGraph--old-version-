@@ -34,13 +34,16 @@
     "view": "CounterComponentView"
   },
   {
-    "id": "conditional"
-  },
-  {
     "id": "slider"
   },
   {
+    "id": "build"
+  },
+  {
     "id": "select"
+  },
+  {
+    "id": "conditional"
   },
   {
     "id": "regex"
