@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: components/models/ClockComponent.js</title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,17 +16,17 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title">Source: components/models/ClockComponent.js</h1>
-    
-    
 
 
-    
+
+
+
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
- * Component to fire a bang at regular, settable interval.
+ * Component to fire a tick at regular, settable interval.
  *
  * @class
  * @type {*}
@@ -66,7 +66,7 @@ var ClockComponent = BaseComponent.extend({
     this.tick();
   },
 
-  receiveBang:function () {
+  receiveTick:function () {
     if (this.get("running")) {
       this.set("running", false);
     }
@@ -81,7 +81,7 @@ var ClockComponent = BaseComponent.extend({
     var self = this;
     this.timeoutId = setTimeout(function(){
       if (self.get("running")) {
-        self.sendBang();
+        self.sendTick();
         self.tick();
       }
     }, this.get("period"));

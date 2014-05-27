@@ -38,8 +38,8 @@ describe('HTTPClient', function () {
             a.placeNewWire(origin.cid, destination.cid);
             a.clearCursorMode();
 
-            statusOutput.on("bang", done);
-            http.receiveBang();
+            statusOutput.on("tick", done);
+            http.receiveTick();
         });
 
     });

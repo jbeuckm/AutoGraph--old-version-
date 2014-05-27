@@ -11,7 +11,7 @@ var EchoComponentView = WebviewComponentView.extend({
     initialize: function () {
         WebviewComponentView.prototype.initialize.call(this);
 
-        this.listenTo(this.model, "bang", function () {
+        this.listenTo(this.model, "tick", function () {
 
             this.render();
         });

@@ -233,7 +233,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                     newWireView.listenTo(destination, "change", newWireView.render, newWireView);
                     newWireView.render();
 
-                    destination.listenTo(origin, "bang", destination.receiveBang, destination);
+                    destination.listenTo(origin, "tick", destination.receiveTick, destination);
                     destination.listenTo(origin, "change:value", destination.receiveValue, destination);
 
                     self.cursorMode.wire.on("destroy", function () {

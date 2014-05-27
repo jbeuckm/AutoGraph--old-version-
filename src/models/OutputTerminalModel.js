@@ -18,15 +18,15 @@ define(['models/TerminalModel'], function (TerminalModel) {
 
             var component = this.get("component");
 
-            this.listenTo(component, "bang", this.sendBang);
+            this.listenTo(component, "tick", this.sendTick);
         },
 
         /**
          * @method
-         * @fires bang
+         * @fires tick
          */
-        sendBang: function () {
-            this.trigger("bang");
+        sendTick: function () {
+            this.trigger("tick");
         }
 
     });

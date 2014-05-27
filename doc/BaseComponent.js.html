@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: components/models/BaseComponent.js</title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,13 +16,13 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title">Source: components/models/BaseComponent.js</h1>
-    
-    
 
 
-    
+
+
+
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
@@ -60,7 +60,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       /**
        * @method
        */
-      receiveBang:function () {
+      receiveTick:function () {
         var inputTerminalValues = this.readInputValues();
         var self = this;
 
@@ -70,7 +70,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
           console.log(results);
 
           self.updateOutputTerminals(results);
-          self.sendBang();
+          self.sendTick();
         });
       },
 
@@ -112,8 +112,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
       /**
        * @method
        */
-      sendBang:function () {
-        this.trigger("bang");
+      sendTick:function () {
+        this.trigger("tick");
       },
 
 
@@ -135,7 +135,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             name:input.name
           });
 
-          this.listenTo(im, "bang", this.receiveBang);
+          this.listenTo(im, "tick", this.receiveTick);
           this.listenTo(im, "change:value", function () {
             console.log("basecomp setting " + input.name + " to " + im.get("value"));
             this.set(input.name, im.get("value"))

@@ -1,5 +1,5 @@
 /**
- * Increase an integer every bang.
+ * Increase an integer every tick.
  *
  * @class
  * @type {*}

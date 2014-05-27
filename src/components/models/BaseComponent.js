@@ -35,7 +35,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             /**
              * @method
              */
-            receiveBang: function () {
+            receiveTick: function () {
                 var inputTerminalValues = this.readInputValues();
                 var self = this;
 
@@ -45,7 +45,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                     console.log(results);
 
                     self.updateOutputTerminals(results);
-                    self.sendBang();
+                    self.sendTick();
                 });
             },
 
@@ -87,8 +87,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             /**
              * @method
              */
-            sendBang: function () {
-                this.trigger("bang");
+            sendTick: function () {
+                this.trigger("tick");
             },
 
 
@@ -110,7 +110,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                         name: input.name
                     });
 
-                    this.listenTo(im, "bang", this.receiveBang);
+                    this.listenTo(im, "tick", this.receiveTick);
                     this.listenTo(im, "change:value", function () {
                         console.log("basecomp setting " + input.name + " to " + im.get("value"));
                         this.set(input.name, im.get("value"));

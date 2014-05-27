@@ -62,12 +62,12 @@ describe('AutoGraph', function() {
       expect(a.Components.length).to.equal(componentCount + 1);
     });
 
-    it('should transmit a bang from in to out', function(done) {
+    it('should transmit a tick from in to out', function(done) {
       var input = bc.inputs['input'].model;
       var output = bc.outputs['output'].model;
 
-      output.on("bang", done);
-      input.receiveBang();
+      output.on("tick", done);
+      input.receiveTick();
     });
 
     it('can remove a component', function() {
@@ -110,8 +110,8 @@ describe('AutoGraph', function() {
       expect(newWire).to.not.equal(null);
       expect(a.Wires.length).to.equal(wireCount + 1);
 
-      valueOutput.on("bang", done);
-      button.receiveBang();
+      valueOutput.on("tick", done);
+      button.receiveTick();
     });
 
   });

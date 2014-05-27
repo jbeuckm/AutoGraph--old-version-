@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: components/models/DelayComponent.js</title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,13 +16,13 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title">Source: components/models/DelayComponent.js</h1>
-    
-    
 
 
-    
+
+
+
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
@@ -56,10 +56,10 @@ var DelayComponent = BaseComponent.extend({
     BaseComponent.prototype.initialize.call(this);
   },
 
-  receiveBang: function() {
+  receiveTick: function() {
     var self = this;
     setTimeout(function(){
-      self.sendBang();
+      self.sendTick();
     }, this.get("period"));
   }
 

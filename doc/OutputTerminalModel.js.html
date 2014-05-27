@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: models/OutputTerminalModel.js</title>
-    
+
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,13 +16,13 @@
 <body>
 
 <div id="main">
-    
+
     <h1 class="page-title">Source: models/OutputTerminalModel.js</h1>
-    
-    
 
 
-    
+
+
+
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
@@ -45,15 +45,15 @@ define(['models/TerminalModel'], function (TerminalModel) {
 
       var component = this.get("component");
 
-      this.listenTo(component, "bang", this.sendBang);
+      this.listenTo(component, "tick", this.sendTick);
     },
 
     /**
      * @method
-     * @fires bang
+     * @fires tick
      */
-    sendBang:function () {
-      this.trigger("bang");
+    sendTick:function () {
+      this.trigger("tick");
     }
 
   });

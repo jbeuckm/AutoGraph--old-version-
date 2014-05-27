@@ -75,6 +75,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-open');
 
     // open a proxy and server and open the app in your preferred browser
+    grunt.registerTask('build', ['command:build']);
     grunt.registerTask('launch', ['command:proxy', 'command:server', 'open']);
     grunt.registerTask('kill', ['command:kill']);
 

@@ -1,5 +1,5 @@
 /**
- * Component to fire a bang at regular, settable interval.
+ * Component to fire a tick at regular, settable interval.
  *
  * @class
  * @type {*}
@@ -39,7 +39,7 @@ var ClockComponent = BaseComponent.extend({
         this.tick();
     },
 
-    receiveBang: function () {
+    receiveTick: function () {
         if (this.get("running")) {
             this.set("running", false);
         }
@@ -54,7 +54,7 @@ var ClockComponent = BaseComponent.extend({
         var self = this;
         this.timeoutId = setTimeout(function () {
             if (self.get("running")) {
-                self.sendBang();
+                self.sendTick();
                 self.tick();
             }
         }, this.get("period"));

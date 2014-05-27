@@ -15,8 +15,8 @@ define(['models/TerminalModel'], function (TerminalModel) {
         /**
          * @method
          */
-        receiveBang: function () {
-            this.trigger("bang");
+        receiveTick: function () {
+            this.trigger("tick");
         },
 
         /**
