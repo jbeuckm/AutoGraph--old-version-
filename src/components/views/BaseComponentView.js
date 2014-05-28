@@ -68,6 +68,9 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
                 this.rect.on("select", function(){
                     m.set("selected", true);
                 });
+                this.rect.on("deselect", function(){
+                    m.set("selected", false);
+                });
 
                 this.rect.on("contextmenu", function (data, index) {
 

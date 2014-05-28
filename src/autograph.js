@@ -334,6 +334,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
             selectionTool.dispatch.on("change", function(e){
 
                 d3.selectAll(".component-rect").each(function(){
+
+                    var event = document.createEvent("SVGEvents");
+
                     var bb = this.getBoundingClientRect();
 
                     if (
@@ -342,14 +345,14 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                         (bb.top >= e.top) &&
                         (bb.bottom <= e.bottom)) {
 
-
-                        var event = document.createEvent("SVGEvents");
                         event.initEvent("select",true,true);
                         this.dispatchEvent(event);
-
+                    } else {
+                        event.initEvent("deselect",true,true);
+                        this.dispatchEvent(event);
                     }
 
-                });
+            });
             });
 
         };
