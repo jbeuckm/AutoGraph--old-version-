@@ -98,6 +98,8 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
                 this.buildOutputs(outputs);
 
                 this.listenTo(m, "tick", this.hilight);
+
+                this.listenTo(m, "change:selected", this.showSelected);
             },
 
             addContent: function () {
@@ -113,19 +115,37 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
                     .transition()
                     .style("stroke", this.rectColor);
             },
+            showSelected: function (e) {
+
+                if (e.changed.selected == true) {
+
+                    this.selectedRect = this.d3.append("rect")
+                        .attr("class", "selected-rect");
+
+                    this.selectedRect
+                        .attr("transform", "translate(-8,-8)")
+                        .attr("rx", 8)
+                        .attr("ry", 8)
+                        .attr("width", parseFloat(this.rect.attr("width")) + 16)
+                        .attr("height", parseFloat(this.rect.attr("height")) + 16);
+                } else {
+                    this.selectedRect.remove();
+                }
+            },
 
             render: function () {
 
                 var m = this.model;
 
                 var bb = this.content.node().getBBox();
-                this.rect.attr("width", Math.max(bb.width + 8, this.minWidth));
+                var bbWidth = bb.width + 8;
+                this.rect.attr("width", Math.max(bbWidth, this.minWidth));
 
-                var height = bb.height + 8;
-                this.rect.attr("height", height);
+                var bbHeight = bb.height + 8;
+                this.rect.attr("height", bbHeight);
 
                 this.outputTerminalHolder
-                    .attr("transform", "translate(0, " + height + ")");
+                    .attr("transform", "translate(0, " + bbHeight + ")");
 
                 this.d3
                     .attr("transform", "translate(" + m.get("x") + " " + m.get("y") + ")");

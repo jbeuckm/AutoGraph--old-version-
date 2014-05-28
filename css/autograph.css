@@ -13,17 +13,21 @@ body {
 }
 
 .component-list {
-  background-color: #444;
+  background-color: #333;
   position: absolute;;
   right: 0;
-  width: 150px;
+  width: 175px;
   overflow: auto;
 }
 
 .component-option {
-  padding-left: 4px;
+  background-color: #555;
+  padding: 4px;
+  margin: 5px;
   width: 146px;
   cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 3px;
 }
 .component-option:hover {
   background-color: #000;
@@ -35,6 +39,12 @@ body {
   stroke-width: 1;
   fill: rgba(0,0,0,.5);
   cursor: move;
+}
+.selected-rect {
+  stroke: #5ac;
+  stroke-width: 2;
+  fill: transparent;
+  pointer-events: none;
 }
 .component-terminal {
   fill: #ddd;
@@ -64,3 +74,4 @@ body {
 input {
   background-color: #fff;
 }
+

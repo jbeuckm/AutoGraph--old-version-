@@ -32,33 +32,5 @@
     "name": "counter",
     "model": "CounterComponent",
     "view": "CounterComponentView"
-  },
-  {
-    "id": "slider"
-  },
-  {
-    "id": "build"
-  },
-  {
-    "id": "select"
-  },
-  {
-    "id": "conditional"
-  },
-  {
-    "id": "regex"
-  },
-  {
-    "id": "xpath"
-  },
-  {
-    "id": "in"
-  },
-  {
-    "id": "out"
-  },
-  {
-    "id": "HTTP server"
   }
-
 ]
