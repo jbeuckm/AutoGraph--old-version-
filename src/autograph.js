@@ -328,7 +328,29 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
             var selectionTool = SelectionTool(self.controlLayer);
+            console.log(selectionTool);
             self.controlTarget.call(selectionTool);
+
+            selectionTool.dispatch.on("change", function(e){
+
+                d3.selectAll(".component-rect").each(function(){
+                    var bb = this.getBoundingClientRect();
+
+                    if (
+                        (bb.left >= e.left) &&
+                        (bb.right <= e.right) &&
+                        (bb.top >= e.top) &&
+                        (bb.bottom <= e.bottom)) {
+
+
+                        var event = document.createEvent("SVGEvents");
+                        event.initEvent("select",true,true);
+                        this.dispatchEvent(event);
+
+                    }
+
+                });
+            });
 
         };
 

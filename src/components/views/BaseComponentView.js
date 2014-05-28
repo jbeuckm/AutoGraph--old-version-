@@ -64,6 +64,11 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 
                 this.rect = this.d3.append("rect")
                     .attr("class", "component-rect");
+
+                this.rect.on("select", function(){
+                    m.set("selected", true);
+                });
+
                 this.rect.on("contextmenu", function (data, index) {
 
                     d3.event.preventDefault();

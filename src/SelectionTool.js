@@ -38,10 +38,21 @@ define(['d3'], function (d3) {
                 { x: selectStart.x, y: d3.event.y}
             ];
             selectRect.attr("d", selectLineFunction(data));
+
+            var rect = {
+                left: Math.min(d3.event.x, selectStart.x),
+                top: Math.min(d3.event.y, selectStart.y),
+                right: Math.max(d3.event.x, selectStart.x),
+                bottom: Math.max(d3.event.y, selectStart.y)
+            };
+
+            selectDragger.dispatch.change(rect);
         });
         selectDragger.on("dragend", function () {
             selectRect.remove();
         });
+
+        selectDragger.dispatch = d3.dispatch("change");
 
         return selectDragger;
     };
