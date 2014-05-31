@@ -17,7 +17,7 @@ var ValueComponentView = WebviewComponentView.extend({
 
         WebviewComponentView.prototype.addContent.call(this);
 
-        var m = this.model;
+        var m = this.model, self = this;
 
         this.htmlHolder
             .attr("width", 130)
@@ -33,6 +33,10 @@ var ValueComponentView = WebviewComponentView.extend({
                 var val = d3.event.target.value;
                 m.set("value", val);
             });
+
+        m.on("change:value", function(e) {
+            self.textField.value(m.get("value"));
+        });
     },
 
     /**

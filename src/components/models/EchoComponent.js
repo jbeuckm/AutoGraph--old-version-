@@ -9,7 +9,9 @@ var EchoComponent = BaseComponent.extend({
         }
     },
     outputs: {
-        output: {name: "output"}
+        output: {
+            name: "output"
+        }
     }
 
 
