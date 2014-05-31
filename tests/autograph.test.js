@@ -115,7 +115,11 @@ describe('AutoGraph', function () {
             expect(newWire).to.not.equal(null);
             expect(a.Wires.length).to.equal(wireCount + 1);
 
-            valueOutput.on("tick", done);
+            function valueTick() {
+                valueOutput.off("tick", valueTick);
+                done();
+            }
+            valueOutput.on("tick", valueTick);
             button.receiveTick();
         });
 
@@ -135,10 +139,13 @@ describe('AutoGraph', function () {
             var testString = (new Date()).getTime();
 //            value.set("value", testString);
 
-            echoOutput.on("tick", function(){
+            function echoTick(){
 //                expect(echo.get("value")).to.equal(testString);
+                echoOutput.off("tick", echoTick);
                 done();
-            });
+            }
+
+            echoOutput.on("tick", echoTick);
             button.receiveTick();
         });
 
