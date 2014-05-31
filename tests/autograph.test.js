@@ -137,10 +137,10 @@ describe('AutoGraph', function () {
             a.clearCursorMode();
 
             var testString = (new Date()).getTime();
-//            value.set("value", testString);
+            value.set("value", testString);
 
             function echoTick(){
-//                expect(echo.get("value")).to.equal(testString);
+                expect(echo.get("value")).to.equal(testString);
                 echoOutput.off("tick", echoTick);
                 done();
             }

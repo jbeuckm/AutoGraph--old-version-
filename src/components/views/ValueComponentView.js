@@ -35,7 +35,7 @@ var ValueComponentView = WebviewComponentView.extend({
             });
 
         m.on("change:value", function(e) {
-            self.textField.value(m.get("value"));
+            self.textField.attr("value", m.get("value"));
         });
     },
 
