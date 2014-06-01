@@ -12,6 +12,10 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
             var self = this;
 
+            /**
+             *
+             * @type {*}
+             */
             self.componentList = container.append("div").attr("class", "component-list");
 
 
@@ -35,22 +39,26 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
             var classRegistry = {};
 
-            function getClass(className, path, callback) {
+            function getClass(className, path) {
+
+                var def = Q.defer();
 
                 if (classRegistry[className]) {
-                    callback(classRegistry[className]);
+                    def.resolve(classRegistry[className]);
                 }
                 else {
                     $.get(path, function (str) {
                         eval(str);
                         classRegistry[className] = eval(className);
-                        callback(classRegistry[className]);
+                        def.resolve(classRegistry[className]);
                     }, 'text')
                         .fail(function(err){
                             console.log('ERROR LOADING COMPONENT '+className);
-                            console.log(path);
+                            def.reject(path);
                         });
                 }
+
+                return def.promise;
             }
 
             /**
@@ -58,31 +66,33 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
              * @param componentDescription
              * @param callback
              */
-            self.loadComponentClasses = function (componentDescription, callback) {
+            self.loadComponentClasses = function (componentDescription) {
 
                 var modelClass = componentDescription.model;
                 var viewClass = componentDescription.view;
                 var fullpath = componentDescription.path || "src/components/";
 
-                var result = {};
+                var def = Q.defer();
 
-                getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random(), function (mc) {
+                var loading = [];
 
-                    result.modelClass = mc;
+                loading.push(getClass(modelClass, componentPath + fullpath + "models/" + modelClass + ".js?v=" + Math.random()));
+                if (viewClass) {
+                    loading.push(getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random()));
+                }
 
-                    if (viewClass) {
+                Q.all(loading).spread(function(mc, vc){
 
-                        getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random(), function (vc) {
-                            result.viewClass = vc;
-                            callback(result);
-                        });
-                    }
-                    else {
-                        result.viewClass = BaseComponentView;
-                        callback(result);
-                    }
+                    result = {
+                        modelClass: mc,
+                        viewClass: vc
+                    };
+
+                    def.resolve(result);
 
                 });
+
+                return def.promise;
             };
 
         };

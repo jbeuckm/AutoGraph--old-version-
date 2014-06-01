@@ -42,6 +42,9 @@ var ClockComponent = BaseComponent.extend({
         this.tick();
     },
 
+    /**
+     * Toggle whether the clock is running.
+     */
     receiveTick: function () {
         if (this.get("running")) {
             this.set("running", false);
@@ -53,6 +56,9 @@ var ClockComponent = BaseComponent.extend({
     },
 
 
+    /**
+     * Send the tick and prepare the next tick.
+     */
     tick: function () {
         var self = this;
         this.timeoutId = setTimeout(function () {

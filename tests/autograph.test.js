@@ -55,7 +55,7 @@ describe('AutoGraph', function () {
         var bc;
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(baseComponent, function (b) {
+            a.componentLibrary.loadComponentClasses(baseComponent).then(function (b) {
                 loadedBaseComponent = b;
                 ready();
             });
@@ -86,11 +86,11 @@ describe('AutoGraph', function () {
     describe('creates components and wires', function () {
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(buttonComponent, function (b) {
+            a.componentLibrary.loadComponentClasses(buttonComponent).then(function (b) {
                 loadedButton = b;
-                a.componentLibrary.loadComponentClasses(valueComponent, function (v) {
+                a.componentLibrary.loadComponentClasses(valueComponent).then(function (v) {
                     loadedValue = v;
-                    a.componentLibrary.loadComponentClasses(echoComponent, function (e) {
+                    a.componentLibrary.loadComponentClasses(echoComponent).then(function (e) {
                         loadedEcho = e;
                         ready();
                     });

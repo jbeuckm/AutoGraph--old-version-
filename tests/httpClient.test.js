@@ -18,7 +18,7 @@ describe('HTTPClient', function () {
     describe('creates an http component', function () {
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(HTTPClientComponent, function (c) {
+            a.componentLibrary.loadComponentClasses(HTTPClientComponent).then(function (c) {
                 loadedComponent = c;
                 ready();
             });
