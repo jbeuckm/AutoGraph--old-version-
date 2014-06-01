@@ -25,7 +25,9 @@ describe('AutoGraph', function () {
         "name": "echo",
         "model": "EchoComponent",
         "view": "EchoComponentView"
-    }, loadedEcho, echo;
+    }, loadedEcho, echo, echo2;
+
+    var testString;
 
     before(function () {
         a = new autograph('container', 'components.json', '../');
@@ -132,7 +134,7 @@ describe('AutoGraph', function () {
             var destination = echo.inputs['value'].model;
             var echoOutput = echo.outputs['output'].model;
 
-            var testString = (new Date()).getTime();
+            testString = (new Date()).getTime();
             value.set("value", testString);
 
             a.terminalMouseDown(origin);
@@ -146,6 +148,32 @@ describe('AutoGraph', function () {
             }
 
             echoOutput.on("tick", echoTick);
+            button.receiveTick();
+        });
+
+
+        it('should transmit a value to multiple recipients', function (done) {
+
+            echo2 = a.placeNewModel(loadedEcho.modelClass, loadedEcho.viewClass, {x: 720, y: 130});
+
+            var origin = value.outputs['output'].model;
+            var destination = echo2.inputs['value'].model;
+            var echo2Output = echo2.outputs['output'].model;
+
+            a.terminalMouseDown(origin);
+            a.placeNewWire(origin.cid, destination.cid);
+            a.clearCursorMode();
+
+            function echoTick(){
+                echo2Output.off("tick", echoTick);
+
+                expect(echo.get("value")).to.equal(testString);
+                expect(echo2.get("value")).to.equal(testString);
+
+                done();
+            }
+
+            echo2Output.on("tick", echoTick);
             button.receiveTick();
         });
 

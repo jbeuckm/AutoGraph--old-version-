@@ -230,11 +230,12 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                     self.cursorMode.wire.set("destinationTerminalId", destinationId);
 
                     var newWireView = self.cursorMode.wireView;
-                    newWireView.listenTo(destination, "change", newWireView.render, newWireView);
+                    newWireView.listenTo(destination, "change", newWireView.render);
                     newWireView.render();
 
-                    destination.listenTo(origin, "tick", destination.receiveTick, destination);
-                    destination.listenTo(origin, "change:value", destination.receiveValue, destination);
+                    destination.listenTo(origin, "tick", destination.receiveTick);
+                    destination.receiveValue(origin);
+                    destination.listenTo(origin, "change:value", destination.receiveValue);
 
                     self.cursorMode.wire.on("destroy", function () {
                         destination.stopListening(origin);
@@ -315,11 +316,22 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
             self.handleKeyDown = function (e) {
                 switch (d3.event.which) {
 
+                    // escape
                     case 27:
                         if (self.cursorMode.wire) {
                             self.cursorMode.wire.destroy();
                         }
                         self.clearCursorMode();
+                        break;
+
+                    // delete
+                    case 46:
+
+                        d3.selectAll(".component-rect").each(function(){
+                            event.initEvent("delete",true,true);
+                            this.dispatchEvent(event);
+                        });
+
                         break;
                 }
 

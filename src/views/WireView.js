@@ -72,15 +72,14 @@ define(['backbone'], function (Backbone) {
          * @method
          */
         render: function () {
-            console.log("WireView::render()");
+
             var m = this.model;
 
             if (m.get("originTerminalId")) {
 
                 var origin = m.getOriginModel();
                 var destination = m.getDestinationModel();
-                console.log("origin anchors " + origin.get("anchorX") + ", " + origin.get("anchorY"));
-                console.log("destination anchors " + destination.get("anchorX") + ", " + destination.get("anchorY"));
+
                 var dx = destination.get("anchorX") - origin.get("anchorX");
                 var dy = destination.get("anchorY") - origin.get("anchorY");
                 var distance = Math.sqrt(dx * dx + dy * dy);

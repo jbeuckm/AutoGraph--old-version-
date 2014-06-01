@@ -12,7 +12,26 @@ var EchoComponent = BaseComponent.extend({
         output: {
             name: "output"
         }
-    }
+    },
+/*
+    /**
+     * A tick was received at one of the inputs. Process the inputs and pass on the tick.
+     *
+     * @method
+     *
+    receiveTick: function () {
+        var inputTerminalValues = this.readInputValues();
+        var self = this;
 
+        this.process(inputTerminalValues, function (results) {
+
+            console.log("process results for " + self.label);
+            console.log(results);
+
+            self.updateOutputTerminals(results);
+            self.sendTick();
+        });
+    }
+*/
 
 });

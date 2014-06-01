@@ -75,7 +75,7 @@ define(['backbone'], function (Backbone) {
          * @method
          */
         updateAnchorPoints: function () {
-            console.log("TerminalView::updateAnchorPoints()");
+
             var m = this.model;
 
             var pos = this.getBBoxInWorkbenchSpace(this.rect.node());

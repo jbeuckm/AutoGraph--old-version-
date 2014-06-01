@@ -22,17 +22,24 @@ var ValueComponent = BaseComponent.extend({
      * @method
      */
     receiveTick: function () {
+        console.log("Value: receiveTick()");
         var inputTerminalValues = this.readInputValues();
+
+        console.log("Value::inputs = ");
+        console.log(inputTerminalValues);
+
         var self = this;
 
         this.process(inputTerminalValues, function (results) {
 
-            console.log("process results for " + self.label);
-            console.log(results);
-
-            self.updateOutputTerminals({
+            var outs = {
                 output: self.get("value")
-            });
+            };
+
+            console.log("Value::outputs = ");
+            console.log(outs);
+
+            self.updateOutputTerminals(outs);
             self.sendTick();
         });
     }

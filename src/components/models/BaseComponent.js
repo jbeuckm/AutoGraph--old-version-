@@ -43,9 +43,6 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
                 this.process(inputTerminalValues, function (results) {
 
-                    console.log("process results for " + self.label);
-                    console.log(results);
-
                     self.updateOutputTerminals(results);
                     self.sendTick();
                 });
@@ -58,11 +55,13 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
                 var ins = {};
                 for (var key in this.inputs) {
-                    var input = this.inputs[key].model;
-                    if (input.get("value")) {
-                        ins[key] = input.get("value");
+                    var inputModel = this.inputs[key].model;
+                    if (inputModel.get("value")) {
+                        ins[key] = inputModel.get("value");
                     }
                 }
+                console.log("component "+this.label+" sees inputs ==>");
+                console.log(ins);
                 return ins;
             },
 
@@ -74,6 +73,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                 for (var key in values) {
                     var output = this.outputs[key];
                     if (output) {
+                        console.log("setting output terminal value ["+values[key]+"] for key ["+key+"]");
                         output.model.set("value", values[key]);
                     }
                 }
