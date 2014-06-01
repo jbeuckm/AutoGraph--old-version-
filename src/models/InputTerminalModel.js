@@ -18,9 +18,6 @@ define(['models/TerminalModel'], function (TerminalModel) {
          * @method
          */
         receiveTick: function () {
-            console.log('receiveTick()...');
-            console.log(this);
-
             this.trigger("tick");
         },
 

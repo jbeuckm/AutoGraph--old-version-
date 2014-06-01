@@ -30,10 +30,13 @@ var ClockComponent = BaseComponent.extend({
     initialize: function () {
         BaseComponent.prototype.initialize.call(this);
 
+        var self = this;
+
         // reset clock when period changes
-        this.on("change:period", function () {
-            clearTimeout(this.timeoutId);
-            this.tick();
+        this.inputs["period"].model.on("change:value", function (period) {
+            clearTimeout(self.timeoutId);
+            self.set("period", period.get("value"));
+            self.tick();
         });
 
         this.tick();

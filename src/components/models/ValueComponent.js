@@ -16,6 +16,24 @@ var ValueComponent = BaseComponent.extend({
         value: ""
     },
 
+    initialize: function () {
+        BaseComponent.prototype.initialize.call(this);
+
+        var self = this;
+
+        this.on("change:value", function (newVal) {
+
+            var outs = {
+                output: newVal.changed.value
+            };
+
+            console.log("setting new val = "+newVal.changed.value);
+
+            self.updateOutputTerminals(outs);
+        });
+
+    },
+
     /**
      * A tick was received at one of the inputs. Process the inputs and pass on the tick.
      *
