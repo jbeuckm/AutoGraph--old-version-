@@ -33,6 +33,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             },
 
             /**
+             * A tick was received at one of the inputs. Process the inputs and pass on the tick.
+             *
              * @method
              */
             receiveTick: function () {

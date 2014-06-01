@@ -102,7 +102,7 @@ describe('AutoGraph', function () {
 
             button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x: 470, y: 10});
 
-            value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 60});
+            value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 65});
 
             var origin = button.outputs['output'].model;
             var destination = value.inputs['input'].model;
@@ -126,18 +126,18 @@ describe('AutoGraph', function () {
 
         it('should transmit a value from the value component', function (done) {
 
-            echo = a.placeNewModel(loadedEcho.modelClass, loadedEcho.viewClass, {x: 450, y: 130});
+            echo = a.placeNewModel(loadedEcho.modelClass, loadedEcho.viewClass, {x: 480, y: 130});
 
             var origin = value.outputs['output'].model;
             var destination = echo.inputs['value'].model;
             var echoOutput = echo.outputs['output'].model;
 
+            var testString = (new Date()).getTime();
+            value.set("value", testString);
+
             a.terminalMouseDown(origin);
             a.placeNewWire(origin.cid, destination.cid);
             a.clearCursorMode();
-
-            var testString = (new Date()).getTime();
-            value.set("value", testString);
 
             function echoTick(){
                 expect(echo.get("value")).to.equal(testString);

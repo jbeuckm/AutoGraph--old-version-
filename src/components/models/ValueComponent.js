@@ -16,16 +16,25 @@ var ValueComponent = BaseComponent.extend({
         value: ""
     },
 
+    /**
+     * A tick was received at one of the inputs. Process the inputs and pass on the tick.
+     *
+     * @method
+     */
+    receiveTick: function () {
+        var inputTerminalValues = this.readInputValues();
+        var self = this;
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
+        this.process(inputTerminalValues, function (results) {
 
-        this.outputs.output.model.set("value", this.get("value"));
+            console.log("process results for " + self.label);
+            console.log(results);
 
-        this.listenTo(this, "change:value", function () {
-            this.outputs.output.model.set("value", this.get("value"));
+            self.updateOutputTerminals({
+                output: self.get("value")
+            });
+            self.sendTick();
         });
     }
-
 
 });

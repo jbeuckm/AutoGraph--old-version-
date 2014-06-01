@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: components/views/BaseComponentView.js</title>
-
+    
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
@@ -16,194 +16,222 @@
 <body>
 
 <div id="main">
-
+    
     <h1 class="page-title">Source: components/views/BaseComponentView.js</h1>
+    
+    
 
 
-
-
-
+    
     <section>
         <article>
             <pre class="prettyprint source"><code>/**
  * @module BaseComponentView
  */
 define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
-  function (Backbone, InputTerminalView, OutputTerminalView) {
+    function (Backbone, InputTerminalView, OutputTerminalView) {
 
-    /**
-     * @class BaseComponentView
-     */
-  return Backbone.View.extend({
+        /**
+         * @class BaseComponentView
+         */
+        return Backbone.View.extend({
 
-    initialize: function () {
-      this.d3 = d3.select(this.el);
+            initialize: function () {
+                this.d3 = d3.select(this.el);
 
-      var m = this.model;
+                var m = this.model;
 
-      var self = this;
+                var self = this;
 
-      var dragger = d3.behavior.drag();
-      dragger.on("dragstart", function(){
-          if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) {
-            self.ignoreDrag = true;
-          }
-      });
-      dragger.on("drag", function () {
+                var dragger = d3.behavior.drag();
+                dragger.on("dragstart", function () {
+                    if (d3.select(d3.event.sourceEvent.target).classed("nodrag")) {
+                        self.ignoreDrag = true;
+                    }
+                });
+                dragger.on("drag", function () {
 
-        if (self.ignoreDrag) {
-          return;
-        }
+                    if (self.ignoreDrag) {
+                        return;
+                    }
 
-        this.parentNode.appendChild(this);
-        var dragTarget = d3.select(this);
+                    this.parentNode.appendChild(this);
+                    var dragTarget = d3.select(this);
 
-        var oldDims = dragTarget.attr("transform").replace("translate(", "").replace(")", "");
-        oldDims = oldDims.split(' ');
+                    var oldDims = dragTarget.attr("transform").replace("translate(", "").replace(")", "");
+                    oldDims = oldDims.split(' ');
 
-        var newX = d3.event.dx + parseFloat(oldDims[0]);
-        var newY = d3.event.dy + parseFloat(oldDims[1]);
+                    var newX = d3.event.dx + parseFloat(oldDims[0]);
+                    var newY = d3.event.dy + parseFloat(oldDims[1]);
 
-        m.set("x", newX);
-        m.set("y", newY);
+                    m.set("x", newX);
+                    m.set("y", newY);
 
-        for (var i in inputs) {
-          inputs[i].view.updateAnchorPoints();
-        }
-        for (var j in outputs) {
-          outputs[j].view.updateAnchorPoints();
-        }
+                    for (var i in inputs) {
+                        inputs[i].view.updateAnchorPoints();
+                    }
+                    for (var j in outputs) {
+                        outputs[j].view.updateAnchorPoints();
+                    }
 
-        dragTarget
-          .attr("transform", function () {
-            return "translate(" + newX + " " + newY + ")";
-          });
-      });
-      // this tells the wire views to update
-      dragger.on("dragend", function(){
-        m.trigger("change");
-        self.ignoreDrag = false;
-      });
+                    dragTarget
+                        .attr("transform", function () {
+                            return "translate(" + newX + " " + newY + ")";
+                        });
+                });
+                // this tells the wire views to update
+                dragger.on("dragend", function () {
+                    m.trigger("change");
+                    self.ignoreDrag = false;
+                });
 
-      this.d3
-        .call(dragger)
-        .classed("component", true);
+                this.d3
+                    .call(dragger)
+                    .classed("component", true);
 
-      this.rect = this.d3.append("rect")
-        .attr("class", "component-rect");
-      this.rect.on("contextmenu", function(data, index) {
+                this.rect = this.d3.append("rect")
+                    .attr("class", "component-rect");
 
-        d3.event.preventDefault();
+                this.rect.on("select", function(){
+                    m.set("selected", true);
+                });
+                this.rect.on("deselect", function(){
+                    m.set("selected", false);
+                });
 
-        if (confirm('Delete this component?')) {
-          var a = m.get("autograph");
-          self.d3.remove();
-          a.removeComponent(m);
-        }
-      });
+                this.rect.on("contextmenu", function (data, index) {
 
-      this.rectColor = this.rect.style("stroke");
+                    d3.event.preventDefault();
 
-      this.content = this.d3.append("g")
-        .attr("transform", "translate(4,4)");
+                    if (confirm('Delete this component?')) {
+                        var a = m.get("autograph");
+                        self.d3.remove();
+                        a.removeComponent(m);
+                    }
+                });
+
+                this.rectColor = this.rect.style("stroke");
+
+                this.content = this.d3.append("g")
+                    .attr("transform", "translate(4,4)");
 
 
-      this.addContent();
+                this.addContent();
 
-      var inputs = m.inputs;
-      var outputs = m.outputs;
+                var inputs = m.inputs;
+                var outputs = m.outputs;
 
-      var inputCount = Object.keys(inputs).length;
-      var outputCount = Object.keys(outputs).length;
+                var inputCount = Object.keys(inputs).length;
+                var outputCount = Object.keys(outputs).length;
 
-      this.minWidth = Math.max(inputCount, outputCount) * 20;
+                this.minWidth = Math.max(inputCount, outputCount) * 20;
 
-      this.inputTerminalHolder = this.d3.append("g");
-      this.outputTerminalHolder = this.d3.append("g");
+                this.inputTerminalHolder = this.d3.append("g");
+                this.outputTerminalHolder = this.d3.append("g");
 
-      this.buildInputs(inputs);
-      this.buildOutputs(outputs);
+                this.buildInputs(inputs);
+                this.buildOutputs(outputs);
 
-      this.listenTo(m, "tick", this.hilight);
-    },
+                this.listenTo(m, "tick", this.hilight);
 
-    addContent: function() {
-      this.text = this.content.append("text")
-        .text(this.model.label)
-        .attr("class", "component-text")
-        .attr("dy", '.9em');
-    },
+                this.listenTo(m, "change:selected", this.showSelected);
+            },
 
-    hilight: function () {
-      this.rect
-        .style("stroke", "#f00")
-        .transition()
-        .style("stroke", this.rectColor);
-    },
+            addContent: function () {
+                this.text = this.content.append("text")
+                    .text(this.model.label)
+                    .attr("class", "component-text")
+                    .attr("dy", '.9em');
+            },
 
-    render: function () {
+            hilight: function () {
+                this.rect
+                    .style("stroke", "#f00")
+                    .transition()
+                    .style("stroke", this.rectColor);
+            },
+            showSelected: function (e) {
 
-      var m = this.model;
+                if (e.changed.selected == true) {
 
-      var bb = this.content.node().getBBox();
-      this.rect.attr("width", Math.max(bb.width + 8, this.minWidth));
+                    this.selectedRect = this.d3.append("rect")
+                        .attr("class", "selected-rect");
 
-      var height = bb.height + 8;
-      this.rect.attr("height", height);
+                    this.selectedRect
+                        .attr("transform", "translate(-8,-8)")
+                        .attr("rx", 8)
+                        .attr("ry", 8)
+                        .attr("width", parseFloat(this.rect.attr("width")) + 16)
+                        .attr("height", parseFloat(this.rect.attr("height")) + 16);
+                } else {
+                    this.selectedRect.remove();
+                }
+            },
 
-      this.outputTerminalHolder
-        .attr("transform", "translate(0, "+height+")");
+            render: function () {
 
-      this.d3
-        .attr("transform", "translate(" + m.get("x") + " " + m.get("y") + ")");
-    },
+                var m = this.model;
 
-    buildInputs:function (inputs) {
+                var bb = this.content.node().getBBox();
+                var bbWidth = bb.width + 8;
+                this.rect.attr("width", Math.max(bbWidth, this.minWidth));
 
-      var cnt = 0;
-      for (var i in inputs) {
+                var bbHeight = bb.height + 8;
+                this.rect.attr("height", bbHeight);
 
-        var input = inputs[i];
+                this.outputTerminalHolder
+                    .attr("transform", "translate(0, " + bbHeight + ")");
 
-        var view = new InputTerminalView({
-          autograph: this.model.get("autograph"),
-          model: input.model,
-          el: this.inputTerminalHolder.append("g")[0]
+                this.d3
+                    .attr("transform", "translate(" + m.get("x") + " " + m.get("y") + ")");
+            },
+
+            buildInputs: function (inputs) {
+
+                var cnt = 0;
+                for (var i in inputs) {
+
+                    var input = inputs[i];
+
+                    var view = new InputTerminalView({
+                        autograph: this.model.get("autograph"),
+                        model: input.model,
+                        el: this.inputTerminalHolder.append("g")[0]
+                    });
+
+                    this.model.on("change", view.updateAnchorPoints, view);
+                    view.render();
+
+                    input.view = view;
+
+                    cnt++;
+                }
+            },
+
+            buildOutputs: function (outputs) {
+
+                var cnt = 0;
+                for (var i in outputs) {
+
+                    var output = outputs[i];
+
+                    var view = new OutputTerminalView({
+                        autograph: this.model.get("autograph"),
+                        model: output.model,
+                        el: this.outputTerminalHolder.append("g")[0]
+                    });
+                    this.model.on("change", view.updateAnchorPoints, view);
+                    view.render();
+
+                    output.view = view;
+
+                    cnt++;
+                }
+            }
+
         });
 
-        this.model.on("change", view.updateAnchorPoints, view);
-        view.render();
-
-        input.view = view;
-
-        cnt++;
-      }
-    },
-
-    buildOutputs: function (outputs) {
-
-      var cnt = 0;
-      for (var i in outputs) {
-
-        var output = outputs[i];
-
-        var view = new OutputTerminalView({
-          autograph: this.model.get("autograph"),
-          model:output.model,
-          el:this.outputTerminalHolder.append("g")[0]
-        });
-        this.model.on("change", view.updateAnchorPoints, view);
-        view.render();
-
-        output.view = view;
-
-        cnt++;
-      }
-    }
-
-  });
-
-});
+    });
 
 </code></pre>
         </article>
@@ -215,13 +243,13 @@ define(['backbone', 'views/InputTerminalView', 'views/OutputTerminalView'],
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-autograph.html">autograph</a></li><li><a href="module-BaseComponent.html">BaseComponent</a></li><li><a href="module-BaseComponentView.html">BaseComponentView</a></li><li><a href="module-ComponentCollection.html">ComponentCollection</a></li><li><a href="module-ComponentLibrary.html">ComponentLibrary</a></li><li><a href="module-CursorModel.html">CursorModel</a></li><li><a href="TerminalModel_.html">models/TerminalModel</a></li><li><a href="module-PositionedModel.html">PositionedModel</a></li><li><a href="module-SelectionTool.html">SelectionTool</a></li><li><a href="module-TerminalModel.html">TerminalModel</a></li><li><a href="module-WebviewComponentView.html">WebviewComponentView</a></li><li><a href="module-WireModel.html">WireModel</a></li></ul><h3>Classes</h3><ul><li><a href="BaseComponentView.html">BaseComponentView</a></li><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="ButtonComponentView.html">ButtonComponentView</a></li><li><a href="ClockComponent.html">ClockComponent</a></li><li><a href="ComponentLibrary.html">ComponentLibrary</a></li><li><a href="DelayComponent.html">DelayComponent</a></li><li><a href="EchoComponentView.html">EchoComponentView</a></li><li><a href="HTTPClientComponentView.html">HTTPClientComponentView</a></li><li><a href="TerminalModel.html">models/TerminalModel</a></li><li><a href="PositionedModel.html">PositionedModel</a></li><li><a href="TerminalModel__.html">TerminalModel</a></li><li><a href="ValueComponentView.html">ValueComponentView</a></li><li><a href="WebviewComponentView.html">WebviewComponentView</a></li><li><a href="WireModel.html">WireModel</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addContent">addContent</a></li><li><a href="global.html#hilight">hilight</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#render">render</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-autograph.html">autograph</a></li><li><a href="module-BaseComponent.html">BaseComponent</a></li><li><a href="module-BaseComponentView.html">BaseComponentView</a></li><li><a href="module-ComponentCollection.html">ComponentCollection</a></li><li><a href="module-ComponentLibrary.html">ComponentLibrary</a></li><li><a href="module-CursorModel.html">CursorModel</a></li><li><a href="TerminalModel_.html">models/TerminalModel</a></li><li><a href="module-PositionedModel.html">PositionedModel</a></li><li><a href="module-SelectionTool.html">SelectionTool</a></li><li><a href="module-TerminalModel.html">TerminalModel</a></li><li><a href="module-WebviewComponentView.html">WebviewComponentView</a></li><li><a href="module-WireModel.html">WireModel</a></li></ul><h3>Classes</h3><ul><li><a href="BaseComponentView.html">BaseComponentView</a></li><li><a href="ButtonComponent.html">ButtonComponent</a></li><li><a href="ButtonComponentView.html">ButtonComponentView</a></li><li><a href="ClockComponent.html">ClockComponent</a></li><li><a href="ComponentLibrary.html">ComponentLibrary</a></li><li><a href="CounterComponent.html">CounterComponent</a></li><li><a href="CounterComponentView.html">CounterComponentView</a></li><li><a href="DelayComponent.html">DelayComponent</a></li><li><a href="EchoComponentView.html">EchoComponentView</a></li><li><a href="HTTPClientComponentView.html">HTTPClientComponentView</a></li><li><a href="TerminalModel.html">models/TerminalModel</a></li><li><a href="PositionedModel.html">PositionedModel</a></li><li><a href="TerminalModel__.html">TerminalModel</a></li><li><a href="ValueComponentView.html">ValueComponentView</a></li><li><a href="WebviewComponentView.html">WebviewComponentView</a></li><li><a href="WireModel.html">WireModel</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addContent">addContent</a></li><li><a href="global.html#hilight">hilight</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#render">render</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed May 07 2014 22:03:07 GMT-0500 (CDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Sat May 31 2014 18:44:52 GMT-0500 (CDT)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -28,6 +28,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         jshint: {
             options: {
                 curly: true,
