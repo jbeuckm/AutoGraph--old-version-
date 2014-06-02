@@ -8,7 +8,13 @@ describe('HTTPClient', function () {
         "model": "HTTPClientComponent",
         "view": "HTTPClientComponentView"
     };
-    var loadedComponent;
+    var loadedHttp, http;
+
+    var valueComponent = {
+        "name": "value",
+        "model": "ValueComponent",
+        "view": "ValueComponentView"
+    }, loadedValue, value;
 
 
     before(function () {
@@ -18,8 +24,15 @@ describe('HTTPClient', function () {
     describe('creates an http component', function () {
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(HTTPClientComponent).then(function (c) {
-                loadedComponent = c;
+
+            var loading = [
+                a.componentLibrary.loadComponentClasses(HTTPClientComponent),
+                a.componentLibrary.loadComponentClasses(valueComponent)
+            ];
+
+            Q.all(loading).spread(function (c, v) {
+                loadedHttp = c;
+                loadedValue = v;
                 ready();
             });
         });
@@ -28,7 +41,7 @@ describe('HTTPClient', function () {
 
             var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 60});
 
-            var http = a.placeNewModel(loadedComponent.modelClass, loadedComponent.viewClass, {x: 380, y: 230});
+            var http = a.placeNewModel(loadedHttp.modelClass, loadedHttp.viewClass, {x: 380, y: 230});
 
             var origin = value.outputs['output'].model;
             var destination = http.inputs['host'].model;

@@ -55,7 +55,11 @@ describe('AutoGraph', function () {
         var bc;
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(baseComponent).then(function (b) {
+
+            var loading = [
+                a.componentLibrary.loadComponentClasses(baseComponent)
+            ];
+            Q.all(loading).spread(function (b) {
                 loadedBaseComponent = b;
                 ready();
             });
@@ -86,15 +90,18 @@ describe('AutoGraph', function () {
     describe('creates components and wires', function () {
 
         before(function (ready) {
-            a.componentLibrary.loadComponentClasses(buttonComponent).then(function (b) {
+
+            var loading = [
+                a.componentLibrary.loadComponentClasses(buttonComponent),
+                a.componentLibrary.loadComponentClasses(valueComponent),
+                a.componentLibrary.loadComponentClasses(echoComponent)
+            ];
+
+            Q.all(loading).spread(function(b,v,e){
                 loadedButton = b;
-                a.componentLibrary.loadComponentClasses(valueComponent).then(function (v) {
-                    loadedValue = v;
-                    a.componentLibrary.loadComponentClasses(echoComponent).then(function (e) {
-                        loadedEcho = e;
-                        ready();
-                    });
-                });
+                loadedValue = v;
+                loadedEcho = e;
+                ready();
             });
         });
 
