@@ -165,9 +165,11 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                             y: d3.event.offsetY
                         };
 
-                        self.componentLibrary.loadComponentClasses(self.cursorMode.component).then(function (loaded) {
-                            self.placeNewModel(loaded.modelClass, loaded.viewClass, position);
-                        }).fail(function(err){
+                        self.componentLibrary.loadComponentClasses(self.cursorMode.component)
+                            .then(function (loaded) {
+                                self.placeNewModel(loaded.modelClass, loaded.viewClass || BaseComponentView, position);
+                            })
+                            .fail(function(err){
                                 alert(err);
                             });
 

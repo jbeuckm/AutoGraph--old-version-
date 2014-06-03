@@ -67,7 +67,8 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
              * @param callback
              */
             self.loadComponentClasses = function (componentDescription) {
-
+                console.log("loadComponentClasses ");
+                console.log(componentDescription);
                 var modelClass = componentDescription.model;
                 var viewClass = componentDescription.view;
                 var fullpath = componentDescription.path || "src/components/";
@@ -81,11 +82,12 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
                     loading.push(getClass(viewClass, componentPath + fullpath + "views/" + viewClass + ".js?v=" + Math.random()));
                 }
 
-                Q.all(loading).spread(function(mc, vc){
+                Q.all(loading).spread(function(){
 
+console.log(arguments);
                     result = {
-                        modelClass: mc,
-                        viewClass: vc
+                        modelClass: arguments[0],
+                        viewClass: arguments[1]
                     };
 
                     def.resolve(result);
