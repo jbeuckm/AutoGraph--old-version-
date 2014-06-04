@@ -32,7 +32,8 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
                 }
                 d3.selectAll(".component-option").on("click", function () {
-                    selectCallback(d3.select(d3.event.target).datum());
+                    var componentDescription = d3.select(d3.event.target).datum();
+                    selectCallback(componentDescription);
                 });
             });
 
@@ -67,8 +68,7 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
              * @param callback
              */
             self.loadComponentClasses = function (componentDescription) {
-                console.log("loadComponentClasses ");
-                console.log(componentDescription);
+
                 var modelClass = componentDescription.model;
                 var viewClass = componentDescription.view;
                 var fullpath = componentDescription.path || "src/components/";
@@ -84,7 +84,6 @@ define(['jquery', 'components/models/BaseComponent', 'components/views/BaseCompo
 
                 Q.all(loading).spread(function(){
 
-console.log(arguments);
                     result = {
                         modelClass: arguments[0],
                         viewClass: arguments[1]
