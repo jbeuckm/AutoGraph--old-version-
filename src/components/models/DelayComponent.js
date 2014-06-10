@@ -29,10 +29,12 @@ var DelayComponent = BaseComponent.extend({
         BaseComponent.prototype.initialize.call(this);
     },
 
-    receiveTick: function () {
-        var self = this;
+    process: function(args, callback) {
+
         setTimeout(function () {
-            self.sendTick();
+
+            callback(args);
+
         }, this.get("period"));
     }
 
