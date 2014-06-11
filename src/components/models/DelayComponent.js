@@ -9,7 +9,7 @@ var DelayComponent = BaseComponent.extend({
     label: "delay",
 
     inputs: {
-        trigger: {
+        input: {
             name: "input",
             description: "the message to be passed after the delay"
         },

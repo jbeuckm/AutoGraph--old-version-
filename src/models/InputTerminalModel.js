@@ -18,6 +18,7 @@ define(['models/TerminalModel'], function (TerminalModel) {
          * @method
          */
         receiveTick: function () {
+            this.get("component").receiveTick();
             this.trigger("tick");
         },
 
