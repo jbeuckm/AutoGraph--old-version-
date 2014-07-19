@@ -8,6 +8,11 @@
     "name": "clock",
     "model": "ClockComponent"
   },
+  {
+    "name": "counter",
+    "model": "CounterComponent",
+    "view": "CounterComponentView"
+  },
 
   {
     "name": "delay",
@@ -29,8 +34,7 @@
     "view": "HTTPClientComponentView"
   },
   {
-    "name": "counter",
-    "model": "CounterComponent",
-    "view": "CounterComponentView"
+    "name": "parse",
+    "model": "ParseJsonComponent"
   }
 ]

@@ -344,7 +344,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
 
             var selectionTool = SelectionTool(self.controlLayer);
-            console.log(selectionTool);
+
             self.controlTarget.call(selectionTool);
 
             selectionTool.dispatch.on("change", function(e){
