@@ -1,8 +1,8 @@
 /**
  * @module ComponentLibrary
  */
-define(['jquery', 'components/models/BaseComponent', 'components/views/BaseComponentView', 'components/views/WebviewComponentView'],
-    function ($, BaseComponent, BaseComponentView, WebviewComponentView) {
+define(['jquery', 'q', 'components/models/BaseComponent', 'components/views/BaseComponentView', 'components/views/WebviewComponentView'],
+    function ($, Q, BaseComponent, BaseComponentView, WebviewComponentView) {
 
         /**
          * Manage available components.

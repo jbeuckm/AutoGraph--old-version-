@@ -18,6 +18,9 @@ requirejs.config({
         },
         'd3': {
             exports: 'd3'
+        },
+        'q': {
+            exports: 'Q'
         }
     }
 });
