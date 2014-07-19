@@ -6,7 +6,7 @@
  */
 var ParseJsonComponent = BaseComponent.extend({
 
-    label: "parse",
+    label: "parse object",
 
     inputs: {
         input: {
@@ -31,13 +31,11 @@ var ParseJsonComponent = BaseComponent.extend({
 
     process: function(args, callback) {
 
-        console.log(args.input);
+        // remove trailing comma in json arrays or objects
         var fixedString = args.input.replace(/\s+/g,'').replace(/,(\s*)]$/, '$1]').replace(/,(\s*)\}$/, '$1\}');
-        console.log(fixedString);
 
         var obj = JSON.parse(fixedString);
-        console.log(obj);
-        callback(obj);
+        callback({output:obj});
     }
 
 });
