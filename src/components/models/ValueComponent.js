@@ -9,13 +9,15 @@ var ValueComponent = BaseComponent.extend({
         }
     },
     outputs: {
-        output: {name: "output"}
+        output: {
+            name: "output"
+        }
     },
 
     defaults: {
         value: ""
     },
-
+/*
     initialize: function () {
         BaseComponent.prototype.initialize.call(this);
 
@@ -33,12 +35,26 @@ var ValueComponent = BaseComponent.extend({
         });
 
     },
+*/
+    process: function(args, callback) {
+
+        if (args.input) {
+            console.log("changing value to input = "+args.input);
+            this.set("value", args.input);
+        }
+
+        callback({
+            output: this.get("value")
+        });
+    }
+
 
     /**
      * A tick was received at one of the inputs. Process the inputs and pass on the tick.
      *
      * @method
      */
+        /*
     receiveTick: function () {
         console.log("Value: receiveTick()");
         var inputTerminalValues = this.readInputValues();
@@ -61,5 +77,6 @@ var ValueComponent = BaseComponent.extend({
             self.sendTick();
         });
     }
+    */
 
 });

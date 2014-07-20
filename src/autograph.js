@@ -368,7 +368,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                         this.dispatchEvent(event);
                     }
 
-            });
+                });
             });
 
         };

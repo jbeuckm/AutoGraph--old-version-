@@ -42,7 +42,6 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                 var self = this;
 
                 this.process(inputTerminalValues, function (results) {
-
                     self.updateOutputTerminals(results);
                     self.sendTick();
                 });
