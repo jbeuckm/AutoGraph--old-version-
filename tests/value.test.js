@@ -39,7 +39,7 @@ describe('Value Component', function () {
 
             var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x: 370, y: 260});
             var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 460, y: 280});
-            var value2 = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 610, y: 280});
+//            var value2 = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 610, y: 280});
 
             var origin = button.model.outputs['output'].model;
             var destination = value.model.inputs['input'].model;
@@ -48,7 +48,9 @@ describe('Value Component', function () {
             a.placeNewWire(origin.cid, destination.cid);
             a.clearCursorMode();
 
-console.log(value.view.textField[0]);
+            var testString = "123";
+            value.model.set("value", testString);
+            expect(value.view.textField.node().value).to.equal(testString);
         });
 
     });
