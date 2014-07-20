@@ -278,7 +278,10 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                 });
                 view.render();
 
-                return model;
+                return {
+                    model: model,
+                    view: view
+                };
             };
 
             /**

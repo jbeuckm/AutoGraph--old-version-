@@ -2,7 +2,6 @@ var expect = chai.expect;
 
 describe('HTTPClient', function () {
 
-    var a;
     var HTTPClientComponent = {
         "name": "base components",
         "model": "HTTPClientComponent",
@@ -18,7 +17,7 @@ describe('HTTPClient', function () {
 
 
     before(function () {
-        a = new autograph('container', 'components.json', '../');
+
     });
 
     describe('creates an http component', function () {

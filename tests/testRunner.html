@@ -16,7 +16,9 @@
 
 <body>
 
-  <div id="container"> </div>
+  <div id="test-holder">
+    <div id="container"> </div>
+  </div>
   <div id="mocha"></div>
 
   <script src="../node_modules/mocha/mocha.js"></script>
@@ -27,9 +29,14 @@
     mocha.ui('bdd');
     mocha.reporter('html');
     expect = chai.expect;
+
+    // the shared autograph instance between tests
+    var a, ypos;
+
   </script>
 
   <script src="autograph.test.js"></script>
+  <script src="value.test.js"></script>
   <script src="httpClient.test.js"></script>
 
   <script data-main="test-config" src="../src/lib/require.js"></script>
