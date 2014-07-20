@@ -38,16 +38,17 @@ describe('Value Component', function () {
         it('sets text input from value', function () {
 
             var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x: 370, y: 260});
-            var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 450, y: 280});
+            var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 460, y: 280});
+            var value2 = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 610, y: 280});
 
             var origin = button.model.outputs['output'].model;
             var destination = value.model.inputs['input'].model;
 
             a.terminalMouseDown(origin);
-            var newWire = a.placeNewWire(origin.cid, destination.cid);
+            a.placeNewWire(origin.cid, destination.cid);
             a.clearCursorMode();
 
-
+console.log(value.view.textField[0]);
         });
 
     });
