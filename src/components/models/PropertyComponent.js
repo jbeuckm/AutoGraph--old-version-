@@ -19,7 +19,7 @@ var PropertyComponent = BaseComponent.extend({
         }
     },
     outputs: {
-        value: {
+        output: {
             name: "value",
             description: "property value"
         }
@@ -31,7 +31,7 @@ var PropertyComponent = BaseComponent.extend({
 
     process: function(args, callback) {
         callback({
-            output: args.object[this.get("key")]
+            output: args.input[args.key]
         });
     }
 
