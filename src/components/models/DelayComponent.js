@@ -26,10 +26,6 @@ var DelayComponent = BaseComponent.extend({
         period: 500
     },
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
-    },
-
     process: function(args, callback) {
 
         setTimeout(function () {

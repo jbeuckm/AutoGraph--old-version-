@@ -13,10 +13,10 @@ define(['models/TerminalModel'], function (TerminalModel) {
         /**
          * @method
          */
-        initialize: function () {
-            TerminalModel.prototype.initialize.call(this);
+        initialize: function (args, opts) {
+            TerminalModel.prototype.initialize.call(this, args, opts);
 
-            var component = this.get("component");
+            var component = this.component;
 
             this.listenTo(component, "tick", this.sendTick);
         },

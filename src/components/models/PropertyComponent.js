@@ -29,10 +29,6 @@ var PropertyComponent = BaseComponent.extend({
 
     },
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
-    },
-
     process: function(args, callback) {
         callback({
             output: args.object[this.get("key")]

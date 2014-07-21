@@ -193,7 +193,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                         };
 
                         self.componentLibrary.loadComponentClasses(self.cursorMode.component, function (loaded) {
-                            self.placeNewModel(loaded.modelClass, loaded.viewClass, position);
+                            self.placeNewComponent(loaded.modelClass, loaded.viewClass, position);
                         });
 
                         if (!d3.event.shiftKey) {
@@ -283,7 +283,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
              *
              * @return {BaseComponent}
              */
-            self.placeNewModel = function (modelClass, viewClass, position) {
+            self.placeNewComponent = function (modelClass, viewClass, position) {
 
                 var self = this;
 

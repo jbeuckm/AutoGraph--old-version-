@@ -27,7 +27,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
             /**
              * @method
              */
-            initialize: function () {
+            initialize: function (args, opts) {
+                this.autograph = opts.autograph;
                 this.buildInputs(this.inputs);
                 this.buildOutputs(this.outputs);
             },
@@ -104,11 +105,12 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                     var input = inputs[i];
 
                     var im = new InputTerminalModel({
-                        autograph: this.get("autograph"),
-                        component: this,
                         x: cnt * 20,
                         y: 0,
                         name: input.name
+                    },{
+                        autograph: this.autograph,
+                        component: this
                     });
 
                     this.listenTo(im, "change:value", function () {
@@ -118,7 +120,7 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
                     input.model = im;
 
-                    this.get("autograph").Terminals.add(im);
+                    this.autograph.Terminals.add(im);
 
                     cnt++;
                 }
@@ -135,16 +137,17 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                     var output = outputs[i];
 
                     var om = new OutputTerminalModel({
-                        autograph: this.get("autograph"),
-                        component: this,
                         x: cnt * 20,
                         y: 0,
                         name: output.name
+                    },{
+                        autograph: this.autograph,
+                        component: this
                     });
 
                     output.model = om;
 
-                    this.get("autograph").Terminals.add(om);
+                    this.autograph.Terminals.add(om);
 
                     cnt++;
                 }

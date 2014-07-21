@@ -27,8 +27,8 @@ var ClockComponent = BaseComponent.extend({
         running: true
     },
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
+    initialize: function (args, opts) {
+        BaseComponent.prototype.initialize.call(this, args, opts);
 
         var self = this;
 

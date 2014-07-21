@@ -104,7 +104,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                 }
 
                 // update the anchor points to draw the temp wire
-                terminal.get("component").trigger("change");
+                terminal.component.trigger("change");
 
                 var newWire = new WireModel({
                     autograph: self,
@@ -167,7 +167,7 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
 
                         self.componentLibrary.loadComponentClasses(self.cursorMode.component)
                             .then(function (loaded) {
-                                self.placeNewModel(loaded.modelClass, loaded.viewClass || BaseComponentView, position);
+                                self.placeNewComponent(loaded.modelClass, loaded.viewClass || BaseComponentView, position);
                             })
                             .fail(function(err){
                                 alert(err);
@@ -212,9 +212,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
             self.placeNewWire = function (originId, destinationId) {
 
                 var origin = self.Terminals.get(originId);
-                origin.get("component").trigger("change");
+                origin.component.trigger("change");
                 var destination = self.Terminals.get(destinationId);
-                destination.get("component").trigger("change");
+                destination.component.trigger("change");
 
                 // can't connect terminal to itself
                 if (destinationId === originId) {
@@ -261,15 +261,17 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
              *
              * @return {BaseComponent}
              */
-            self.placeNewModel = function (modelClass, viewClass, position) {
+            self.placeNewComponent = function (modelClass, viewClass, position) {
 
                 var self = this;
 
                 var model = new modelClass({
-                    autograph: self,
                     x: position.x,
                     y: position.y
+                },{
+                    autograph: self
                 });
+                model.autograph = this;
                 self.Components.add(model);
 
                 var view = new viewClass({

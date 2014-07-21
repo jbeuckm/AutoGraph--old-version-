@@ -17,9 +17,9 @@ var ValueComponent = BaseComponent.extend({
     defaults: {
         value: ""
     },
-/*
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
+
+    initialize: function (args, opts) {
+        BaseComponent.prototype.initialize.call(this, args, opts);
 
         var self = this;
 
@@ -35,7 +35,7 @@ var ValueComponent = BaseComponent.extend({
         });
 
     },
-*/
+
     process: function(args, callback) {
 
         if (args.input) {

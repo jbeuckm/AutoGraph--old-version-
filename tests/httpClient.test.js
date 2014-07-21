@@ -38,9 +38,9 @@ describe('HTTPClient', function () {
 
         xit('makes an http request', function (done) {
 
-            var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 60});
+            var value = a.placeNewComponent(loadedValue.modelClass, loadedValue.viewClass, {x: 590, y: 60});
 
-            var http = a.placeNewModel(loadedHttp.modelClass, loadedHttp.viewClass, {x: 380, y: 230});
+            var http = a.placeNewComponent(loadedHttp.modelClass, loadedHttp.viewClass, {x: 380, y: 230});
 
             var origin = value.outputs['output'].model;
             var destination = http.inputs['host'].model;

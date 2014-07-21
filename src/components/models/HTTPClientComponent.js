@@ -20,9 +20,9 @@ var HTTPClientComponent = BaseComponent.extend({
         method: 'GET'
     },
 
-    initialize: function() {
+    initialize: function(args, opts) {
 
-        BaseComponent.prototype.initialize.call(this);
+        BaseComponent.prototype.initialize.call(this, args, opts);
 
         $.ajaxPrefilter(function( options ) {
             if ( options.crossDomain ) {

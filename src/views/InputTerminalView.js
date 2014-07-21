@@ -28,7 +28,7 @@ define(['views/TerminalView'], function (TerminalView) {
                     self.label.style("visibility", "visible");
 
                     enabled = true;
-                    m.get("autograph").cursorModel.set("activeTerminal", m);
+                    m.autograph.cursorModel.set("activeTerminal", m);
                     d3.select(this)
                         .transition().duration(200)
                         .attr("y", -8)
@@ -39,7 +39,7 @@ define(['views/TerminalView'], function (TerminalView) {
                     self.label.style("visibility", "hidden");
 
                     enabled = true;
-                    m.get("autograph").cursorModel.set("activeTerminal", null);
+                    m.autograph.cursorModel.set("activeTerminal", null);
                     d3.select(this)
                         .transition().duration(200)
                         .attr("y", -4)

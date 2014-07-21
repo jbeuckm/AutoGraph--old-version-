@@ -49,7 +49,7 @@ define(['backbone'], function (Backbone) {
                     self.label.style("visibility", "visible");
 
                     enabled = true;
-                    m.get("autograph").cursorModel.set("activeTerminal", m);
+                    m.autograph.cursorModel.set("activeTerminal", m);
                     d3.select(this)
                         .classed("enabled", true)
                         .transition().duration(200)
@@ -60,7 +60,7 @@ define(['backbone'], function (Backbone) {
                     self.label.style("visibility", "hidden");
 
                     enabled = false;
-                    m.get("autograph").cursorModel.set("activeTerminal", null);
+                    m.autograph.cursorModel.set("activeTerminal", null);
                     d3.select(this)
                         .classed("enabled", false)
                         .transition().duration(200)
@@ -102,7 +102,7 @@ define(['backbone'], function (Backbone) {
          */
         getBBoxInWorkbenchSpace: function (element) {
 
-            var svg = this.model.get("autograph").svg.node();
+            var svg = this.model.autograph.svg.node();
             var trans = element.getTransformToElement(svg);
 
             return this.getBoundingBoxInArbitrarySpace(element, trans);

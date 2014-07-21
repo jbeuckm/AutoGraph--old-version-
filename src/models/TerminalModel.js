@@ -22,8 +22,10 @@ define(['models/PositionedModel'],
             /**
              * @method
              */
-            initialize: function () {
-                this.set("componentId", this.get("component").cid);
+            initialize: function (args, opts) {
+                this.autograph = opts.autograph;
+                this.component = opts.component;
+                this.set("componentId", this.component.cid);
             }
 
         });

@@ -25,10 +25,6 @@ var ParseJsonComponent = BaseComponent.extend({
 
     },
 
-    initialize: function () {
-        BaseComponent.prototype.initialize.call(this);
-    },
-
     process: function(args, callback) {
 
         // remove trailing comma in json arrays or objects

@@ -37,9 +37,16 @@ describe('Value Component', function () {
 
         it('sets text input from value', function () {
 
-            var button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x: 370, y: 260});
-            var value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 460, y: 280});
-//            var value2 = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 610, y: 280});
+            var button = a.placeNewComponent(loadedButton.modelClass, loadedButton.viewClass, {x: 370, y: 260});
+            var value = a.placeNewComponent(loadedValue.modelClass, loadedValue.viewClass, {x: 460, y: 280});
+            console.log(a.Components.toJSON());
+//            console.log(a.Terminals.toJSON());
+//            console.log(a.Wires.toJSON());
+            var value2 = a.placeNewComponent(loadedValue.modelClass, loadedValue.viewClass, {x: 610, y: 280});
+            console.log(a.Components.toJSON());
+
+            console.log(value.model.toJSON());
+            console.log(value2.model.toJSON());
 
             var origin = button.model.outputs['output'].model;
             var destination = value.model.inputs['input'].model;

@@ -66,7 +66,7 @@ describe('AutoGraph', function () {
 
         it('should add the base component to the collection', function () {
             var componentCount = a.Components.length;
-            bc = a.placeNewModel(loadedBaseComponent.modelClass, loadedBaseComponent.viewClass, {x: 340, y: 40}).model;
+            bc = a.placeNewComponent(loadedBaseComponent.modelClass, loadedBaseComponent.viewClass, {x: 340, y: 40}).model;
             expect(a.Components.length).to.equal(componentCount + 1);
         });
 
@@ -108,9 +108,9 @@ describe('AutoGraph', function () {
 
             var wireCount = a.Wires.length;
 
-            button = a.placeNewModel(loadedButton.modelClass, loadedButton.viewClass, {x: 470, y: 10}).model;
+            button = a.placeNewComponent(loadedButton.modelClass, loadedButton.viewClass, {x: 470, y: 10}).model;
 
-            value = a.placeNewModel(loadedValue.modelClass, loadedValue.viewClass, {x: 620, y: 15}).model;
+            value = a.placeNewComponent(loadedValue.modelClass, loadedValue.viewClass, {x: 620, y: 15}).model;
 
             var origin = button.outputs['output'].model;
             var destination = value.inputs['input'].model;
@@ -134,7 +134,7 @@ describe('AutoGraph', function () {
 
         it('should transmit a value from the value component', function (done) {
 
-            echo = a.placeNewModel(loadedEcho.modelClass, loadedEcho.viewClass, {x: 580, y: 80}).model;
+            echo = a.placeNewComponent(loadedEcho.modelClass, loadedEcho.viewClass, {x: 580, y: 80}).model;
 
             var origin = value.outputs['output'].model;
             var destination = echo.inputs['value'].model;
@@ -160,7 +160,7 @@ describe('AutoGraph', function () {
 
         it('should transmit a value to multiple recipients', function (done) {
 
-            echo2 = a.placeNewModel(loadedEcho.modelClass, loadedEcho.viewClass, {x: 820, y: 80}).model;
+            echo2 = a.placeNewComponent(loadedEcho.modelClass, loadedEcho.viewClass, {x: 820, y: 80}).model;
 
             var origin = value.outputs['output'].model;
             var destination = echo2.inputs['value'].model;

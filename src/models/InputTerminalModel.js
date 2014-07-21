@@ -18,7 +18,7 @@ define(['models/TerminalModel'], function (TerminalModel) {
          * @method
          */
         receiveTick: function () {
-            this.get("component").receiveTick();
+            this.component.receiveTick();
         },
 
         receiveValue: function(origin) {
