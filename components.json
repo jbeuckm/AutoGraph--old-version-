@@ -34,11 +34,15 @@
     "view": "HTTPClientComponentView"
   },
   {
-    "name": "parse object",
+    "name": "parse JSON",
     "model": "ParseJsonComponent"
   },
   {
-    "name": "property",
+    "name": "value for key",
     "model": "PropertyComponent"
+  },
+  {
+    "name": "parse integer",
+    "model": "ParseIntComponent"
   }
 ]

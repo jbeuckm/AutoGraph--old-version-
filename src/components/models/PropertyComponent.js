@@ -6,7 +6,7 @@
  */
 var PropertyComponent = BaseComponent.extend({
 
-    label: "property",
+    label: "value for key",
 
     inputs: {
         input: {

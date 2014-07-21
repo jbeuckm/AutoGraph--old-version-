@@ -6,7 +6,7 @@
  */
 var ParseJsonComponent = BaseComponent.extend({
 
-    label: "parse object",
+    label: "parse json",
 
     inputs: {
         input: {
