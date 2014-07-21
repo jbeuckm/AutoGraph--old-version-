@@ -107,8 +107,9 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                 terminal.component.trigger("change");
 
                 var newWire = new WireModel({
-                    autograph: self,
                     originTerminalId: terminal.cid
+                },{
+                    autograph: self
                 });
 
                 var newWireView = new WireView({

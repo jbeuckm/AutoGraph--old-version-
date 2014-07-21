@@ -15,13 +15,17 @@ define(['backbone'], function (Backbone) {
             destinationTerminalId: null
         },
 
+        initialize: function(args, opts) {
+            this.autograph = opts.autograph;
+        },
+
         /**
          * @method
          * @return {*}
          */
         getOriginModel: function () {
             var o = this.get("originTerminalId");
-            return(this.get("autograph").Terminals.get(o));
+            return(this.autograph.Terminals.get(o));
         },
 
         /**
@@ -31,10 +35,10 @@ define(['backbone'], function (Backbone) {
         getDestinationModel: function () {
             var d = this.get("destinationTerminalId");
             if (d) {
-                return(this.get("autograph").Terminals.get(d));
+                return(this.autograph.Terminals.get(d));
             }
             else {
-                return(this.get("autograph").cursorModel);
+                return(this.autograph.cursorModel);
             }
         }
 
