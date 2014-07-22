@@ -8,13 +8,13 @@ var ParseIntComponent = BaseComponent.extend({
 
     label: "parse integer",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "input",
             description: "the string to be parsed"
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {
             name: "output",
             description: "parsed integer"

@@ -8,13 +8,13 @@ var ParseJsonComponent = BaseComponent.extend({
 
     label: "parse json",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "input",
             description: "the message to be parsed"
-        },
+        }
     },
-    outputs: {
+    outputSpecs: {
         output: {
             name: "output",
             description: "parsed object"

@@ -2,13 +2,13 @@ var EchoComponent = BaseComponent.extend({
 
     label: "echo",
 
-    inputs: {
+    inputSpecs: {
         value: {
             name: "value",
             description: "Set the value of the component."
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {
             name: "output"
         }

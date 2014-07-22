@@ -2,7 +2,7 @@ var HTTPClientComponent = BaseComponent.extend({
 
     label: "HTTP Client",
 
-    inputs: {
+    inputSpecs: {
         method: {name: "method"},
         hostname: {name: "hostname"},
         port: {name: "port"},
@@ -11,7 +11,7 @@ var HTTPClientComponent = BaseComponent.extend({
         params: {name: "params"},
         body: {name: "body"}
     },
-    outputs: {
+    outputSpecs: {
         status: {name: "status"},
         headers: {name: "headers"},
         body: {name: "body"}

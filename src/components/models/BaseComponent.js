@@ -14,10 +14,10 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
 
             label: "component",
 
-            inputs: {
+            inputSpecs: {
                 input: {name: "input"}
             },
-            outputs: {
+            outputSpecs: {
                 output: {name: "output"}
             },
 
@@ -99,10 +99,14 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
              */
             buildInputs: function (inputs) {
 
-                var cnt = 0;
-                for (var i in inputs) {
+                this.inputs = {};
 
-                    var input = inputs[i];
+                var cnt = 0;
+                for (var i in this.inputSpecs) {
+
+                    // clone spec into instance
+                    var input = JSON.parse(JSON.stringify(this.inputSpecs[i]));
+                    this.inputs[i] = input;
 
                     var im = new InputTerminalModel({
                         x: cnt * 20,
@@ -131,10 +135,14 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
              */
             buildOutputs: function (outputs) {
 
-                var cnt = 0;
-                for (var i in outputs) {
+                this.outputs = {};
 
-                    var output = outputs[i];
+                var cnt = 0;
+                for (var i in this.outputSpecs) {
+
+                    // clone spec into instance
+                    var output = JSON.parse(JSON.stringify(this.outputSpecs[i]));
+                    this.outputs[i] = output;
 
                     var om = new OutputTerminalModel({
                         x: cnt * 20,

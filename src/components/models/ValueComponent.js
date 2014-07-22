@@ -2,13 +2,13 @@ var ValueComponent = BaseComponent.extend({
 
     label: "value",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "input",
             description: "Set the value of the component."
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {
             name: "output"
         }

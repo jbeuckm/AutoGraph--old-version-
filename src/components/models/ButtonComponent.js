@@ -8,13 +8,13 @@ var ButtonComponent = BaseComponent.extend({
 
     label: "button",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "input",
             description: "values and ticks will be copied to output."
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {name: "output"}
     },
 

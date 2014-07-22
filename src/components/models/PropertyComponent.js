@@ -8,7 +8,7 @@ var PropertyComponent = BaseComponent.extend({
 
     label: "value for key",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "object",
             description: "the object with a property"
@@ -18,7 +18,7 @@ var PropertyComponent = BaseComponent.extend({
             description: "the property name"
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {
             name: "value",
             description: "property value"

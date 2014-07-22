@@ -8,7 +8,7 @@ var ClockComponent = BaseComponent.extend({
 
     label: "clock",
 
-    inputs: {
+    inputSpecs: {
         toggle: {
             name: "toggle",
             description: "Turn the clock off or on."
@@ -18,7 +18,7 @@ var ClockComponent = BaseComponent.extend({
             description: "Period of the clock in milliseconds."
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {name: "output"}
     },
 

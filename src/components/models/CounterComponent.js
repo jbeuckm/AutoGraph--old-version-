@@ -8,12 +8,12 @@ var CounterComponent = BaseComponent.extend({
 
     label: "counter",
 
-    inputs: {
+    inputSpecs: {
         trigger: {
             name: "input"
-        },
+        }
     },
-    outputs: {
+    outputSpecs: {
         output: {name: "output"}
     },
 

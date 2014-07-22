@@ -8,7 +8,7 @@ var DelayComponent = BaseComponent.extend({
 
     label: "delay",
 
-    inputs: {
+    inputSpecs: {
         input: {
             name: "input",
             description: "the message to be passed after the delay"
@@ -18,7 +18,7 @@ var DelayComponent = BaseComponent.extend({
             description: "Period of the delay in milliseconds."
         }
     },
-    outputs: {
+    outputSpecs: {
         output: {name: "output"}
     },
 
