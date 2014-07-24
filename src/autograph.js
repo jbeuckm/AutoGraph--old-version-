@@ -52,6 +52,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
             this.Components = new ComponentCollection();
             this.Terminals = new TerminalCollection();
 
+            this.Components.fetch({autograph:this});
+
 
             /**
              * @method
