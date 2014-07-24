@@ -5,7 +5,7 @@ requirejs.config({
         "underscore": "lib/underscore-min",
         "jquery": "lib/jquery-1.10.2.min",
         "backbone": "lib/backbone-min",
-        "localstorage": "lib/backbone.localStorage",
+        "localstorage": "lib/backbone.localStorage-min",
         "d3": "lib/d3.min",
         "q": "lib/q"
     },

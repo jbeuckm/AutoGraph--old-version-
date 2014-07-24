@@ -114,7 +114,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                         name: input.name
                     },{
                         autograph: this.autograph,
-                        component: this
+                        component: this,
+                        collection: this.autograph.Terminals
                     });
 
                     this.listenTo(im, "change:value", function () {
@@ -150,7 +151,8 @@ define(['models/PositionedModel', 'models/OutputTerminalModel', 'models/InputTer
                         name: output.name
                     },{
                         autograph: this.autograph,
-                        component: this
+                        component: this,
+                        collection: this.autograph.Terminals
                     });
 
                     output.model = om;

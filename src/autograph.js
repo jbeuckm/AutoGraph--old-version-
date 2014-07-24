@@ -109,7 +109,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                 var newWire = new WireModel({
                     originTerminalId: terminal.cid
                 },{
-                    autograph: self
+                    autograph: self,
+                    collection: self.Wires
                 });
 
                 var newWireView = new WireView({
@@ -270,7 +271,8 @@ define(['backbone', 'd3', 'models/CursorModel', 'ComponentLibrary', 'SelectionTo
                     x: position.x,
                     y: position.y
                 },{
-                    autograph: self
+                    autograph: self,
+                    collection: self.Components
                 });
                 model.autograph = this;
                 self.Components.add(model);

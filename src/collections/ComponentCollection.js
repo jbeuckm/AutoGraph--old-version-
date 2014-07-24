@@ -1,13 +1,14 @@
 /**
  * @module ComponentCollection
  */
-define(['backbone', 'components/models/BaseComponent'], function (Backbone, BaseComponent) {
+define(['backbone', 'components/models/BaseComponent', 'localstorage'], function (Backbone, BaseComponent) {
 
     /**
      * @constructor
      */
     return Backbone.Collection.extend({
-        model: BaseComponent
+        model: BaseComponent,
+        localStorage: new Backbone.LocalStorage("ComponentCollection")
     });
 
 });
